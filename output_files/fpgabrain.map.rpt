@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Sun Jul 28 00:57:46 2019
+Sun Jul 28 03:00:34 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -45,7 +45,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul 28 00:57:46 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul 28 03:00:34 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
@@ -170,16 +170,16 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                             ; Library ;
 +----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+---------+
-; VGA.vhd                          ; yes             ; User VHDL File                     ; G:/fpgabrain/VGA.vhd                                                     ;         ;
-; SYNC.vhd                         ; yes             ; User VHDL File                     ; G:/fpgabrain/SYNC.vhd                                                    ;         ;
-; fpgabrain.bdf                    ; yes             ; User Block Diagram/Schematic File  ; G:/fpgabrain/fpgabrain.bdf                                               ;         ;
-; pll.vhd                          ; yes             ; User Wizard-Generated File         ; G:/fpgabrain/pll.vhd                                                     ;         ;
+; VGA.vhd                          ; yes             ; User VHDL File                     ; G:/fpga-brain/VGA.vhd                                                    ;         ;
+; SYNC.vhd                         ; yes             ; User VHDL File                     ; G:/fpga-brain/SYNC.vhd                                                   ;         ;
+; fpgabrain.bdf                    ; yes             ; User Block Diagram/Schematic File  ; G:/fpga-brain/fpgabrain.bdf                                              ;         ;
+; pll.vhd                          ; yes             ; User Wizard-Generated File         ; G:/fpga-brain/pll.vhd                                                    ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf        ;         ;
 ; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc    ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc   ;         ;
 ; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc ;         ;
 ; cycloneii_pll.inc                ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc ;         ;
-; db/pll_altpll.v                  ; yes             ; Auto-Generated Megafunction        ; G:/fpgabrain/db/pll_altpll.v                                             ;         ;
+; db/pll_altpll.v                  ; yes             ; Auto-Generated Megafunction        ; G:/fpga-brain/db/pll_altpll.v                                            ;         ;
 +----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+---------+
 
 
@@ -688,36 +688,40 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Jul 28 00:57:36 2019
+    Info: Processing started: Sun Jul 28 03:00:22 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file vga.vhd
-    Info (12022): Found design unit 1: VGA-MAIN File: G:/fpgabrain/VGA.vhd Line: 13
-    Info (12023): Found entity 1: VGA File: G:/fpgabrain/VGA.vhd Line: 5
+    Info (12022): Found design unit 1: VGA-MAIN File: G:/fpga-brain/VGA.vhd Line: 13
+    Info (12023): Found entity 1: VGA File: G:/fpga-brain/VGA.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file sync.vhd
-    Info (12022): Found design unit 1: SYNC-MAIN File: G:/fpgabrain/SYNC.vhd Line: 13
-    Info (12023): Found entity 1: SYNC File: G:/fpgabrain/SYNC.vhd Line: 5
+    Info (12022): Found design unit 1: SYNC-MAIN File: G:/fpga-brain/SYNC.vhd Line: 13
+    Info (12023): Found entity 1: SYNC File: G:/fpga-brain/SYNC.vhd Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file fpgabrain.bdf
     Info (12023): Found entity 1: fpgabrain
 Info (12021): Found 2 design units, including 1 entities, in source file pll.vhd
-    Info (12022): Found design unit 1: pll-SYN File: G:/fpgabrain/pll.vhd Line: 53
-    Info (12023): Found entity 1: pll File: G:/fpgabrain/pll.vhd Line: 42
+    Info (12022): Found design unit 1: pll-SYN File: G:/fpga-brain/pll.vhd Line: 53
+    Info (12023): Found entity 1: pll File: G:/fpga-brain/pll.vhd Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file fulladder.bdf
+    Info (12023): Found entity 1: fulladder
+Info (12021): Found 1 design units, including 1 entities, in source file sum8.bdf
+    Info (12023): Found entity 1: sum8
 Info (12127): Elaborating entity "fpgabrain" for the top level hierarchy
 Info (12128): Elaborating entity "VGA" for hierarchy "VGA:inst"
-Info (12128): Elaborating entity "SYNC" for hierarchy "VGA:inst|SYNC:C1" File: G:/fpgabrain/VGA.vhd Line: 24
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(14): used explicit default value for signal "WW" because signal was never assigned a value File: G:/fpgabrain/SYNC.vhd Line: 14
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(15): used explicit default value for signal "HH" because signal was never assigned a value File: G:/fpgabrain/SYNC.vhd Line: 15
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(16): used explicit default value for signal "HFP" because signal was never assigned a value File: G:/fpgabrain/SYNC.vhd Line: 16
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(17): used explicit default value for signal "HS" because signal was never assigned a value File: G:/fpgabrain/SYNC.vhd Line: 17
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(18): used explicit default value for signal "HBP" because signal was never assigned a value File: G:/fpgabrain/SYNC.vhd Line: 18
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(19): used explicit default value for signal "VFP" because signal was never assigned a value File: G:/fpgabrain/SYNC.vhd Line: 19
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(20): used explicit default value for signal "VS" because signal was never assigned a value File: G:/fpgabrain/SYNC.vhd Line: 20
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(21): used explicit default value for signal "VBP" because signal was never assigned a value File: G:/fpgabrain/SYNC.vhd Line: 21
+Info (12128): Elaborating entity "SYNC" for hierarchy "VGA:inst|SYNC:C1" File: G:/fpga-brain/VGA.vhd Line: 24
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(14): used explicit default value for signal "WW" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 14
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(15): used explicit default value for signal "HH" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 15
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(16): used explicit default value for signal "HFP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 16
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(17): used explicit default value for signal "HS" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 17
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(18): used explicit default value for signal "HBP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 18
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(19): used explicit default value for signal "VFP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 19
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(20): used explicit default value for signal "VS" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 20
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(21): used explicit default value for signal "VBP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 21
 Info (12128): Elaborating entity "pll" for hierarchy "pll:inst1"
-Info (12128): Elaborating entity "altpll" for hierarchy "pll:inst1|altpll:altpll_component" File: G:/fpgabrain/pll.vhd Line: 140
-Info (12130): Elaborated megafunction instantiation "pll:inst1|altpll:altpll_component" File: G:/fpgabrain/pll.vhd Line: 140
-Info (12133): Instantiated megafunction "pll:inst1|altpll:altpll_component" with the following parameter: File: G:/fpgabrain/pll.vhd Line: 140
+Info (12128): Elaborating entity "altpll" for hierarchy "pll:inst1|altpll:altpll_component" File: G:/fpga-brain/pll.vhd Line: 140
+Info (12130): Elaborated megafunction instantiation "pll:inst1|altpll:altpll_component" File: G:/fpga-brain/pll.vhd Line: 140
+Info (12133): Instantiated megafunction "pll:inst1|altpll:altpll_component" with the following parameter: File: G:/fpga-brain/pll.vhd Line: 140
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "147"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -774,7 +778,7 @@ Info (12133): Instantiated megafunction "pll:inst1|altpll:altpll_component" with
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
-    Info (12023): Found entity 1: pll_altpll File: G:/fpgabrain/db/pll_altpll.v Line: 30
+    Info (12023): Found entity 1: pll_altpll File: G:/fpga-brain/db/pll_altpll.v Line: 30
 Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:inst1|altpll:altpll_component|pll_altpll:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -786,8 +790,8 @@ Info (21057): Implemented 61 device resources after synthesis - the final resour
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
     Info: Peak virtual memory: 4816 megabytes
-    Info: Processing ended: Sun Jul 28 00:57:46 2019
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Processing ended: Sun Jul 28 03:00:34 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:21
 
 
