@@ -1,0 +1,78 @@
+# Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do fpgabrain_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+G:/fpga-brain/db {G:/fpga-brain/db/pll_altpll.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:18:20 on Jul 28,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+G:/fpga-brain/db" G:/fpga-brain/db/pll_altpll.v 
+# -- Compiling module pll_altpll
+# 
+# Top level modules:
+# 	pll_altpll
+# End time: 18:18:20 on Jul 28,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {G:/fpga-brain/VGA.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:18:20 on Jul 28,2019
+# vcom -reportprogress 300 -93 -work work G:/fpga-brain/VGA.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity VGA
+# -- Compiling architecture MAIN of VGA
+# End time: 18:18:20 on Jul 28,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {G:/fpga-brain/SYNC.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:18:20 on Jul 28,2019
+# vcom -reportprogress 300 -93 -work work G:/fpga-brain/SYNC.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity SYNC
+# -- Compiling architecture MAIN of SYNC
+# End time: 18:18:20 on Jul 28,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {G:/fpga-brain/pll.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:18:20 on Jul 28,2019
+# vcom -reportprogress 300 -93 -work work G:/fpga-brain/pll.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity pll
+# -- Compiling architecture SYN of pll
+# End time: 18:18:20 on Jul 28,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim rtl_work.vga
+# vsim rtl_work.vga 
+# Start time: 18:18:35 on Jul 28,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading rtl_work.vga(main)
+# Loading rtl_work.sync(main)
+add wave -position insertpoint  \
+sim:/vga/CLOCK_50 \
+sim:/vga/VGA_HS \
+sim:/vga/VGA_VS \
+sim:/vga/VGA_R \
+sim:/vga/VGA_G \
+sim:/vga/VGA_B
+run
+force -freeze sim:/vga/CLOCK_50 1 0, 0 {50 ps} -r 100
+# End time: 18:24:29 on Jul 28,2019, Elapsed time: 0:05:54
+# Errors: 0, Warnings: 0

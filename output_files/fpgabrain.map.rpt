@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Sun Jul 28 03:00:34 2019
+Mon Jul 29 03:33:54 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -45,7 +45,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul 28 03:00:34 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Jul 29 03:33:54 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
@@ -688,7 +688,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Jul 28 03:00:22 2019
+    Info: Processing started: Mon Jul 29 03:33:39 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -707,6 +707,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file fulladd
     Info (12023): Found entity 1: fulladder
 Info (12021): Found 1 design units, including 1 entities, in source file sum8.bdf
     Info (12023): Found entity 1: sum8
+Info (12021): Found 2 design units, including 1 entities, in source file padder.vhd
+    Info (12022): Found design unit 1: padder-SYN File: G:/fpga-brain/padder.vhd Line: 66
+    Info (12023): Found entity 1: padder File: G:/fpga-brain/padder.vhd Line: 42
+Info (12021): Found 4 design units, including 2 entities, in source file alt_mul.vhd
+    Info (12022): Found design unit 1: alt_mul_altfp_mult_atn-RTL File: G:/fpga-brain/alt_mul.vhd Line: 56
+    Info (12022): Found design unit 2: alt_mul-RTL File: G:/fpga-brain/alt_mul.vhd Line: 1921
+    Info (12023): Found entity 1: alt_mul_altfp_mult_atn File: G:/fpga-brain/alt_mul.vhd Line: 46
+    Info (12023): Found entity 2: alt_mul File: G:/fpga-brain/alt_mul.vhd Line: 1910
+Info (12021): Found 2 design units, including 1 entities, in source file net.vhd
+    Info (12022): Found design unit 1: net-bhv File: G:/fpga-brain/net.vhd Line: 90
+    Info (12023): Found entity 1: net File: G:/fpga-brain/net.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file neuron.vhd
+    Info (12022): Found design unit 1: neuron-bdf_type File: G:/fpga-brain/neuron.vhd Line: 23
+    Info (12023): Found entity 1: neuron File: G:/fpga-brain/neuron.vhd Line: 6
 Info (12127): Elaborating entity "fpgabrain" for the top level hierarchy
 Info (12128): Elaborating entity "VGA" for hierarchy "VGA:inst"
 Info (12128): Elaborating entity "SYNC" for hierarchy "VGA:inst|SYNC:C1" File: G:/fpga-brain/VGA.vhd Line: 24
@@ -789,9 +803,9 @@ Info (21057): Implemented 61 device resources after synthesis - the final resour
     Info (21061): Implemented 54 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4816 megabytes
-    Info: Processing ended: Sun Jul 28 03:00:34 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Peak virtual memory: 4819 megabytes
+    Info: Processing ended: Mon Jul 29 03:33:54 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:23
 
 
