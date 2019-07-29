@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Mon Jul 29 04:16:14 2019
+Mon Jul 29 15:37:26 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -45,7 +45,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jul 29 04:16:14 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Jul 29 15:37:26 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
@@ -174,6 +174,8 @@ refer to the applicable agreement for further details.
 ; SYNC.vhd                         ; yes             ; User VHDL File                     ; G:/fpga-brain/SYNC.vhd                                                   ;         ;
 ; fpgabrain.bdf                    ; yes             ; User Block Diagram/Schematic File  ; G:/fpga-brain/fpgabrain.bdf                                              ;         ;
 ; pll.vhd                          ; yes             ; User Wizard-Generated File         ; G:/fpga-brain/pll.vhd                                                    ;         ;
+; net.vhd                          ; yes             ; User VHDL File                     ; G:/fpga-brain/net.vhd                                                    ;         ;
+; neuron.vhd                       ; yes             ; User VHDL File                     ; G:/fpga-brain/neuron.vhd                                                 ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf        ;         ;
 ; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc    ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc   ;         ;
@@ -688,7 +690,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Jul 29 04:16:02 2019
+    Info: Processing started: Mon Jul 29 15:37:12 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -794,6 +796,11 @@ Info (12133): Instantiated megafunction "pll:inst1|altpll:altpll_component" with
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
     Info (12023): Found entity 1: pll_altpll File: G:/fpga-brain/db/pll_altpll.v Line: 30
 Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:inst1|altpll:altpll_component|pll_altpll:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
+Info (12128): Elaborating entity "net" for hierarchy "net:inst5"
+Info (12128): Elaborating entity "neuron" for hierarchy "net:inst5|neuron:c0" File: G:/fpga-brain/net.vhd Line: 114
+Warning (12001): Port "out0[32]" does not exist in entity definition of "net".  The port's range differs between the entity definition and its actual instantiation, "net:inst5".
+Warning (12001): Port "out1[32]" does not exist in entity definition of "net".  The port's range differs between the entity definition and its actual instantiation, "net:inst5".
+Warning (12001): Port "out2[32]" does not exist in entity definition of "net".  The port's range differs between the entity definition and its actual instantiation, "net:inst5".
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
@@ -802,10 +809,10 @@ Info (21057): Implemented 61 device resources after synthesis - the final resour
     Info (21059): Implemented 5 output pins
     Info (21061): Implemented 54 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4820 megabytes
-    Info: Processing ended: Mon Jul 29 04:16:14 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:18
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4828 megabytes
+    Info: Processing ended: Mon Jul 29 15:37:26 2019
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:21
 
 
