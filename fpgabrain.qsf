@@ -60,9 +60,9 @@ set_location_assignment PIN_144 -to VGA_HS
 set_location_assignment PIN_143 -to VGA_VS
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name VHDL_FILE fpgabrain.vhdl
 set_global_assignment -name VHDL_FILE VGA.vhd
 set_global_assignment -name VHDL_FILE SYNC.vhd
-set_global_assignment -name BDF_FILE fpgabrain.bdf
 set_global_assignment -name QIP_FILE pll.qip
 set_global_assignment -name BDF_FILE fulladder.bdf
 set_global_assignment -name BDF_FILE sum8.bdf

@@ -209,7 +209,7 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 296 320 504 1520)
 	(text "net" (rect 5 0 20 12)(font "Arial" ))
-	(text "inst5" (rect 8 1184 30 1201)(font "Intel Clear" ))
+	(text "inst5" (rect 8 1184 31 1196)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -711,21 +711,21 @@ refer to the applicable agreement for further details.
 		(pt 208 32)
 		(output)
 		(text "out0[32..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "out0[32..0]" (rect 143 27 196 39)(font "Arial" ))
+		(text "out0[32..0]" (rect 143 27 187 39)(font "Arial" ))
 		(line (pt 208 32)(pt 192 32)(line_width 3))
 	)
 	(port
 		(pt 208 48)
 		(output)
 		(text "out1[32..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "out1[32..0]" (rect 143 43 196 55)(font "Arial" ))
+		(text "out1[32..0]" (rect 143 43 187 55)(font "Arial" ))
 		(line (pt 208 48)(pt 192 48)(line_width 3))
 	)
 	(port
 		(pt 208 64)
 		(output)
 		(text "out2[32..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "out2[32..0]" (rect 143 59 196 71)(font "Arial" ))
+		(text "out2[32..0]" (rect 143 59 187 71)(font "Arial" ))
 		(line (pt 208 64)(pt 192 64)(line_width 3))
 	)
 	(drawing
