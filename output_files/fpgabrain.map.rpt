@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Tue Jul 30 01:35:57 2019
+Tue Jul 30 03:30:51 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -17,10 +17,11 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   9. General Register Statistics
  10. Parameter Settings for User Entity Instance: pll:c1|altpll:altpll_component
  11. altpll Parameter Settings by Entity Instance
- 12. Port Connectivity Checks: "pll:c1"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 12. Port Connectivity Checks: "net:c3"
+ 13. Port Connectivity Checks: "pll:c1"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -46,7 +47,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 30 01:35:57 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jul 30 03:30:51 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
@@ -175,6 +176,8 @@ refer to the applicable agreement for further details.
 ; VGA.vhd                          ; yes             ; User VHDL File               ; G:/fpga-brain/VGA.vhd                                                    ;         ;
 ; SYNC.vhd                         ; yes             ; User VHDL File               ; G:/fpga-brain/SYNC.vhd                                                   ;         ;
 ; pll.vhd                          ; yes             ; User Wizard-Generated File   ; G:/fpga-brain/pll.vhd                                                    ;         ;
+; net.vhd                          ; yes             ; User VHDL File               ; G:/fpga-brain/net.vhd                                                    ;         ;
+; neuron.vhd                       ; yes             ; User VHDL File               ; G:/fpga-brain/neuron.vhd                                                 ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf        ;         ;
 ; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc    ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc   ;         ;
@@ -649,6 +652,437 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+--------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "net:c3"                                                                                         ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; i0[13..12]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i0[5..3]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i0[31..14]       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i0[11..6]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i0[2..1]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i0[0]            ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i1[13..12]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i1[5..3]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i1[31..14]       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i1[11..6]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i1[2..1]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i1[0]            ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i2[13..12]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i2[5..3]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i2[31..14]       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i2[11..6]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i2[2..1]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i2[0]            ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i3[13..12]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i3[5..3]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i3[31..14]       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i3[11..6]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i3[2..1]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i3[0]            ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i4[13..12]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i4[5..3]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i4[31..14]       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i4[11..6]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i4[2..1]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i4[0]            ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h5[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h5[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h5[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h5[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h5[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h5[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h6[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h6[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h6[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h6[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h6[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h6[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h7[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h7[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h7[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h7[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h7[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h7[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h8[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h8[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h8[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h8[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h8[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h8[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h9[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h9[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh0_h9[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h9[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h9[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh0_h9[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h5[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h5[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h5[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h5[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h5[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h5[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h6[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h6[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h6[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h6[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h6[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h6[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h7[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h7[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h7[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h7[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h7[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h7[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h8[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h8[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h8[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h8[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h8[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h8[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h9[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h9[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh1_h9[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h9[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h9[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh1_h9[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h5[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h5[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h5[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h5[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h5[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h5[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h6[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h6[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h6[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h6[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h6[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h6[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h7[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h7[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h7[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h7[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h7[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h7[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h8[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h8[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h8[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h8[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h8[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h8[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h9[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h9[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh2_h9[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h9[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h9[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh2_h9[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h5[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h5[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h5[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h5[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h5[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h5[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h6[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h6[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h6[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h6[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h6[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h6[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h7[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h7[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h7[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h7[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h7[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h7[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h8[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h8[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h8[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h8[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h8[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h8[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h9[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h9[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh3_h9[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h9[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h9[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh3_h9[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h5[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h5[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h5[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h5[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h5[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h5[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h6[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h6[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h6[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h6[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h6[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h6[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h7[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h7[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h7[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h7[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h7[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h7[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h8[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h8[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h8[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h8[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h8[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h8[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h9[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h9[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh4_h9[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h9[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h9[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh4_h9[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh5_out0[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh5_out0[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh5_out0[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh5_out0[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh5_out0[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh5_out0[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh5_out1[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh5_out1[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh5_out1[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh5_out1[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh5_out1[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh5_out1[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh5_out2[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh5_out2[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh5_out2[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh5_out2[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh5_out2[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh5_out2[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh6_out0[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh6_out0[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh6_out0[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh6_out0[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh6_out0[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh6_out0[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh6_out1[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh6_out1[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh6_out1[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh6_out1[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh6_out1[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh6_out1[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh6_out2[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh6_out2[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh6_out2[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh6_out2[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh6_out2[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh6_out2[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh7_out0[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh7_out0[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh7_out0[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh7_out0[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh7_out0[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh7_out0[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh7_out1[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh7_out1[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh7_out1[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh7_out1[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh7_out1[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh7_out1[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh7_out2[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh7_out2[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh7_out2[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh7_out2[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh7_out2[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh7_out2[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh8_out0[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh8_out0[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh8_out0[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh8_out0[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh8_out0[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh8_out0[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh8_out1[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh8_out1[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh8_out1[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh8_out1[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh8_out1[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh8_out1[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh8_out2[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh8_out2[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh8_out2[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh8_out2[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh8_out2[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh8_out2[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh9_out0[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh9_out0[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh9_out0[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh9_out0[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh9_out0[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh9_out0[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh9_out1[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh9_out1[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh9_out1[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh9_out1[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh9_out1[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh9_out1[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh9_out2[13..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh9_out2[5..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wh9_out2[31..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh9_out2[11..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh9_out2[2..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wh9_out2[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h0[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h0[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h0[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h0[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h0[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h0[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h1[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h1[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h1[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h1[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h1[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h1[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h2[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h2[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h2[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h2[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h2[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h2[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h3[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h3[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h3[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h3[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h3[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h3[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h4[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h4[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi0_h4[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h4[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h4[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi0_h4[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h0[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h0[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h0[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h0[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h0[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h0[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h1[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h1[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h1[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h1[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h1[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h1[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h2[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h2[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h2[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h2[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h2[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h2[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h3[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h3[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h3[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h3[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h3[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h3[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h4[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h4[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi1_h4[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h4[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h4[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi1_h4[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h0[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h0[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h0[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h0[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h0[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h0[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h1[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h1[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h1[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h1[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h1[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h1[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h2[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h2[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h2[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h2[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h2[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h2[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h3[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h3[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h3[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h3[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h3[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h3[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h4[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h4[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi2_h4[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h4[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h4[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi2_h4[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h0[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h0[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h0[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h0[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h0[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h0[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h1[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h1[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h1[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h1[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h1[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h1[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h2[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h2[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h2[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h2[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h2[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h2[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h3[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h3[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h3[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h3[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h3[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h3[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h4[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h4[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi3_h4[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h4[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h4[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi3_h4[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h0[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h0[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h0[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h0[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h0[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h0[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h1[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h1[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h1[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h1[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h1[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h1[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h2[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h2[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h2[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h2[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h2[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h2[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h3[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h3[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h3[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h3[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h3[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h3[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h4[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h4[5..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; wi4_h4[31..14]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h4[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h4[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wi4_h4[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; out0             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out1             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out2             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "pll:c1"                                                                               ;
 +--------+--------+----------+-------------------------------------------------------------------------------------+
@@ -698,13 +1132,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Jul 30 01:35:45 2019
+    Info: Processing started: Tue Jul 30 03:30:39 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file fpgabrain.vhdl
-    Info (12022): Found design unit 1: fpgabrain-bhv File: G:/fpga-brain/fpgabrain.vhdl Line: 18
-    Info (12023): Found entity 1: fpgabrain File: G:/fpga-brain/fpgabrain.vhdl Line: 6
+    Info (12022): Found design unit 1: fpgabrain-bhv File: G:/fpga-brain/fpgabrain.vhdl Line: 19
+    Info (12023): Found entity 1: fpgabrain File: G:/fpga-brain/fpgabrain.vhdl Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file vga.vhd
     Info (12022): Found design unit 1: VGA-MAIN File: G:/fpga-brain/VGA.vhd Line: 13
     Info (12023): Found entity 1: VGA File: G:/fpga-brain/VGA.vhd Line: 5
@@ -733,9 +1167,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file neuron.
     Info (12022): Found design unit 1: neuron-bdf_type File: G:/fpga-brain/neuron.vhd Line: 24
     Info (12023): Found entity 1: neuron File: G:/fpga-brain/neuron.vhd Line: 7
 Info (12127): Elaborating entity "fpgabrain" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at fpgabrain.vhdl(117): used implicit default value for signal "areset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/fpgabrain.vhdl Line: 117
-Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(118): object "locked" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 118
-Info (12128): Elaborating entity "pll" for hierarchy "pll:c1" File: G:/fpga-brain/fpgabrain.vhdl Line: 122
+Warning (10541): VHDL Signal Declaration warning at fpgabrain.vhdl(119): used implicit default value for signal "areset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/fpgabrain.vhdl Line: 119
+Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(120): object "locked" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 120
+Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(196): object "out0" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 196
+Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(197): object "out1" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 197
+Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(198): object "out2" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 198
+Info (12128): Elaborating entity "pll" for hierarchy "pll:c1" File: G:/fpga-brain/fpgabrain.vhdl Line: 275
 Info (12128): Elaborating entity "altpll" for hierarchy "pll:c1|altpll:altpll_component" File: G:/fpga-brain/pll.vhd Line: 140
 Info (12130): Elaborated megafunction instantiation "pll:c1|altpll:altpll_component" File: G:/fpga-brain/pll.vhd Line: 140
 Info (12133): Instantiated megafunction "pll:c1|altpll:altpll_component" with the following parameter: File: G:/fpga-brain/pll.vhd Line: 140
@@ -797,7 +1234,7 @@ Info (12133): Instantiated megafunction "pll:c1|altpll:altpll_component" with th
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
     Info (12023): Found entity 1: pll_altpll File: G:/fpga-brain/db/pll_altpll.v Line: 30
 Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:c1|altpll:altpll_component|pll_altpll:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "VGA" for hierarchy "VGA:c2" File: G:/fpga-brain/fpgabrain.vhdl Line: 123
+Info (12128): Elaborating entity "VGA" for hierarchy "VGA:c2" File: G:/fpga-brain/fpgabrain.vhdl Line: 276
 Info (12128): Elaborating entity "SYNC" for hierarchy "VGA:c2|SYNC:C1" File: G:/fpga-brain/VGA.vhd Line: 24
 Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(14): used explicit default value for signal "WW" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 14
 Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(15): used explicit default value for signal "HH" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 15
@@ -807,6 +1244,8 @@ Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(18): used explicit 
 Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(19): used explicit default value for signal "VFP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 19
 Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(20): used explicit default value for signal "VS" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 20
 Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(21): used explicit default value for signal "VBP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 21
+Info (12128): Elaborating entity "net" for hierarchy "net:c3" File: G:/fpga-brain/fpgabrain.vhdl Line: 277
+Info (12128): Elaborating entity "neuron" for hierarchy "net:c3|neuron:c0" File: G:/fpga-brain/net.vhd Line: 114
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
@@ -815,10 +1254,10 @@ Info (21057): Implemented 61 device resources after synthesis - the final resour
     Info (21059): Implemented 5 output pins
     Info (21061): Implemented 54 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4819 megabytes
-    Info: Processing ended: Tue Jul 30 01:35:57 2019
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 4829 megabytes
+    Info: Processing ended: Tue Jul 30 03:30:51 2019
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Total CPU time (on all processors): 00:00:19
 
 
