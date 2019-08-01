@@ -1,11 +1,11 @@
 |fpgabrain
 CLK => pll:c1.inclk0
 CLK => net:c3.CLK
-VGA_HS <= vga:c2.VGA_HS
-VGA_VS <= vga:c2.VGA_VS
-VGA_R <= vga:c2.VGA_R
-VGA_G <= vga:c2.VGA_G
-VGA_B <= vga:c2.VGA_B
+VGA_HS << vga:c2.VGA_HS
+VGA_VS << vga:c2.VGA_VS
+VGA_R << vga:c2.VGA_R
+VGA_G << vga:c2.VGA_G
+VGA_B << vga:c2.VGA_B
 
 
 |fpgabrain|pll:c1

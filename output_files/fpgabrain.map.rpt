@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Thu Aug 01 04:07:36 2019
+Thu Aug 01 05:18:25 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -47,7 +47,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Aug 01 04:07:36 2019       ;
+; Analysis & Synthesis Status        ; Successful - Thu Aug 01 05:18:25 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
@@ -1731,7 +1731,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Aug 01 04:07:24 2019
+    Info: Processing started: Thu Aug 01 05:18:12 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1757,6 +1757,56 @@ Info (12021): Found 2 design units, including 1 entities, in source file net.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file neuron.vhd
     Info (12022): Found design unit 1: neuron-bdf_type File: G:/fpga-brain/neuron.vhd Line: 24
     Info (12023): Found entity 1: neuron File: G:/fpga-brain/neuron.vhd Line: 7
+Info (12021): Found 4 design units, including 2 entities, in source file altfp_mul.vhd
+    Info (12022): Found design unit 1: altfp_mul_altfp_mult_atn-RTL File: G:/fpga-brain/altfp_mul.vhd Line: 56
+    Info (12022): Found design unit 2: altfp_mul-RTL File: G:/fpga-brain/altfp_mul.vhd Line: 1921
+    Info (12023): Found entity 1: altfp_mul_altfp_mult_atn File: G:/fpga-brain/altfp_mul.vhd Line: 46
+    Info (12023): Found entity 2: altfp_mul File: G:/fpga-brain/altfp_mul.vhd Line: 1910
+Info (12021): Found 44 design units, including 22 entities, in source file altfp_addsub.vhd
+    Info (12022): Found design unit 1: altfp_addsub_altbarrel_shift_35e-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 59
+    Info (12022): Found design unit 2: altfp_addsub_altbarrel_shift_98g-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 317
+    Info (12022): Found design unit 3: altfp_addsub_altpriority_encoder_3e8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 614
+    Info (12022): Found design unit 4: altfp_addsub_altpriority_encoder_6e8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 636
+    Info (12022): Found design unit 5: altfp_addsub_altpriority_encoder_be8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 690
+    Info (12022): Found design unit 6: altfp_addsub_altpriority_encoder_3v7-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 761
+    Info (12022): Found design unit 7: altfp_addsub_altpriority_encoder_6v7-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 781
+    Info (12022): Found design unit 8: altfp_addsub_altpriority_encoder_bv7-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 838
+    Info (12022): Found design unit 9: altfp_addsub_altpriority_encoder_uv8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 901
+    Info (12022): Found design unit 10: altfp_addsub_altpriority_encoder_ue9-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 969
+    Info (12022): Found design unit 11: altfp_addsub_altpriority_encoder_ou8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1031
+    Info (12022): Found design unit 12: altfp_addsub_altpriority_encoder_nh8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1130
+    Info (12022): Found design unit 13: altfp_addsub_altpriority_encoder_qh8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1156
+    Info (12022): Found design unit 14: altfp_addsub_altpriority_encoder_vh8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1210
+    Info (12022): Found design unit 15: altfp_addsub_altpriority_encoder_ii9-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1270
+    Info (12022): Found design unit 16: altfp_addsub_altpriority_encoder_n28-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1345
+    Info (12022): Found design unit 17: altfp_addsub_altpriority_encoder_q28-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1369
+    Info (12022): Found design unit 18: altfp_addsub_altpriority_encoder_v28-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1426
+    Info (12022): Found design unit 19: altfp_addsub_altpriority_encoder_i39-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1489
+    Info (12022): Found design unit 20: altfp_addsub_altpriority_encoder_cna-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1555
+    Info (12022): Found design unit 21: altfp_addsub_altfp_add_sub_j6j-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1642
+    Info (12022): Found design unit 22: altfp_addsub-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 5833
+    Info (12023): Found entity 1: altfp_addsub_altbarrel_shift_35e File: G:/fpga-brain/altfp_addsub.vhd Line: 47
+    Info (12023): Found entity 2: altfp_addsub_altbarrel_shift_98g File: G:/fpga-brain/altfp_addsub.vhd Line: 305
+    Info (12023): Found entity 3: altfp_addsub_altpriority_encoder_3e8 File: G:/fpga-brain/altfp_addsub.vhd Line: 605
+    Info (12023): Found entity 4: altfp_addsub_altpriority_encoder_6e8 File: G:/fpga-brain/altfp_addsub.vhd Line: 627
+    Info (12023): Found entity 5: altfp_addsub_altpriority_encoder_be8 File: G:/fpga-brain/altfp_addsub.vhd Line: 681
+    Info (12023): Found entity 6: altfp_addsub_altpriority_encoder_3v7 File: G:/fpga-brain/altfp_addsub.vhd Line: 753
+    Info (12023): Found entity 7: altfp_addsub_altpriority_encoder_6v7 File: G:/fpga-brain/altfp_addsub.vhd Line: 773
+    Info (12023): Found entity 8: altfp_addsub_altpriority_encoder_bv7 File: G:/fpga-brain/altfp_addsub.vhd Line: 830
+    Info (12023): Found entity 9: altfp_addsub_altpriority_encoder_uv8 File: G:/fpga-brain/altfp_addsub.vhd Line: 893
+    Info (12023): Found entity 10: altfp_addsub_altpriority_encoder_ue9 File: G:/fpga-brain/altfp_addsub.vhd Line: 960
+    Info (12023): Found entity 11: altfp_addsub_altpriority_encoder_ou8 File: G:/fpga-brain/altfp_addsub.vhd Line: 1020
+    Info (12023): Found entity 12: altfp_addsub_altpriority_encoder_nh8 File: G:/fpga-brain/altfp_addsub.vhd Line: 1121
+    Info (12023): Found entity 13: altfp_addsub_altpriority_encoder_qh8 File: G:/fpga-brain/altfp_addsub.vhd Line: 1147
+    Info (12023): Found entity 14: altfp_addsub_altpriority_encoder_vh8 File: G:/fpga-brain/altfp_addsub.vhd Line: 1201
+    Info (12023): Found entity 15: altfp_addsub_altpriority_encoder_ii9 File: G:/fpga-brain/altfp_addsub.vhd Line: 1261
+    Info (12023): Found entity 16: altfp_addsub_altpriority_encoder_n28 File: G:/fpga-brain/altfp_addsub.vhd Line: 1337
+    Info (12023): Found entity 17: altfp_addsub_altpriority_encoder_q28 File: G:/fpga-brain/altfp_addsub.vhd Line: 1361
+    Info (12023): Found entity 18: altfp_addsub_altpriority_encoder_v28 File: G:/fpga-brain/altfp_addsub.vhd Line: 1418
+    Info (12023): Found entity 19: altfp_addsub_altpriority_encoder_i39 File: G:/fpga-brain/altfp_addsub.vhd Line: 1481
+    Info (12023): Found entity 20: altfp_addsub_altpriority_encoder_cna File: G:/fpga-brain/altfp_addsub.vhd Line: 1544
+    Info (12023): Found entity 21: altfp_addsub_altfp_add_sub_j6j File: G:/fpga-brain/altfp_addsub.vhd Line: 1632
+    Info (12023): Found entity 22: altfp_addsub File: G:/fpga-brain/altfp_addsub.vhd Line: 5822
 Info (12127): Elaborating entity "fpgabrain" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at fpgabrain.vhdl(119): used implicit default value for signal "areset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/fpgabrain.vhdl Line: 119
 Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(120): object "locked" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 120
@@ -1916,9 +1966,9 @@ Info (21057): Implemented 61 device resources after synthesis - the final resour
     Info (21061): Implemented 54 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 84 warnings
-    Info: Peak virtual memory: 4826 megabytes
-    Info: Processing ended: Thu Aug 01 04:07:36 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Peak virtual memory: 4835 megabytes
+    Info: Processing ended: Thu Aug 01 05:18:25 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:19
 
 

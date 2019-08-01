@@ -1,0 +1,7 @@
+
+
+G:/fpga-brain/altfp_add_sub.vhd
+
+Aug 01 05AM:05:02>: Variation file name (altfp_add_sub) is identical with the name of one of its sub-components.
+
+MegaWizard Plug-In Manager will rename the variation to "altfp_add_sua" to prevent compilation errors

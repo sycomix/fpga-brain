@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "08/01/2019 04:07:48"
+-- DATE "08/01/2019 05:18:37"
 
 -- 
 -- Device: Altera EP4CE6E22C8 Package TQFP144
@@ -36,11 +36,11 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY 	fpgabrain IS
     PORT (
 	CLK : IN std_logic;
-	VGA_HS : OUT std_logic;
-	VGA_VS : OUT std_logic;
-	VGA_R : OUT std_logic;
-	VGA_G : OUT std_logic;
-	VGA_B : OUT std_logic
+	VGA_HS : BUFFER std_logic;
+	VGA_VS : BUFFER std_logic;
+	VGA_R : BUFFER std_logic;
+	VGA_G : BUFFER std_logic;
+	VGA_B : BUFFER std_logic
 	);
 END fpgabrain;
 
