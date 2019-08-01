@@ -34,27 +34,25 @@ ARCHITECTURE bdf_type OF neuron IS
 	SIGNAL a_w4 : signed(31 downto 0);
 	SIGNAL a_outV : signed(31 downto 0);
 
-	 COMPONENT  altfp_addsub_altbarrel_shift_35e IS 
-	 PORT 
-	 ( 
-		 aclr	:	IN  STD_LOGIC := '0';
-		 clk_en	:	IN  STD_LOGIC := '1';
-		 clock	:	IN  STD_LOGIC := '0';
-		 data	:	IN  STD_LOGIC_VECTOR (25 DOWNTO 0);
-		 distance	:	IN  STD_LOGIC_VECTOR (4 DOWNTO 0);
-		 result	:	OUT  STD_LOGIC_VECTOR (25 DOWNTO 0)
-	 ); 
- END COMPONENT altfp_addsub_altbarrel_shift_35e;
- 
-	COMPONENT altfp_mul_altfp_mult_atn IS 
-		 PORT 
-		 ( 
-			 clock	:	IN  STD_LOGIC;
-			 dataa	:	IN  STD_LOGIC_VECTOR (31 DOWNTO 0);
-			 datab	:	IN  STD_LOGIC_VECTOR (31 DOWNTO 0);
-			 result	:	OUT  STD_LOGIC_VECTOR (31 DOWNTO 0)
-		 ); 
-	 END COMPONENT altfp_mul_altfp_mult_atn;
+	COMPONENT altfp_addsub IS
+		PORT
+		(
+		clock		: IN STD_LOGIC ;
+		dataa		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		datab		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		result		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+		);
+	END COMPONENT altfp_addsub;
+
+	COMPONENT altfp_mul IS
+		PORT
+		(
+		clock		: IN STD_LOGIC ;
+		dataa		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		datab		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		result		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+		);
+	END COMPONENT altfp_mul;
 
 BEGIN 
 	a_v0 <= signed(v0);
