@@ -70,4 +70,5 @@ set_global_assignment -name VHDL_FILE net.vhd
 set_global_assignment -name VHDL_FILE neuron.vhd
 set_global_assignment -name QIP_FILE altfp_mul.qip
 set_global_assignment -name QIP_FILE altfp_addsub.qip
+set_global_assignment -name QIP_FILE altfpcomp.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

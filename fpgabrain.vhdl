@@ -27,7 +27,10 @@ COMPONENT pll
 END COMPONENT;
 
 COMPONENT vga
-	PORT(CLOCK_50 : IN STD_LOGIC;
+	PORT(CLOCK_INVGA : IN STD_LOGIC;
+		netOut0: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		netOut1: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		netOut2: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 VGA_HS : OUT STD_LOGIC;
 		 VGA_VS : OUT STD_LOGIC;
 		 VGA_R : OUT STD_LOGIC;
@@ -199,7 +202,6 @@ SIGNAL	out2 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
 BEGIN
 c1 : pll PORT MAP(areset, CLK, CLK_VGA, locked);
-c2 : vga PORT MAP(CLK_VGA, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B);
 c3 : net PORT MAP(CLK, i0, i1, i2, i3, i4,  wi0_h0, wi0_h1, wi0_h2, wi0_h3, wi0_h4,
 											wi1_h0, wi1_h1, wi1_h2, wi1_h3, wi1_h4,
 											wi2_h0, wi2_h1, wi2_h2, wi2_h3, wi2_h4,
@@ -216,5 +218,6 @@ c3 : net PORT MAP(CLK, i0, i1, i2, i3, i4,  wi0_h0, wi0_h1, wi0_h2, wi0_h3, wi0_
 											wh8_out0, wh8_out1, wh8_out2,
 											wh9_out0, wh9_out1, wh9_out2,
 											out0, out1, out2);
+c2 : vga PORT MAP(CLK_VGA, out0, out1, out2, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B);
 
 END bhv;

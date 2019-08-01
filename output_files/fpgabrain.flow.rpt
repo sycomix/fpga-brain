@@ -1,5 +1,5 @@
 Flow report for fpgabrain
-Thu Aug 01 06:37:07 2019
+Thu Aug 01 23:02:46 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Aug 01 06:37:07 2019       ;
+; Flow Status                        ; Successful - Thu Aug 01 23:02:46 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/01/2019 06:34:36 ;
+; Start date & time ; 08/01/2019 23:00:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; fpgabrain           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 8796757229156.156463407603344          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 8796757229156.156469320909028          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
@@ -89,6 +89,9 @@ refer to the applicable agreement for further details.
 ; MISC_FILE                           ; altfp_addsub.bsf                       ; --            ; --          ; --             ;
 ; MISC_FILE                           ; altfp_addsub_inst.vhd                  ; --            ; --          ; --             ;
 ; MISC_FILE                           ; altfp_addsub.cmp                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; altfpcomp.bsf                          ; --            ; --          ; --             ;
+; MISC_FILE                           ; altfpcomp_inst.vhd                     ; --            ; --          ; --             ;
+; MISC_FILE                           ; altfpcomp.cmp                          ; --            ; --          ; --             ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --             ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
@@ -104,12 +107,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:45     ; 1.0                     ; 5198 MB             ; 00:01:18                           ;
-; Fitter               ; 00:00:04     ; 1.0                     ; 5526 MB             ; 00:00:04                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4714 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4795 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4692 MB             ; 00:00:01                           ;
-; Total                ; 00:01:53     ; --                      ; --                  ; 00:01:26                           ;
+; Analysis & Synthesis ; 00:01:50     ; 1.0                     ; 5226 MB             ; 00:01:19                           ;
+; Fitter               ; 00:00:05     ; 1.0                     ; 5533 MB             ; 00:00:03                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4718 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4791 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4689 MB             ; 00:00:01                           ;
+; Total                ; 00:01:59     ; --                      ; --                  ; 00:01:26                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
