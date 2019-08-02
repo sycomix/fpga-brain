@@ -22,6 +22,10 @@
 				{
 					"name" : "VGA_B",
 					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
 				}
 			]
 		}

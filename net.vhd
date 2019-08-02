@@ -81,13 +81,20 @@ ENTITY net IS
 		wh9_out1 :  IN  STD_LOGIC_VECTOR(31 downto 0);
 		wh9_out2 :  IN  STD_LOGIC_VECTOR(31 downto 0);
 	
-		out0 :  OUT  STD_LOGIC_VECTOR(31 downto 0);
-		out1 :  OUT  STD_LOGIC_VECTOR(31 downto 0);
-		out2 :  OUT  STD_LOGIC_VECTOR(31 downto 0)
+		outs :  OUT  STD_LOGIC_VECTOR(2 downto 0)
 	);
 END net;
 
 ARCHITECTURE bhv OF net IS 
+COMPONENT altfpcompM IS
+	PORT
+	(
+		clock		: IN STD_LOGIC ;
+		dataa		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		datab		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		agb		: OUT STD_LOGIC 
+	);
+END COMPONENT altfpcompM;
 
 COMPONENT neuron IS
 PORT
@@ -109,7 +116,10 @@ END COMPONENT neuron;
 
 
 SIGNAL h0, h1, h2, h3, h4, h5, h6, h7, h8, h9: STD_LOGIC_VECTOR(31 downto 0);
+SIGNAL out0, out1, out2: STD_LOGIC_VECTOR(31 downto 0);
 SIGNAL CURRLAYER: INTEGER RANGE 0 TO 2:=0;
+
+SIGNAL comp0, comp1: STD_LOGIC;
 	
 BEGIN
 	c0: neuron PORT MAP (CLK, i0, wi0_h0, i1, wi1_h0, i2, wi2_h0, i3, wi3_h0, i4, wi4_h0, h0);
@@ -125,10 +135,22 @@ BEGIN
 	c10: neuron PORT MAP (CLK, h5, wh5_out0, h6, wh6_out0, h7, wh7_out0, h8, wh8_out0, h9, wh9_out0, out0);
 	c11: neuron PORT MAP (CLK, h5, wh5_out1, h6, wh6_out1, h7, wh7_out1, h8, wh8_out1, h9, wh9_out1, out1);
 	c12: neuron PORT MAP (CLK, h5, wh5_out2, h6, wh6_out2, h7, wh7_out2, h8, wh8_out2, h9, wh9_out2, out2);	
+	
+	 c13: altfpcompM PORT MAP (CLK, out1, out0, comp0);
+	 c14: altfpcompM PORT MAP (CLK, out2, out1, comp1);
+ 
+	
 	PROCESS(CLK)
 	BEGIN
 		IF (rising_edge(CLK)) THEN
 				
+	IF comp0 = '1' THEN
+		outs<="001";
+	ELSIF comp1 = '1' THEN
+		outs<="010";
+	ELSE
+		outs<="100";
+	END IF;	
 		END IF;
 	END PROCESS;
  

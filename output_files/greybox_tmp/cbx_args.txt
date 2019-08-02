@@ -6,4 +6,4 @@ DEVICE_FAMILY="Cyclone IV E"
 clock
 dataa
 datab
-alb
+agb

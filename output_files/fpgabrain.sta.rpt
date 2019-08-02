@@ -1,5 +1,5 @@
 Timing Analyzer report for fpgabrain
-Thu Aug 01 23:02:44 2019
+Fri Aug 02 01:14:03 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -120,7 +120,7 @@ refer to the applicable agreement for further details.
 +------------+-----------------+------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                     ; Note ;
 +------------+-----------------+------------------------------------------------+------+
-; 151.56 MHz ; 151.56 MHz      ; c1|altpll_component|auto_generated|pll1|clk[0] ;      ;
+; 151.49 MHz ; 151.49 MHz      ; c1|altpll_component|auto_generated|pll1|clk[0] ;      ;
 +------------+-----------------+------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -136,7 +136,7 @@ HTML report is unavailable in plain text report export.
 +------------------------------------------------+--------+---------------+
 ; Clock                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------+--------+---------------+
-; c1|altpll_component|auto_generated|pll1|clk[0] ; 33.131 ; 0.000         ;
+; c1|altpll_component|auto_generated|pll1|clk[0] ; 33.128 ; 0.000         ;
 +------------------------------------------------+--------+---------------+
 
 
@@ -176,22 +176,22 @@ No paths to report.
 +--------+-------------------------+------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
 ; Slack  ; From Node               ; To Node                ; Launch Clock                                   ; Latch Clock                                    ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-------------------------+------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
-; 33.131 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 6.523      ;
-; 33.379 ; VGA:c2|SYNC:C1|VPOS[7]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 6.275      ;
-; 33.454 ; VGA:c2|SYNC:C1|VPOS[6]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 6.200      ;
+; 33.128 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 6.526      ;
+; 33.376 ; VGA:c2|SYNC:C1|VPOS[7]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 6.278      ;
+; 33.451 ; VGA:c2|SYNC:C1|VPOS[6]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 6.203      ;
 ; 33.734 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 5.920      ;
-; 33.827 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 5.827      ;
-; 33.888 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 5.766      ;
+; 33.824 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 5.830      ;
+; 33.885 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 5.769      ;
 ; 33.982 ; VGA:c2|SYNC:C1|VPOS[7]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 5.672      ;
 ; 34.057 ; VGA:c2|SYNC:C1|VPOS[6]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 5.597      ;
 ; 34.430 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 5.224      ;
-; 34.547 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 5.107      ;
-; 34.756 ; VGA:c2|SYNC:C1|VPOS[8]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.898      ;
-; 34.788 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.863      ;
-; 34.807 ; VGA:c2|SYNC:C1|VPOS[1]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.847      ;
-; 34.819 ; VGA:c2|SYNC:C1|VPOS[0]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.835      ;
-; 34.843 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.808      ;
-; 34.903 ; VGA:c2|SYNC:C1|VPOS[3]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.751      ;
+; 34.544 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 5.110      ;
+; 34.752 ; VGA:c2|SYNC:C1|VPOS[8]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.902      ;
+; 34.784 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.867      ;
+; 34.804 ; VGA:c2|SYNC:C1|VPOS[1]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.850      ;
+; 34.816 ; VGA:c2|SYNC:C1|VPOS[0]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.838      ;
+; 34.840 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.811      ;
+; 34.900 ; VGA:c2|SYNC:C1|VPOS[3]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.754      ;
 ; 34.925 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.080     ; 4.725      ;
 ; 34.925 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.080     ; 4.725      ;
 ; 34.925 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|VPOS[1] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.080     ; 4.725      ;
@@ -202,12 +202,12 @@ No paths to report.
 ; 34.925 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|VPOS[6] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.080     ; 4.725      ;
 ; 34.925 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.080     ; 4.725      ;
 ; 34.925 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.080     ; 4.725      ;
-; 35.028 ; VGA:c2|SYNC:C1|HPOS[2]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.623      ;
-; 35.088 ; VGA:c2|SYNC:C1|VPOS[2]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.566      ;
-; 35.140 ; VGA:c2|SYNC:C1|HPOS[3]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.511      ;
-; 35.163 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.488      ;
-; 35.237 ; VGA:c2|SYNC:C1|VPOS[9]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.417      ;
-; 35.280 ; VGA:c2|SYNC:C1|HPOS[9]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.371      ;
+; 35.024 ; VGA:c2|SYNC:C1|HPOS[2]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.627      ;
+; 35.085 ; VGA:c2|SYNC:C1|VPOS[2]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.569      ;
+; 35.137 ; VGA:c2|SYNC:C1|HPOS[3]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.514      ;
+; 35.157 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.494      ;
+; 35.234 ; VGA:c2|SYNC:C1|VPOS[9]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.420      ;
+; 35.276 ; VGA:c2|SYNC:C1|HPOS[9]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.375      ;
 ; 35.305 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.083     ; 4.342      ;
 ; 35.305 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.083     ; 4.342      ;
 ; 35.305 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|VPOS[1] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.083     ; 4.342      ;
@@ -218,10 +218,10 @@ No paths to report.
 ; 35.305 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|VPOS[6] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.083     ; 4.342      ;
 ; 35.305 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.083     ; 4.342      ;
 ; 35.305 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.083     ; 4.342      ;
-; 35.320 ; VGA:c2|SYNC:C1|HPOS[4]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.331      ;
+; 35.316 ; VGA:c2|SYNC:C1|HPOS[4]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.335      ;
 ; 35.360 ; VGA:c2|SYNC:C1|VPOS[8]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.294      ;
-; 35.391 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.260      ;
-; 35.393 ; VGA:c2|SYNC:C1|HPOS[1]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.258      ;
+; 35.390 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.261      ;
+; 35.390 ; VGA:c2|SYNC:C1|HPOS[1]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.261      ;
 ; 35.410 ; VGA:c2|SYNC:C1|VPOS[1]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.244      ;
 ; 35.422 ; VGA:c2|SYNC:C1|VPOS[0]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 4.232      ;
 ; 35.446 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.205      ;
@@ -236,9 +236,9 @@ No paths to report.
 ; 35.513 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|VPOS[6] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.083     ; 4.134      ;
 ; 35.513 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.083     ; 4.134      ;
 ; 35.513 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.083     ; 4.134      ;
-; 35.521 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.130      ;
-; 35.527 ; VGA:c2|SYNC:C1|HPOS[0]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.124      ;
-; 35.578 ; VGA:c2|SYNC:C1|HPOS[8]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.073      ;
+; 35.518 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.133      ;
+; 35.524 ; VGA:c2|SYNC:C1|HPOS[0]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.127      ;
+; 35.572 ; VGA:c2|SYNC:C1|HPOS[8]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 4.079      ;
 ; 35.584 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.080     ; 4.066      ;
 ; 35.584 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.080     ; 4.066      ;
 ; 35.584 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|VPOS[1] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.080     ; 4.066      ;
@@ -261,21 +261,21 @@ No paths to report.
 ; 35.671 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.083     ; 3.976      ;
 ; 35.671 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.083     ; 3.976      ;
 ; 35.691 ; VGA:c2|SYNC:C1|VPOS[2]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 3.963      ;
-; 35.718 ; VGA:c2|SYNC:C1|VPOS[1]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 3.936      ;
+; 35.715 ; VGA:c2|SYNC:C1|VPOS[1]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 3.939      ;
 ; 35.733 ; VGA:c2|SYNC:C1|VPOS[1]  ; VGA:c2|SYNC:C1|VSYNC   ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 3.921      ;
 ; 35.743 ; VGA:c2|SYNC:C1|HPOS[3]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.908      ;
 ; 35.745 ; VGA:c2|SYNC:C1|VPOS[0]  ; VGA:c2|SYNC:C1|VSYNC   ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 3.909      ;
-; 35.753 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.898      ;
-; 35.767 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.884      ;
+; 35.749 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.902      ;
+; 35.765 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.886      ;
 ; 35.829 ; VGA:c2|SYNC:C1|VPOS[3]  ; VGA:c2|SYNC:C1|VSYNC   ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 3.825      ;
 ; 35.840 ; VGA:c2|SYNC:C1|VPOS[9]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 3.814      ;
-; 35.883 ; VGA:c2|SYNC:C1|HPOS[9]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.768      ;
-; 35.888 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.763      ;
-; 35.916 ; VGA:c2|SYNC:C1|HPOS[10] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.735      ;
-; 35.923 ; VGA:c2|SYNC:C1|HPOS[4]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.728      ;
-; 35.954 ; VGA:c2|SYNC:C1|VPOS[3]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 3.700      ;
+; 35.882 ; VGA:c2|SYNC:C1|HPOS[9]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.769      ;
+; 35.884 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.767      ;
+; 35.912 ; VGA:c2|SYNC:C1|HPOS[10] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.739      ;
+; 35.922 ; VGA:c2|SYNC:C1|HPOS[4]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.729      ;
+; 35.951 ; VGA:c2|SYNC:C1|VPOS[3]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.076     ; 3.703      ;
 ; 35.996 ; VGA:c2|SYNC:C1|HPOS[1]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.655      ;
-; 36.013 ; VGA:c2|SYNC:C1|HPOS[9]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.638      ;
+; 36.010 ; VGA:c2|SYNC:C1|HPOS[9]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.079     ; 3.641      ;
 +--------+-------------------------+------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
 
 
@@ -398,7 +398,7 @@ No synchronizer chains to report.
 +------------+-----------------+------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                     ; Note ;
 +------------+-----------------+------------------------------------------------+------+
-; 158.96 MHz ; 158.96 MHz      ; c1|altpll_component|auto_generated|pll1|clk[0] ;      ;
+; 158.88 MHz ; 158.88 MHz      ; c1|altpll_component|auto_generated|pll1|clk[0] ;      ;
 +------------+-----------------+------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -408,7 +408,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------+--------+---------------+
 ; Clock                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------+--------+---------------+
-; c1|altpll_component|auto_generated|pll1|clk[0] ; 33.438 ; 0.000         ;
+; c1|altpll_component|auto_generated|pll1|clk[0] ; 33.435 ; 0.000         ;
 +------------------------------------------------+--------+---------------+
 
 
@@ -448,22 +448,22 @@ No paths to report.
 +--------+-------------------------+------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
 ; Slack  ; From Node               ; To Node                ; Launch Clock                                   ; Latch Clock                                    ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-------------------------+------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
-; 33.438 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 6.225      ;
-; 33.678 ; VGA:c2|SYNC:C1|VPOS[7]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 5.985      ;
-; 33.760 ; VGA:c2|SYNC:C1|VPOS[6]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 5.903      ;
+; 33.435 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 6.228      ;
+; 33.675 ; VGA:c2|SYNC:C1|VPOS[7]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 5.988      ;
+; 33.757 ; VGA:c2|SYNC:C1|VPOS[6]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 5.906      ;
 ; 33.998 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 5.665      ;
-; 34.103 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 5.560      ;
+; 34.100 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 5.563      ;
 ; 34.238 ; VGA:c2|SYNC:C1|VPOS[7]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 5.425      ;
-; 34.261 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 5.402      ;
+; 34.258 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 5.405      ;
 ; 34.320 ; VGA:c2|SYNC:C1|VPOS[6]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 5.343      ;
 ; 34.663 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 5.000      ;
-; 34.856 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.807      ;
-; 35.057 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.606      ;
-; 35.101 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.562      ;
-; 35.121 ; VGA:c2|SYNC:C1|VPOS[8]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.542      ;
-; 35.168 ; VGA:c2|SYNC:C1|VPOS[1]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.495      ;
-; 35.180 ; VGA:c2|SYNC:C1|VPOS[0]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.483      ;
-; 35.249 ; VGA:c2|SYNC:C1|VPOS[3]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.414      ;
+; 34.853 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.810      ;
+; 35.053 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.610      ;
+; 35.098 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.565      ;
+; 35.117 ; VGA:c2|SYNC:C1|VPOS[8]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.546      ;
+; 35.165 ; VGA:c2|SYNC:C1|VPOS[1]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.498      ;
+; 35.177 ; VGA:c2|SYNC:C1|VPOS[0]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.486      ;
+; 35.246 ; VGA:c2|SYNC:C1|VPOS[3]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.417      ;
 ; 35.259 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 4.399      ;
 ; 35.259 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 4.399      ;
 ; 35.259 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|VPOS[1] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 4.399      ;
@@ -474,13 +474,13 @@ No paths to report.
 ; 35.259 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|VPOS[6] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 4.399      ;
 ; 35.259 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 4.399      ;
 ; 35.259 ; VGA:c2|SYNC:C1|VPOS[5]  ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 4.399      ;
-; 35.298 ; VGA:c2|SYNC:C1|HPOS[2]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.365      ;
-; 35.419 ; VGA:c2|SYNC:C1|VPOS[2]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.244      ;
-; 35.429 ; VGA:c2|SYNC:C1|HPOS[3]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.234      ;
-; 35.437 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.226      ;
-; 35.469 ; VGA:c2|SYNC:C1|VPOS[9]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.194      ;
-; 35.515 ; VGA:c2|SYNC:C1|HPOS[9]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.148      ;
-; 35.554 ; VGA:c2|SYNC:C1|HPOS[4]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.109      ;
+; 35.295 ; VGA:c2|SYNC:C1|HPOS[2]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.368      ;
+; 35.416 ; VGA:c2|SYNC:C1|VPOS[2]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.247      ;
+; 35.426 ; VGA:c2|SYNC:C1|HPOS[3]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.237      ;
+; 35.433 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.230      ;
+; 35.466 ; VGA:c2|SYNC:C1|VPOS[9]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.197      ;
+; 35.511 ; VGA:c2|SYNC:C1|HPOS[9]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.152      ;
+; 35.550 ; VGA:c2|SYNC:C1|HPOS[4]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.113      ;
 ; 35.587 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 4.071      ;
 ; 35.587 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 4.071      ;
 ; 35.587 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|VPOS[1] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 4.071      ;
@@ -491,14 +491,14 @@ No paths to report.
 ; 35.587 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|VPOS[6] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 4.071      ;
 ; 35.587 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 4.071      ;
 ; 35.587 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 4.071      ;
-; 35.617 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.046      ;
-; 35.642 ; VGA:c2|SYNC:C1|HPOS[1]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.021      ;
+; 35.616 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.047      ;
+; 35.639 ; VGA:c2|SYNC:C1|HPOS[1]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.024      ;
 ; 35.661 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 4.002      ;
 ; 35.683 ; VGA:c2|SYNC:C1|VPOS[8]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.980      ;
 ; 35.728 ; VGA:c2|SYNC:C1|VPOS[1]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.935      ;
+; 35.739 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.924      ;
 ; 35.740 ; VGA:c2|SYNC:C1|VPOS[0]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.923      ;
-; 35.742 ; VGA:c2|SYNC:C1|HPOS[6]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.921      ;
-; 35.768 ; VGA:c2|SYNC:C1|HPOS[0]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.895      ;
+; 35.765 ; VGA:c2|SYNC:C1|HPOS[0]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.898      ;
 ; 35.779 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 3.879      ;
 ; 35.779 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 3.879      ;
 ; 35.779 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|VPOS[1] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 3.879      ;
@@ -509,7 +509,7 @@ No paths to report.
 ; 35.779 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|VPOS[6] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 3.879      ;
 ; 35.779 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 3.879      ;
 ; 35.779 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 3.879      ;
-; 35.808 ; VGA:c2|SYNC:C1|HPOS[8]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.855      ;
+; 35.804 ; VGA:c2|SYNC:C1|HPOS[8]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.859      ;
 ; 35.809 ; VGA:c2|SYNC:C1|VPOS[3]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.854      ;
 ; 35.854 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 3.804      ;
 ; 35.854 ; VGA:c2|SYNC:C1|VPOS[4]  ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 3.804      ;
@@ -534,19 +534,19 @@ No paths to report.
 ; 35.906 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.073     ; 3.752      ;
 ; 35.979 ; VGA:c2|SYNC:C1|VPOS[2]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.684      ;
 ; 35.989 ; VGA:c2|SYNC:C1|HPOS[3]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.674      ;
-; 35.993 ; VGA:c2|SYNC:C1|VPOS[1]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.670      ;
-; 35.994 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.669      ;
-; 35.997 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.666      ;
+; 35.990 ; VGA:c2|SYNC:C1|VPOS[1]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.673      ;
+; 35.991 ; VGA:c2|SYNC:C1|HPOS[5]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.672      ;
+; 35.996 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.667      ;
 ; 36.028 ; VGA:c2|SYNC:C1|VPOS[1]  ; VGA:c2|SYNC:C1|VSYNC   ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.635      ;
 ; 36.029 ; VGA:c2|SYNC:C1|VPOS[9]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.634      ;
 ; 36.040 ; VGA:c2|SYNC:C1|VPOS[0]  ; VGA:c2|SYNC:C1|VSYNC   ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.623      ;
-; 36.075 ; VGA:c2|SYNC:C1|HPOS[9]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.588      ;
+; 36.074 ; VGA:c2|SYNC:C1|HPOS[9]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.589      ;
 ; 36.109 ; VGA:c2|SYNC:C1|VPOS[3]  ; VGA:c2|SYNC:C1|VSYNC   ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.554      ;
-; 36.114 ; VGA:c2|SYNC:C1|HPOS[4]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.549      ;
-; 36.122 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.541      ;
-; 36.125 ; VGA:c2|SYNC:C1|HPOS[10] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.538      ;
-; 36.196 ; VGA:c2|SYNC:C1|VPOS[3]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.467      ;
-; 36.200 ; VGA:c2|SYNC:C1|HPOS[9]  ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.463      ;
+; 36.113 ; VGA:c2|SYNC:C1|HPOS[4]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.550      ;
+; 36.119 ; VGA:c2|SYNC:C1|HPOS[7]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.544      ;
+; 36.121 ; VGA:c2|SYNC:C1|HPOS[10] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.542      ;
+; 36.193 ; VGA:c2|SYNC:C1|VPOS[3]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.470      ;
+; 36.197 ; VGA:c2|SYNC:C1|HPOS[9]  ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.466      ;
 ; 36.202 ; VGA:c2|SYNC:C1|HPOS[1]  ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.068     ; 3.461      ;
 +--------+-------------------------+------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
 
@@ -670,7 +670,7 @@ No synchronizer chains to report.
 +------------------------------------------------+--------+---------------+
 ; Clock                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------+--------+---------------+
-; c1|altpll_component|auto_generated|pll1|clk[0] ; 36.804 ; 0.000         ;
+; c1|altpll_component|auto_generated|pll1|clk[0] ; 36.800 ; 0.000         ;
 +------------------------------------------------+--------+---------------+
 
 
@@ -710,19 +710,19 @@ No paths to report.
 +--------+------------------------+------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
 ; Slack  ; From Node              ; To Node                ; Launch Clock                                   ; Latch Clock                                    ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------------+------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
-; 36.804 ; VGA:c2|SYNC:C1|VPOS[5] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.881      ;
-; 36.945 ; VGA:c2|SYNC:C1|VPOS[7] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.740      ;
-; 36.967 ; VGA:c2|SYNC:C1|VPOS[6] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.718      ;
+; 36.800 ; VGA:c2|SYNC:C1|VPOS[5] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.885      ;
+; 36.941 ; VGA:c2|SYNC:C1|VPOS[7] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.744      ;
+; 36.963 ; VGA:c2|SYNC:C1|VPOS[6] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.722      ;
 ; 37.040 ; VGA:c2|SYNC:C1|VPOS[5] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.645      ;
-; 37.160 ; VGA:c2|SYNC:C1|VPOS[5] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.525      ;
-; 37.160 ; VGA:c2|SYNC:C1|VPOS[4] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.525      ;
+; 37.156 ; VGA:c2|SYNC:C1|VPOS[5] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.529      ;
+; 37.156 ; VGA:c2|SYNC:C1|VPOS[4] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.529      ;
 ; 37.181 ; VGA:c2|SYNC:C1|VPOS[7] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.504      ;
 ; 37.203 ; VGA:c2|SYNC:C1|VPOS[6] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.482      ;
 ; 37.396 ; VGA:c2|SYNC:C1|VPOS[4] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.289      ;
-; 37.479 ; VGA:c2|SYNC:C1|VPOS[4] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.206      ;
-; 37.547 ; VGA:c2|SYNC:C1|HPOS[6] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 2.136      ;
-; 37.603 ; VGA:c2|SYNC:C1|HPOS[5] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 2.080      ;
-; 37.643 ; VGA:c2|SYNC:C1|VPOS[8] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.042      ;
+; 37.475 ; VGA:c2|SYNC:C1|VPOS[4] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.210      ;
+; 37.542 ; VGA:c2|SYNC:C1|HPOS[6] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 2.141      ;
+; 37.599 ; VGA:c2|SYNC:C1|HPOS[5] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 2.084      ;
+; 37.639 ; VGA:c2|SYNC:C1|VPOS[8] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.046      ;
 ; 37.658 ; VGA:c2|SYNC:C1|VPOS[5] ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.036     ; 2.022      ;
 ; 37.658 ; VGA:c2|SYNC:C1|VPOS[5] ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.036     ; 2.022      ;
 ; 37.658 ; VGA:c2|SYNC:C1|VPOS[5] ; VGA:c2|SYNC:C1|VPOS[1] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.036     ; 2.022      ;
@@ -733,11 +733,11 @@ No paths to report.
 ; 37.658 ; VGA:c2|SYNC:C1|VPOS[5] ; VGA:c2|SYNC:C1|VPOS[6] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.036     ; 2.022      ;
 ; 37.658 ; VGA:c2|SYNC:C1|VPOS[5] ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.036     ; 2.022      ;
 ; 37.658 ; VGA:c2|SYNC:C1|VPOS[5] ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.036     ; 2.022      ;
-; 37.666 ; VGA:c2|SYNC:C1|VPOS[1] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.019      ;
-; 37.666 ; VGA:c2|SYNC:C1|HPOS[2] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 2.017      ;
-; 37.668 ; VGA:c2|SYNC:C1|VPOS[0] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.017      ;
-; 37.718 ; VGA:c2|SYNC:C1|HPOS[7] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.965      ;
-; 37.718 ; VGA:c2|SYNC:C1|VPOS[3] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.967      ;
+; 37.662 ; VGA:c2|SYNC:C1|VPOS[1] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.023      ;
+; 37.662 ; VGA:c2|SYNC:C1|HPOS[2] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 2.021      ;
+; 37.664 ; VGA:c2|SYNC:C1|VPOS[0] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 2.021      ;
+; 37.713 ; VGA:c2|SYNC:C1|HPOS[7] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.970      ;
+; 37.714 ; VGA:c2|SYNC:C1|VPOS[3] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.971      ;
 ; 37.738 ; VGA:c2|SYNC:C1|HPOS[6] ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.940      ;
 ; 37.738 ; VGA:c2|SYNC:C1|HPOS[6] ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.940      ;
 ; 37.738 ; VGA:c2|SYNC:C1|HPOS[6] ; VGA:c2|SYNC:C1|VPOS[1] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.940      ;
@@ -748,12 +748,12 @@ No paths to report.
 ; 37.738 ; VGA:c2|SYNC:C1|HPOS[6] ; VGA:c2|SYNC:C1|VPOS[6] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.940      ;
 ; 37.738 ; VGA:c2|SYNC:C1|HPOS[6] ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.940      ;
 ; 37.738 ; VGA:c2|SYNC:C1|HPOS[6] ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.940      ;
-; 37.754 ; VGA:c2|SYNC:C1|HPOS[3] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.929      ;
-; 37.761 ; VGA:c2|SYNC:C1|VPOS[9] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.924      ;
-; 37.779 ; VGA:c2|SYNC:C1|VPOS[2] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.906      ;
-; 37.780 ; VGA:c2|SYNC:C1|HPOS[9] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.903      ;
-; 37.783 ; VGA:c2|SYNC:C1|HPOS[6] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.900      ;
-; 37.785 ; VGA:c2|SYNC:C1|HPOS[4] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.898      ;
+; 37.750 ; VGA:c2|SYNC:C1|HPOS[3] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.933      ;
+; 37.757 ; VGA:c2|SYNC:C1|VPOS[9] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.928      ;
+; 37.775 ; VGA:c2|SYNC:C1|HPOS[9] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.908      ;
+; 37.775 ; VGA:c2|SYNC:C1|VPOS[2] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.910      ;
+; 37.780 ; VGA:c2|SYNC:C1|HPOS[4] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.903      ;
+; 37.782 ; VGA:c2|SYNC:C1|HPOS[6] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.901      ;
 ; 37.839 ; VGA:c2|SYNC:C1|HPOS[5] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.844      ;
 ; 37.842 ; VGA:c2|SYNC:C1|HPOS[7] ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.836      ;
 ; 37.842 ; VGA:c2|SYNC:C1|HPOS[7] ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.836      ;
@@ -765,8 +765,9 @@ No paths to report.
 ; 37.842 ; VGA:c2|SYNC:C1|HPOS[7] ; VGA:c2|SYNC:C1|VPOS[6] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.836      ;
 ; 37.842 ; VGA:c2|SYNC:C1|HPOS[7] ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.836      ;
 ; 37.842 ; VGA:c2|SYNC:C1|HPOS[7] ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.836      ;
-; 37.850 ; VGA:c2|SYNC:C1|HPOS[6] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.833      ;
+; 37.846 ; VGA:c2|SYNC:C1|HPOS[6] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.837      ;
 ; 37.872 ; VGA:c2|SYNC:C1|VPOS[8] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.813      ;
+; 37.885 ; VGA:c2|SYNC:C1|HPOS[8] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.798      ;
 ; 37.888 ; VGA:c2|SYNC:C1|HPOS[5] ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.790      ;
 ; 37.888 ; VGA:c2|SYNC:C1|HPOS[5] ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.790      ;
 ; 37.888 ; VGA:c2|SYNC:C1|HPOS[5] ; VGA:c2|SYNC:C1|VPOS[1] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.790      ;
@@ -777,15 +778,14 @@ No paths to report.
 ; 37.888 ; VGA:c2|SYNC:C1|HPOS[5] ; VGA:c2|SYNC:C1|VPOS[6] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.790      ;
 ; 37.888 ; VGA:c2|SYNC:C1|HPOS[5] ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.790      ;
 ; 37.888 ; VGA:c2|SYNC:C1|HPOS[5] ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.790      ;
-; 37.890 ; VGA:c2|SYNC:C1|HPOS[8] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.793      ;
 ; 37.902 ; VGA:c2|SYNC:C1|VPOS[1] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.783      ;
 ; 37.902 ; VGA:c2|SYNC:C1|HPOS[2] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.781      ;
 ; 37.904 ; VGA:c2|SYNC:C1|VPOS[0] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.781      ;
-; 37.938 ; VGA:c2|SYNC:C1|HPOS[1] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.745      ;
-; 37.950 ; VGA:c2|SYNC:C1|HPOS[5] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.733      ;
-; 37.954 ; VGA:c2|SYNC:C1|HPOS[7] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.729      ;
+; 37.934 ; VGA:c2|SYNC:C1|HPOS[1] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.749      ;
+; 37.946 ; VGA:c2|SYNC:C1|HPOS[5] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.737      ;
+; 37.953 ; VGA:c2|SYNC:C1|HPOS[7] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.730      ;
 ; 37.954 ; VGA:c2|SYNC:C1|VPOS[3] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.731      ;
-; 37.990 ; VGA:c2|SYNC:C1|VPOS[1] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.695      ;
+; 37.986 ; VGA:c2|SYNC:C1|VPOS[1] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.699      ;
 ; 37.990 ; VGA:c2|SYNC:C1|HPOS[3] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.693      ;
 ; 37.991 ; VGA:c2|SYNC:C1|VPOS[4] ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.036     ; 1.689      ;
 ; 37.991 ; VGA:c2|SYNC:C1|VPOS[4] ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.036     ; 1.689      ;
@@ -797,7 +797,7 @@ No paths to report.
 ; 37.991 ; VGA:c2|SYNC:C1|VPOS[4] ; VGA:c2|SYNC:C1|VPOS[6] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.036     ; 1.689      ;
 ; 37.991 ; VGA:c2|SYNC:C1|VPOS[4] ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.036     ; 1.689      ;
 ; 37.991 ; VGA:c2|SYNC:C1|VPOS[4] ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.036     ; 1.689      ;
-; 37.996 ; VGA:c2|SYNC:C1|HPOS[0] ; VGA:c2|SYNC:C1|R       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.687      ;
+; 37.992 ; VGA:c2|SYNC:C1|HPOS[0] ; VGA:c2|SYNC:C1|G       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.691      ;
 ; 37.997 ; VGA:c2|SYNC:C1|VPOS[9] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.688      ;
 ; 38.005 ; VGA:c2|SYNC:C1|HPOS[8] ; VGA:c2|SYNC:C1|VPOS[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.673      ;
 ; 38.005 ; VGA:c2|SYNC:C1|HPOS[8] ; VGA:c2|SYNC:C1|VPOS[2] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.673      ;
@@ -809,7 +809,7 @@ No paths to report.
 ; 38.005 ; VGA:c2|SYNC:C1|HPOS[8] ; VGA:c2|SYNC:C1|VPOS[6] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.673      ;
 ; 38.005 ; VGA:c2|SYNC:C1|HPOS[8] ; VGA:c2|SYNC:C1|VPOS[7] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.673      ;
 ; 38.005 ; VGA:c2|SYNC:C1|HPOS[8] ; VGA:c2|SYNC:C1|VPOS[8] ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.038     ; 1.673      ;
-; 38.015 ; VGA:c2|SYNC:C1|VPOS[2] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.031     ; 1.670      ;
+; 38.015 ; VGA:c2|SYNC:C1|HPOS[9] ; VGA:c2|SYNC:C1|B       ; c1|altpll_component|auto_generated|pll1|clk[0] ; c1|altpll_component|auto_generated|pll1|clk[0] ; 39.729       ; -0.033     ; 1.668      ;
 +--------+------------------------+------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
 
 
@@ -932,9 +932,9 @@ No synchronizer chains to report.
 +-------------------------------------------------+--------+-------+----------+---------+---------------------+
 ; Clock                                           ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +-------------------------------------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack                                ; 33.131 ; 0.304 ; N/A      ; N/A     ; 9.594               ;
+; Worst-case Slack                                ; 33.128 ; 0.304 ; N/A      ; N/A     ; 9.594               ;
 ;  CLK                                            ; N/A    ; N/A   ; N/A      ; N/A     ; 9.594               ;
-;  c1|altpll_component|auto_generated|pll1|clk[0] ; 33.131 ; 0.304 ; N/A      ; N/A     ; 19.582              ;
+;  c1|altpll_component|auto_generated|pll1|clk[0] ; 33.128 ; 0.304 ; N/A      ; N/A     ; 19.582              ;
 ; Design-wide TNS                                 ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  CLK                                            ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
 ;  c1|altpll_component|auto_generated|pll1|clk[0] ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
@@ -1101,7 +1101,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Aug 01 23:02:42 2019
+    Info: Processing started: Fri Aug 02 01:14:00 2019
 Info: Command: quartus_sta fpgabrain -c fpgabrain
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1119,10 +1119,10 @@ Info (332143): No user constrained clock uncertainty found in the design. Callin
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
-Info (332146): Worst-case setup slack is 33.131
+Info (332146): Worst-case setup slack is 33.128
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    33.131               0.000 c1|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    33.128               0.000 c1|altpll_component|auto_generated|pll1|clk[0] 
 Info (332146): Worst-case hold slack is 0.753
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1138,10 +1138,10 @@ Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 33.438
+Info (332146): Worst-case setup slack is 33.435
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    33.438               0.000 c1|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    33.435               0.000 c1|altpll_component|auto_generated|pll1|clk[0] 
 Info (332146): Worst-case hold slack is 0.702
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1155,10 +1155,10 @@ Info (332146): Worst-case minimum pulse width slack is 9.943
     Info (332119):    19.582               0.000 c1|altpll_component|auto_generated|pll1|clk[0] 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 36.804
+Info (332146): Worst-case setup slack is 36.800
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    36.804               0.000 c1|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    36.800               0.000 c1|altpll_component|auto_generated|pll1|clk[0] 
 Info (332146): Worst-case hold slack is 0.304
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1173,9 +1173,9 @@ Info (332146): Worst-case minimum pulse width slack is 9.594
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4791 megabytes
-    Info: Processing ended: Thu Aug 01 23:02:44 2019
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4794 megabytes
+    Info: Processing ended: Fri Aug 02 01:14:03 2019
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 

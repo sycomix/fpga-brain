@@ -28,9 +28,7 @@ END COMPONENT;
 
 COMPONENT vga
 	PORT(CLOCK_INVGA : IN STD_LOGIC;
-		netOut0: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		netOut1: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		netOut2: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		netOuts: IN STD_LOGIC_VECTOR(2 downto 0);
 		 VGA_HS : OUT STD_LOGIC;
 		 VGA_VS : OUT STD_LOGIC;
 		 VGA_R : OUT STD_LOGIC;
@@ -111,9 +109,7 @@ COMPONENT net
 		 wi4_h2 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 wi4_h3 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 wi4_h4 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 out0 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 out1 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 out2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+		 outs : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
 	);
 END COMPONENT;
 
@@ -196,9 +192,7 @@ SIGNAL	wh9_out0 : STD_LOGIC_VECTOR(31 DOWNTO 0) := x"3c615547";
 SIGNAL	wh9_out1 : STD_LOGIC_VECTOR(31 DOWNTO 0) := x"3c645564";
 SIGNAL	wh9_out2 : STD_LOGIC_VECTOR(31 DOWNTO 0) := x"3c629797";
 
-SIGNAL	out0 : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL	out1 : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL	out2 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL	outs : STD_LOGIC_VECTOR(2 DOWNTO 0);
 
 BEGIN
 c1 : pll PORT MAP(areset, CLK, CLK_VGA, locked);
@@ -217,7 +211,7 @@ c3 : net PORT MAP(CLK, i0, i1, i2, i3, i4,  wi0_h0, wi0_h1, wi0_h2, wi0_h3, wi0_
 											wh7_out0, wh7_out1, wh7_out2,
 											wh8_out0, wh8_out1, wh8_out2,
 											wh9_out0, wh9_out1, wh9_out2,
-											out0, out1, out2);
-c2 : vga PORT MAP(CLK_VGA, out0, out1, out2, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B);
+											outs);
+c2 : vga PORT MAP(CLK_VGA, outs, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B);
 
 END bhv;
