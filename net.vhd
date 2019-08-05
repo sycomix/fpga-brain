@@ -84,7 +84,7 @@ ENTITY net IS
 		
 		ram_addr: OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
 		ram_data_in: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-		ram_data_out: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		ram_data_out: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 		ram_WE: OUT STD_LOGIC
 	);
 END net;
@@ -105,7 +105,8 @@ BEGIN
 	BEGIN
 		IF (rising_edge(CLK_IN)) THEN
 			--CLK_OUT
-			ram_WE <= '0';
+			ram_WE <= '1';
+			outs <= ram_data_out;
 		
 			IF CMD = 0 THEN -- INIT RAM VALUES
 				IF n_s = 2 THEN
@@ -122,11 +123,20 @@ BEGIN
 						data_s <= 0;
 					END IF;			
 				END IF;
+			ELSIF CMD = 1 THEN
+				IF n_s = 2 THEN
+					IF addr_s < 4096 THEN
+						addr_s <= addr_s+1;
+					ELSE
+						addr_s <= 0;
+						CMD <= 1;
+					END IF;		
+				END IF;
 			END IF;
 			
 			IF n_s = 2 THEN
 				IF CMD = 0 THEN -- INIT RAM VALUES
-					ram_WE <= '1';
+					ram_WE <= '0';
 				END IF;
 				
 				n_s <= 0;

@@ -19,7 +19,7 @@ ENTITY ram16 IS
 		
 		ram_addr: IN STD_LOGIC_VECTOR(12 DOWNTO 0);
 		ram_data_in: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-		ram_data_out: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+		ram_data_out: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 		ram_WE: IN STD_LOGIC
 	);
 END ram16;

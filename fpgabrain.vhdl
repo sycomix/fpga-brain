@@ -131,7 +131,7 @@ COMPONENT net
 		
 		ram_addr: OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
 		ram_data_in: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-		ram_data_out: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		ram_data_out: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 		ram_WE: OUT STD_LOGIC
 	);
 END COMPONENT;
@@ -153,7 +153,7 @@ COMPONENT ram16 IS
 		
 		ram_addr: IN STD_LOGIC_VECTOR(12 DOWNTO 0);
 		ram_data_in: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-		ram_data_out: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+		ram_data_out: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 		ram_WE: IN STD_LOGIC
 	);
 END COMPONENT ram16;
@@ -247,7 +247,9 @@ SIGNAL	ram_WE: STD_LOGIC;
 
 BEGIN
 c1 : pll PORT MAP(areset, CLK, CLK_VGA, CLK_RAMM, locked);
+
 CLK_OUT <= CLK_RAMM;
+
 c2 : ram16 PORT MAP(CLK_RAMM, CKE, RA, DQ, UMQM, LDQM, CS, RAS, CAS, WE, BA, net_ram_addr, net_ram_data_in, net_ram_data_out, ram_WE);
 
 c3 : net PORT MAP(CLK_RAMM,
