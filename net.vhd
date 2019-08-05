@@ -82,51 +82,62 @@ ENTITY net IS
 	
 		outs :  OUT  STD_LOGIC_VECTOR(15 downto 0);
 		
-		ram_addr: OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
-		ram_data_in: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-		ram_data_out: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-		ram_WE: OUT STD_LOGIC
+		ram_row_addr: OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
+		ram_col_addr: OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
+		
+		ram_data_save: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		ram_data_save_ready: IN STD_LOGIC;
+		
+		ram_data_read_do: OUT STD_LOGIC;
+		ram_data_read_ready: IN STD_LOGIC;
+		ram_data_read: IN STD_LOGIC_VECTOR(15 DOWNTO 0)
 	);
 END net;
 
 ARCHITECTURE bhv OF net IS 
 
 
-SIGNAL addr_s: INTEGER RANGE 0 TO 4096:=0;
-SIGNAL data_s: INTEGER RANGE 0 TO 4096:=0;
-SIGNAL n_s: INTEGER RANGE 0 TO 13:=0;
+SIGNAL addr_s: INTEGER RANGE 0 TO 64:=0;
+SIGNAL data_s: INTEGER RANGE 0 TO 3:=0;
 
-SIGNAL CMD: INTEGER RANGE 0 TO 13:=0;
--- 0 = INIT RAM VALUES
+SIGNAL CMD: INTEGER RANGE 0 TO 13:=0; -- 0 = INIT RAM VALUES
 	
-BEGIN 
-	--WE;
+BEGIN 	
 	PROCESS(CLK_IN)
 	BEGIN
 		IF (rising_edge(CLK_IN)) THEN
-			--CLK_OUT
-			ram_WE <= '1';
-			outs <= ram_data_out;
+			outs <= ram_data_read;
 		
 			IF CMD = 0 THEN -- INIT RAM VALUES
-				IF n_s = 2 THEN
-					IF addr_s < 4096 THEN
+				IF ram_data_save_ready = '1' THEN
+					IF addr_s < 64 THEN						
+						ram_row_addr <= STD_LOGIC_VECTOR(to_signed(0, ram_row_addr'length));
+						ram_col_addr <= STD_LOGIC_VECTOR(to_signed(addr_s, ram_col_addr'length));
+						
 						addr_s <= addr_s+1;
+						
+						
+						IF data_s < 3 THEN
+							data_s <= data_s+1;
+						ELSE
+							data_s <= 0;
+						END IF;	
+						
+						ram_data_save <= STD_LOGIC_VECTOR(to_signed(data_s, ram_data_save'length));
 					ELSE
 						addr_s <= 0;
 						CMD <= 1;
 					END IF;
-					
-					IF data_s < 3 THEN
-						data_s <= data_s+1;
-					ELSE
-						data_s <= 0;
-					END IF;			
 				END IF;
 			ELSIF CMD = 1 THEN
-				IF n_s = 2 THEN
-					IF addr_s < 4096 THEN
+				IF ram_data_read_ready = '1' THEN
+					IF addr_s < 64 THEN
+						ram_row_addr <= STD_LOGIC_VECTOR(to_signed(0, ram_row_addr'length));
+						ram_col_addr <= STD_LOGIC_VECTOR(to_signed(addr_s, ram_col_addr'length));
+						
 						addr_s <= addr_s+1;
+						
+						ram_data_read_do <= '1';
 					ELSE
 						addr_s <= 0;
 						CMD <= 1;
@@ -134,20 +145,6 @@ BEGIN
 				END IF;
 			END IF;
 			
-			IF n_s = 2 THEN
-				IF CMD = 0 THEN -- INIT RAM VALUES
-					ram_WE <= '0';
-				END IF;
-				
-				n_s <= 0;
-			ELSE
-				n_s <= n_s+1;
-			END IF;
-			
-			
-			
-			ram_addr <= STD_LOGIC_VECTOR(to_signed(addr_s, ram_addr'length));
-			ram_data_in <= STD_LOGIC_VECTOR(to_signed(data_s, ram_data_in'length));
 			
 			--FOR I in 0 to 17 LOOP
 		

@@ -17,10 +17,15 @@ ENTITY ram16 IS
 		WE: OUT STD_LOGIC;
 		BA: OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 		
-		ram_addr: IN STD_LOGIC_VECTOR(12 DOWNTO 0);
-		ram_data_in: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-		ram_data_out: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-		ram_WE: IN STD_LOGIC
+		ram_row_addr: IN STD_LOGIC_VECTOR(12 DOWNTO 0);
+		ram_col_addr: IN STD_LOGIC_VECTOR(12 DOWNTO 0);
+		
+		ram_data_save: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+		ram_data_save_ready: OUT STD_LOGIC;
+		
+		ram_data_read_do: IN STD_LOGIC;
+		ram_data_read_ready: OUT STD_LOGIC;
+		ram_data_read: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
 	);
 END ram16;
 
