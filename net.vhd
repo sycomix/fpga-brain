@@ -5,6 +5,7 @@ USE ieee.numeric_std.all;
 ENTITY net IS 
 	PORT
 	(
+		CLK_IN: IN STD_LOGIC;
 	
 		i0 :  IN  STD_LOGIC_VECTOR(31 downto 0);
 		i1 :  IN  STD_LOGIC_VECTOR(31 downto 0);
@@ -79,21 +80,7 @@ ENTITY net IS
 		wh9_out1 :  IN  STD_LOGIC_VECTOR(31 downto 0);
 		wh9_out2 :  IN  STD_LOGIC_VECTOR(31 downto 0);
 	
-		outs :  OUT  STD_LOGIC_VECTOR(15 downto 0);
-		
-		
-		CLK_IN: IN STD_LOGIC;
-		CLK_OUT: OUT STD_LOGIC;
-		CKE: OUT STD_LOGIC;
-		RA: OUT STD_LOGIC_VECTOR(12 DOWNTO 0);		
-		DQ: INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-		UMQM: OUT STD_LOGIC;
-		LDQM: OUT STD_LOGIC;
-		CS: OUT STD_LOGIC;
-		RAS: OUT STD_LOGIC;
-		CAS: OUT STD_LOGIC;
-		WE: OUT STD_LOGIC;
-		BA: OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+		outs :  OUT  STD_LOGIC_VECTOR(15 downto 0)
 	);
 END net;
 
@@ -111,7 +98,8 @@ BEGIN
 	PROCESS(CLK_IN)
 	BEGIN
 		IF (rising_edge(CLK_IN)) THEN
-			WE <= '0';
+			--CLK_OUT
+			--WE <= '0';
 		
 			IF n_s = 2 THEN
 				IF addr_s < 4096 THEN
@@ -129,7 +117,7 @@ BEGIN
 			
 			
 			IF n_s = 2 THEN
-				WE <= '1';
+				--WE <= '1';
 				n_s <= 0;
 			ELSE
 				n_s <= n_s+1;

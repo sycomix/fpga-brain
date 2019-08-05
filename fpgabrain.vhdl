@@ -52,7 +52,8 @@ END COMPONENT;
 
 COMPONENT net
 	PORT(
-	
+		CLK_IN: IN STD_LOGIC;
+		
 		 i0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 i1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 i2 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -126,11 +127,14 @@ COMPONENT net
 		 wh9_out1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 wh9_out2 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 
-		 outs : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-		 
-		 
+		 outs : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT ram16 IS 
+	PORT
+	(
 		CLK_IN: IN STD_LOGIC;
-		CLK_OUT: OUT STD_LOGIC;
 		CKE: OUT STD_LOGIC;
 		RA: OUT STD_LOGIC_VECTOR(12 DOWNTO 0);		
 		DQ: INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -142,7 +146,7 @@ COMPONENT net
 		WE: OUT STD_LOGIC;
 		BA: OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
 	);
-END COMPONENT;
+END COMPONENT ram16;
 
 -- PLL
 SIGNAL	CLK_VGA :  STD_LOGIC;
@@ -229,25 +233,28 @@ SIGNAL	outs : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
 BEGIN
 c1 : pll PORT MAP(areset, CLK, CLK_VGA, CLK_RAMM, locked);
+CLK_OUT <= CLK_RAMM;
+c2 : ram16 PORT MAP(CLK_RAMM, CKE, RA, DQ, UMQM, LDQM, CS, RAS, CAS, WE, BA);
 
-c3 : net PORT MAP(i0, i1, i2, i3, i4,  wi0_h0, wi0_h1, wi0_h2, wi0_h3, wi0_h4,
-											wi1_h0, wi1_h1, wi1_h2, wi1_h3, wi1_h4,
-											wi2_h0, wi2_h1, wi2_h2, wi2_h3, wi2_h4,
-											wi3_h0, wi3_h1, wi3_h2, wi3_h3, wi3_h4,
-											wi4_h0, wi4_h1, wi4_h2, wi4_h3, wi4_h4,
-											wh0_h5, wh0_h6, wh0_h7, wh0_h8, wh0_h9,
-											wh1_h5, wh1_h6, wh1_h7, wh1_h8, wh1_h9,
-											wh2_h5, wh2_h6, wh2_h7, wh2_h8, wh2_h9,
-											wh3_h5, wh3_h6, wh3_h7, wh3_h8, wh3_h9,
-											wh4_h5, wh4_h6, wh4_h7, wh4_h8, wh4_h9,
-											wh5_out0, wh5_out1, wh5_out2,
-											wh6_out0, wh6_out1, wh6_out2,
-											wh7_out0, wh7_out1, wh7_out2,
-											wh8_out0, wh8_out1, wh8_out2,
-											wh9_out0, wh9_out1, wh9_out2,
-											outs, 
-											CLK_RAMM, CLK_OUT, CKE, RA, DQ, UMQM, LDQM, CS, RAS, CAS, WE, BA);
-c2 : vga PORT MAP(CLK_VGA, outs, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B);
+c3 : net PORT MAP(CLK_RAMM,
+				i0, i1, i2, i3, i4,  wi0_h0, wi0_h1, wi0_h2, wi0_h3, wi0_h4,
+				wi1_h0, wi1_h1, wi1_h2, wi1_h3, wi1_h4,
+				wi2_h0, wi2_h1, wi2_h2, wi2_h3, wi2_h4,
+				wi3_h0, wi3_h1, wi3_h2, wi3_h3, wi3_h4,
+				wi4_h0, wi4_h1, wi4_h2, wi4_h3, wi4_h4,
+				wh0_h5, wh0_h6, wh0_h7, wh0_h8, wh0_h9,
+				wh1_h5, wh1_h6, wh1_h7, wh1_h8, wh1_h9,
+				wh2_h5, wh2_h6, wh2_h7, wh2_h8, wh2_h9,
+				wh3_h5, wh3_h6, wh3_h7, wh3_h8, wh3_h9,
+				wh4_h5, wh4_h6, wh4_h7, wh4_h8, wh4_h9,
+				wh5_out0, wh5_out1, wh5_out2,
+				wh6_out0, wh6_out1, wh6_out2,
+				wh7_out0, wh7_out1, wh7_out2,
+				wh8_out0, wh8_out1, wh8_out2,
+				wh9_out0, wh9_out1, wh9_out2,
+				outs);
+				
+c4 : vga PORT MAP(CLK_VGA, outs, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B);
 
 
 END bhv;

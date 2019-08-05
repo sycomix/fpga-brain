@@ -1,49 +1,49 @@
 |fpgabrain
 CLK => pll:c1.inclk0
-VGA_HS << vga:c2.VGA_HS
-VGA_VS << vga:c2.VGA_VS
-VGA_R << vga:c2.VGA_R
-VGA_G << vga:c2.VGA_G
-VGA_B << vga:c2.VGA_B
-CLK_OUT << net:c3.CLK_OUT
-CKE << net:c3.CKE
-RA[0] << net:c3.RA[0]
-RA[1] << net:c3.RA[1]
-RA[2] << net:c3.RA[2]
-RA[3] << net:c3.RA[3]
-RA[4] << net:c3.RA[4]
-RA[5] << net:c3.RA[5]
-RA[6] << net:c3.RA[6]
-RA[7] << net:c3.RA[7]
-RA[8] << net:c3.RA[8]
-RA[9] << net:c3.RA[9]
-RA[10] << net:c3.RA[10]
-RA[11] << net:c3.RA[11]
-RA[12] << net:c3.RA[12]
-DQ[0] <> net:c3.DQ[0]
-DQ[1] <> net:c3.DQ[1]
-DQ[2] <> net:c3.DQ[2]
-DQ[3] <> net:c3.DQ[3]
-DQ[4] <> net:c3.DQ[4]
-DQ[5] <> net:c3.DQ[5]
-DQ[6] <> net:c3.DQ[6]
-DQ[7] <> net:c3.DQ[7]
-DQ[8] <> net:c3.DQ[8]
-DQ[9] <> net:c3.DQ[9]
-DQ[10] <> net:c3.DQ[10]
-DQ[11] <> net:c3.DQ[11]
-DQ[12] <> net:c3.DQ[12]
-DQ[13] <> net:c3.DQ[13]
-DQ[14] <> net:c3.DQ[14]
-DQ[15] <> net:c3.DQ[15]
-UMQM << net:c3.UMQM
-LDQM << net:c3.LDQM
-CS << net:c3.CS
-RAS << net:c3.RAS
-CAS << net:c3.CAS
-WE << net:c3.WE
-BA[0] << net:c3.BA[0]
-BA[1] << net:c3.BA[1]
+VGA_HS <= vga:c4.VGA_HS
+VGA_VS <= vga:c4.VGA_VS
+VGA_R <= vga:c4.VGA_R
+VGA_G <= vga:c4.VGA_G
+VGA_B <= vga:c4.VGA_B
+CLK_OUT <= pll:c1.c1
+CKE <= ram16:c2.CKE
+RA[0] <= ram16:c2.RA[0]
+RA[1] <= ram16:c2.RA[1]
+RA[2] <= ram16:c2.RA[2]
+RA[3] <= ram16:c2.RA[3]
+RA[4] <= ram16:c2.RA[4]
+RA[5] <= ram16:c2.RA[5]
+RA[6] <= ram16:c2.RA[6]
+RA[7] <= ram16:c2.RA[7]
+RA[8] <= ram16:c2.RA[8]
+RA[9] <= ram16:c2.RA[9]
+RA[10] <= ram16:c2.RA[10]
+RA[11] <= ram16:c2.RA[11]
+RA[12] <= ram16:c2.RA[12]
+DQ[0] <> ram16:c2.DQ[0]
+DQ[1] <> ram16:c2.DQ[1]
+DQ[2] <> ram16:c2.DQ[2]
+DQ[3] <> ram16:c2.DQ[3]
+DQ[4] <> ram16:c2.DQ[4]
+DQ[5] <> ram16:c2.DQ[5]
+DQ[6] <> ram16:c2.DQ[6]
+DQ[7] <> ram16:c2.DQ[7]
+DQ[8] <> ram16:c2.DQ[8]
+DQ[9] <> ram16:c2.DQ[9]
+DQ[10] <> ram16:c2.DQ[10]
+DQ[11] <> ram16:c2.DQ[11]
+DQ[12] <> ram16:c2.DQ[12]
+DQ[13] <> ram16:c2.DQ[13]
+DQ[14] <> ram16:c2.DQ[14]
+DQ[15] <> ram16:c2.DQ[15]
+UMQM <= ram16:c2.UMQM
+LDQM <= ram16:c2.LDQM
+CS <= ram16:c2.CS
+RAS <= ram16:c2.RAS
+CAS <= ram16:c2.CAS
+WE <= ram16:c2.WE
+BA[0] <= ram16:c2.BA[0]
+BA[1] <= ram16:c2.BA[1]
 
 
 |fpgabrain|pll:c1
@@ -127,7 +127,50 @@ inclk[1] => pll1.CLK1
 locked <= locked.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|fpgabrain|ram16:c2
+CLK_IN => ~NO_FANOUT~
+CKE <= CKE.DB_MAX_OUTPUT_PORT_TYPE
+RA[0] <= RA[0].DB_MAX_OUTPUT_PORT_TYPE
+RA[1] <= RA[1].DB_MAX_OUTPUT_PORT_TYPE
+RA[2] <= RA[2].DB_MAX_OUTPUT_PORT_TYPE
+RA[3] <= RA[3].DB_MAX_OUTPUT_PORT_TYPE
+RA[4] <= RA[4].DB_MAX_OUTPUT_PORT_TYPE
+RA[5] <= RA[5].DB_MAX_OUTPUT_PORT_TYPE
+RA[6] <= RA[6].DB_MAX_OUTPUT_PORT_TYPE
+RA[7] <= RA[7].DB_MAX_OUTPUT_PORT_TYPE
+RA[8] <= RA[8].DB_MAX_OUTPUT_PORT_TYPE
+RA[9] <= RA[9].DB_MAX_OUTPUT_PORT_TYPE
+RA[10] <= RA[10].DB_MAX_OUTPUT_PORT_TYPE
+RA[11] <= RA[11].DB_MAX_OUTPUT_PORT_TYPE
+RA[12] <= RA[12].DB_MAX_OUTPUT_PORT_TYPE
+DQ[0] <> <UNC>
+DQ[1] <> <UNC>
+DQ[2] <> <UNC>
+DQ[3] <> <UNC>
+DQ[4] <> <UNC>
+DQ[5] <> <UNC>
+DQ[6] <> <UNC>
+DQ[7] <> <UNC>
+DQ[8] <> <UNC>
+DQ[9] <> <UNC>
+DQ[10] <> <UNC>
+DQ[11] <> <UNC>
+DQ[12] <> <UNC>
+DQ[13] <> <UNC>
+DQ[14] <> <UNC>
+DQ[15] <> <UNC>
+UMQM <= UMQM.DB_MAX_OUTPUT_PORT_TYPE
+LDQM <= LDQM.DB_MAX_OUTPUT_PORT_TYPE
+CS <= CS.DB_MAX_OUTPUT_PORT_TYPE
+RAS <= RAS.DB_MAX_OUTPUT_PORT_TYPE
+CAS <= CAS.DB_MAX_OUTPUT_PORT_TYPE
+WE <= WE.DB_MAX_OUTPUT_PORT_TYPE
+BA[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+BA[1] <= BA[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
 |fpgabrain|net:c3
+CLK_IN => ~NO_FANOUT~
 i0[0] => ~NO_FANOUT~
 i0[1] => ~NO_FANOUT~
 i0[2] => ~NO_FANOUT~
@@ -2368,7 +2411,7 @@ wh9_out2[28] => ~NO_FANOUT~
 wh9_out2[29] => ~NO_FANOUT~
 wh9_out2[30] => ~NO_FANOUT~
 wh9_out2[31] => ~NO_FANOUT~
-outs[0] <= outs[0].DB_MAX_OUTPUT_PORT_TYPE
+outs[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 outs[1] <= outs[1].DB_MAX_OUTPUT_PORT_TYPE
 outs[2] <= outs[2].DB_MAX_OUTPUT_PORT_TYPE
 outs[3] <= outs[3].DB_MAX_OUTPUT_PORT_TYPE
@@ -2384,53 +2427,9 @@ outs[12] <= outs[12].DB_MAX_OUTPUT_PORT_TYPE
 outs[13] <= outs[13].DB_MAX_OUTPUT_PORT_TYPE
 outs[14] <= outs[14].DB_MAX_OUTPUT_PORT_TYPE
 outs[15] <= outs[15].DB_MAX_OUTPUT_PORT_TYPE
-CLK_IN => n_s[0].CLK
-CLK_IN => n_s[1].CLK
-CLK_IN => n_s[2].CLK
-CLK_IN => n_s[3].CLK
-CLK_IN => WE~reg0.CLK
-CLK_OUT <= CLK_OUT.DB_MAX_OUTPUT_PORT_TYPE
-CKE <= CKE.DB_MAX_OUTPUT_PORT_TYPE
-RA[0] <= RA[0].DB_MAX_OUTPUT_PORT_TYPE
-RA[1] <= RA[1].DB_MAX_OUTPUT_PORT_TYPE
-RA[2] <= RA[2].DB_MAX_OUTPUT_PORT_TYPE
-RA[3] <= RA[3].DB_MAX_OUTPUT_PORT_TYPE
-RA[4] <= RA[4].DB_MAX_OUTPUT_PORT_TYPE
-RA[5] <= RA[5].DB_MAX_OUTPUT_PORT_TYPE
-RA[6] <= RA[6].DB_MAX_OUTPUT_PORT_TYPE
-RA[7] <= RA[7].DB_MAX_OUTPUT_PORT_TYPE
-RA[8] <= RA[8].DB_MAX_OUTPUT_PORT_TYPE
-RA[9] <= RA[9].DB_MAX_OUTPUT_PORT_TYPE
-RA[10] <= RA[10].DB_MAX_OUTPUT_PORT_TYPE
-RA[11] <= RA[11].DB_MAX_OUTPUT_PORT_TYPE
-RA[12] <= RA[12].DB_MAX_OUTPUT_PORT_TYPE
-DQ[0] <> <UNC>
-DQ[1] <> <UNC>
-DQ[2] <> <UNC>
-DQ[3] <> <UNC>
-DQ[4] <> <UNC>
-DQ[5] <> <UNC>
-DQ[6] <> <UNC>
-DQ[7] <> <UNC>
-DQ[8] <> <UNC>
-DQ[9] <> <UNC>
-DQ[10] <> <UNC>
-DQ[11] <> <UNC>
-DQ[12] <> <UNC>
-DQ[13] <> <UNC>
-DQ[14] <> <UNC>
-DQ[15] <> <UNC>
-UMQM <= UMQM.DB_MAX_OUTPUT_PORT_TYPE
-LDQM <= LDQM.DB_MAX_OUTPUT_PORT_TYPE
-CS <= CS.DB_MAX_OUTPUT_PORT_TYPE
-RAS <= RAS.DB_MAX_OUTPUT_PORT_TYPE
-CAS <= CAS.DB_MAX_OUTPUT_PORT_TYPE
-WE <= WE~reg0.DB_MAX_OUTPUT_PORT_TYPE
-BA[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-BA[1] <= BA[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fpgabrain|VGA:c2
+|fpgabrain|VGA:c4
 CLOCK_INVGA => SYNC:C1.CLK
 netOuts[0] => SYNC:C1.netOuts[0]
 netOuts[1] => SYNC:C1.netOuts[1]
@@ -2455,7 +2454,7 @@ VGA_G <= SYNC:C1.G
 VGA_B <= SYNC:C1.B
 
 
-|fpgabrain|VGA:c2|SYNC:C1
+|fpgabrain|VGA:c4|SYNC:C1
 CLK => VSYNC~reg0.CLK
 CLK => HSYNC~reg0.CLK
 CLK => VPOS[0].CLK

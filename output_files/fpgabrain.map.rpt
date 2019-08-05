@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Mon Aug 05 02:04:39 2019
+Mon Aug 05 04:04:41 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -48,15 +48,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Aug 05 02:04:39 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug 05 04:04:41 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 56                                          ;
-;     Total combinational functions  ; 55                                          ;
-;     Dedicated logic registers      ; 31                                          ;
-; Total registers                    ; 31                                          ;
+; Total logic elements               ; 50                                          ;
+;     Total combinational functions  ; 49                                          ;
+;     Dedicated logic registers      ; 26                                          ;
+; Total registers                    ; 26                                          ;
 ; Total pins                         ; 45                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -164,8 +164,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -179,6 +178,7 @@ refer to the applicable agreement for further details.
 ; SYNC.vhd                         ; yes             ; User VHDL File               ; G:/fpga-brain/SYNC.vhd                                                   ;         ;
 ; pll.vhd                          ; yes             ; User Wizard-Generated File   ; G:/fpga-brain/pll.vhd                                                    ;         ;
 ; net.vhd                          ; yes             ; User VHDL File               ; G:/fpga-brain/net.vhd                                                    ;         ;
+; ram16.vhd                        ; yes             ; User VHDL File               ; G:/fpga-brain/ram16.vhd                                                  ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf        ;         ;
 ; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc    ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc   ;         ;
@@ -193,20 +193,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 56                                                                         ;
+; Estimated Total logic elements              ; 50                                                                         ;
 ;                                             ;                                                                            ;
-; Total combinational functions               ; 55                                                                         ;
+; Total combinational functions               ; 49                                                                         ;
 ; Logic element usage by number of LUT inputs ;                                                                            ;
-;     -- 4 input functions                    ; 31                                                                         ;
-;     -- 3 input functions                    ; 1                                                                          ;
+;     -- 4 input functions                    ; 21                                                                         ;
+;     -- 3 input functions                    ; 5                                                                          ;
 ;     -- <=2 input functions                  ; 23                                                                         ;
 ;                                             ;                                                                            ;
 ; Logic elements by mode                      ;                                                                            ;
-;     -- normal mode                          ; 36                                                                         ;
+;     -- normal mode                          ; 30                                                                         ;
 ;     -- arithmetic mode                      ; 19                                                                         ;
 ;                                             ;                                                                            ;
-; Total registers                             ; 31                                                                         ;
-;     -- Dedicated logic registers            ; 31                                                                         ;
+; Total registers                             ; 26                                                                         ;
+;     -- Dedicated logic registers            ; 26                                                                         ;
 ;     -- I/O registers                        ; 0                                                                          ;
 ;                                             ;                                                                            ;
 ; I/O pins                                    ; 45                                                                         ;
@@ -217,9 +217,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                          ;
 ;                                             ;                                                                            ;
 ; Maximum fan-out node                        ; pll:c1|altpll:altpll_component|pll_altpll1:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 32                                                                         ;
-; Total fan-out                               ; 333                                                                        ;
-; Average fan-out                             ; 1.73                                                                       ;
+; Maximum fan-out                             ; 28                                                                         ;
+; Total fan-out                               ; 295                                                                        ;
+; Average fan-out                             ; 1.62                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -228,10 +228,9 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
-; |fpgabrain                            ; 55 (0)              ; 31 (0)                    ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |fpgabrain                                                           ; fpgabrain   ; work         ;
-;    |VGA:c2|                           ; 50 (0)              ; 26 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c2                                                    ; VGA         ; work         ;
-;       |SYNC:C1|                       ; 50 (50)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c2|SYNC:C1                                            ; SYNC        ; work         ;
-;    |net:c3|                           ; 5 (5)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3                                                    ; net         ; work         ;
+; |fpgabrain                            ; 49 (0)              ; 26 (0)                    ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |fpgabrain                                                           ; fpgabrain   ; work         ;
+;    |VGA:c4|                           ; 49 (0)              ; 26 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4                                                    ; VGA         ; work         ;
+;       |SYNC:C1|                       ; 49 (49)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4|SYNC:C1                                            ; SYNC        ; work         ;
 ;    |pll:c1|                           ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1                                                    ; pll         ; work         ;
 ;       |altpll:altpll_component|       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component                            ; altpll      ; work         ;
 ;          |pll_altpll1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component|pll_altpll1:auto_generated ; pll_altpll1 ; work         ;
@@ -253,7 +252,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 31    ;
+; Total registers                              ; 26    ;
 ; Number of registers using Synchronous Clear  ; 21    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -268,7 +267,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|VGA:c2|SYNC:C1|G ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|VGA:c4|SYNC:C1|G ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
@@ -1705,24 +1704,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 45                          ;
-; cycloneiii_ff         ; 31                          ;
+; cycloneiii_ff         ; 26                          ;
 ;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 11                          ;
-;     plain             ; 10                          ;
+;     plain             ; 5                           ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 56                          ;
+; cycloneiii_lcell_comb ; 50                          ;
 ;     arith             ; 19                          ;
 ;         2 data inputs ; 19                          ;
-;     normal            ; 37                          ;
+;     normal            ; 31                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 2                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 31                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 21                          ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.05                        ;
+; Average LUT depth     ; 2.15                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1741,7 +1740,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Aug 05 02:04:22 2019
+    Info: Processing started: Mon Aug 05 04:04:25 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1762,7 +1761,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file fulladd
 Info (12021): Found 1 design units, including 1 entities, in source file sum8.bdf
     Info (12023): Found entity 1: sum8
 Info (12021): Found 2 design units, including 1 entities, in source file net.vhd
-    Info (12022): Found design unit 1: net-bhv File: G:/fpga-brain/net.vhd Line: 100
+    Info (12022): Found design unit 1: net-bhv File: G:/fpga-brain/net.vhd Line: 87
     Info (12023): Found entity 1: net File: G:/fpga-brain/net.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file neuron.vhd
     Info (12022): Found design unit 1: neuron-bdf_type File: G:/fpga-brain/neuron.vhd Line: 25
@@ -1826,82 +1825,82 @@ Info (12021): Found 2 design units, including 1 entities, in source file ram1por
     Info (12022): Found design unit 1: ram1port-SYN File: G:/fpga-brain/ram1port.vhd Line: 54
     Info (12023): Found entity 1: ram1port File: G:/fpga-brain/ram1port.vhd Line: 42
 Info (12021): Found 2 design units, including 1 entities, in source file ram16.vhd
-    Info (12022): Found design unit 1: ram16-bhv File: G:/fpga-brain/ram16.vhd Line: 23
+    Info (12022): Found design unit 1: ram16-bhv File: G:/fpga-brain/ram16.vhd Line: 22
     Info (12023): Found entity 1: ram16 File: G:/fpga-brain/ram16.vhd Line: 5
 Info (12127): Elaborating entity "fpgabrain" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at fpgabrain.vhdl(151): used implicit default value for signal "areset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/fpgabrain.vhdl Line: 151
-Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(152): object "locked" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 152
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(155): used explicit default value for signal "i0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 155
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(156): used explicit default value for signal "i1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 156
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(157): used explicit default value for signal "i2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 157
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(158): used explicit default value for signal "i3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 158
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(159): used explicit default value for signal "i4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 159
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(160): used explicit default value for signal "wi0_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 160
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(161): used explicit default value for signal "wi0_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 161
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(162): used explicit default value for signal "wi0_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 162
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(163): used explicit default value for signal "wi0_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 163
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(164): used explicit default value for signal "wi0_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 164
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(165): used explicit default value for signal "wi1_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 165
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(166): used explicit default value for signal "wi1_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 166
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(167): used explicit default value for signal "wi1_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 167
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(168): used explicit default value for signal "wi1_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 168
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(169): used explicit default value for signal "wi1_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 169
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(170): used explicit default value for signal "wi2_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 170
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(171): used explicit default value for signal "wi2_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 171
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(172): used explicit default value for signal "wi2_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 172
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(173): used explicit default value for signal "wi2_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 173
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(174): used explicit default value for signal "wi2_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 174
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(175): used explicit default value for signal "wi3_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 175
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(176): used explicit default value for signal "wi3_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 176
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(177): used explicit default value for signal "wi3_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 177
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(178): used explicit default value for signal "wi3_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 178
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(179): used explicit default value for signal "wi3_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 179
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(180): used explicit default value for signal "wi4_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 180
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(181): used explicit default value for signal "wi4_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 181
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(182): used explicit default value for signal "wi4_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 182
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(183): used explicit default value for signal "wi4_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 183
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(184): used explicit default value for signal "wi4_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 184
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(186): used explicit default value for signal "wh0_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 186
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(187): used explicit default value for signal "wh0_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 187
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(188): used explicit default value for signal "wh0_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 188
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(189): used explicit default value for signal "wh0_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 189
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(190): used explicit default value for signal "wh0_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 190
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(191): used explicit default value for signal "wh1_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 191
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(192): used explicit default value for signal "wh1_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 192
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(193): used explicit default value for signal "wh1_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 193
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(194): used explicit default value for signal "wh1_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 194
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(195): used explicit default value for signal "wh1_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 195
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(196): used explicit default value for signal "wh2_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 196
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(197): used explicit default value for signal "wh2_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 197
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(198): used explicit default value for signal "wh2_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 198
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(199): used explicit default value for signal "wh2_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 199
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(200): used explicit default value for signal "wh2_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 200
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(201): used explicit default value for signal "wh3_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 201
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(202): used explicit default value for signal "wh3_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 202
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(203): used explicit default value for signal "wh3_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 203
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(204): used explicit default value for signal "wh3_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 204
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(205): used explicit default value for signal "wh3_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 205
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(206): used explicit default value for signal "wh4_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 206
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(207): used explicit default value for signal "wh4_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 207
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(208): used explicit default value for signal "wh4_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 208
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(209): used explicit default value for signal "wh4_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 209
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(210): used explicit default value for signal "wh4_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 210
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(212): used explicit default value for signal "wh5_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 212
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(213): used explicit default value for signal "wh5_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 213
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(214): used explicit default value for signal "wh5_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 214
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(215): used explicit default value for signal "wh6_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 215
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(216): used explicit default value for signal "wh6_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 216
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(217): used explicit default value for signal "wh6_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 217
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(218): used explicit default value for signal "wh7_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 218
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(219): used explicit default value for signal "wh7_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 219
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(220): used explicit default value for signal "wh7_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 220
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(221): used explicit default value for signal "wh8_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 221
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(222): used explicit default value for signal "wh8_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 222
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(223): used explicit default value for signal "wh8_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 223
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(224): used explicit default value for signal "wh9_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 224
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(225): used explicit default value for signal "wh9_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 225
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(226): used explicit default value for signal "wh9_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 226
-Info (12128): Elaborating entity "pll" for hierarchy "pll:c1" File: G:/fpga-brain/fpgabrain.vhdl Line: 231
+Warning (10541): VHDL Signal Declaration warning at fpgabrain.vhdl(155): used implicit default value for signal "areset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/fpgabrain.vhdl Line: 155
+Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(156): object "locked" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 156
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(159): used explicit default value for signal "i0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 159
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(160): used explicit default value for signal "i1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 160
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(161): used explicit default value for signal "i2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 161
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(162): used explicit default value for signal "i3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 162
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(163): used explicit default value for signal "i4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 163
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(164): used explicit default value for signal "wi0_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 164
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(165): used explicit default value for signal "wi0_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 165
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(166): used explicit default value for signal "wi0_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 166
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(167): used explicit default value for signal "wi0_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 167
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(168): used explicit default value for signal "wi0_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 168
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(169): used explicit default value for signal "wi1_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 169
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(170): used explicit default value for signal "wi1_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 170
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(171): used explicit default value for signal "wi1_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 171
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(172): used explicit default value for signal "wi1_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 172
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(173): used explicit default value for signal "wi1_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 173
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(174): used explicit default value for signal "wi2_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 174
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(175): used explicit default value for signal "wi2_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 175
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(176): used explicit default value for signal "wi2_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 176
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(177): used explicit default value for signal "wi2_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 177
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(178): used explicit default value for signal "wi2_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 178
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(179): used explicit default value for signal "wi3_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 179
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(180): used explicit default value for signal "wi3_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 180
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(181): used explicit default value for signal "wi3_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 181
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(182): used explicit default value for signal "wi3_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 182
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(183): used explicit default value for signal "wi3_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 183
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(184): used explicit default value for signal "wi4_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 184
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(185): used explicit default value for signal "wi4_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 185
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(186): used explicit default value for signal "wi4_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 186
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(187): used explicit default value for signal "wi4_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 187
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(188): used explicit default value for signal "wi4_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 188
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(190): used explicit default value for signal "wh0_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 190
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(191): used explicit default value for signal "wh0_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 191
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(192): used explicit default value for signal "wh0_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 192
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(193): used explicit default value for signal "wh0_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 193
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(194): used explicit default value for signal "wh0_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 194
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(195): used explicit default value for signal "wh1_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 195
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(196): used explicit default value for signal "wh1_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 196
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(197): used explicit default value for signal "wh1_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 197
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(198): used explicit default value for signal "wh1_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 198
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(199): used explicit default value for signal "wh1_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 199
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(200): used explicit default value for signal "wh2_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 200
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(201): used explicit default value for signal "wh2_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 201
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(202): used explicit default value for signal "wh2_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 202
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(203): used explicit default value for signal "wh2_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 203
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(204): used explicit default value for signal "wh2_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 204
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(205): used explicit default value for signal "wh3_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 205
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(206): used explicit default value for signal "wh3_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 206
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(207): used explicit default value for signal "wh3_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 207
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(208): used explicit default value for signal "wh3_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 208
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(209): used explicit default value for signal "wh3_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 209
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(210): used explicit default value for signal "wh4_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 210
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(211): used explicit default value for signal "wh4_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 211
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(212): used explicit default value for signal "wh4_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 212
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(213): used explicit default value for signal "wh4_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 213
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(214): used explicit default value for signal "wh4_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 214
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(216): used explicit default value for signal "wh5_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 216
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(217): used explicit default value for signal "wh5_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 217
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(218): used explicit default value for signal "wh5_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 218
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(219): used explicit default value for signal "wh6_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 219
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(220): used explicit default value for signal "wh6_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 220
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(221): used explicit default value for signal "wh6_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 221
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(222): used explicit default value for signal "wh7_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 222
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(223): used explicit default value for signal "wh7_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 223
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(224): used explicit default value for signal "wh7_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 224
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(225): used explicit default value for signal "wh8_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 225
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(226): used explicit default value for signal "wh8_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 226
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(227): used explicit default value for signal "wh8_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 227
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(228): used explicit default value for signal "wh9_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 228
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(229): used explicit default value for signal "wh9_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 229
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(230): used explicit default value for signal "wh9_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 230
+Info (12128): Elaborating entity "pll" for hierarchy "pll:c1" File: G:/fpga-brain/fpgabrain.vhdl Line: 235
 Info (12128): Elaborating entity "altpll" for hierarchy "pll:c1|altpll:altpll_component" File: G:/fpga-brain/pll.vhd Line: 148
 Info (12130): Elaborated megafunction instantiation "pll:c1|altpll:altpll_component" File: G:/fpga-brain/pll.vhd Line: 148
 Info (12133): Instantiated megafunction "pll:c1|altpll:altpll_component" with the following parameter: File: G:/fpga-brain/pll.vhd Line: 148
@@ -1967,19 +1966,20 @@ Info (12133): Instantiated megafunction "pll:c1|altpll:altpll_component" with th
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll1.v
     Info (12023): Found entity 1: pll_altpll1 File: G:/fpga-brain/db/pll_altpll1.v Line: 30
 Info (12128): Elaborating entity "pll_altpll1" for hierarchy "pll:c1|altpll:altpll_component|pll_altpll1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "net" for hierarchy "net:c3" File: G:/fpga-brain/fpgabrain.vhdl Line: 233
-Warning (10541): VHDL Signal Declaration warning at net.vhd(82): used implicit default value for signal "outs" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/net.vhd Line: 82
-Warning (10541): VHDL Signal Declaration warning at net.vhd(86): used implicit default value for signal "CLK_OUT" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/net.vhd Line: 86
-Warning (10541): VHDL Signal Declaration warning at net.vhd(87): used implicit default value for signal "CKE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/net.vhd Line: 87
-Warning (10541): VHDL Signal Declaration warning at net.vhd(88): used implicit default value for signal "RA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/net.vhd Line: 88
-Warning (10541): VHDL Signal Declaration warning at net.vhd(90): used implicit default value for signal "UMQM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/net.vhd Line: 90
-Warning (10541): VHDL Signal Declaration warning at net.vhd(91): used implicit default value for signal "LDQM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/net.vhd Line: 91
-Warning (10541): VHDL Signal Declaration warning at net.vhd(92): used implicit default value for signal "CS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/net.vhd Line: 92
-Warning (10541): VHDL Signal Declaration warning at net.vhd(93): used implicit default value for signal "RAS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/net.vhd Line: 93
-Warning (10541): VHDL Signal Declaration warning at net.vhd(94): used implicit default value for signal "CAS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/net.vhd Line: 94
-Warning (10541): VHDL Signal Declaration warning at net.vhd(96): used implicit default value for signal "BA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/net.vhd Line: 96
-Info (12128): Elaborating entity "VGA" for hierarchy "VGA:c2" File: G:/fpga-brain/fpgabrain.vhdl Line: 250
-Info (12128): Elaborating entity "SYNC" for hierarchy "VGA:c2|SYNC:C1" File: G:/fpga-brain/VGA.vhd Line: 26
+Info (12128): Elaborating entity "ram16" for hierarchy "ram16:c2" File: G:/fpga-brain/fpgabrain.vhdl Line: 237
+Warning (10541): VHDL Signal Declaration warning at ram16.vhd(9): used implicit default value for signal "CKE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/ram16.vhd Line: 9
+Warning (10541): VHDL Signal Declaration warning at ram16.vhd(10): used implicit default value for signal "RA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/ram16.vhd Line: 10
+Warning (10541): VHDL Signal Declaration warning at ram16.vhd(12): used implicit default value for signal "UMQM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/ram16.vhd Line: 12
+Warning (10541): VHDL Signal Declaration warning at ram16.vhd(13): used implicit default value for signal "LDQM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/ram16.vhd Line: 13
+Warning (10541): VHDL Signal Declaration warning at ram16.vhd(14): used implicit default value for signal "CS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/ram16.vhd Line: 14
+Warning (10541): VHDL Signal Declaration warning at ram16.vhd(15): used implicit default value for signal "RAS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/ram16.vhd Line: 15
+Warning (10541): VHDL Signal Declaration warning at ram16.vhd(16): used implicit default value for signal "CAS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/ram16.vhd Line: 16
+Warning (10541): VHDL Signal Declaration warning at ram16.vhd(17): used implicit default value for signal "WE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/ram16.vhd Line: 17
+Warning (10541): VHDL Signal Declaration warning at ram16.vhd(18): used implicit default value for signal "BA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/ram16.vhd Line: 18
+Info (12128): Elaborating entity "net" for hierarchy "net:c3" File: G:/fpga-brain/fpgabrain.vhdl Line: 239
+Warning (10541): VHDL Signal Declaration warning at net.vhd(83): used implicit default value for signal "outs" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/net.vhd Line: 83
+Info (12128): Elaborating entity "VGA" for hierarchy "VGA:c4" File: G:/fpga-brain/fpgabrain.vhdl Line: 257
+Info (12128): Elaborating entity "SYNC" for hierarchy "VGA:c4|SYNC:C1" File: G:/fpga-brain/VGA.vhd Line: 26
 Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(15): used explicit default value for signal "WW" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 15
 Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(16): used explicit default value for signal "HH" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 16
 Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(17): used explicit default value for signal "HFP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 17
@@ -2006,7 +2006,6 @@ Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "DQ[14]" has no driver File: G:/fpga-brain/fpgabrain.vhdl Line: 20
     Warning (13040): bidirectional pin "DQ[15]" has no driver File: G:/fpga-brain/fpgabrain.vhdl Line: 20
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "CLK_OUT" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 17
     Warning (13410): Pin "CKE" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 18
     Warning (13410): Pin "RA[0]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 19
     Warning (13410): Pin "RA[1]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 19
@@ -2026,21 +2025,22 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "CS" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 23
     Warning (13410): Pin "RAS" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 24
     Warning (13410): Pin "CAS" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 25
+    Warning (13410): Pin "WE" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 26
     Warning (13410): Pin "BA[0]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 27
     Warning (13410): Pin "BA[1]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 27
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 103 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 97 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 28 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 57 logic cells
+    Info (21061): Implemented 51 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 131 warnings
     Info: Peak virtual memory: 4832 megabytes
-    Info: Processing ended: Mon Aug 05 02:04:39 2019
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Processing ended: Mon Aug 05 04:04:41 2019
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:21
 
 

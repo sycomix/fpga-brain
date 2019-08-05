@@ -22,10 +22,6 @@
 				{
 					"name" : "VGA_B",
 					"strict" : false
-				},
-				{
-					"name" : "WE",
-					"strict" : false
 				}
 			]
 		}

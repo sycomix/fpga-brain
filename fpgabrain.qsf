@@ -73,7 +73,6 @@ set_global_assignment -name QIP_FILE altfp_addsub.qip
 set_global_assignment -name QIP_FILE altfpcompM.qip
 set_global_assignment -name QIP_FILE ram1port.qip
 set_global_assignment -name VHDL_FILE ram16.vhd
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_location_assignment PIN_52 -to BA[1]
 set_location_assignment PIN_49 -to BA[0]
 set_location_assignment PIN_46 -to CAS
@@ -114,3 +113,4 @@ set_location_assignment PIN_54 -to RA[0]
 set_location_assignment PIN_44 -to RAS
 set_location_assignment PIN_73 -to UMQM
 set_location_assignment PIN_42 -to WE
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
