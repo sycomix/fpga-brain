@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 ENTITY SYNC IS
 PORT(
 	CLK: IN STD_LOGIC;
-	netOuts: IN STD_LOGIC_VECTOR(2 downto 0);
+	netOuts: IN STD_LOGIC_VECTOR(15 downto 0);
 	HSYNC, VSYNC: OUT STD_LOGIC;
 	R, G, B: OUT STD_LOGIC
 );
@@ -31,16 +31,20 @@ BEGIN
 		-- add 240 horiz. FP, BP, SYNC and 66 vert. FP, BP, SYNC
 		-- display a green rectangle in the middle of the screen
 		IF ((HPOS>200 AND HPOS<300) AND (VPOS>300 AND VPOS<400)) THEN
-			IF netOuts = "001" THEN
+			IF netOuts = "0000000000000000" THEN
 				R<='1';
 				G<='0';
 				B<='0';
-			ELSIF netOuts = "010" THEN
+			ELSIF netOuts = "0000000000000001" THEN
 				R<='0';
 				G<='1';
 				B<='0';
-			ELSE
+			ELSIF netOuts = "0000000000000010" THEN
 				R<='0';
+				G<='0';
+				B<='1';
+			ELSE
+				R<='1';
 				G<='0';
 				B<='1';
 			END IF;			

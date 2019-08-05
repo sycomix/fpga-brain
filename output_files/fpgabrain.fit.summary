@@ -1,16 +1,16 @@
-Fitter Status : Failed - Fri Aug 02 02:18:58 2019
+Fitter Status : Successful - Mon Aug 05 02:04:44 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : fpgabrain
 Top-level Entity Name : fpgabrain
 Family : Cyclone IV E
 Device : EP4CE6E22C8
 Timing Models : Final
-Total logic elements : 64,054 / 6,272 ( 1021 % )
-    Total combinational functions : 52,068 / 6,272 ( 830 % )
-    Dedicated logic registers : 44,987 / 6,272 ( 717 % )
-Total registers : 44987
-Total pins : 6 / 92 ( 7 % )
+Total logic elements : 56 / 6,272 ( < 1 % )
+    Total combinational functions : 55 / 6,272 ( < 1 % )
+    Dedicated logic registers : 31 / 6,272 ( < 1 % )
+Total registers : 31
+Total pins : 45 / 92 ( 49 % )
 Total virtual pins : 0
-Total memory bits : 16,130 / 276,480 ( 6 % )
-Embedded Multiplier 9-bit elements : 420 / 30 ( 1400 % )
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
 Total PLLs : 1 / 2 ( 50 % )
