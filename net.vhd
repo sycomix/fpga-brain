@@ -80,7 +80,12 @@ ENTITY net IS
 		wh9_out1 :  IN  STD_LOGIC_VECTOR(31 downto 0);
 		wh9_out2 :  IN  STD_LOGIC_VECTOR(31 downto 0);
 	
-		outs :  OUT  STD_LOGIC_VECTOR(15 downto 0)
+		outs :  OUT  STD_LOGIC_VECTOR(15 downto 0);
+		
+		ram_addr: OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
+		ram_data_in: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		ram_data_out: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		ram_WE: OUT STD_LOGIC
 	);
 END net;
 
