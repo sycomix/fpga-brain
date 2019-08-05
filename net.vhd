@@ -96,7 +96,8 @@ SIGNAL addr_s: INTEGER RANGE 0 TO 4096:=0;
 SIGNAL data_s: INTEGER RANGE 0 TO 4096:=0;
 SIGNAL n_s: INTEGER RANGE 0 TO 13:=0;
 
---SIGNAL WEnet: STD_LOGIC;
+SIGNAL CMD: INTEGER RANGE 0 TO 13:=0;
+-- 0 = INIT RAM VALUES
 	
 BEGIN 
 	--WE;
@@ -104,25 +105,30 @@ BEGIN
 	BEGIN
 		IF (rising_edge(CLK_IN)) THEN
 			--CLK_OUT
-			--WE <= '0';
+			ram_WE <= '0';
 		
-			IF n_s = 2 THEN
-				IF addr_s < 4096 THEN
-					addr_s <= addr_s+1;
-				ELSE
-					addr_s <= 0;
+			IF CMD = 0 THEN -- INIT RAM VALUES
+				IF n_s = 2 THEN
+					IF addr_s < 4096 THEN
+						addr_s <= addr_s+1;
+					ELSE
+						addr_s <= 0;
+						CMD <= 1;
+					END IF;
+					
+					IF data_s < 3 THEN
+						data_s <= data_s+1;
+					ELSE
+						data_s <= 0;
+					END IF;			
 				END IF;
-				
-				IF data_s < 3 THEN
-					data_s <= data_s+1;
-				ELSE
-					data_s <= 0;
-				END IF;			
 			END IF;
 			
-			
 			IF n_s = 2 THEN
-				--WE <= '1';
+				IF CMD = 0 THEN -- INIT RAM VALUES
+					ram_WE <= '1';
+				END IF;
+				
 				n_s <= 0;
 			ELSE
 				n_s <= n_s+1;
@@ -130,8 +136,8 @@ BEGIN
 			
 			
 			
-			--RA <= STD_LOGIC_VECTOR(to_signed(addr_s, RA'length));
-			--DQ <= STD_LOGIC_VECTOR(to_signed(data_s, DQ'length));
+			ram_addr <= STD_LOGIC_VECTOR(to_signed(addr_s, ram_addr'length));
+			ram_data_in <= STD_LOGIC_VECTOR(to_signed(data_s, ram_data_in'length));
 			
 			--FOR I in 0 to 17 LOOP
 		

@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "08/05/2019 04:23:26"
+-- DATE "08/05/2019 05:00:22"
 
 -- 
 -- Device: Altera EP4CE6E22C8 Package TQFP144
@@ -36,22 +36,22 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY 	fpgabrain IS
     PORT (
 	CLK : IN std_logic;
-	VGA_HS : OUT std_logic;
-	VGA_VS : OUT std_logic;
-	VGA_R : OUT std_logic;
-	VGA_G : OUT std_logic;
-	VGA_B : OUT std_logic;
-	CLK_OUT : OUT std_logic;
-	CKE : OUT std_logic;
-	RA : OUT std_logic_vector(12 DOWNTO 0);
-	DQ : OUT std_logic_vector(15 DOWNTO 0);
-	UMQM : OUT std_logic;
-	LDQM : OUT std_logic;
-	CS : OUT std_logic;
-	RAS : OUT std_logic;
-	CAS : OUT std_logic;
-	WE : OUT std_logic;
-	BA : OUT std_logic_vector(1 DOWNTO 0)
+	VGA_HS : BUFFER std_logic;
+	VGA_VS : BUFFER std_logic;
+	VGA_R : BUFFER std_logic;
+	VGA_G : BUFFER std_logic;
+	VGA_B : BUFFER std_logic;
+	CLK_OUT : BUFFER std_logic;
+	CKE : BUFFER std_logic;
+	RA : BUFFER std_logic_vector(12 DOWNTO 0);
+	DQ : BUFFER std_logic_vector(15 DOWNTO 0);
+	UMQM : BUFFER std_logic;
+	LDQM : BUFFER std_logic;
+	CS : BUFFER std_logic;
+	RAS : BUFFER std_logic;
+	CAS : BUFFER std_logic;
+	WE : BUFFER std_logic;
+	BA : BUFFER std_logic_vector(1 DOWNTO 0)
 	);
 END fpgabrain;
 
