@@ -89,7 +89,7 @@ ENTITY net IS
 		ram_data_save: OUT STD_LOGIC_VECTOR(15 DOWNTO 0):="0000000000000000";
 		ram_data_save_ready: IN STD_LOGIC;
 		
-		ram_data_read_do: OUT STD_LOGIC;
+		ram_data_read_do: OUT STD_LOGIC:='0';
 		ram_data_read_ready: IN STD_LOGIC;
 		ram_data_read: IN STD_LOGIC_VECTOR(15 DOWNTO 0)
 	);
