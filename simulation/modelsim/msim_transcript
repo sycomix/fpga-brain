@@ -10,19 +10,31 @@
 # Copying C:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+G:/fpga-brain/db {G:/fpga-brain/db/pll_altpll.v}
+# vlog -vlog01compat -work work +incdir+G:/fpga-brain/db {G:/fpga-brain/db/pll_altpll1.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:18:20 on Jul 28,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+G:/fpga-brain/db" G:/fpga-brain/db/pll_altpll.v 
-# -- Compiling module pll_altpll
+# Start time: 01:07:40 on Aug 07,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+G:/fpga-brain/db" G:/fpga-brain/db/pll_altpll1.v 
+# -- Compiling module pll_altpll1
 # 
 # Top level modules:
-# 	pll_altpll
-# End time: 18:18:20 on Jul 28,2019, Elapsed time: 0:00:00
+# 	pll_altpll1
+# End time: 01:07:40 on Aug 07,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {G:/fpga-brain/fpgabrain.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:07:40 on Aug 07,2019
+# vcom -reportprogress 300 -93 -work work G:/fpga-brain/fpgabrain.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity fpgabrain
+# -- Compiling architecture bhv of fpgabrain
+# End time: 01:07:40 on Aug 07,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {G:/fpga-brain/VGA.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:18:20 on Jul 28,2019
+# Start time: 01:07:40 on Aug 07,2019
 # vcom -reportprogress 300 -93 -work work G:/fpga-brain/VGA.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -30,11 +42,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity VGA
 # -- Compiling architecture MAIN of VGA
-# End time: 18:18:20 on Jul 28,2019, Elapsed time: 0:00:00
+# End time: 01:07:40 on Aug 07,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {G:/fpga-brain/SYNC.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:18:20 on Jul 28,2019
+# Start time: 01:07:40 on Aug 07,2019
 # vcom -reportprogress 300 -93 -work work G:/fpga-brain/SYNC.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -42,37 +54,86 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity SYNC
 # -- Compiling architecture MAIN of SYNC
-# End time: 18:18:20 on Jul 28,2019, Elapsed time: 0:00:00
+# End time: 01:07:41 on Aug 07,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {G:/fpga-brain/pll.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:18:20 on Jul 28,2019
+# Start time: 01:07:41 on Aug 07,2019
 # vcom -reportprogress 300 -93 -work work G:/fpga-brain/pll.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity pll
 # -- Compiling architecture SYN of pll
-# End time: 18:18:20 on Jul 28,2019, Elapsed time: 0:00:00
+# End time: 01:07:41 on Aug 07,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {G:/fpga-brain/net.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:07:41 on Aug 07,2019
+# vcom -reportprogress 300 -93 -work work G:/fpga-brain/net.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity net
+# -- Compiling architecture bhv of net
+# End time: 01:07:41 on Aug 07,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {G:/fpga-brain/ram16.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:07:41 on Aug 07,2019
+# vcom -reportprogress 300 -93 -work work G:/fpga-brain/ram16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ram16
+# -- Compiling architecture bhv of ram16
+# End time: 01:07:41 on Aug 07,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-vsim rtl_work.vga
-# vsim rtl_work.vga 
-# Start time: 18:18:35 on Jul 28,2019
+vsim -gui -l msim_transcript work.fpgabrain -t ns
+# vsim -gui -l msim_transcript work.fpgabrain -t ns 
+# Start time: 01:07:58 on Aug 07,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading rtl_work.vga(main)
-# Loading rtl_work.sync(main)
-add wave -position insertpoint  \
-sim:/vga/CLOCK_50 \
-sim:/vga/VGA_HS \
-sim:/vga/VGA_VS \
-sim:/vga/VGA_R \
-sim:/vga/VGA_G \
-sim:/vga/VGA_B
+# Loading work.fpgabrain(bhv)
+# Loading work.pll(syn)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.mf_pllpack(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altpll(behavior)
+# Loading altera_mf.mf_cycloneiii_pll(vital_pll)
+# ** Warning: (vsim-3479) Time unit 'ps' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Instance: /fpgabrain/c1/altpll_component/CYCLONEIII_ALTPLL/M5
+# Loading altera_mf.mf_cda_mn_cntr(behave)
+# Loading altera_mf.mf_cda_scale_cntr(behave)
+# Loading work.ram16(bhv)
+# Loading work.net(bhv)
+# Loading work.vga(main)
+# Loading work.sync(main)
+# ** Warning: Design size of 13616 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Warning: (vsim-8683) Uninitialized out port /fpgabrain/c2/DQ(15 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /fpgabrain/c2/UMQM has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /fpgabrain/c2/LDQM has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /fpgabrain/c2/ram_data_read(15 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
 run
-force -freeze sim:/vga/CLOCK_50 1 0, 0 {50 ps} -r 100
-# End time: 18:24:29 on Jul 28,2019, Elapsed time: 0:05:54
-# Errors: 0, Warnings: 0
+restart
+# ** Warning: (vsim-8683) Uninitialized out port /fpgabrain/c2/DQ(15 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /fpgabrain/c2/UMQM has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /fpgabrain/c2/LDQM has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /fpgabrain/c2/ram_data_read(15 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUU) to the signal network.
+# End time: 01:09:40 on Aug 07,2019, Elapsed time: 0:01:42
+# Errors: 0, Warnings: 10

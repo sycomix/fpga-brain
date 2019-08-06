@@ -88,6 +88,7 @@ BEGIN
 					n_s <= n_s+1;
 				ELSE
 					ram_data_save_ready <= '1';
+					ram_data_read_ready <= '1';
 				
 					CMD <= 2;
 					n_s <= 0;
@@ -96,6 +97,7 @@ BEGIN
 				IF n_s < 4 THEN
 					n_s <= n_s+1;
 				ELSE
+					ram_data_save_ready <= '1';
 					ram_data_read_ready <= '1';
 				
 					CMD <= 2;
