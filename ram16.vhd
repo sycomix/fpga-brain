@@ -58,8 +58,10 @@ BEGIN
 				END IF;				
 				
 			ELSIF s_ram_initialized = '1' THEN
-				IF ram_data_save > "0000000000000000" THEN
-				
+				ram_data_save_ready <= '1'; -- ready to save
+				IF ram_data_save > "0000000000000000" THEN -- do save data
+					ram_data_save_ready <= '0';
+					--
 				END IF;
 			END IF;
 			

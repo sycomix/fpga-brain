@@ -86,7 +86,7 @@ ENTITY net IS
 		ram_row_addr: OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
 		ram_col_addr: OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
 		
-		ram_data_save: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		ram_data_save: OUT STD_LOGIC_VECTOR(15 DOWNTO 0):="0000000000000000";
 		ram_data_save_ready: IN STD_LOGIC;
 		
 		ram_data_read_do: OUT STD_LOGIC;
@@ -98,7 +98,8 @@ END net;
 ARCHITECTURE bhv OF net IS 
 
 
-SIGNAL addr_s: INTEGER RANGE 0 TO 64:=0;
+SIGNAL s_addrRow: INTEGER RANGE 0 TO 2047:=0;
+SIGNAL s_addrCol: INTEGER RANGE 0 TO 255:=0;
 SIGNAL data_s: INTEGER RANGE 0 TO 3:=0;
 
 SIGNAL CMD: INTEGER RANGE 0 TO 13:=0; -- 0 = INIT RAM VALUES
@@ -112,36 +113,39 @@ BEGIN
 			IF ram_initialized = '1' THEN
 				IF CMD = 0 THEN -- INIT RAM VALUES
 					IF ram_data_save_ready = '1' THEN
-						IF addr_s < 64 THEN						
-							ram_row_addr <= STD_LOGIC_VECTOR(to_signed(0, ram_row_addr'length));
-							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(addr_s, ram_col_addr'length));
+						IF s_addrRow < 2048 THEN						
+							ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
+							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_col_addr'length));
 							
-							addr_s <= addr_s+1;
+							s_addrRow <= s_addrRow+1;
 							
 							
 							IF data_s < 3 THEN
 								data_s <= data_s+1;
 							ELSE
-								data_s <= 0;
+								data_s <= 1;
 							END IF;	
 							
 							ram_data_save <= STD_LOGIC_VECTOR(to_signed(data_s, ram_data_save'length));
 						ELSE
-							addr_s <= 0;
+							s_addrRow <= 0;
+							
+							ram_data_save <= STD_LOGIC_VECTOR(to_signed(0, ram_data_save'length));
+							
 							CMD <= 1;
 						END IF;
 					END IF;
 				ELSIF CMD = 1 THEN
 					IF ram_data_read_ready = '1' THEN
-						IF addr_s < 64 THEN
+						IF s_addrRow < 2048 THEN
 							ram_row_addr <= STD_LOGIC_VECTOR(to_signed(0, ram_row_addr'length));
-							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(addr_s, ram_col_addr'length));
+							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_col_addr'length));
 							
-							addr_s <= addr_s+1;
+							s_addrRow <= s_addrRow+1;
 							
 							ram_data_read_do <= '1';
 						ELSE
-							addr_s <= 0;
+							s_addrRow <= 0;
 							CMD <= 1;
 						END IF;		
 					END IF;
