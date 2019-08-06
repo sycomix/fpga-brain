@@ -129,6 +129,7 @@ COMPONENT net
 		 
 		 outs : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 		
+		ram_initialized: IN STD_LOGIC;
 		ram_row_addr: OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
 		ram_col_addr: OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
 		
@@ -157,6 +158,7 @@ COMPONENT ram16 IS
 		BA: OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 		
 		
+		ram_initialized: OUT STD_LOGIC;
 		ram_row_addr: IN STD_LOGIC_VECTOR(12 DOWNTO 0);
 		ram_col_addr: IN STD_LOGIC_VECTOR(12 DOWNTO 0);
 		
@@ -260,6 +262,7 @@ SIGNAL	ram_WE: STD_LOGIC;
 
 
 
+SIGNAL	ram_initialized: STD_LOGIC;
 SIGNAL	ram_row_addr: STD_LOGIC_VECTOR(12 DOWNTO 0);
 SIGNAL	ram_col_addr: STD_LOGIC_VECTOR(12 DOWNTO 0);
 		
@@ -275,7 +278,7 @@ c1 : pll PORT MAP(areset, CLK, CLK_VGA, CLK_RAMM, locked);
 
 CLK_OUT <= CLK_RAMM;
 
-c2 : ram16 PORT MAP(CLK_RAMM, CKE, RA, DQ, UMQM, LDQM, CS, RAS, CAS, WE, BA, ram_row_addr, ram_col_addr, ram_data_save, ram_data_save_ready, ram_data_read_do, ram_data_read_ready, ram_data_read);
+c2 : ram16 PORT MAP(CLK_RAMM, CKE, RA, DQ, UMQM, LDQM, CS, RAS, CAS, WE, BA, ram_initialized, ram_row_addr, ram_col_addr, ram_data_save, ram_data_save_ready, ram_data_read_do, ram_data_read_ready, ram_data_read);
 
 c3 : net PORT MAP(CLK_RAMM,
 				i0, i1, i2, i3, i4,  wi0_h0, wi0_h1, wi0_h2, wi0_h3, wi0_h4,
@@ -294,7 +297,7 @@ c3 : net PORT MAP(CLK_RAMM,
 				wh8_out0, wh8_out1, wh8_out2,
 				wh9_out0, wh9_out1, wh9_out2,
 				outs,
-				ram_row_addr, ram_col_addr, ram_data_save, ram_data_save_ready, ram_data_read_do, ram_data_read_ready, ram_data_read);
+				ram_initialized, ram_row_addr, ram_col_addr, ram_data_save, ram_data_save_ready, ram_data_read_do, ram_data_read_ready, ram_data_read);
 				
 c4 : vga PORT MAP(CLK_VGA, outs, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B);
 

@@ -17,6 +17,7 @@ ENTITY ram16 IS
 		WE: OUT STD_LOGIC;
 		BA: OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 		
+		ram_initialized: OUT STD_LOGIC := '0';
 		ram_row_addr: IN STD_LOGIC_VECTOR(12 DOWNTO 0);
 		ram_col_addr: IN STD_LOGIC_VECTOR(12 DOWNTO 0);
 		
@@ -29,15 +30,40 @@ ENTITY ram16 IS
 	);
 END ram16;
 
-ARCHITECTURE bhv OF ram16 IS 
 
-	
+
+ARCHITECTURE bhv OF ram16 IS 
+SIGNAL s_ram_initialized: STD_LOGIC := '0';
+SIGNAL n_s: INTEGER RANGE 0 TO 64:=0;
 BEGIN
+
 	PROCESS(CLK_IN)
 	BEGIN
 		IF (rising_edge(CLK_IN)) THEN
-		
+			IF s_ram_initialized = '0' THEN
+				CKE <= '1';
+				CS <= '0';
+				RAS <= '0';
+				CAS <= '0';
+				WE <= '0';
+				RA <= "0000000101001";
+				BA <= "00";
+				
+				IF n_s < 2 THEN
+					n_s <= n_s+1;
+				ELSE
+					ram_initialized <= '1';
+					s_ram_initialized <= '1';
+					n_s <= 0;
+				END IF;				
+				
+			ELSIF s_ram_initialized = '1' THEN
+				IF ram_data_save > "0000000000000000" THEN
+				
+				END IF;
+			END IF;
+			
 		END IF;
 	END PROCESS;
- 
+
 END ARCHITECTURE bhv;
