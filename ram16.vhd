@@ -75,7 +75,7 @@ BEGIN
 					CMD <= 2;
 					n_s <= 0;
 				END IF;		
-			ELSIF CMD = 2 THEN	-- REFRESH 63ns tRC (RAS Cycle Time) * 8 refresh cycles ====> 7.5ns/cycle => 8.4 => 9 cycles * 8 refresh cycles = 56 cycles
+			ELSIF CMD = 2 THEN	--  REFRESH 63ns tRC (RAS Cycle Time) * 8 refresh cycles ====> 7.5ns/cycle => 63/7.5= 8.4cycles => 9 cycles * 8 refresh cycles = 56 cycles
 				IF n_s < 56 THEN
 					CKE <= '1';
 					CS <= '0';
@@ -112,7 +112,7 @@ BEGIN
 					CMD <= 4;
 					n_s <= 0;
 				END IF;		
-			ELSIF CMD = 4 THEN	--  REFRESH 63ns tRC (RAS Cycle Time) * 8 refresh cycles ====> 7.5ns/cycle => 8.4 => 9 cycles * 8 refresh cycles = 56 cycles
+			ELSIF CMD = 4 THEN	--  REFRESH 63ns tRC (RAS Cycle Time) * 8 refresh cycles ====> 7.5ns/cycle => 63/7.5= 8.4cycles => 9 cycles * 8 refresh cycles = 56 cycles
 				IF n_s < 56 THEN
 					CKE <= '1';
 					CS <= '0';
@@ -127,23 +127,39 @@ BEGIN
 					CMD <= 5;
 					n_s <= 0;
 				END IF;				
-			ELSIF CMD = 5 THEN -- IDLE
-				n_s <= 0;
-				
-				ram_data_save_ready <= '1'; -- ready to save
-				ram_data_read_ready <= '1'; -- ready to read
-				
-				IF ram_data_save > "0000000000000000" THEN -- do save data
-					ram_data_save_ready <= '0';
-					ram_data_read_ready <= '0';
+			ELSIF CMD = 5 THEN -- IDLE		
+				ram_data_save_ready <= '0';
+				ram_data_read_ready <= '0';
+							
+				IF ram_data_save > "0000000000000000" OR ram_data_read_do = '1' THEN				
+					IF ram_data_save > "0000000000000000" THEN -- do save data						
+						-- ACTIVATE
+						
+						CMD <= 6;
+					END IF;		
+					IF ram_data_read_do = '1' THEN -- do read data						
+						-- ACTIVATE
+						
+						CMD <= 7;
+					END IF;	
+				ELSE
+					IF n_s < 9 THEN --  REFRESH 63ns tRC (RAS Cycle Time) * 1 refresh cycles ====> 7.5ns/cycle => 63/7.5= 8.4cycles => 9 cycles * 1 refresh cycles = 9 cycles
+						CKE <= '1';
+						CS <= '0';
+						RAS <= '0';
+						CAS <= '0';
+						WE <= '1';
+						RA <= "0000000000000";
+						BA <= "00";
 					
-					CMD <= 6;
-				END IF;		
-				IF ram_data_read_do > '1' THEN -- do save data
-					ram_data_save_ready <= '0';
-					ram_data_read_ready <= '0';
+						n_s <= n_s+1;
+					ELSE				
+						ram_data_save_ready <= '1'; -- ready to save
+						ram_data_read_ready <= '1'; -- ready to read
 					
-					CMD <= 7;
+						CMD <= 5;
+						n_s <= 0;
+					END IF;
 				END IF;			
 			ELSIF CMD = 6 THEN -- SAVE DATA
 				IF n_s < 4 THEN
