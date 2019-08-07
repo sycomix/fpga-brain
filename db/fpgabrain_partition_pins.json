@@ -32,7 +32,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "RA[3]",
+					"name" : "RA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RA[2]",
 					"strict" : false
 				},
 				{
@@ -41,6 +45,14 @@
 				},
 				{
 					"name" : "RA[10]",
+					"strict" : false
+				},
+				{
+					"name" : "UMQM",
+					"strict" : false
+				},
+				{
+					"name" : "LDQM",
 					"strict" : false
 				},
 				{
