@@ -22,6 +22,38 @@
 				{
 					"name" : "VGA_B",
 					"strict" : false
+				},
+				{
+					"name" : "CKE",
+					"strict" : false
+				},
+				{
+					"name" : "RA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "RA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "RA[10]",
+					"strict" : false
+				},
+				{
+					"name" : "RAS",
+					"strict" : false
+				},
+				{
+					"name" : "CAS",
+					"strict" : false
+				},
+				{
+					"name" : "WE",
+					"strict" : false
 				}
 			]
 		}
