@@ -69,6 +69,8 @@ BEGIN
 					WE <= '0';
 					RA <= "0010000000000"; -- RA[10] := '1' Precharge all banks.
 					BA <= "00";
+					UMQM <= '0';
+					LDQM <= '0';
 				
 					n_s <= n_s+1;
 				ELSE					
@@ -84,6 +86,8 @@ BEGIN
 					WE <= '1';
 					RA <= "0000000000000";
 					BA <= "00";
+					UMQM <= '0';
+					LDQM <= '0';
 				
 					n_s <= n_s+1;
 				ELSE					
@@ -106,6 +110,8 @@ BEGIN
 					WE <= '0';
 					RA <= "0"&"00"&"0"&"00"&"010"&"0"&"111";
 					BA <= "00";
+					UMQM <= '0';
+					LDQM <= '0';
 				
 					n_s <= n_s+1;
 				ELSE					
@@ -121,6 +127,8 @@ BEGIN
 					WE <= '1';
 					RA <= "0000000000000";
 					BA <= "00";
+					UMQM <= '0';
+					LDQM <= '0';
 				
 					n_s <= n_s+1;
 				ELSE					
@@ -134,13 +142,43 @@ BEGIN
 				IF ram_data_save > "0000000000000000" OR ram_data_read_do = '1' THEN				
 					IF ram_data_save > "0000000000000000" THEN -- do save data						
 						-- ACTIVATE
+						IF n_s < 2 THEN --  2 cycles
+							CKE <= '1';
+							CS <= '0';
+							RAS <= '0';
+							CAS <= '1';
+							WE <= '1';
+							RA <= "0000000000000";
+							DQ <= ram_data_save;
+							BA <= "00";
+							UMQM <= '0';
+							LDQM <= '0';
 						
-						CMD <= 6;
+							n_s <= n_s+1;
+						ELSE
+							CMD <= 6; -- to WRITE
+							n_s <= 0;
+						END IF;
 					END IF;		
 					IF ram_data_read_do = '1' THEN -- do read data						
 						-- ACTIVATE
+						IF n_s < 2 THEN --  2 cycles
+							CKE <= '1';
+							CS <= '0';
+							RAS <= '0';
+							CAS <= '1';
+							WE <= '1';
+							RA <= "0000000000000";
+							DQ <= ram_data_save;
+							BA <= "00";
+							UMQM <= '0';
+							LDQM <= '0';
 						
-						CMD <= 7;
+							n_s <= n_s+1;
+						ELSE
+							CMD <= 7; -- to READ
+							n_s <= 0;
+						END IF;
 					END IF;	
 				ELSE
 					IF n_s < 9 THEN --  REFRESH 63ns tRC (RAS Cycle Time) * 1 refresh cycles ====> 7.5ns/cycle => 63/7.5= 8.4cycles => 9 cycles * 1 refresh cycles = 9 cycles
@@ -151,6 +189,8 @@ BEGIN
 						WE <= '1';
 						RA <= "0000000000000";
 						BA <= "00";
+						UMQM <= '0';
+						LDQM <= '0';
 					
 						n_s <= n_s+1;
 					ELSE				
@@ -163,6 +203,17 @@ BEGIN
 				END IF;			
 			ELSIF CMD = 6 THEN -- SAVE DATA
 				IF n_s < 4 THEN
+					CKE <= '1';
+					CS <= '0';
+					RAS <= '1';
+					CAS <= '0';
+					WE <= '0';
+					RA <= ram_row_addr;
+					DQ <= ram_data_save;
+					BA <= "00";
+					UMQM <= '0';
+					LDQM <= '0';
+							
 					n_s <= n_s+1;
 				ELSE
 					ram_data_save_ready <= '1';
@@ -173,6 +224,17 @@ BEGIN
 				END IF;
 			ELSIF CMD = 7 THEN -- READ DATA
 				IF n_s < 4 THEN
+					CKE <= '1';
+					CS <= '0';
+					RAS <= '1';
+					CAS <= '0';
+					WE <= '1';
+					RA <= ram_row_addr;
+					DQ <= ram_data_save; -- TODO
+					BA <= "00";
+					UMQM <= '0';
+					LDQM <= '0';
+					
 					n_s <= n_s+1;
 				ELSE
 					ram_data_save_ready <= '1';
