@@ -12,17 +12,17 @@
 # 
 # vlog -vlog01compat -work work +incdir+G:/fpga-brain/db {G:/fpga-brain/db/pll_altpll1.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:17:24 on Aug 10,2019
+# Start time: 19:51:24 on Aug 10,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+G:/fpga-brain/db" G:/fpga-brain/db/pll_altpll1.v 
 # -- Compiling module pll_altpll1
 # 
 # Top level modules:
 # 	pll_altpll1
-# End time: 12:17:24 on Aug 10,2019, Elapsed time: 0:00:00
+# End time: 19:51:24 on Aug 10,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {G:/fpga-brain/fpgabrain.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:17:24 on Aug 10,2019
+# Start time: 19:51:24 on Aug 10,2019
 # vcom -reportprogress 300 -93 -work work G:/fpga-brain/fpgabrain.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -30,11 +30,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity fpgabrain
 # -- Compiling architecture bhv of fpgabrain
-# End time: 12:17:24 on Aug 10,2019, Elapsed time: 0:00:00
+# End time: 19:51:24 on Aug 10,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {G:/fpga-brain/VGA.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:17:24 on Aug 10,2019
+# Start time: 19:51:24 on Aug 10,2019
 # vcom -reportprogress 300 -93 -work work G:/fpga-brain/VGA.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -42,11 +42,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity VGA
 # -- Compiling architecture MAIN of VGA
-# End time: 12:17:24 on Aug 10,2019, Elapsed time: 0:00:00
+# End time: 19:51:24 on Aug 10,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {G:/fpga-brain/SYNC.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:17:24 on Aug 10,2019
+# Start time: 19:51:24 on Aug 10,2019
 # vcom -reportprogress 300 -93 -work work G:/fpga-brain/SYNC.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -54,22 +54,22 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity SYNC
 # -- Compiling architecture MAIN of SYNC
-# End time: 12:17:24 on Aug 10,2019, Elapsed time: 0:00:00
+# End time: 19:51:24 on Aug 10,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {G:/fpga-brain/pll.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:17:24 on Aug 10,2019
+# Start time: 19:51:24 on Aug 10,2019
 # vcom -reportprogress 300 -93 -work work G:/fpga-brain/pll.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity pll
 # -- Compiling architecture SYN of pll
-# End time: 12:17:24 on Aug 10,2019, Elapsed time: 0:00:00
+# End time: 19:51:24 on Aug 10,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {G:/fpga-brain/net.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:17:24 on Aug 10,2019
+# Start time: 19:51:24 on Aug 10,2019
 # vcom -reportprogress 300 -93 -work work G:/fpga-brain/net.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -77,11 +77,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity net
 # -- Compiling architecture bhv of net
-# End time: 12:17:25 on Aug 10,2019, Elapsed time: 0:00:01
+# End time: 19:51:24 on Aug 10,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {G:/fpga-brain/ram16.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:17:25 on Aug 10,2019
+# Start time: 19:51:24 on Aug 10,2019
 # vcom -reportprogress 300 -93 -work work G:/fpga-brain/ram16.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -89,6 +89,37 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ram16
 # -- Compiling architecture bhv of ram16
-# End time: 12:17:25 on Aug 10,2019, Elapsed time: 0:00:00
+# End time: 19:51:24 on Aug 10,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
+vsim -gui -l msim_transcript work.fpgabrain -t ns
+# vsim -gui -l msim_transcript work.fpgabrain -t ns 
+# Start time: 19:51:32 on Aug 10,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.fpgabrain(bhv)
+# Loading work.pll(syn)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.mf_pllpack(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altpll(behavior)
+# Loading altera_mf.mf_cycloneiii_pll(vital_pll)
+# ** Warning: (vsim-3479) Time unit 'ps' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Instance: /fpgabrain/c1/altpll_component/CYCLONEIII_ALTPLL/M5
+# Loading altera_mf.mf_cda_mn_cntr(behave)
+# Loading altera_mf.mf_cda_scale_cntr(behave)
+# Loading work.ram16(bhv)
+# Loading work.net(bhv)
+# Loading work.vga(main)
+# Loading work.sync(main)
+# ** Warning: Design size of 13784 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+add wave -position insertpoint sim:/fpgabrain/*
+force -freeze sim:/fpgabrain/CLK_RAMM 1 0, 0 {3 ns} -r 7
+run
+run
+# End time: 19:54:27 on Aug 10,2019, Elapsed time: 0:02:55
+# Errors: 0, Warnings: 2

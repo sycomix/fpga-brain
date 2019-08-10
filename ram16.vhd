@@ -63,12 +63,14 @@ BEGIN
 					LDQM <= '1';
 					
 					n_s <= n_s+1;	
-				ELSIF n_s < 28600 THEN
+				--ELSIF n_s < 28600 THEN
+				ELSIF n_s < 10 THEN
 					UMQM <= '0';
 					LDQM <= '0';		
 					
 					n_s <= n_s+1;	
-				ELSIF n_s = 28600 THEN
+				--ELSIF n_s = 28600 THEN
+				ELSIF n_s = 10 THEN
 					-- PRECHARGE
 					RAS <= '0';
 					CAS <= '1';
@@ -164,48 +166,58 @@ BEGIN
 					n_s <= 0;
 				END IF;			
 			ELSIF CMD = 5 THEN -- BRANCH CYCLE (cycle 8)							
-				IF ram_data_save_do = '1' OR ram_data_read_do = '1' THEN		
-					ram_data_save_ready <= '0';
-					ram_data_read_ready <= '0';
-				
-					RAS <= '0';
-					CAS <= '1';
-					WE <= '1';
-					
-					RA <= ram_row_addr;
-					DQ <= ram_data_save;
-					BA <= "00";
-					UMQM <= '0';
-					LDQM <= '0';
-				
-					CMD <= 6; -- to ACTIVE
-					n_s <= 0;
-				ELSE
-					IF n_s = 0 THEN	-- REFRESH
-						ram_data_save_ready <= '0';
-						ram_data_read_ready <= '0';
-				
+				IF ram_data_save_do = '1' OR ram_data_read_do = '1' THEN
+					--IF ram_data_save_ready = '1' OR ram_data_read_ready = '1' THEN	
+						-- ACTIVE
 						RAS <= '0';
-						CAS <= '0';
-						WE <= '1';
-					
-						n_s <= n_s+1;
-					ELSIF n_s < 7 THEN
-						ram_data_save_ready <= '0';
-						ram_data_read_ready <= '0';
-				
-						RAS <= '1';
 						CAS <= '1';
 						WE <= '1';
+						
+						RA <= ram_row_addr;
+						DQ <= ram_data_save;
+						BA <= "00";
+						UMQM <= '0';
+						LDQM <= '0';
+						
+						ram_data_save_ready <= '0';
+						ram_data_read_ready <= '0';
 					
-						n_s <= n_s+1;					
-					ELSIF n_s = 7 THEN  -- now is cycle 7. next will be BRANCH CYCLE again (cycle 8) to prompt if ram_data_save_do/ram_data_read_do exists again and the tRC can be satisfied in case of R/W=1 and it must be PRESENTED on cycle 9)
-						ram_data_save_ready <= '1'; -- ready to save
-						ram_data_read_ready <= '1'; -- ready to read
-					
-						CMD <= 5; -- to BRANCH CYCLE
+						CMD <= 6; -- to ACTIVE
 						n_s <= 0;
-					END IF;
+					--END IF;		
+				END IF;			
+				IF ram_data_save_do = '0' AND ram_data_read_do = '0' THEN
+					--IF ram_data_save_ready = '0' OR ram_data_read_ready = '0' THEN	
+						IF n_s = 0 THEN
+							-- REFRESH				
+							RAS <= '0';
+							CAS <= '0';
+							WE <= '1';
+							
+							ram_data_save_ready <= '0';
+							ram_data_read_ready <= '0';
+						
+							n_s <= n_s+1;
+						ELSIF n_s < 7 THEN 	-- REFRESH IS PRESENTED.
+							-- NOP
+							RAS <= '1';
+							CAS <= '1';
+							WE <= '1';
+							
+							ram_data_save_ready <= '0';
+							ram_data_read_ready <= '0';
+						
+							n_s <= n_s+1;					
+						ELSIF n_s = 7 THEN  -- now is cycle 7. next will be BRANCH CYCLE again (cycle 8) to prompt if ram_data_save_do/ram_data_read_do exists again and the tRC can be satisfied in case of R/W=1 and it must be PRESENTED on cycle 9)
+							ram_data_save_ready <= '1'; -- ready to save
+							ram_data_read_ready <= '1'; -- ready to read
+						
+							CMD <= 5; -- to BRANCH CYCLE
+							n_s <= n_s+1;
+						ELSIF n_s = 8 THEN
+							n_s <= 0;
+						END IF;
+					--END IF;
 				END IF;			
 			ELSIF CMD = 6 THEN
 				IF n_s = 0 THEN -- ACTIVE is PRESENTED
