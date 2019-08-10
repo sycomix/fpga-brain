@@ -9,7 +9,7 @@ ENTITY ram16 IS
 		CLK_IN: IN STD_LOGIC;
 		CKE: OUT STD_LOGIC:='0';
 		RA: OUT STD_LOGIC_VECTOR(12 DOWNTO 0):="0000000000000";		
-		DQ: OUT STD_LOGIC_VECTOR(15 DOWNTO 0):="0000000000000000";
+		DQ: INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 		UMQM: OUT STD_LOGIC:='0';
 		LDQM: OUT STD_LOGIC:='0';
 		CS: OUT STD_LOGIC:='0';
@@ -49,7 +49,8 @@ BEGIN
 			CS <= '0';
 			
 			IF CMD = 0 THEN -- POWER (200us) AND NOP (NO OPERATION COMMAND)
-				IF n_s < 28600 THEN
+				IF n_s = 0 THEN
+					-- NOP
 					RAS <= '1';
 					CAS <= '1';
 					WE <= '1';
@@ -57,20 +58,23 @@ BEGIN
 					RA <= "0000000000000";
 					
 					BA <= "00";
+					
 					UMQM <= '1';
 					LDQM <= '1';
 					
-					n_s <= n_s+1;
+					n_s <= n_s+1;	
+				ELSIF n_s < 28600 THEN
+					UMQM <= '0';
+					LDQM <= '0';		
+					
+					n_s <= n_s+1;	
 				ELSIF n_s = 28600 THEN
+					-- PRECHARGE
 					RAS <= '0';
 					CAS <= '1';
 					WE <= '0';
 					
 					RA <= "0010000000000"; -- RA[10] := '1' Precharge all banks.
-					
-					BA <= "00";
-					UMQM <= '0';
-					LDQM <= '0';
 					
 					CMD <= 1; -- to PRECHARGE
 					n_s <= 0;
@@ -88,6 +92,7 @@ BEGIN
 				ELSIF n_s < 2 THEN
 					n_s <= n_s+1;
 				ELSIF n_s = 2 THEN
+					-- REFRESH
 					RAS <= '0';
 					CAS <= '0';
 					WE <= '1';
@@ -133,6 +138,7 @@ BEGIN
 				ELSIF n_s < 3 THEN
 					n_s <= n_s+1;
 				ELSIF n_s = 3 THEN
+					-- REFRESH
 					RAS <= '0';
 					CAS <= '0';
 					WE <= '1';
@@ -154,6 +160,7 @@ BEGIN
 					n_s <= n_s+1;
 				ELSIF n_s = 56 THEN
 					CMD <= 5; -- to BRANCH CYCLE
+					ram_initialized <= '1';
 					n_s <= 0;
 				END IF;			
 			ELSIF CMD = 5 THEN -- BRANCH CYCLE (cycle 8)							
@@ -164,6 +171,7 @@ BEGIN
 					RAS <= '0';
 					CAS <= '1';
 					WE <= '1';
+					
 					RA <= ram_row_addr;
 					DQ <= ram_data_save;
 					BA <= "00";
@@ -212,10 +220,11 @@ BEGIN
 				ELSIF n_s < 2 THEN							
 					n_s <= n_s+1;
 				ELSIF n_s = 2 THEN
+					-- W/R
 					RAS <= '1';
 					CAS <= '0';							
 					IF ram_data_save_do = '1' THEN 
-						WE <= '0';		
+						WE <= '0'; -- WRITE
 					
 						DQ <= ram_data_save;
 						
@@ -224,7 +233,7 @@ BEGIN
 						CMD <= 7; -- to WRITE
 					END IF;		
 					IF ram_data_read_do = '1' THEN 
-						WE <= '1';	
+						WE <= '1'; -- READ
 						
 						CMD <= 8; -- to READ
 					END IF;
@@ -244,11 +253,12 @@ BEGIN
 				ELSIF n_s < 2 THEN							
 					n_s <= n_s+1;
 				ELSIF n_s = 2 THEN
+					-- PRECHARGE
 					RAS <= '0';
 					CAS <= '1';	
 					WE <= '0';		
 						
-					RA(10) <= '1'; -- RA[10] := '1' Precharge all banks.
+					--RA(10) <= '1'; -- RA[10] := '1' Precharge all banks.
 					
 					CMD <= 9; -- to PRECHARGE
 					n_s <= 0;
@@ -264,11 +274,13 @@ BEGIN
 				ELSIF n_s < 2 THEN							
 					n_s <= n_s+1;
 				ELSIF n_s = 2 THEN
+					-- PRECHARGE
 					RAS <= '0';
 					CAS <= '1';			
 					WE <= '0';
 					
-					RA(10) <= '1'; -- RA[10] := '1' Precharge all banks.
+					--RA(10) <= '1'; -- RA[10] := '1' Precharge all banks.
+					ram_data_read <= DQ;
 					
 					CMD <= 9; -- to PRECHARGE
 					n_s <= 0;

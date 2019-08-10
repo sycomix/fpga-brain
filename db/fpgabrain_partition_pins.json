@@ -40,7 +40,27 @@
 					"strict" : false
 				},
 				{
+					"name" : "RA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "RA[4]",
+					"strict" : false
+				},
+				{
 					"name" : "RA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "RA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "RA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "RA[8]",
 					"strict" : false
 				},
 				{
@@ -65,6 +85,14 @@
 				},
 				{
 					"name" : "WE",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[1]",
 					"strict" : false
 				}
 			]

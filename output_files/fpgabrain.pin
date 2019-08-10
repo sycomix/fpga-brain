@@ -95,18 +95,18 @@ GND+                         : 24        :        :                   :         
 GND+                         : 25        :        :                   :         : 2         :                
 VCCIO2                       : 26        : power  :                   : 2.5V    : 2         :                
 GND                          : 27        : gnd    :                   :         :           :                
-DQ[1]                        : 28        : output : 2.5 V             :         : 2         : Y              
+DQ[1]                        : 28        : bidir  : 2.5 V             :         : 2         : Y              
 VCCINT                       : 29        : power  :                   : 1.2V    :           :                
-DQ[0]                        : 30        : output : 2.5 V             :         : 2         : Y              
-DQ[3]                        : 31        : output : 2.5 V             :         : 2         : Y              
-DQ[2]                        : 32        : output : 2.5 V             :         : 2         : Y              
-DQ[5]                        : 33        : output : 2.5 V             :         : 2         : Y              
-DQ[4]                        : 34        : output : 2.5 V             :         : 2         : Y              
+DQ[0]                        : 30        : bidir  : 2.5 V             :         : 2         : Y              
+DQ[3]                        : 31        : bidir  : 2.5 V             :         : 2         : Y              
+DQ[2]                        : 32        : bidir  : 2.5 V             :         : 2         : Y              
+DQ[5]                        : 33        : bidir  : 2.5 V             :         : 2         : Y              
+DQ[4]                        : 34        : bidir  : 2.5 V             :         : 2         : Y              
 VCCA1                        : 35        : power  :                   : 2.5V    :           :                
 GNDA1                        : 36        : gnd    :                   :         :           :                
 VCCD_PLL1                    : 37        : power  :                   : 1.2V    :           :                
-DQ[7]                        : 38        : output : 2.5 V             :         : 3         : Y              
-DQ[6]                        : 39        : output : 2.5 V             :         : 3         : Y              
+DQ[7]                        : 38        : bidir  : 2.5 V             :         : 3         : Y              
+DQ[6]                        : 39        : bidir  : 2.5 V             :         : 3         : Y              
 VCCIO3                       : 40        : power  :                   : 2.5V    : 3         :                
 GND                          : 41        : gnd    :                   :         :           :                
 WE                           : 42        : output : 2.5 V             :         : 3         : Y              
@@ -139,20 +139,20 @@ RA[12]                       : 68        : output : 2.5 V             :         
 RA[11]                       : 69        : output : 2.5 V             :         : 4         : Y              
 CLK_OUT                      : 70        : output : 2.5 V             :         : 4         : Y              
 CKE                          : 71        : output : 2.5 V             :         : 4         : Y              
-DQ[8]                        : 72        : output : 2.5 V             :         : 4         : Y              
+DQ[8]                        : 72        : bidir  : 2.5 V             :         : 4         : Y              
 UMQM                         : 73        : output : 2.5 V             :         : 5         : Y              
-DQ[10]                       : 74        : output : 2.5 V             :         : 5         : Y              
-DQ[9]                        : 75        : output : 2.5 V             :         : 5         : Y              
-DQ[12]                       : 76        : output : 2.5 V             :         : 5         : Y              
-DQ[11]                       : 77        : output : 2.5 V             :         : 5         : Y              
+DQ[10]                       : 74        : bidir  : 2.5 V             :         : 5         : Y              
+DQ[9]                        : 75        : bidir  : 2.5 V             :         : 5         : Y              
+DQ[12]                       : 76        : bidir  : 2.5 V             :         : 5         : Y              
+DQ[11]                       : 77        : bidir  : 2.5 V             :         : 5         : Y              
 VCCINT                       : 78        : power  :                   : 1.2V    :           :                
 GND                          : 79        : gnd    :                   :         :           :                
-DQ[14]                       : 80        : output : 2.5 V             :         : 5         : Y              
+DQ[14]                       : 80        : bidir  : 2.5 V             :         : 5         : Y              
 VCCIO5                       : 81        : power  :                   : 2.5V    : 5         :                
 GND                          : 82        : gnd    :                   :         :           :                
-DQ[13]                       : 83        : output : 2.5 V             :         : 5         : Y              
+DQ[13]                       : 83        : bidir  : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 84        :        :                   :         : 5         :                
-DQ[15]                       : 85        : output : 2.5 V             :         : 5         : Y              
+DQ[15]                       : 85        : bidir  : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 86        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
 GND+                         : 88        :        :                   :         : 5         :                
