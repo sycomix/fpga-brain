@@ -63,14 +63,14 @@ BEGIN
 					LDQM <= '1';
 					
 					n_s <= n_s+1;	
-				--ELSIF n_s < 28600 THEN
-				ELSIF n_s < 10 THEN
+				ELSIF n_s < 28600 THEN
+				--ELSIF n_s < 10 THEN
 					UMQM <= '0';
 					LDQM <= '0';		
 					
 					n_s <= n_s+1;	
-				--ELSIF n_s = 28600 THEN
-				ELSIF n_s = 10 THEN
+				ELSIF n_s = 28600 THEN
+				--ELSIF n_s = 10 THEN
 					-- PRECHARGE
 					RAS <= '0';
 					CAS <= '1';

@@ -56,14 +56,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "RA[7]",
-					"strict" : false
-				},
-				{
-					"name" : "RA[8]",
-					"strict" : false
-				},
-				{
 					"name" : "RA[10]",
 					"strict" : false
 				},
