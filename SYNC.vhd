@@ -35,23 +35,31 @@ BEGIN
 				R<='1';
 				G<='0';
 				B<='0';
-			ELSIF netOuts = "0000000000000001" THEN
+			ELSIF netOuts = "0000000111111111" THEN
 				R<='0';
 				G<='1';
 				B<='0';
-			ELSIF netOuts = "0000000000000010" THEN
+			ELSIF netOuts = "0000001111111111" THEN
 				R<='0';
 				G<='0';
 				B<='1';
-			ELSE
+			ELSIF netOuts = "0000011111111111" THEN
 				R<='1';
-				G<='0';
+				G<='1';
 				B<='1';
+			ELSIF netOuts = "0000111111111111" THEN
+				R<='1';
+				G<='1';
+				B<='0';
+			ELSE
+				R<='0';
+				G<='0';
+				B<='0';
 			END IF;			
 		ELSE
-			R<='1';
-			G<='1';
-			B<='1';
+			R<='0';
+			G<='0';
+			B<='0';
 		END IF;
  
 		IF (HPOS<(WW+HFP+HS+HBP)) THEN

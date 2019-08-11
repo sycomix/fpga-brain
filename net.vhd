@@ -99,9 +99,13 @@ END net;
 ARCHITECTURE bhv OF net IS 
 
 
-SIGNAL s_addrRow: INTEGER RANGE 0 TO 512:=0;
+SIGNAL s_addrRow: INTEGER RANGE 0 TO 512:=1;
 SIGNAL s_addrCol: INTEGER RANGE 0 TO 255:=0;
-SIGNAL data_s: INTEGER RANGE 0 TO 3:=0;
+SIGNAL data_s: INTEGER RANGE 0 TO 4096:=4095;
+
+
+SIGNAL incRef: INTEGER RANGE 0 TO 4096:=0;
+SIGNAL incRefSub: INTEGER RANGE 0 TO 4096:=0;
 
 SIGNAL CMD: INTEGER RANGE 0 TO 13:=0; -- 0 = INIT RAM VALUES
 	
@@ -113,56 +117,85 @@ BEGIN
 		
 			IF ram_initialized = '1' THEN
 				
-					outs <= "0000000000000001";
-					IF ram_data_save_ready = '1' OR ram_data_read_ready = '1' THEN
-						IF CMD = 0 THEN -- INIT SOME RAM VALUES
-							IF s_addrRow < 3 THEN						
-								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
-								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
-								
-								s_addrRow <= s_addrRow+1;
-								
-								
-								IF data_s < 2 THEN
-									data_s <= data_s+1;
-								ELSE
-									data_s <= 0;
-								END IF;	
-								
-								ram_data_save <= STD_LOGIC_VECTOR(to_signed(data_s, ram_data_save'length));
-								ram_data_save_do <= '1';
-							ELSE
-								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
-								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
-								
-								s_addrRow <= 1;
-								
-								ram_data_save <= STD_LOGIC_VECTOR(to_signed(data_s, ram_data_save'length));
-								ram_data_save_do <= '1';
-								
-								CMD <= 1; -- to READ VALUES
-							END IF;
-						ELSIF CMD = 1 THEN
-							outs <= ram_data_read;
-							IF s_addrRow < 3 THEN
-								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
-								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
-								
-								s_addrRow <= s_addrRow+1;
-								
-								ram_data_save_do <= '0';
-								ram_data_read_do <= '1';
-							ELSE
-								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
-								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
-								
-								s_addrRow <= 1;
-								--ram_data_read_do <= '0';
-								CMD <= 1;
-							END IF;
+				outs <= "0000000000000101";
+				
+				
+				
+				IF ram_data_save_ready = '1' OR ram_data_read_ready = '1' THEN
+											
+					IF CMD = 0 THEN -- INIT SOME RAM VALUES
+						IF s_addrRow < 4 THEN						
+							ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
+							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
+							
+							s_addrRow <= s_addrRow+1;
+							
+							
+							IF data_s = 4095 THEN
+								data_s <= 511;		
+								ram_data_save <= "0000000111111111";	
+							ELSIF data_s = 511 THEN
+								data_s <= 1023;			
+								ram_data_save <= "0000001111111111";						
+							ELSIF data_s = 1023 THEN
+								data_s <= 2047;				
+								ram_data_save <= "0000011111111111";					
+							ELSIF data_s = 2047 THEN
+								data_s <= 4095;	
+								ram_data_save <= "0000111111111111";
+							END IF;	
+							
+							--ram_data_save <= STD_LOGIC_VECTOR(to_signed(data_s, ram_data_save'length));
+							ram_data_save_do <= '1';
+						ELSE
+							ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
+							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
+							
+							s_addrRow <= 1;
+							
+							ram_data_save <= STD_LOGIC_VECTOR(to_signed(data_s, ram_data_save'length));
+							ram_data_save_do <= '1';
+							
+							CMD <= 1; -- to READ VALUES
 						END IF;
+					ELSIF CMD = 1 THEN
+						outs <= ram_data_read;
+						IF s_addrRow = 1 THEN
+							ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
+							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
+							
+							s_addrRow <= s_addrRow+1;
+							
+							ram_data_save_do <= '0';
+							ram_data_read_do <= '1';
+							
+							incRef <= incRef+1;	
+							IF incRef > 22 THEN
+								incRef <= 0;	
+							ELSIF incRef > 20 THEN	
+								ram_data_read_do <= '0';
+								s_addrRow <= 1;		
+							END IF;	
+						ELSIF s_addrRow < 4 THEN
+							ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
+							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
+							
+							s_addrRow <= s_addrRow+1;
+							
+							ram_data_save_do <= '0';
+							--ram_data_read_do <= '1';
+						ELSE
+							ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
+							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
+							
+							s_addrRow <= 1;
+							--ram_data_read_do <= '0';
+							CMD <= 1;
+						END IF;
+						
 					END IF;
-					
+				END IF;
+				
 			END IF;
 			
 			

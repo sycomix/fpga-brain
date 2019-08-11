@@ -225,8 +225,6 @@ BEGIN
 					RAS <= '1';
 					CAS <= '1';
 					WE <= '1';
-					
-					RA <= ram_col_addr;
 							
 					n_s <= n_s+1;					
 				ELSIF n_s < 2 THEN							
@@ -241,6 +239,7 @@ BEGIN
 						DQ <= ram_data_save;
 						
 						UMQM <= '1';
+						LDQM <= '0';
 										
 						CMD <= 7; -- to WRITE
 					END IF;		
@@ -249,6 +248,9 @@ BEGIN
 						
 						CMD <= 8; -- to READ
 					END IF;
+					
+					RA <= ram_col_addr;
+					RA(10) <= '1'; -- RA[10] := '1' Precharge all banks.
 					
 					n_s <= 0;
 				END IF;
@@ -260,6 +262,9 @@ BEGIN
 					WE <= '1';
 					
 					UMQM <= '0';
+					LDQM <= '0';
+					
+					RA(10) <= '0'; -- RA[10] := '1' Precharge all banks.
 							
 					n_s <= n_s+1;					
 				ELSIF n_s < 2 THEN							
@@ -270,7 +275,6 @@ BEGIN
 					CAS <= '1';	
 					WE <= '0';		
 						
-					--RA(10) <= '1'; -- RA[10] := '1' Precharge all banks.
 					
 					CMD <= 9; -- to PRECHARGE
 					n_s <= 0;
@@ -281,6 +285,8 @@ BEGIN
 					RAS <= '1';
 					CAS <= '1';
 					WE <= '1';
+					
+					RA(10) <= '0'; -- RA[10] := '1' Precharge all banks.
 							
 					n_s <= n_s+1;					
 				ELSIF n_s < 2 THEN							
@@ -304,7 +310,10 @@ BEGIN
 					CAS <= '1';
 					WE <= '1';
 					
-					RA(10) <= '0';
+					RA(10) <= '0';			
+					
+					ram_data_save_ready <= '1'; -- ready to save
+					ram_data_read_ready <= '1'; -- ready to read
 							
 					n_s <= n_s+1;
 				ELSIF n_s = 1 THEN  -- now is cycle 7. next will be BRANCH CYCLE again (cycle 8) to prompt if ram_data_save_do/ram_data_read_do exists again and the tRC can be satisfied in case of R/W=1 and it must be PRESENTED on cycle 9)					
