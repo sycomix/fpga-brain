@@ -117,14 +117,14 @@ BEGIN
 					-- 00 RA11-RA10
 					-- 0 RA9 (Write Mode = Burst Read and Burst Write)
 					-- 00 RA8-RA7
-					-- 010 RA6-RA4 (CAS Latency = 2)
+					-- 011 RA6-RA4 (CAS Latency = 3)
 					-- 0 RA3 (Burst Type 0 = Sequential; 1 = Interleave)
 					-- 111 RA2-RA0 (Burst Length = 16 (Full))
 					RAS <= '0';
 					CAS <= '0';
 					WE <= '0';
 					
-					RA <= "0"&"00"&"0"&"00"&"010"&"0"&"111";
+					RA <= "0"&"00"&"0"&"00"&"011"&"0"&"000";
 				
 					CMD <= 3; -- to MODE REGISTER SET
 					n_s <= 0;
