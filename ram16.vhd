@@ -159,83 +159,97 @@ BEGIN
 				END IF;		
 				
 				
-			ELSIF CMD = 5 THEN -- BRANCH CYCLE (cycle 8)							
-				IF ram_data_save_do = '1' OR ram_data_read_do = '1' THEN
-					--IF ram_data_save_ready = '1' OR ram_data_read_ready = '1' THEN	
-						-- ACTIVE
+			ELSIF CMD = 5 THEN 
+				--------------------------
+				-- NOW BRANCH CYCLE (cycle 8)	
+				IF ram_data_save_do = '0' AND ram_data_read_do = '0' THEN
+					IF n_s = 0 THEN
+						-- DO REFRESH				
+						--------------------------
 						RAS <= '0';
-						CAS <= '1';
+						CAS <= '0';
 						WE <= '1';
-						
-						RA <= ram_row_addr;
-						DQ <= ram_data_save;
-						BA <= "00";
-						UMQM <= '0';
-						LDQM <= '0';
-						RA(10) <= '0';
 						
 						ram_data_save_ready <= '0';
 						ram_data_read_ready <= '0';
 					
-						CMD <= 6; -- to ACTIVE
+						n_s <= n_s+1;
+					ELSIF n_s < 7 THEN 
+						--------------------------
+						-- NOW REFRESH
+						
+						-- DO NOP
+						--------------------------
+						RAS <= '1';
+						CAS <= '1';
+						WE <= '1';
+					
+						n_s <= n_s+1;					
+					ELSIF n_s = 7 THEN  -- now is cycle 7. next will be BRANCH CYCLE again (cycle 8) to prompt if ram_data_save_do/ram_data_read_do exists again and the tRC can be satisfied in case of R/W=1 and it must be PRESENTED on cycle 9)
+						--------------------------
+						-- NOW NOP
+						ram_data_save_ready <= '1'; -- ready to save
+						ram_data_read_ready <= '1'; -- ready to read
+					
+						CMD <= 5; -- to BRANCH CYCLE
+						n_s <= n_s+1;
+					ELSIF n_s = 8 THEN
+						--------------------------
+						-- NOW NOP
 						n_s <= 0;
-					--END IF;		
-				END IF;			
-				IF ram_data_save_do = '0' AND ram_data_read_do = '0' THEN
-					--IF ram_data_save_ready = '0' OR ram_data_read_ready = '0' THEN	
-						IF n_s = 0 THEN
-							-- REFRESH				
-							RAS <= '0';
-							CAS <= '0';
-							WE <= '1';
-							
-							ram_data_save_ready <= '0';
-							ram_data_read_ready <= '0';
-						
-							n_s <= n_s+1;
-						ELSIF n_s < 7 THEN 	-- REFRESH IS PRESENTED.
-							-- NOP
-							RAS <= '1';
-							CAS <= '1';
-							WE <= '1';
-							
-							ram_data_save_ready <= '0';
-							ram_data_read_ready <= '0';
-						
-							n_s <= n_s+1;					
-						ELSIF n_s = 7 THEN  -- now is cycle 7. next will be BRANCH CYCLE again (cycle 8) to prompt if ram_data_save_do/ram_data_read_do exists again and the tRC can be satisfied in case of R/W=1 and it must be PRESENTED on cycle 9)
-							ram_data_save_ready <= '1'; -- ready to save
-							ram_data_read_ready <= '1'; -- ready to read
-						
-							CMD <= 5; -- to BRANCH CYCLE
-							n_s <= n_s+1;
-						ELSIF n_s = 8 THEN
-							n_s <= 0;
-						END IF;
-					--END IF;
-				END IF;		
+					END IF;
+				END IF;							
+				IF ram_data_save_do = '1' OR ram_data_read_do = '1' THEN
+					-- DO ACTIVE
+					--------------------------
+					RAS <= '0';
+					CAS <= '1';
+					WE <= '1';
+					
+					RA <= ram_row_addr;
+					DQ <= ram_data_save;
+					BA <= "00";
+					UMQM <= '0';
+					LDQM <= '0';
+					RA(10) <= '0';
+					
+					ram_data_save_ready <= '0';
+					ram_data_read_ready <= '0';
+				
+					CMD <= 6; -- to ACTIVE
+					n_s <= 0;		
+				END IF;	
 				
 					
 			ELSIF CMD = 6 THEN
-				IF n_s = 0 THEN -- ACTIVE is PRESENTED
-					-- NOP
+				IF n_s = 0 THEN
+					--------------------------
+					-- NOW ACTIVE
+					
+					-- DO NOP
+					--------------------------
 					RAS <= '1';
 					CAS <= '1';
 					WE <= '1';
 					
-					RA(10) <= '1'; 
+					--RA(10) <= '1'; 
+					RA <= ram_col_addr;
 							
 					n_s <= n_s+1;					
-				ELSIF n_s < 2 THEN							
+				ELSIF n_s < 2 THEN			
+					--------------------------
+					-- NOW NOP				
 					n_s <= n_s+1;
 				ELSIF n_s = 2 THEN
-					-- W/R
+					--------------------------
+					-- NOW NOP
+									
+					-- DO W/R
+					--------------------------	
 					RAS <= '1';
 					CAS <= '0';							
 					IF ram_data_save_do = '1' THEN 
 						WE <= '0'; -- WRITE
-					
-						DQ <= ram_data_save;
 						
 						UMQM <= '1';
 						LDQM <= '0';
@@ -248,7 +262,6 @@ BEGIN
 						CMD <= 8; -- to READ
 					END IF;
 					
-					RA <= ram_col_addr;
 					RA(10) <= '0';
 					
 					n_s <= 0;
@@ -256,73 +269,100 @@ BEGIN
 				
 				
 			ELSIF CMD = 7 THEN
-				IF n_s = 0 THEN	-- WRITE IS PRESENTED
-					-- NOP
+				IF n_s = 0 THEN
+					--------------------------
+					-- NOW WRITE
+					
+					-- DO NOP
+					--------------------------
 					RAS <= '1';
 					CAS <= '1';
 					WE <= '1';
 					
-					UMQM <= '0';
-					LDQM <= '0';
-					
-					RA(10) <= '1';
+					--RA(10) <= '1';
 							
 					n_s <= n_s+1;					
-				ELSIF n_s < 2 THEN							
+				ELSIF n_s < 2 THEN				
+					--------------------------
+					-- NOW NOP					
 					n_s <= n_s+1;
-				ELSIF n_s = 2 THEN
-					-- PRECHARGE
-					RAS <= '0';
-					CAS <= '1';	
-					WE <= '0';		
-						
-					RA(10) <= '0';
+				ELSIF n_s = 2 THEN	
+					--------------------------
+					-- NOW NOP	
 					
-					CMD <= 9; -- to PRECHARGE
+					--ram_data_read <= DQ;
+					
+					CMD <= 15; -- to BST
 					n_s <= 0;
 				END IF;
 			ELSIF CMD = 8 THEN 
-				IF n_s = 0 THEN	-- READ IS PRESENTED
-					-- NOP
+				IF n_s = 0 THEN
+					--------------------------
+					-- NOW READ
+					
+					-- DO NOP
+					--------------------------
 					RAS <= '1';
 					CAS <= '1';
 					WE <= '1';
 					
-					RA(10) <= '1';
+					--RA(10) <= '1';
 							
 					n_s <= n_s+1;					
-				ELSIF n_s < 2 THEN							
+				ELSIF n_s < 2 THEN			
+					--------------------------
+					-- NOW NOP					
 					n_s <= n_s+1;
-				ELSIF n_s = 2 THEN
-					-- PRECHARGE
-					RAS <= '0';
-					CAS <= '1';			
-					WE <= '0';
+				ELSIF n_s = 2 THEN	
+					--------------------------
+					-- NOW NOP		
 					
-					RA(10) <= '0';
-					ram_data_read <= DQ;
-					
-					CMD <= 9; -- to PRECHARGE
+					CMD <= 15; -- to BST
 					n_s <= 0;
 				END IF;
 				
 				
+			ELSIF CMD = 15 THEN
+				--------------------------
+				-- NOW NOP (BST)
+				
+				-- DO PRECHARGE
+				--------------------------
+				RAS <= '0';
+				CAS <= '1';	
+				WE <= '0';	
+				
+				RA(10) <= '0';
+				ram_data_read <= DQ;
+				
+				CMD <= 9; -- to PRECHARGE
+				n_s <= 0;
+			
 			ELSIF CMD = 9 THEN 
-				IF n_s = 0 THEN	-- PRECHARGE IS PRESENTED
-					-- NOP
+				IF n_s = 0 THEN
+					--------------------------
+					-- NOW PRECHARGE
+					
+					-- DO NOP
+					--------------------------
 					RAS <= '1';
 					CAS <= '1';
 					WE <= '1';
 					
 					RA(10) <= '0';			
 					
-					ram_data_save_ready <= '1'; -- ready to save
-					ram_data_read_ready <= '1'; -- ready to read
+					UMQM <= '0';
+					LDQM <= '0';
+					
+					ram_data_save_ready <= '1';
+					ram_data_read_ready <= '1';
 							
 					n_s <= n_s+1;
-				ELSIF n_s = 1 THEN  -- now is cycle 7. next will be BRANCH CYCLE again (cycle 8) to prompt if ram_data_save_do/ram_data_read_do exists again and the tRC can be satisfied in case of R/W=1 and it must be PRESENTED on cycle 9)					
-					ram_data_save_ready <= '1'; -- ready to save
-					ram_data_read_ready <= '1'; -- ready to read
+				ELSIF n_s = 1 THEN 
+					--------------------------
+					-- NOW NOP
+					ram_data_save_ready <= '1';
+					ram_data_read_ready <= '1';
 						
 					CMD <= 5; -- to BRANCH CYCLE
 					n_s <= 0;
