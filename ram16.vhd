@@ -38,6 +38,7 @@ ARCHITECTURE bhv OF ram16 IS
 SIGNAL s_ram_initialized: STD_LOGIC := '0';
 SIGNAL CMD: INTEGER RANGE 0 TO 31:=0;
 SIGNAL n_s: INTEGER RANGE 0 TO 28600:=0;
+SIGNAL n_sb: INTEGER RANGE 0 TO 8:=0;
 BEGIN
 
 	PROCESS(CLK_IN)
@@ -55,7 +56,8 @@ BEGIN
 					CAS <= '1';
 					WE <= '1';
 					
-					RA <= "0000000000000";
+					--RA <= "0000000000000";
+					RA <= "0010000000000"; -- RA[10] := '1' Precharge all banks.
 					
 					BA <= "00";
 					
@@ -64,10 +66,7 @@ BEGIN
 					
 					n_s <= n_s+1;	
 				ELSIF n_s < 28600 THEN
-				--ELSIF n_s < 10 THEN
-					UMQM <= '0';
-					LDQM <= '0';		
-					
+				--ELSIF n_s < 10 THEN					
 					n_s <= n_s+1;	
 				ELSIF n_s = 28600 THEN
 				--ELSIF n_s = 10 THEN
@@ -75,8 +74,6 @@ BEGIN
 					RAS <= '0';
 					CAS <= '1';
 					WE <= '0';
-					
-					RA <= "0010000000000"; -- RA[10] := '1' Precharge all banks.
 					
 					CMD <= 1; -- to PRECHARGE
 					n_s <= 0;
@@ -87,8 +84,6 @@ BEGIN
 					RAS <= '1';
 					CAS <= '1';
 					WE <= '1';
-					
-					RA(10) <= '0';
 							
 					n_s <= n_s+1;				
 				ELSIF n_s < 2 THEN
@@ -110,61 +105,60 @@ BEGIN
 					WE <= '1';
 							
 					n_s <= n_s+1;				
-				ELSIF n_s < 56 THEN
+				ELSIF n_s < 8 THEN
 					n_s <= n_s+1;
-				ELSIF n_s = 56 THEN
-					-- 0 RA12
-					-- 00 RA11-RA10
-					-- 0 RA9 (Write Mode = Burst Read and Burst Write)
-					-- 00 RA8-RA7
-					-- 011 RA6-RA4 (CAS Latency = 3)
-					-- 0 RA3 (Burst Type 0 = Sequential; 1 = Interleave)
-					-- 111 RA2-RA0 (Burst Length = 16 (Full))
-					RAS <= '0';
-					CAS <= '0';
-					WE <= '0';
+				ELSIF n_s = 8 THEN
+					IF n_sb < 7 THEN -- *8 REFRESH
+						-- REFRESH
+						RAS <= '0';
+						CAS <= '0';
+						WE <= '1';		
+						
+						n_sb <= n_sb+1;
+					ELSE
+						-- 0 RA12
+						-- 00 RA11-RA10
+						-- 0 RA9 (Write Mode = Burst Read and Burst Write)
+						-- 00 RA8-RA7
+						-- 011 RA6-RA4 (CAS Latency = 3)
+						-- 0 RA3 (Burst Type 0 = Sequential; 1 = Interleave)
+						-- 111 RA2-RA0 (Burst Length = 16 (Full))
+						RAS <= '0';
+						CAS <= '0';
+						WE <= '0';
+						
+						RA <= "0"&"00"&"0"&"00"&"011"&"0"&"000";
 					
-					RA <= "0"&"00"&"0"&"00"&"011"&"0"&"000";
-				
-					CMD <= 3; -- to MODE REGISTER SET
+						CMD <= 3; -- to MODE REGISTER SET
+						
+					END IF;
+					
 					n_s <= 0;
 				END IF;
 			ELSIF CMD = 3 THEN	--  Mode Register Set command 
-				IF n_s = 0 THEN	-- PRECHARGE IS PRESENTED
+				IF n_s = 0 THEN	-- Mode Register Set IS PRESENTED
 					-- NOP
 					RAS <= '1';
 					CAS <= '1';
 					WE <= '1';
+					
+					RA(10) <= '1';
 					
 					n_s <= n_s+1;				
 				ELSIF n_s < 3 THEN
 					n_s <= n_s+1;
-				ELSIF n_s = 3 THEN
-					-- REFRESH
-					RAS <= '0';
-					CAS <= '0';
-					WE <= '1';
-					
-					RA <= "0000000000000";
+				ELSIF n_s = 3 THEN					
+					--RA <= "0000000000000";
+					RA(10) <= '0';
+					UMQM <= '0';
+					LDQM <= '0';	
 				
-					CMD <= 4; -- to REFRESH
-					n_s <= 0;
-				END IF;
-			ELSIF CMD = 4 THEN	--  REFRESH 63ns tRC (RAS Cycle Time) * 8 refresh cycles ====> 7.5ns/cycle => 63/7.5= 8.4cycles => 9 cycles * 8 refresh cycles = 56 cycles
-				IF n_s = 0 THEN	-- REFRESH IS PRESENTED.  REFRESH 63ns tRC (RAS Cycle Time) * 8 refresh cycles ====> 7.5ns/cycle => 63/7.5= 8.4cycles => 9 cycles * 8 refresh cycles = 56 cycles
-					-- NOP
-					RAS <= '1';
-					CAS <= '1';
-					WE <= '1';
-							
-					n_s <= n_s+1;				
-				ELSIF n_s < 56 THEN
-					n_s <= n_s+1;
-				ELSIF n_s = 56 THEN
 					CMD <= 5; -- to BRANCH CYCLE
 					ram_initialized <= '1';
 					n_s <= 0;
-				END IF;			
+				END IF;		
+				
+				
 			ELSIF CMD = 5 THEN -- BRANCH CYCLE (cycle 8)							
 				IF ram_data_save_do = '1' OR ram_data_read_do = '1' THEN
 					--IF ram_data_save_ready = '1' OR ram_data_read_ready = '1' THEN	
@@ -178,6 +172,7 @@ BEGIN
 						BA <= "00";
 						UMQM <= '0';
 						LDQM <= '0';
+						RA(10) <= '0';
 						
 						ram_data_save_ready <= '0';
 						ram_data_read_ready <= '0';
@@ -218,13 +213,17 @@ BEGIN
 							n_s <= 0;
 						END IF;
 					--END IF;
-				END IF;			
+				END IF;		
+				
+					
 			ELSIF CMD = 6 THEN
 				IF n_s = 0 THEN -- ACTIVE is PRESENTED
 					-- NOP
 					RAS <= '1';
 					CAS <= '1';
 					WE <= '1';
+					
+					RA(10) <= '1'; 
 							
 					n_s <= n_s+1;					
 				ELSIF n_s < 2 THEN							
@@ -250,10 +249,12 @@ BEGIN
 					END IF;
 					
 					RA <= ram_col_addr;
-					RA(10) <= '1'; -- RA[10] := '1' Precharge all banks.
+					RA(10) <= '0';
 					
 					n_s <= 0;
 				END IF;
+				
+				
 			ELSIF CMD = 7 THEN
 				IF n_s = 0 THEN	-- WRITE IS PRESENTED
 					-- NOP
@@ -264,7 +265,7 @@ BEGIN
 					UMQM <= '0';
 					LDQM <= '0';
 					
-					RA(10) <= '0'; -- RA[10] := '1' Precharge all banks.
+					RA(10) <= '1';
 							
 					n_s <= n_s+1;					
 				ELSIF n_s < 2 THEN							
@@ -275,6 +276,7 @@ BEGIN
 					CAS <= '1';	
 					WE <= '0';		
 						
+					RA(10) <= '0';
 					
 					CMD <= 9; -- to PRECHARGE
 					n_s <= 0;
@@ -286,7 +288,7 @@ BEGIN
 					CAS <= '1';
 					WE <= '1';
 					
-					RA(10) <= '0'; -- RA[10] := '1' Precharge all banks.
+					RA(10) <= '1';
 							
 					n_s <= n_s+1;					
 				ELSIF n_s < 2 THEN							
@@ -297,12 +299,14 @@ BEGIN
 					CAS <= '1';			
 					WE <= '0';
 					
-					--RA(10) <= '1'; -- RA[10] := '1' Precharge all banks.
+					RA(10) <= '0';
 					ram_data_read <= DQ;
 					
 					CMD <= 9; -- to PRECHARGE
 					n_s <= 0;
 				END IF;
+				
+				
 			ELSIF CMD = 9 THEN 
 				IF n_s = 0 THEN	-- PRECHARGE IS PRESENTED
 					-- NOP
