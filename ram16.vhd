@@ -57,8 +57,7 @@ BEGIN
 					WE <= '1';
 					
 					--RA <= "0000000000000";
-					RA <= "0010000000000"; -- RA[10] := '1' Precharge all banks.
-					
+					RA <= "0010000000000"; -- RA[10] := '1' Precharge all banks.					
 					BA <= "00";
 					
 					UMQM <= '1';
@@ -170,6 +169,15 @@ BEGIN
 						CAS <= '0';
 						WE <= '1';
 						
+						RA <= ram_row_addr;
+						RA(10) <= '0';
+						BA <= "00";
+						
+						DQ <= "ZZZZZZZZZZZZZZZZ";
+						
+						UMQM <= '0';
+						LDQM <= '0';
+					
 						ram_data_save_ready <= '0';
 						ram_data_read_ready <= '0';
 					
@@ -188,8 +196,8 @@ BEGIN
 					ELSIF n_s = 7 THEN  -- now is cycle 7. next will be BRANCH CYCLE again (cycle 8) to prompt if ram_data_save_do/ram_data_read_do exists again and the tRC can be satisfied in case of R/W=1 and it must be PRESENTED on cycle 9)
 						--------------------------
 						-- NOW NOP
-						ram_data_save_ready <= '1'; -- ready to save
-						ram_data_read_ready <= '1'; -- ready to read
+						ram_data_save_ready <= '1';
+						ram_data_read_ready <= '1';
 					
 						CMD <= 5; -- to BRANCH CYCLE
 						n_s <= n_s+1;
@@ -207,11 +215,11 @@ BEGIN
 					WE <= '1';
 					
 					RA <= ram_row_addr;
-					DQ <= ram_data_save;
+					RA(10) <= '0';
 					BA <= "00";
+					
 					UMQM <= '0';
 					LDQM <= '0';
-					RA(10) <= '0';
 					
 					ram_data_save_ready <= '0';
 					ram_data_read_ready <= '0';
@@ -231,9 +239,6 @@ BEGIN
 					RAS <= '1';
 					CAS <= '1';
 					WE <= '1';
-					
-					--RA(10) <= '1'; 
-					RA <= ram_col_addr;
 							
 					n_s <= n_s+1;					
 				ELSIF n_s < 2 THEN			
@@ -244,25 +249,37 @@ BEGIN
 					--------------------------
 					-- NOW NOP
 									
-					-- DO W/R
-					--------------------------	
 					RAS <= '1';
 					CAS <= '0';							
 					IF ram_data_save_do = '1' THEN 
-						WE <= '0'; -- WRITE
+						WE <= '0';
+						-- DO WRITE
+						--------------------------	
 						
-						UMQM <= '1';
+						UMQM <= '0';
 						LDQM <= '0';
 										
 						CMD <= 7; -- to WRITE
 					END IF;		
 					IF ram_data_read_do = '1' THEN 
-						WE <= '1'; -- READ
+						WE <= '1';
+						-- DO READ
+						--------------------------	
+						
+						UMQM <= '0';
+						LDQM <= '0';
 						
 						CMD <= 8; -- to READ
 					END IF;
 					
+					RA <= ram_col_addr;
 					RA(10) <= '0';
+					
+					IF ram_data_read_do = '1' THEN
+						DQ <= "ZZZZZZZZZZZZZZZZ";
+					ELSE
+						DQ <= ram_data_save;
+					END IF;
 					
 					n_s <= 0;
 				END IF;
@@ -279,12 +296,14 @@ BEGIN
 					CAS <= '1';
 					WE <= '1';
 					
-					--RA(10) <= '1';
+					RA <= "0000000000000";
 							
 					n_s <= n_s+1;					
 				ELSIF n_s < 2 THEN				
 					--------------------------
-					-- NOW NOP					
+					-- NOW NOP
+					UMQM <= '1';
+					LDQM <= '1';	
 					n_s <= n_s+1;
 				ELSIF n_s = 2 THEN	
 					--------------------------
@@ -292,7 +311,13 @@ BEGIN
 					
 					--ram_data_read <= DQ;
 					
-					CMD <= 15; -- to BST
+					-- DO PRECHARGE
+					--------------------------
+					RAS <= '0';
+					CAS <= '1';	
+					WE <= '0';	
+					
+					CMD <= 9; -- to PRECHARGE
 					n_s <= 0;
 				END IF;
 			ELSIF CMD = 8 THEN 
@@ -306,18 +331,28 @@ BEGIN
 					CAS <= '1';
 					WE <= '1';
 					
-					--RA(10) <= '1';
+					RA <= "0000000000000";
 							
 					n_s <= n_s+1;					
 				ELSIF n_s < 2 THEN			
 					--------------------------
-					-- NOW NOP					
+					-- NOW NOP		
+					UMQM <= '1';
+					LDQM <= '1';			
 					n_s <= n_s+1;
 				ELSIF n_s = 2 THEN	
 					--------------------------
 					-- NOW NOP		
+								
+				
+					ram_data_read <= DQ;
+					-- DO PRECHARGE
+					--------------------------
+					RAS <= '0';
+					CAS <= '1';	
+					WE <= '0';	
 					
-					CMD <= 15; -- to BST
+					CMD <= 9; -- to PRECHARGE
 					n_s <= 0;
 				END IF;
 				
@@ -331,9 +366,6 @@ BEGIN
 				RAS <= '0';
 				CAS <= '1';	
 				WE <= '0';	
-				
-				RA(10) <= '0';
-				ram_data_read <= DQ;
 				
 				CMD <= 9; -- to PRECHARGE
 				n_s <= 0;
@@ -349,11 +381,6 @@ BEGIN
 					CAS <= '1';
 					WE <= '1';
 					
-					RA(10) <= '0';			
-					
-					UMQM <= '0';
-					LDQM <= '0';
-					
 					ram_data_save_ready <= '1';
 					ram_data_read_ready <= '1';
 							
@@ -361,6 +388,9 @@ BEGIN
 				ELSIF n_s = 1 THEN 
 					--------------------------
 					-- NOW NOP
+					
+					DQ <= "ZZZZZZZZZZZZZZZZ";
+					
 					ram_data_save_ready <= '1';
 					ram_data_read_ready <= '1';
 						

@@ -138,6 +138,22 @@
 				{
 					"name" : "DQ[11]",
 					"strict" : false
+				},
+				{
+					"name" : "DQ[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[13]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[14]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[15]",
+					"strict" : false
 				}
 			]
 		}
