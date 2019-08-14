@@ -149,8 +149,8 @@ BEGIN
 				ELSIF n_s = 3 THEN					
 					--RA <= "0000000000000";
 					RA(10) <= '0';
-					UMQM <= '0';
-					LDQM <= '0';	
+					UMQM <= '1';
+					LDQM <= '1';	
 				
 					CMD <= 5; -- to BRANCH CYCLE
 					ram_initialized <= '1';
@@ -175,8 +175,8 @@ BEGIN
 						
 						DQ <= "ZZZZZZZZZZZZZZZZ";
 						
-						UMQM <= '0';
-						LDQM <= '0';
+						UMQM <= '1';
+						LDQM <= '1';
 					
 						ram_data_save_ready <= '0';
 						ram_data_read_ready <= '0';
@@ -218,8 +218,8 @@ BEGIN
 					RA(10) <= '0';
 					BA <= "00";
 					
-					UMQM <= '0';
-					LDQM <= '0';
+					UMQM <= '1';
+					LDQM <= '1';
 					
 					ram_data_save_ready <= '0';
 					ram_data_read_ready <= '0';
@@ -297,6 +297,7 @@ BEGIN
 					WE <= '1';
 					
 					RA <= "0000000000000";
+					DQ <= "ZZZZZZZZZZZZZZZZ";
 							
 					n_s <= n_s+1;					
 				ELSIF n_s < 2 THEN				
@@ -316,6 +317,8 @@ BEGIN
 					RAS <= '0';
 					CAS <= '1';	
 					WE <= '0';	
+					
+					RA(10) <= '1';
 					
 					CMD <= 9; -- to PRECHARGE
 					n_s <= 0;
@@ -350,7 +353,9 @@ BEGIN
 					--------------------------
 					RAS <= '0';
 					CAS <= '1';	
-					WE <= '0';	
+					WE <= '0';
+					
+					RA(10) <= '1';
 					
 					CMD <= 9; -- to PRECHARGE
 					n_s <= 0;
@@ -366,6 +371,8 @@ BEGIN
 				RAS <= '0';
 				CAS <= '1';	
 				WE <= '0';	
+				
+				RA(10) <= '0';
 				
 				CMD <= 9; -- to PRECHARGE
 				n_s <= 0;
@@ -389,7 +396,7 @@ BEGIN
 					--------------------------
 					-- NOW NOP
 					
-					DQ <= "ZZZZZZZZZZZZZZZZ";
+					DQ <= "ZZZZZZZZZZZZZZZZ";   
 					
 					ram_data_save_ready <= '1';
 					ram_data_read_ready <= '1';

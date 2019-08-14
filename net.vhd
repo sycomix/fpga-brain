@@ -109,6 +109,8 @@ SIGNAL incRefSub: INTEGER RANGE 0 TO 4096:=0;
 
 SIGNAL CMD: INTEGER RANGE 0 TO 13:=0; -- 0 = INIT RAM VALUES
 	
+SIGNAL incVGA: INTEGER RANGE 0 TO 66:=0;
+
 BEGIN 	
 	PROCESS(CLK_IN)
 	BEGIN
@@ -117,11 +119,12 @@ BEGIN
 		
 			IF ram_initialized = '1' THEN
 				
-				outs <= "0000000000000101";
+				--outs <= "0000000000000101";
 				
 				
 				
 				IF ram_data_save_ready = '1' OR ram_data_read_ready = '1' THEN
+				--
 											
 					IF CMD = 0 THEN -- INIT SOME RAM VALUES
 						IF s_addrRow < 4 THEN						
@@ -151,7 +154,7 @@ BEGIN
 							ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
 							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
 							
-							s_addrRow <= 1;
+							s_addrRow <= 0;
 							
 							ram_data_save <= STD_LOGIC_VECTOR(to_signed(data_s, ram_data_save'length));
 							ram_data_save_do <= '1';
@@ -160,37 +163,35 @@ BEGIN
 						END IF;
 					ELSIF CMD = 1 THEN
 						outs <= ram_data_read;
-						IF s_addrRow = 1 THEN
-							ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
-							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
-							
-							s_addrRow <= s_addrRow+1;
+						ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
+						ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
+						
+						IF incVGA < 88 THEN
+							incVGA <= incVGA+1;
 							
 							ram_data_save_do <= '0';
 							ram_data_read_do <= '1';
-							
-							incRef <= incRef+1;	
-							IF incRef > 22 THEN
-								incRef <= 0;	
-							ELSIF incRef > 20 THEN	
-								ram_data_read_do <= '0';
-								s_addrRow <= 1;		
-							END IF;	
-						ELSIF s_addrRow < 4 THEN
-							ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
-							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
-							
-							s_addrRow <= s_addrRow+1;
+						ELSIF incVGA < 111 THEN
+							incVGA <= incVGA+1;
 							
 							ram_data_save_do <= '0';
-							--ram_data_read_do <= '1';
-						ELSE
-							ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
-							ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
+							ram_data_read_do <= '0';
+						ELSIF incVGA = 111 THEN
+							incVGA <= 0;
 							
-							s_addrRow <= 1;
-							--ram_data_read_do <= '0';
-							CMD <= 1;
+							IF s_addrRow < 4 THEN
+								IF incRef < 1024 THEN
+									incRef <= incRef+1;							
+								ELSE 
+									s_addrRow <= s_addrRow+1;
+									incRef <= 0;									
+								END IF;							
+							ELSE 
+								s_addrRow <= 0;									
+							END IF;
+							
+							ram_data_save_do <= '0';
+							ram_data_read_do <= '0';
 						END IF;
 						
 					END IF;
