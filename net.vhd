@@ -99,7 +99,7 @@ END net;
 ARCHITECTURE bhv OF net IS 
 
 
-SIGNAL s_addrRow: INTEGER RANGE 0 TO 512:=1;
+SIGNAL s_addrRow: INTEGER RANGE 0 TO 512:=0;
 SIGNAL s_addrCol: INTEGER RANGE 0 TO 255:=0;
 SIGNAL data_s: INTEGER RANGE 0 TO 4096:=4095;
 
@@ -109,7 +109,7 @@ SIGNAL incRefSub: INTEGER RANGE 0 TO 4096:=0;
 
 SIGNAL CMD: INTEGER RANGE 0 TO 13:=0; -- 0 = INIT RAM VALUES
 	
-SIGNAL incVGA: INTEGER RANGE 0 TO 220000:=0;
+SIGNAL incVGA: INTEGER RANGE 0 TO 5000001:=0;
 
 BEGIN 	
 	PROCESS(CLK_IN)
@@ -154,17 +154,17 @@ BEGIN
 						ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
 						ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
 						
-						IF incVGA < 20000 THEN -- 0 to 7
+						IF incVGA < 5000000 THEN -- 0 to 7
 							incVGA <= incVGA+1;
 							
 							ram_data_save_do <= '0';
 							ram_data_read_do <= '1';
-						ELSIF incVGA = 20000 THEN
+						ELSIF incVGA = 5000000 THEN
 							incVGA <= incVGA+1;
 							
 							ram_data_save_do <= '0';
 							ram_data_read_do <= '0';
-						ELSIF incVGA = 20001 THEN
+						ELSIF incVGA = 5000001 THEN
 							incVGA <= 0;
 							
 							IF s_addrRow < 4 THEN
@@ -174,7 +174,7 @@ BEGIN
 							END IF;
 							
 							ram_data_save_do <= '0';
-							ram_data_read_do <= '0';
+							ram_data_read_do <= '1';
 						END IF;
 						
 					END IF;

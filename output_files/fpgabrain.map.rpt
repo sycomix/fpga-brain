@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Fri Aug 23 03:53:48 2019
+Fri Aug 23 08:22:53 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -51,15 +51,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Aug 23 03:53:48 2019       ;
+; Analysis & Synthesis Status        ; Successful - Fri Aug 23 08:22:53 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 416                                         ;
-;     Total combinational functions  ; 346                                         ;
-;     Dedicated logic registers      ; 175                                         ;
-; Total registers                    ; 175                                         ;
+; Total logic elements               ; 414                                         ;
+;     Total combinational functions  ; 343                                         ;
+;     Dedicated logic registers      ; 180                                         ;
+; Total registers                    ; 180                                         ;
 ; Total pins                         ; 45                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -167,7 +167,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -196,20 +197,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 416                                                                        ;
+; Estimated Total logic elements              ; 414                                                                        ;
 ;                                             ;                                                                            ;
-; Total combinational functions               ; 346                                                                        ;
+; Total combinational functions               ; 343                                                                        ;
 ; Logic element usage by number of LUT inputs ;                                                                            ;
-;     -- 4 input functions                    ; 188                                                                        ;
+;     -- 4 input functions                    ; 189                                                                        ;
 ;     -- 3 input functions                    ; 67                                                                         ;
-;     -- <=2 input functions                  ; 91                                                                         ;
+;     -- <=2 input functions                  ; 87                                                                         ;
 ;                                             ;                                                                            ;
 ; Logic elements by mode                      ;                                                                            ;
-;     -- normal mode                          ; 287                                                                        ;
-;     -- arithmetic mode                      ; 59                                                                         ;
+;     -- normal mode                          ; 279                                                                        ;
+;     -- arithmetic mode                      ; 64                                                                         ;
 ;                                             ;                                                                            ;
-; Total registers                             ; 175                                                                        ;
-;     -- Dedicated logic registers            ; 175                                                                        ;
+; Total registers                             ; 180                                                                        ;
+;     -- Dedicated logic registers            ; 180                                                                        ;
 ;     -- I/O registers                        ; 0                                                                          ;
 ;                                             ;                                                                            ;
 ; I/O pins                                    ; 45                                                                         ;
@@ -220,9 +221,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                          ;
 ;                                             ;                                                                            ;
 ; Maximum fan-out node                        ; pll:c1|altpll:altpll_component|pll_altpll1:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 177                                                                        ;
-; Total fan-out                               ; 1786                                                                       ;
-; Average fan-out                             ; 2.84                                                                       ;
+; Maximum fan-out                             ; 182                                                                        ;
+; Total fan-out                               ; 1803                                                                       ;
+; Average fan-out                             ; 2.86                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -231,14 +232,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
-; |fpgabrain                            ; 346 (0)             ; 175 (0)                   ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |fpgabrain                                                           ; fpgabrain   ; work         ;
-;    |VGA:c4|                           ; 55 (0)              ; 26 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4                                                    ; VGA         ; work         ;
-;       |SYNC:C1|                       ; 55 (55)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4|SYNC:C1                                            ; SYNC        ; work         ;
-;    |net:c3|                           ; 70 (70)             ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3                                                    ; net         ; work         ;
+; |fpgabrain                            ; 343 (0)             ; 180 (0)                   ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |fpgabrain                                                           ; fpgabrain   ; work         ;
+;    |VGA:c4|                           ; 56 (0)              ; 26 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4                                                    ; VGA         ; work         ;
+;       |SYNC:C1|                       ; 56 (56)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4|SYNC:C1                                            ; SYNC        ; work         ;
+;    |net:c3|                           ; 77 (77)             ; 69 (69)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3                                                    ; net         ; work         ;
 ;    |pll:c1|                           ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1                                                    ; pll         ; work         ;
 ;       |altpll:altpll_component|       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component                            ; altpll      ; work         ;
 ;          |pll_altpll1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component|pll_altpll1:auto_generated ; pll_altpll1 ; work         ;
-;    |ram16:c2|                         ; 221 (221)           ; 85 (85)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|ram16:c2                                                  ; ram16       ; work         ;
+;    |ram16:c2|                         ; 210 (210)           ; 85 (85)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|ram16:c2                                                  ; ram16       ; work         ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -299,12 +300,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 175   ;
-; Number of registers using Synchronous Clear  ; 54    ;
+; Total registers                              ; 180   ;
+; Number of registers using Synchronous Clear  ; 59    ;
 ; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 140   ;
+; Number of registers using Clock Enable       ; 145   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -314,28 +315,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; net:c3|s_addrRow[0]                    ; 2       ;
 ; net:c3|data_s[11]                      ; 7       ;
 ; net:c3|data_s[10]                      ; 7       ;
 ; net:c3|data_s[9]                       ; 6       ;
-; Total number of inverted registers = 4 ;         ;
+; Total number of inverted registers = 3 ;         ;
 +----------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |fpgabrain|net:c3|incVGA[8]        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|s_addrRow[1]     ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|ram_data_save[9] ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[0]          ;
-; 26:1               ; 2 bits    ; 34 LEs        ; 12 LEs               ; 22 LEs                 ; Yes        ; |fpgabrain|ram16:c2|CMD[0]         ;
-; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[1]         ;
-; 1:1                ; 12 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[11]~reg0    ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|data_s[11]       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 3:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |fpgabrain|net:c3|incVGA[22]        ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |fpgabrain|net:c3|s_addrRow[0]      ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|ram_data_save[11] ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[5]           ;
+; 26:1               ; 2 bits    ; 34 LEs        ; 12 LEs               ; 22 LEs                 ; Yes        ; |fpgabrain|ram16:c2|CMD[0]          ;
+; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[0]          ;
+; 1:1                ; 12 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[0]~reg0      ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|data_s[11]        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 
 
 +-----------------------------------------------------------------------------+
@@ -1771,26 +1771,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 45                          ;
-; cycloneiii_ff         ; 175                         ;
+; cycloneiii_ff         ; 180                         ;
 ;     ENA               ; 97                          ;
-;     ENA SCLR          ; 43                          ;
+;     ENA SCLR          ; 48                          ;
 ;     SCLR              ; 11                          ;
 ;     SLD               ; 1                           ;
 ;     plain             ; 23                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 347                         ;
-;     arith             ; 59                          ;
-;         2 data inputs ; 59                          ;
-;     normal            ; 288                         ;
+; cycloneiii_lcell_comb ; 344                         ;
+;     arith             ; 64                          ;
+;         2 data inputs ; 64                          ;
+;     normal            ; 280                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 26                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 18                          ;
 ;         3 data inputs ; 67                          ;
-;         4 data inputs ; 188                         ;
+;         4 data inputs ; 189                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 3.91                        ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 3.98                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1809,7 +1809,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Aug 23 03:53:34 2019
+    Info: Processing started: Fri Aug 23 08:22:38 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2057,16 +2057,16 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 463 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 461 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 28 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 417 logic cells
+    Info (21061): Implemented 415 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 88 warnings
-    Info: Peak virtual memory: 4833 megabytes
-    Info: Processing ended: Fri Aug 23 03:53:48 2019
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Peak virtual memory: 4834 megabytes
+    Info: Processing ended: Fri Aug 23 08:22:53 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:21
 
 

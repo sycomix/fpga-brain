@@ -64,11 +64,11 @@ BEGIN
 					LDQM <= '1';
 					
 					n_s <= n_s+1;	
-				ELSIF n_s < 28600 THEN
-				--ELSIF n_s < 10 THEN					
+				--ELSIF n_s < 28600 THEN
+				ELSIF n_s < 10 THEN					
 					n_s <= n_s+1;	
-				ELSIF n_s = 28600 THEN
-				--ELSIF n_s = 10 THEN
+				--ELSIF n_s = 28600 THEN
+			ELSIF n_s = 10 THEN
 					-- PRECHARGE
 					RAS <= '0';
 					CAS <= '1';
@@ -203,7 +203,10 @@ BEGIN
 						n_s <= n_s+1;
 					ELSIF n_s = 8 THEN
 						--------------------------
-						-- NOW NOP
+						-- NOW NOP					
+						ram_data_save_ready <= '0';
+						ram_data_read_ready <= '0';
+						
 						n_s <= 0;
 					END IF;
 				END IF;							
@@ -398,8 +401,8 @@ BEGIN
 					
 					DQ <= "ZZZZZZZZZZZZZZZZ";   
 					
-					ram_data_save_ready <= '1';
-					ram_data_read_ready <= '1';
+					ram_data_save_ready <= '0';
+					ram_data_read_ready <= '0';
 						
 					CMD <= 5; -- to BRANCH CYCLE
 					n_s <= 0;
