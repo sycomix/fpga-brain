@@ -35,26 +35,26 @@ BEGIN
 				R<='1';
 				G<='0';
 				B<='0';
-			ELSIF netOuts = "0000000111111111" THEN
-				R<='1';
-				G<='0';
-				B<='0';
-			ELSIF netOuts = "0000001111111111" THEN
+			ELSIF netOuts = "00000001"&"11111111" THEN
 				R<='0';
 				G<='1';
 				B<='0';
-			ELSIF netOuts = "0000011111111111" THEN
+			ELSIF netOuts = "00000011"&"11111111" THEN
 				R<='0';
 				G<='0';
 				B<='1';
-			ELSIF netOuts = "0000111111111111" THEN
+			ELSIF netOuts = "00000111"&"11111111" THEN
 				R<='1';
 				G<='1';
 				B<='0';
+			ELSIF netOuts = "00001111"&"11111111" THEN
+				R<='0';
+				G<='1';
+				B<='1';
 			ELSE
 				R<='1';
-				G<='0';
-				B<='0';
+				G<='1';
+				B<='1';
 			END IF;			
 		ELSE
 			R<='0';
