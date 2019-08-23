@@ -121,7 +121,17 @@ BEGIN
 			
 				IF ram_data_save_ready = '1' OR ram_data_read_ready = '1' THEN
 				
-											
+					-- SDRAM (16bits per grid cell)
+					-- ADJ MATRIX
+					--							COL 0000 0000					COL 0000 0001
+					-- ROW 000 0000 0000 | childLayer i4					|
+					-- ROW 000 0000 0001 | linkWeight f32 (first 16 bits) 	| linkWeight f32 (the others 16)
+					-- ROW 000 0000 0010 | linkTypeParent i1				|	
+					-- ROW 000 0000 0011 | nodeId i16						|
+					-- ROW 000 0000 0100 | nodeIdInv i16					|
+					-- GEOM 
+					--							COL 0000 0000					COL 0000 0001
+					-- ROW 000 0000 0000 | outValue f32 (first 16 bits)		| outValue f32 (the others 16)
 					IF CMD = 0 THEN -- INIT SOME RAM VALUES
 						IF data_s = 4095 THEN
 							data_s <= 511;		
