@@ -104,8 +104,12 @@ SIGNAL s_addrCol: INTEGER RANGE 0 TO 255:=0;
 SIGNAL data_s: INTEGER RANGE 0 TO 4096:=4095;
 
 
-SIGNAL incRef: INTEGER RANGE 0 TO 4096:=0;
-SIGNAL incRefSub: INTEGER RANGE 0 TO 4096:=0;
+SIGNAL neuronSize: INTEGER RANGE 0 TO 6:=6;
+SIGNAL neuronAdjRAMrowSize: INTEGER RANGE 0 TO 4:=4;
+
+SIGNAL geomNeuronId: INTEGER RANGE 0 TO 5:=0;
+SIGNAL adjNeuronId: INTEGER RANGE 0 TO 5:=0;
+
 
 SIGNAL CMD: INTEGER RANGE 0 TO 13:=0; -- 0 = INIT RAM VALUES
 	
@@ -122,17 +126,20 @@ BEGIN
 				IF ram_data_save_ready = '1' OR ram_data_read_ready = '1' THEN
 				
 					-- SDRAM (16bits per grid cell)
-					-- ADJ MATRIX
+					-- ADJ MATRIX (weights) 4row/2col per nodeId data
 					--							COL 0000 0000					COL 0000 0001
 					-- ROW 000 0000 0000 | childLayer i4					|
 					-- ROW 000 0000 0001 | linkWeight f32 (first 16 bits) 	| linkWeight f32 (the others 16)
-					-- ROW 000 0000 0010 | linkTypeParent i1				|	
-					-- ROW 000 0000 0011 | nodeId i16						|
-					-- ROW 000 0000 0100 | nodeIdInv i16					|
-					-- GEOM 
+					-- ROW 000 0000 0010 | linkTypeParent i2				|	
+					-- ROW 000 0000 0011 | nodeIdInv i16					|
+					-- GEOM (neuron values) 1row/2col per nodeData
 					--							COL 0000 0000					COL 0000 0001
 					-- ROW 000 0000 0000 | outValue f32 (first 16 bits)		| outValue f32 (the others 16)
 					IF CMD = 0 THEN -- INIT SOME RAM VALUES
+						--FOR I in 0 to 5 LOOP
+							--adjNeuronIdRowStartAddr
+						--END LOOP
+					
 						IF data_s = 4095 THEN
 							data_s <= 511;		
 							ram_data_save <= "00000001"&"11111111";	
@@ -194,10 +201,6 @@ BEGIN
 				
 			END IF;
 			
-			
-			--FOR I in 0 to 17 LOOP
-		
-			--END LOOP
 		END IF;
 	END PROCESS;
  
