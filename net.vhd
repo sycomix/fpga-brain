@@ -116,6 +116,7 @@ signal linksArray: tLinksArray :=(
    3,5
    );
 SIGNAL currLinksArrayId: INTEGER RANGE 0 TO 15:=0;
+SIGNAL linksArraySize: INTEGER RANGE 0 TO 16:=16;
 
    
 SIGNAL neuronSize: INTEGER RANGE 0 TO 6:=6;
@@ -123,6 +124,7 @@ SIGNAL neuronAdjRAMrowSize: INTEGER RANGE 0 TO 4:=4;
 
 SIGNAL currGeomNeuronId: INTEGER RANGE 0 TO 5:=0;
 SIGNAL currAdjNeuronId: INTEGER RANGE 0 TO 5:=0;
+SIGNAL currWord: INTEGER RANGE 0 TO 5:=0;
 
    
 SIGNAL CMD: INTEGER RANGE 0 TO 13:=0; -- 0 = INIT RAM VALUES
@@ -146,9 +148,9 @@ BEGIN
 					-- SDRAM (16bits per grid cell)
 					-- ADJ MATRIX (weights) 4row/2col per AdjNeuronId data
 					--							COL 0000 0000					COL 0000 0001
-					-- ROW 000 0000 0000 | childLayer i4					|
 					-- ROW 000 0000 0001 | linkWeight f32 (first 16 bits) 	| linkWeight f32 (the others 16)
 					-- ROW 000 0000 0010 | linkTypeParent i2				|	
+					-- ROW 000 0000 0000 | childLayer i4					|
 					-- ROW 000 0000 0011 | neuronIdInv i16					|
 					-- GEOM (neuron values) 1row/2col per GeomNeuronId data
 					--							COL 0000 0000					COL 0000 0001
@@ -158,8 +160,8 @@ BEGIN
 					--   X   X
 					-- 1/-\3/-\5
 					-- 0-2 0-3 1-2 1-3 2-4 2-5 3-4 3-5 (8 relations=16 integers of linksArray)
-					IF CMD = 0 THEN -- INIT SOME RAM VALUES
-						adjNeuronParentId1D := (linksArray(currLinksArrayId)*neuronSize)+linksArray(currLinksArrayId+1);
+					IF CMD = 0 THEN -- INIT RAM ADJACENCY MATRIX VALUES
+						adjNeuronParentId1D := (linksArray(currLinksArrayId+1)*neuronSize)+linksArray(currLinksArrayId);
 						adjNeuronIdRowStartAddr := adjNeuronParentId1D*neuronAdjRAMrowSize;
 					
 						IF data_s = 4095 THEN
@@ -179,13 +181,19 @@ BEGIN
 						--ram_data_save <= STD_LOGIC_VECTOR(to_signed(data_s, ram_data_save'length));
 						ram_data_save_do <= '1';
 						
-						ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr, ram_row_addr'length));
-						ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr, ram_col_addr'length));
+						ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr, ram_row_addr'length)); -- first is linkWeight
 						
-						IF s_addrRow < 4 THEN
-							s_addrRow <= s_addrRow+1;
+						IF currLinksArrayId < (linksArraySize-2) THEN
+							IF currWord = 0 THEN
+								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr, ram_col_addr'length));
+								currWord <= currWord+1;
+							ELSE
+								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr+1, ram_col_addr'length));
+								currWord <= 0;							
+								currLinksArrayId <= currLinksArrayId+2;
+							END IF;
 						ELSE
-							s_addrRow <= 0;							
+							currLinksArrayId <= 0;							
 							CMD <= 1; -- to READ VALUES
 						END IF;
 					ELSIF CMD = 1 THEN
