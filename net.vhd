@@ -107,8 +107,8 @@ SIGNAL data_s: INTEGER RANGE 0 TO 4096:=4095;
 SIGNAL neuronSize: INTEGER RANGE 0 TO 6:=6;
 SIGNAL neuronAdjRAMrowSize: INTEGER RANGE 0 TO 4:=4;
 
-SIGNAL geomNeuronId: INTEGER RANGE 0 TO 5:=0;
-SIGNAL adjNeuronId: INTEGER RANGE 0 TO 5:=0;
+SIGNAL currGeomNeuronId: INTEGER RANGE 0 TO 5:=0;
+SIGNAL currAdjNeuronId: INTEGER RANGE 0 TO 5:=0;
 
 
 SIGNAL CMD: INTEGER RANGE 0 TO 13:=0; -- 0 = INIT RAM VALUES
@@ -117,6 +117,9 @@ SIGNAL incVGA: INTEGER RANGE 0 TO 5000001:=0;
 
 BEGIN 	
 	PROCESS(CLK_IN)
+	VARIABLE adjNeuronIdRowStartAddr : INTEGER range 0 to 2097 := 0;
+	VARIABLE adjNeuronIdColStartAddr : INTEGER range 0 to 152 := 0;
+	VARIABLE w : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	BEGIN
 		IF (rising_edge(CLK_IN)) THEN
 			--outs <= "0000000000000000";
@@ -136,9 +139,7 @@ BEGIN
 					--							COL 0000 0000					COL 0000 0001
 					-- ROW 000 0000 0000 | outValue f32 (first 16 bits)		| outValue f32 (the others 16)
 					IF CMD = 0 THEN -- INIT SOME RAM VALUES
-						--FOR I in 0 to 5 LOOP
-							--adjNeuronIdRowStartAddr
-						--END LOOP
+						--adjNeuronIdRowStartAddr
 					
 						IF data_s = 4095 THEN
 							data_s <= 511;		
