@@ -120,11 +120,12 @@ SIGNAL linksArraySize: INTEGER RANGE 0 TO 16:=16;
 
    
 SIGNAL neuronSize: INTEGER RANGE 0 TO 6:=6;
-SIGNAL neuronAdjRAMrowSize: INTEGER RANGE 0 TO 4:=4;
+SIGNAL neuronAdjRAMrowSize: INTEGER RANGE 0 TO 5:=5;
+SIGNAL currAdjNeuronData: INTEGER RANGE 0 TO 4:=0;
 
 SIGNAL currGeomNeuronId: INTEGER RANGE 0 TO 5:=0;
 SIGNAL currAdjNeuronId: INTEGER RANGE 0 TO 5:=0;
-SIGNAL currWord: INTEGER RANGE 0 TO 5:=0;
+SIGNAL currWord: INTEGER RANGE 0 TO 1:=0;
 
    
 SIGNAL CMD: INTEGER RANGE 0 TO 13:=0; -- 0 = INIT RAM VALUES
@@ -146,12 +147,13 @@ BEGIN
 				IF ram_data_save_ready = '1' OR ram_data_read_ready = '1' THEN
 				
 					-- SDRAM (16bits per grid cell)
-					-- ADJ MATRIX (weights) 4row/2col per AdjNeuronId data
+					-- ADJ MATRIX (weights) 5row/2col per AdjNeuronId data
 					--							COL 0000 0000					COL 0000 0001
-					-- ROW 000 0000 0001 | linkWeight f32 (first 16 bits) 	| linkWeight f32 (the others 16)
-					-- ROW 000 0000 0010 | linkTypeParent i2				|	
-					-- ROW 000 0000 0000 | childLayer i4					|
-					-- ROW 000 0000 0011 | neuronIdInv i16					|
+					-- ROW 000 0000 0000 | linkWeight f32 (first 16 bits) 	| linkWeight f32 (the others 16)
+					-- ROW 000 0000 0001 | linkTypeParent i2				|	
+					-- ROW 000 0000 0010 | childLayer i4					|
+					-- ROW 000 0000 0011 | neuronId i16					|
+					-- ROW 000 0000 0100 | neuronIdInv i16					|
 					-- GEOM (neuron values) 1row/2col per GeomNeuronId data
 					--							COL 0000 0000					COL 0000 0001
 					-- ROW 000 0000 0000 | outValue f32 (first 16 bits)		| outValue f32 (the others 16)
@@ -181,18 +183,43 @@ BEGIN
 						--ram_data_save <= STD_LOGIC_VECTOR(to_signed(data_s, ram_data_save'length));
 						ram_data_save_do <= '1';
 						
-						ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr, ram_row_addr'length)); -- first is linkWeight
-						
 						IF currLinksArrayId < (linksArraySize-2) THEN
-							IF currWord = 0 THEN
+							IF currAdjNeuronData = 0 THEN
+								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr, ram_row_addr'length)); -- first is linkWeight
+								
+								IF currWord = 0 THEN
+									ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr, ram_col_addr'length));
+									currWord <= currWord+1;
+								ELSE
+									ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr+1, ram_col_addr'length));
+									currWord <= 0;							
+									--currLinksArrayId <= currLinksArrayId+2;
+									currAdjNeuronData <= 1;
+								END IF;
+							ELSIF currAdjNeuronData = 1 THEN
+								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr+1, ram_row_addr'length)); -- second is linkTypeParent (1 child; 2 parent) (act as relation exists flag)
 								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr, ram_col_addr'length));
-								currWord <= currWord+1;
-							ELSE
-								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr+1, ram_col_addr'length));
-								currWord <= 0;							
+								
+								currAdjNeuronData <= 2;
+							ELSIF currAdjNeuronData = 2 THEN
+								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr+2, ram_row_addr'length)); -- childLayer
+								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr, ram_col_addr'length));
+								
+								currAdjNeuronData <= 3;
+							ELSIF currAdjNeuronData = 3 THEN
+								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr+3, ram_row_addr'length)); -- neuronId
+								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr, ram_col_addr'length));
+								
+								currAdjNeuronData <= 4;
+							ELSIF currAdjNeuronData = 4 THEN
+								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr+4, ram_row_addr'length)); -- neuronIdInv
+								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr, ram_col_addr'length));
+								
+								currAdjNeuronData <= 0;
 								currLinksArrayId <= currLinksArrayId+2;
 							END IF;
 						ELSE
+							-- TODO something on RAM
 							currLinksArrayId <= 0;							
 							CMD <= 1; -- to READ VALUES
 						END IF;
