@@ -154,6 +154,7 @@ SIGNAL currAdjNeuronData: INTEGER RANGE 0 TO 4:=0;
 SIGNAL currGeomNeuronId: INTEGER RANGE 0 TO 5:=0;
 SIGNAL currAdjNeuronId: INTEGER RANGE 0 TO 5:=0;
 SIGNAL currWord: INTEGER RANGE 0 TO 1:=0;
+SIGNAL adjMatField: INTEGER RANGE 0 TO 1:=0;
 
    
 SIGNAL CMD: INTEGER RANGE 0 TO 13:=0; -- 0 = INIT RAM VALUES
@@ -191,7 +192,11 @@ BEGIN
 					-- 1/-\3/-\5
 					-- 0-2 0-3 1-2 1-3 2-4 2-5 3-4 3-5 (8 relations=16 integers of linksArray)
 					IF CMD = 0 THEN -- INIT RAM ADJACENCY MATRIX VALUES
-						adjNeuronParentId1D := (linksArray(currLinksArrayId+1)*neuronSize)+linksArray(currLinksArrayId);
+						IF adjMatField = 0 THEN
+							adjNeuronParentId1D := (linksArray(currLinksArrayId+1)*neuronSize)+linksArray(currLinksArrayId); -- parents
+						ELSIF adjMatField = 1 THEN
+							adjNeuronParentId1D := (linksArray(currLinksArrayId)*neuronSize)+linksArray(currLinksArrayId+1); -- childs											
+						END IF;
 						adjNeuronIdRowStartAddr := adjNeuronParentId1D*neuronAdjRAMrowSize;
 					
 						--IF data_s = 4095 THEN
@@ -234,7 +239,11 @@ BEGIN
 								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr+1, ram_row_addr'length)); -- second is linkTypeParent (1 child; 2 parent) (act as relation exists flag)
 								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr, ram_col_addr'length));
 								
-								ram_data_save <= STD_LOGIC_VECTOR(to_signed(2, ram_data_save'length));
+								IF adjMatField = 0 THEN
+									ram_data_save <= STD_LOGIC_VECTOR(to_signed(2, ram_data_save'length));
+								ELSIF adjMatField = 1 THEN
+									ram_data_save <= STD_LOGIC_VECTOR(to_signed(1, ram_data_save'length));										
+								END IF;
 								
 								currAdjNeuronData <= 2;
 							ELSIF currAdjNeuronData = 2 THEN
@@ -248,22 +257,36 @@ BEGIN
 								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr+3, ram_row_addr'length)); -- neuronId (parent)
 								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr, ram_col_addr'length));
 								
-								ram_data_save <= STD_LOGIC_VECTOR(to_signed(linksArray(currLinksArrayId+1), ram_data_save'length));
+								IF adjMatField = 0 THEN
+									ram_data_save <= STD_LOGIC_VECTOR(to_signed(linksArray(currLinksArrayId+1), ram_data_save'length));
+								ELSIF adjMatField = 1 THEN
+									ram_data_save <= STD_LOGIC_VECTOR(to_signed(linksArray(currLinksArrayId), ram_data_save'length));								
+								END IF;
 								
 								currAdjNeuronData <= 4;
 							ELSIF currAdjNeuronData = 4 THEN
 								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr+4, ram_row_addr'length)); -- neuronIdInv (child)
 								ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr, ram_col_addr'length));
 								
-								ram_data_save <= STD_LOGIC_VECTOR(to_signed(linksArray(currLinksArrayId), ram_data_save'length));
+								IF adjMatField = 0 THEN
+									ram_data_save <= STD_LOGIC_VECTOR(to_signed(linksArray(currLinksArrayId), ram_data_save'length));
+								ELSIF adjMatField = 1 THEN
+									ram_data_save <= STD_LOGIC_VECTOR(to_signed(linksArray(currLinksArrayId+1), ram_data_save'length));								
+								END IF;
 								
 								currAdjNeuronData <= 0;
 								currLinksArrayId <= currLinksArrayId+2;
 							END IF;
 						ELSE
 							-- TODO something on RAM
-							currLinksArrayId <= 0;							
-							CMD <= 1; -- to READ VALUES
+							currLinksArrayId <= 0;		
+									
+							IF adjMatField = 0 THEN
+								adjMatField <= 1;
+							ELSIF adjMatField = 1 THEN
+								adjMatField <= 0;					
+								CMD <= 1; -- to READ VALUES													
+							END IF;
 						END IF;
 					ELSIF CMD = 1 THEN
 						outs <= ram_data_read;
