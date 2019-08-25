@@ -223,13 +223,13 @@ BEGIN
 								IF currWord = 0 THEN
 									ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr, ram_col_addr'length));
 									
-									--ram_data_save <= linksWeightArray(currLinksArrayId/2); -- TODO LSB
+									ram_data_save <= linksWeightArray(currLinksArrayId/2)(15 DOWNTO 0); -- TODO LSB
 									
 									currWord <= currWord+1;
 								ELSE
 									ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr+1, ram_col_addr'length));
 									
-									--ram_data_save <= linksWeightArray(currLinksArrayId/2); -- TODO MSB
+									ram_data_save <= linksWeightArray(currLinksArrayId/2)(31 DOWNTO 16); -- TODO MSB
 									
 									currWord <= 0;							
 									--currLinksArrayId <= currLinksArrayId+2;
@@ -279,12 +279,14 @@ BEGIN
 							END IF;
 						ELSE
 							-- TODO something on RAM
-							currLinksArrayId <= 0;		
+							currLinksArrayId <= 0;				
+							ram_data_save_do <= '0';
+							ram_data_read_do <= '0';
 									
 							IF adjMatField = 0 THEN
 								adjMatField <= 1;
 							ELSIF adjMatField = 1 THEN
-								adjMatField <= 0;					
+								adjMatField <= 0;			
 								CMD <= 1; -- to READ VALUES													
 							END IF;
 						END IF;

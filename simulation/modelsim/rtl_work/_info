@@ -22,9 +22,9 @@ V3C7`KRbJNYiK1m4G3X@@11
 !s100 0Mg2VJl96KJ`=kmB>0HRg3
 Z7 OV;C;10.5b;63
 31
-Z8 !s110 1566538948
+Z8 !s110 1566745419
 !i10b 1
-Z9 !s108 1566538948.000000
+Z9 !s108 1566745419.000000
 Z10 !s90 -reportprogress|300|-93|-work|work|G:/fpga-brain/fpgabrain.vhdl|
 Z11 !s107 G:/fpga-brain/fpgabrain.vhdl|
 !i113 1
@@ -50,7 +50,7 @@ R11
 R12
 R13
 Enet
-Z14 w1566538854
+Z14 w1566745369
 R2
 R3
 R4
@@ -63,9 +63,9 @@ V^8fBGAMNjhM3_YW8mmBN>2
 !s100 FGmS89SnHRL6[_IVKN63h2
 R7
 31
-Z17 !s110 1566538949
+Z17 !s110 1566745420
 !i10b 1
-Z18 !s108 1566538949.000000
+Z18 !s108 1566745420.000000
 Z19 !s90 -reportprogress|300|-93|-work|work|G:/fpga-brain/net.vhd|
 Z20 !s107 G:/fpga-brain/net.vhd|
 !i113 1
@@ -76,10 +76,10 @@ R2
 R3
 R4
 DEx4 work 3 net 0 22 ^8fBGAMNjhM3_YW8mmBN>2
-l114
+l164
 L99
-V?730Nzia;`gOhN]Le?i7e0
-!s100 c<>ODCKSKlOZKPK]52UGX0
+VRjiSDez2HOOX@CIXo^Pfk2
+!s100 i?@P2C;c6NodlnXUR2=gL0
 R7
 31
 R17
@@ -152,7 +152,7 @@ o-vlog01compat -work work
 !s92 -vlog01compat -work work +incdir+G:/fpga-brain/db
 tCvgOpt 0
 Eram16
-Z26 w1566538847
+Z26 w1566541352
 R2
 R3
 R4
@@ -180,8 +180,8 @@ R4
 DEx4 work 5 ram16 0 22 G;LVhN_O?aE>ZJ>EP1UFB3
 l42
 L37
-VJ_EiVD8P?XIC:=G8n;M6N3
-!s100 64CNPKgGgA><HYLiE2XPX0
+V5f>Ga10B4[cIAZ_eR=`>J0
+!s100 CC6TN`7QiC;XiI9g?90^L3
 R7
 31
 R17
@@ -247,9 +247,9 @@ V6>`6ZU4PmY2JP:Z=^U;AF3
 !s100 UakCj3;PAM@OjDKh1mEfY1
 R7
 31
-R17
+R8
 !i10b 1
-R18
+R9
 Z39 !s90 -reportprogress|300|-93|-work|work|G:/fpga-brain/VGA.vhd|
 Z40 !s107 G:/fpga-brain/VGA.vhd|
 !i113 1
@@ -266,9 +266,9 @@ Vl:CI=a=[^S4HjMNz;DaRo2
 !s100 l5=MJEbbHkk6PcdSXWEY`3
 R7
 31
-R17
+R8
 !i10b 1
-R18
+R9
 R39
 R40
 !i113 1
