@@ -103,6 +103,40 @@ SIGNAL s_addrRow: INTEGER RANGE 0 TO 512:=0;
 SIGNAL s_addrCol: INTEGER RANGE 0 TO 255:=0;
 SIGNAL data_s: INTEGER RANGE 0 TO 4096:=4095;
 
+COMPONENT altfp_addsub IS
+	PORT
+	(
+	clock		: IN STD_LOGIC ;
+	dataa		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+	datab		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+	result		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+	);
+END COMPONENT altfp_addsub;
+SIGNAL compAddv0, compAddv1, compAddResult: STD_LOGIC_VECTOR(31 downto 0);
+
+COMPONENT altfp_mul IS
+	PORT
+	(
+	clock		: IN STD_LOGIC ;
+	dataa		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+	datab		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+	result		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+	);
+END COMPONENT altfp_mul;
+SIGNAL compMulv0, compMulv1, compMulResult: STD_LOGIC_VECTOR(31 downto 0);
+
+
+type tAdjMatrixLinkWeight is array (0 to 35) of std_logic_vector(31 downto 0);
+signal adjMatrixLinkWeight: tAdjMatrixLinkWeight;
+
+type tAdjMatrixNeuronId is array (0 to 35) of INTEGER RANGE 0 TO 5;
+signal adjMatrixNeuronId: tAdjMatrixNeuronId;
+
+type tAdjMatrixNeuronIdInv is array (0 to 35) of INTEGER RANGE 0 TO 5;
+signal adjMatrixNeuronIdInv: tAdjMatrixNeuronIdInv;
+
+type tGeomNeuronOut is array (0 to 5) of std_logic_vector(31 downto 0);
+signal geomNeuronOut: tGeomNeuronOut;
 
 type tLinksArray is array (0 to 15 ) of INTEGER RANGE 0 TO 5;
 signal linksArray: tLinksArray :=(
@@ -170,6 +204,9 @@ SIGNAL CMD: INTEGER RANGE 0 TO 13:=0; -- 0 = INIT RAM VALUES
 SIGNAL incVGA: INTEGER RANGE 0 TO 5000001:=0;
 
 BEGIN 	
+	c0: altfp_mul PORT MAP (CLK_IN, compMulv0, compMulv1, compMulResult);
+	c1: altfp_addsub PORT MAP (CLK_IN, compAddv0, compAddv1, compAddResult);
+
 	PROCESS(CLK_IN)
 	VARIABLE adjNeuronIdRowStartAddr : INTEGER range 0 to 2097 := 0;
 	VARIABLE adjNeuronIdColStartAddr : INTEGER range 0 to 152 := 0;
@@ -179,9 +216,9 @@ BEGIN
 		IF (rising_edge(CLK_IN)) THEN
 			--outs <= "0000000000000000";
 		
-			IF ram_initialized = '1' THEN
+			--IF ram_initialized = '1' THEN
 			
-				IF ram_data_save_ready = '1' OR ram_data_read_ready = '1' THEN
+				--IF ram_data_save_ready = '1' OR ram_data_read_ready = '1' THEN
 				
 					-- SDRAM (16bits per grid cell)
 					-- ADJ MATRIX (weights) 5row/2col per AdjNeuronId data
@@ -232,12 +269,14 @@ BEGIN
 									ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr, ram_col_addr'length));
 									
 									ram_data_save <= linksWeightArray(currLinksArrayId/2)(15 DOWNTO 0); -- TODO LSB
+									adjMatrixLinkWeight(adjNeuronParentId1D) <= linksWeightArray(currLinksArrayId/2);
 									
 									currWord <= currWord+1;
 								ELSE
 									ram_col_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdColStartAddr+1, ram_col_addr'length));
 									
 									ram_data_save <= linksWeightArray(currLinksArrayId/2)(31 DOWNTO 16); -- TODO MSB
+									adjMatrixLinkWeight(adjNeuronParentId1D) <= linksWeightArray(currLinksArrayId/2);
 									
 									currWord <= 0;							
 									currAdjNeuronData <= 1;
@@ -270,6 +309,8 @@ BEGIN
 									ram_data_save <= STD_LOGIC_VECTOR(to_signed(linksArray(currLinksArrayId), ram_data_save'length));								
 								END IF;
 								
+								adjMatrixNeuronId(adjNeuronParentId1D) <= linksArray(currLinksArrayId+1);
+								
 								currAdjNeuronData <= 4;
 							ELSIF currAdjNeuronData = 4 THEN
 								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr+4, ram_row_addr'length)); -- neuronIdInv (child)
@@ -280,6 +321,8 @@ BEGIN
 								ELSIF adjMatField = 1 THEN
 									ram_data_save <= STD_LOGIC_VECTOR(to_signed(linksArray(currLinksArrayId+1), ram_data_save'length));								
 								END IF;
+								
+								adjMatrixNeuronIdInv(adjNeuronParentId1D) <= linksArray(currLinksArrayId);
 								
 								currAdjNeuronData <= 0;
 								currLinksArrayId <= currLinksArrayId+2;
@@ -301,11 +344,37 @@ BEGIN
 						adjNeuronParentId1D := (currGeomNeuronId*neuronSize)+neuronsLayerArrayArray(currNeuronsLayerArrayId)(currNeuronsLayerArraySubId); -- parents
 						adjNeuronIdRowStartAddr := adjNeuronParentId1D*neuronAdjRAMrowSize;
 						
-						IF currGeomNeuronId < (neuronSize-1) THEN
-							currGeomNeuronId <= currGeomNeuronId+1;
-						ELSE
-							currGeomNeuronId <= 0;
+						compMulv0 <= i0;
+						compMulv1 <= adjMatrixLinkWeight(adjNeuronParentId1D);
+						-- compMulResult
+						-- TODO wait mul
+						IF currNeuronsLayerArraySubId = 0 THEN
+							geomNeuronOut(currGeomNeuronId) <= compMulResult;			
+							currNeuronsLayerArraySubId <= currNeuronsLayerArraySubId+1;
+						ELSIF currNeuronsLayerArraySubId < 1 THEN
+							compAddv0 <= geomNeuronOut(currGeomNeuronId);
+							compAddv1 <= compMulResult;
+							geomNeuronOut(currGeomNeuronId) <= compAddResult;
+							-- TODO wait add
+							
+							currNeuronsLayerArraySubId <= currNeuronsLayerArraySubId+1;									
+						ELSIF currNeuronsLayerArraySubId = 1 THEN
+							compAddv0 <= geomNeuronOut(currGeomNeuronId);
+							compAddv1 <= compMulResult;
+							geomNeuronOut(currGeomNeuronId) <= compAddResult;
+							-- TODO wait add
+							
+							currNeuronsLayerArraySubId <= 0;			
+								
+							IF currGeomNeuronId < (neuronSize-1) THEN
+								outs <= "00000001"&"11111111";
+								currGeomNeuronId <= currGeomNeuronId+1;
+							ELSE
+								outs <= "00000011"&"11111111";
+								currGeomNeuronId <= 0;
+							END IF;
 						END IF;
+						
 					ELSIF CMD = 2 THEN
 						outs <= ram_data_read;
 						ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
@@ -337,9 +406,9 @@ BEGIN
 					END IF;
 					
 					
-				END IF;
+				--END IF;
 				
-			END IF;
+			--END IF;
 			
 		END IF;
 	END PROCESS;

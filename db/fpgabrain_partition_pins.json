@@ -12,7 +12,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R",
+					"name" : "VGA_G",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B",
 					"strict" : false
 				},
 				{
