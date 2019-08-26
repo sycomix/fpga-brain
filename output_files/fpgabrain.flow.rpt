@@ -1,5 +1,5 @@
 Flow report for fpgabrain
-Tue Aug 27 00:34:05 2019
+Tue Aug 27 01:09:39 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Aug 27 00:34:05 2019       ;
+; Flow Status                        ; Successful - Tue Aug 27 01:09:39 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/27/2019 00:33:29 ;
+; Start date & time ; 08/27/2019 01:09:04 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; fpgabrain           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 8796757229156.156685880900716          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 8796757229156.156686094400764          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
@@ -110,12 +110,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:20     ; 1.0                     ; 4856 MB             ; 00:00:23                           ;
-; Fitter               ; 00:00:05     ; 1.0                     ; 5515 MB             ; 00:00:06                           ;
+; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 4857 MB             ; 00:00:22                           ;
+; Fitter               ; 00:00:06     ; 1.0                     ; 5511 MB             ; 00:00:06                           ;
 ; Assembler            ; 00:00:01     ; 1.0                     ; 4694 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4776 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4666 MB             ; 00:00:01                           ;
-; Total                ; 00:00:30     ; --                      ; --                  ; 00:00:33                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 4776 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4667 MB             ; 00:00:01                           ;
+; Total                ; 00:00:31     ; --                      ; --                  ; 00:00:32                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

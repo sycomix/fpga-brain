@@ -344,8 +344,8 @@ BEGIN
 						adjNeuronParentId1D := (currGeomNeuronId*neuronSize)+neuronsLayerArrayArray(currNeuronsLayerArrayId)(currNeuronsLayerArraySubId); -- parents
 						adjNeuronIdRowStartAddr := adjNeuronParentId1D*neuronAdjRAMrowSize;
 						
-						compMulv0 <= i0;
-						compMulv1 <= adjMatrixLinkWeight(adjNeuronParentId1D);
+						compMulv0 <= geomNeuronOut(neuronsLayerArrayArray(currNeuronsLayerArrayId)(currNeuronsLayerArraySubId)); -- child value
+						compMulv1 <= adjMatrixLinkWeight(adjNeuronParentId1D); -- weight
 						-- compMulResult
 						-- TODO wait mul
 						IF currNeuronsLayerArraySubId = 0 THEN
