@@ -146,12 +146,20 @@ signal childLayerArray: tchildLayerArray :=(
 --SIGNAL currChildLayerArrayId: INTEGER RANGE 0 TO 7:=0;
 --SIGNAL childLayerArraySize: INTEGER RANGE 0 TO 8:=8;
 
+type tneuronsLayerArraySub is array (0 to 1 ) of INTEGER RANGE 0 TO 15;
+type tneuronsLayerArray is array (0 to 1 ) of tneuronsLayerArraySub;
+signal neuronsLayerArrayArray: tneuronsLayerArray :=(
+   (0,1),
+   (2,3)
+   );
+SIGNAL currNeuronsLayerArrayId: INTEGER RANGE 0 TO 1:=0;
+SIGNAL currNeuronsLayerArraySubId: INTEGER RANGE 0 TO 1:=0;
    
 SIGNAL neuronSize: INTEGER RANGE 0 TO 6:=6;
 SIGNAL neuronAdjRAMrowSize: INTEGER RANGE 0 TO 5:=5;
 SIGNAL currAdjNeuronData: INTEGER RANGE 0 TO 4:=0;
 
-SIGNAL currGeomNeuronId: INTEGER RANGE 0 TO 5:=0;
+SIGNAL currGeomNeuronId: INTEGER RANGE 0 TO 5:=neuronsLayerArrayArray(1)(0);
 SIGNAL currAdjNeuronId: INTEGER RANGE 0 TO 5:=0;
 SIGNAL currWord: INTEGER RANGE 0 TO 1:=0;
 SIGNAL adjMatField: INTEGER RANGE 0 TO 1:=0;
@@ -232,7 +240,6 @@ BEGIN
 									ram_data_save <= linksWeightArray(currLinksArrayId/2)(31 DOWNTO 16); -- TODO MSB
 									
 									currWord <= 0;							
-									--currLinksArrayId <= currLinksArrayId+2;
 									currAdjNeuronData <= 1;
 								END IF;
 							ELSIF currAdjNeuronData = 1 THEN
@@ -278,7 +285,7 @@ BEGIN
 								currLinksArrayId <= currLinksArrayId+2;
 							END IF;
 						ELSE
-							-- TODO something on RAM
+							-- RAM REFRESH
 							currLinksArrayId <= 0;				
 							ram_data_save_do <= '0';
 							ram_data_read_do <= '0';
@@ -287,10 +294,19 @@ BEGIN
 								adjMatField <= 1;
 							ELSIF adjMatField = 1 THEN
 								adjMatField <= 0;			
-								CMD <= 1; -- to READ VALUES													
+								CMD <= 1; -- to INFERENCE								
 							END IF;
 						END IF;
-					ELSIF CMD = 1 THEN
+					ELSIF CMD = 1 THEN -- INFERENCE
+						adjNeuronParentId1D := (currGeomNeuronId*neuronSize)+neuronsLayerArrayArray(currNeuronsLayerArrayId)(currNeuronsLayerArraySubId); -- parents
+						adjNeuronIdRowStartAddr := adjNeuronParentId1D*neuronAdjRAMrowSize;
+						
+						IF currGeomNeuronId < (neuronSize-1) THEN
+							currGeomNeuronId <= currGeomNeuronId+1;
+						ELSE
+							currGeomNeuronId <= 0;
+						END IF;
+					ELSIF CMD = 2 THEN
 						outs <= ram_data_read;
 						ram_row_addr <= STD_LOGIC_VECTOR(to_signed(s_addrRow, ram_row_addr'length));
 						ram_col_addr <= STD_LOGIC_VECTOR(to_signed(s_addrCol, ram_col_addr'length));
