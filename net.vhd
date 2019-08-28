@@ -367,29 +367,41 @@ BEGIN
 						ELSIF inferenceMulOK = 1 THEN
 							IF currNeuronsLayerArraySubId = 0 THEN
 								geomNeuronOut(currGeomNeuronId) <= compMulResult;			
+								
 								currNeuronsLayerArraySubId <= currNeuronsLayerArraySubId+1;
 							ELSIF currNeuronsLayerArraySubId < 1 THEN
 								compAddv0 <= geomNeuronOut(currGeomNeuronId);
 								compAddv1 <= compMulResult;
-								geomNeuronOut(currGeomNeuronId) <= compAddResult;
-								-- TODO wait add
-								
-								currNeuronsLayerArraySubId <= currNeuronsLayerArraySubId+1;									
-							ELSIF currNeuronsLayerArraySubId = 1 THEN
+								IF currentOperCycles = 100 THEN
+									doOperCycles <= 7;currentOperCycles <= 0;
+								ELSIF currentOperCycles = doOperCycles THEN -- now is ready
+									--inferenceAddOK <= 1;
+									geomNeuronOut(currGeomNeuronId) <= compAddResult;
+									
+									currNeuronsLayerArraySubId <= currNeuronsLayerArraySubId+1;	
+									inferenceMulOK <= 0;
+								END IF;	
+							END IF;															
+							IF currNeuronsLayerArraySubId = 1 THEN
 								compAddv0 <= geomNeuronOut(currGeomNeuronId);
 								compAddv1 <= compMulResult;
-								geomNeuronOut(currGeomNeuronId) <= compAddResult;
-								-- TODO wait add
-								
-								currNeuronsLayerArraySubId <= 0;			
+								IF currentOperCycles = 100 THEN
+									doOperCycles <= 7;currentOperCycles <= 0;
+								ELSIF currentOperCycles = doOperCycles THEN -- now is ready
+									--inferenceAddOK <= 1;
+									geomNeuronOut(currGeomNeuronId) <= compAddResult;
 									
-								IF currGeomNeuronId < (neuronSize-1) THEN
-									outs <= "00000001"&"11111111";
-									currGeomNeuronId <= currGeomNeuronId+1;
-								ELSE
-									outs <= "00000011"&"11111111";
-									currGeomNeuronId <= 0;
-								END IF;
+									currNeuronsLayerArraySubId <= 0;	
+									inferenceMulOK <= 0;
+									
+									IF currGeomNeuronId < (neuronSize-1) THEN
+										outs <= "00000001"&"11111111";
+										currGeomNeuronId <= currGeomNeuronId+1;
+									ELSE
+										outs <= "00000011"&"11111111";
+										currGeomNeuronId <= 0;
+									END IF;
+								END IF;	
 							END IF;
 						END IF;
 					ELSIF CMD = 2 THEN

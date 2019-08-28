@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Tue Aug 27 14:36:44 2019
+Wed Aug 28 05:01:17 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -74,15 +74,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Aug 27 14:36:44 2019       ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug 28 05:01:16 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 409                                         ;
-;     Total combinational functions  ; 381                                         ;
-;     Dedicated logic registers      ; 134                                         ;
-; Total registers                    ; 134                                         ;
+; Total logic elements               ; 419                                         ;
+;     Total combinational functions  ; 391                                         ;
+;     Dedicated logic registers      ; 135                                         ;
+; Total registers                    ; 135                                         ;
 ; Total pins                         ; 45                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -190,7 +190,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -246,20 +247,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 409                                                                        ;
+; Estimated Total logic elements              ; 419                                                                        ;
 ;                                             ;                                                                            ;
-; Total combinational functions               ; 381                                                                        ;
+; Total combinational functions               ; 391                                                                        ;
 ; Logic element usage by number of LUT inputs ;                                                                            ;
-;     -- 4 input functions                    ; 209                                                                        ;
-;     -- 3 input functions                    ; 88                                                                         ;
-;     -- <=2 input functions                  ; 84                                                                         ;
+;     -- 4 input functions                    ; 213                                                                        ;
+;     -- 3 input functions                    ; 89                                                                         ;
+;     -- <=2 input functions                  ; 89                                                                         ;
 ;                                             ;                                                                            ;
 ; Logic elements by mode                      ;                                                                            ;
-;     -- normal mode                          ; 305                                                                        ;
+;     -- normal mode                          ; 315                                                                        ;
 ;     -- arithmetic mode                      ; 76                                                                         ;
 ;                                             ;                                                                            ;
-; Total registers                             ; 134                                                                        ;
-;     -- Dedicated logic registers            ; 134                                                                        ;
+; Total registers                             ; 135                                                                        ;
+;     -- Dedicated logic registers            ; 135                                                                        ;
 ;     -- I/O registers                        ; 0                                                                          ;
 ;                                             ;                                                                            ;
 ; I/O pins                                    ; 45                                                                         ;
@@ -270,9 +271,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                          ;
 ;                                             ;                                                                            ;
 ; Maximum fan-out node                        ; pll:c1|altpll:altpll_component|pll_altpll1:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 136                                                                        ;
-; Total fan-out                               ; 1775                                                                       ;
-; Average fan-out                             ; 2.85                                                                       ;
+; Maximum fan-out                             ; 137                                                                        ;
+; Total fan-out                               ; 1814                                                                       ;
+; Average fan-out                             ; 2.87                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -281,14 +282,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
-; |fpgabrain                            ; 381 (0)             ; 134 (0)                   ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |fpgabrain                                                           ; fpgabrain   ; work         ;
+; |fpgabrain                            ; 391 (0)             ; 135 (0)                   ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |fpgabrain                                                           ; fpgabrain   ; work         ;
 ;    |VGA:c4|                           ; 45 (0)              ; 25 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4                                                    ; VGA         ; work         ;
 ;       |SYNC:C1|                       ; 45 (45)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4|SYNC:C1                                            ; SYNC        ; work         ;
-;    |net:c3|                           ; 145 (145)           ; 43 (43)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3                                                    ; net         ; work         ;
+;    |net:c3|                           ; 154 (154)           ; 44 (44)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3                                                    ; net         ; work         ;
 ;    |pll:c1|                           ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1                                                    ; pll         ; work         ;
 ;       |altpll:altpll_component|       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component                            ; altpll      ; work         ;
 ;          |pll_altpll1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component|pll_altpll1:auto_generated ; pll_altpll1 ; work         ;
-;    |ram16:c2|                         ; 191 (191)           ; 66 (66)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|ram16:c2                                                  ; ram16       ; work         ;
+;    |ram16:c2|                         ; 192 (192)           ; 66 (66)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|ram16:c2                                                  ; ram16       ; work         ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -309,8 +310,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------+---+
 ; Logic Cell Name                                        ;   ;
 +--------------------------------------------------------+---+
-; net:c3|Add3~0                                          ;   ;
-; net:c3|Add6~0                                          ;   ;
+; net:c3|Add2~0                                          ;   ;
+; net:c3|Add5~0                                          ;   ;
 ; Number of logic cells representing combinational loops ; 2 ;
 +--------------------------------------------------------+---+
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -322,10 +323,202 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Register name                                                                                                                                                               ; Reason for Removal                          ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 ; ram16:c2|CS                                                                                                                                                                 ; Stuck at GND due to stuck port data_in      ;
-; net:c3|compMulv0[0..31]                                                                                                                                                     ; Lost fanout                                 ;
-; net:c3|compMulv1[0..31]                                                                                                                                                     ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][8]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][7]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][6]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][5]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][4]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][3]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][2]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][1]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][0]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][31]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][30]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][29]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][28]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][27]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][26]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][25]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][24]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][23]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][22]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][21]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][20]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][19]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][18]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][17]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][16]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][15]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][14]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][13]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][12]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][11]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][10]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][9]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][8]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][7]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][6]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][5]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][4]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][3]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][2]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][1]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[3][0]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][31]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][30]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][29]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][28]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][27]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][26]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][25]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][24]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][23]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][22]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][21]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][20]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][19]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][18]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][17]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][16]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][15]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][14]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][13]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][12]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][11]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][10]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][9]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][8]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][7]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][6]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][5]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][4]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][3]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][2]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][1]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[4][0]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][31]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][30]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][29]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][28]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][27]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][26]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][25]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][24]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][23]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][22]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][21]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][20]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][19]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][18]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][17]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][16]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][15]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][14]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][13]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][12]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][11]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][10]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][9]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][8]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][7]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][6]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][5]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][4]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][3]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][2]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][1]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[5][0]                                                                                                                                                  ; Lost fanout                                 ;
 ; net:c3|compAddv0[0..31]                                                                                                                                                     ; Lost fanout                                 ;
 ; net:c3|compAddv1[0..31]                                                                                                                                                     ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][9]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][10]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][11]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][12]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][13]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][14]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][15]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][16]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][17]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][18]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][19]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][20]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][21]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][22]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][23]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][24]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][25]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][26]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][27]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][28]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][29]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][30]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][31]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][0]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][1]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][2]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][3]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][4]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][5]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][6]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][7]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][8]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][9]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][10]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][11]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][12]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][13]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][14]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][15]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][16]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][17]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][18]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][19]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][20]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][21]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][22]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][23]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][24]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][25]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][26]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][27]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][28]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][29]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][30]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[1][31]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][0]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][1]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][2]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][3]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][4]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][5]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][6]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][7]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][8]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][9]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][10]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][11]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][12]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][13]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][14]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][15]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][16]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][17]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][18]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][19]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][20]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][21]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][22]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][23]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][24]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][25]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][26]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][27]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][28]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][29]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][30]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[0][31]                                                                                                                                                 ; Lost fanout                                 ;
+; net:c3|compMulv1[0..31]                                                                                                                                                     ; Lost fanout                                 ;
+; net:c3|compMulv0[0..31]                                                                                                                                                     ; Lost fanout                                 ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|both_inputs_are_infinite_dffe1                                               ; Lost fanout                                 ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|data_exp_dffe1[0..7]                                                         ; Lost fanout                                 ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|dataa_man_dffe1[0..25]                                                       ; Lost fanout                                 ;
@@ -510,30 +703,30 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe9                                    ; Lost fanout                                 ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[0..8]                    ; Lost fanout                                 ;
 ; net:c3|adjNeuronParentId1D[0..11]                                                                                                                                           ; Lost fanout                                 ;
-; net:c3|currLinksArrayId[0]                                                                                                                                                  ; Stuck at GND due to stuck port data_in      ;
 ; net:c3|CMD[1..3]                                                                                                                                                            ; Stuck at GND due to stuck port data_in      ;
-; net:c3|doOperCycles[3,4]                                                                                                                                                    ; Stuck at GND due to stuck port data_in      ;
-; net:c3|doOperCycles[2]                                                                                                                                                      ; Stuck at VCC due to stuck port data_in      ;
-; net:c3|doOperCycles[1]                                                                                                                                                      ; Stuck at GND due to stuck port data_in      ;
-; net:c3|doOperCycles[0]                                                                                                                                                      ; Stuck at VCC due to stuck port data_in      ;
+; net:c3|currLinksArrayId[0]                                                                                                                                                  ; Stuck at GND due to stuck port data_in      ;
 ; ram16:c2|ram_data_read[0..15]                                                                                                                                               ; Lost fanout                                 ;
 ; net:c3|incVGA[0..22]                                                                                                                                                        ; Stuck at GND due to stuck port clock_enable ;
 ; net:c3|s_addrRow[0..9]                                                                                                                                                      ; Stuck at GND due to stuck port clock_enable ;
-; net:c3|ram_col_addr[1..4,6,8,9,11,12]                                                                                                                                       ; Merged with net:c3|ram_row_addr[12]         ;
-; net:c3|ram_row_addr[11]                                                                                                                                                     ; Merged with net:c3|ram_row_addr[12]         ;
-; net:c3|ram_col_addr[5,7]                                                                                                                                                    ; Merged with net:c3|ram_row_addr[12]         ;
 ; net:c3|outs[10..14]                                                                                                                                                         ; Merged with net:c3|outs[15]                 ;
 ; net:c3|outs[0..7]                                                                                                                                                           ; Merged with net:c3|outs[8]                  ;
+; net:c3|ram_row_addr[12]                                                                                                                                                     ; Merged with net:c3|ram_col_addr[1]          ;
+; net:c3|ram_col_addr[6,8]                                                                                                                                                    ; Merged with net:c3|ram_col_addr[1]          ;
+; net:c3|ram_row_addr[11]                                                                                                                                                     ; Merged with net:c3|ram_col_addr[1]          ;
+; net:c3|ram_col_addr[2..5,7,9,11,12]                                                                                                                                         ; Merged with net:c3|ram_col_addr[1]          ;
 ; ram16:c2|UMQM                                                                                                                                                               ; Merged with ram16:c2|LDQM                   ;
 ; ram16:c2|BA[1]                                                                                                                                                              ; Merged with ram16:c2|BA[0]                  ;
 ; ram16:c2|RA[12]                                                                                                                                                             ; Merged with ram16:c2|RA[11]                 ;
-; net:c3|ram_row_addr[12]                                                                                                                                                     ; Stuck at GND due to stuck port data_in      ;
-; net:c3|ram_data_read_do                                                                                                                                                     ; Stuck at GND due to stuck port data_in      ;
+; net:c3|doOperCycles[4]                                                                                                                                                      ; Merged with net:c3|doOperCycles[3]          ;
+; net:c3|doOperCycles[2]                                                                                                                                                      ; Merged with net:c3|doOperCycles[0]          ;
 ; net:c3|outs[15]                                                                                                                                                             ; Stuck at GND due to stuck port data_in      ;
+; net:c3|ram_data_read_do                                                                                                                                                     ; Stuck at GND due to stuck port data_in      ;
+; net:c3|ram_col_addr[1]                                                                                                                                                      ; Stuck at GND due to stuck port data_in      ;
 ; net:c3|ram_row_addr[9]                                                                                                                                                      ; Stuck at GND due to stuck port data_in      ;
 ; ram16:c2|RA[11]                                                                                                                                                             ; Merged with ram16:c2|RA[9]                  ;
 ; net:c3|outs[8]                                                                                                                                                              ; Stuck at VCC due to stuck port data_in      ;
 ; VGA:c4|SYNC:C1|R                                                                                                                                                            ; Stuck at GND due to stuck port data_in      ;
+; net:c3|doOperCycles[3]                                                                                                                                                      ; Stuck at GND due to stuck port data_in      ;
 ; ram16:c2|BA[0]                                                                                                                                                              ; Stuck at GND due to stuck port data_in      ;
 ; net:c3|linksWeightArray~0                                                                                                                                                   ; Stuck at GND due to stuck port clock        ;
 ; net:c3|linksWeightArray~1                                                                                                                                                   ; Stuck at GND due to stuck port clock        ;
@@ -797,10 +990,11 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; ram16:c2|DQ[14]~reg0                                                                                                                                                        ; Stuck at GND due to stuck port data_in      ;
 ; net:c3|ram_data_save[9]                                                                                                                                                     ; Stuck at GND due to stuck port data_in      ;
 ; ram16:c2|DQ[9]~reg0                                                                                                                                                         ; Stuck at GND due to stuck port data_in      ;
+; net:c3|doOperCycles[0]                                                                                                                                                      ; Stuck at VCC due to stuck port data_in      ;
 ; net:c3|ram_data_save[10,13]                                                                                                                                                 ; Merged with net:c3|ram_data_save[6]         ;
 ; ram16:c2|RA[9]                                                                                                                                                              ; Stuck at GND due to stuck port data_in      ;
 ; ram16:c2|n_sb[3]                                                                                                                                                            ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 1093                                                                                                                                    ;                                             ;
+; Total Number of Removed Registers = 1284                                                                                                                                    ;                                             ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 
 
@@ -809,27 +1003,19 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +-----------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Register name                                                                                                               ; Reason for Removal        ; Registers Removed due to This Register                                                                                                                 ;
 +-----------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; net:c3|CMD[3]                                                                                                               ; Stuck at GND              ; net:c3|doOperCycles[4], net:c3|doOperCycles[3], net:c3|doOperCycles[2],                                                                                ;
-;                                                                                                                             ; due to stuck port data_in ; net:c3|doOperCycles[1], net:c3|doOperCycles[0], ram16:c2|ram_data_read[15],                                                                            ;
-;                                                                                                                             ;                           ; ram16:c2|ram_data_read[14], ram16:c2|ram_data_read[13], ram16:c2|ram_data_read[12],                                                                    ;
-;                                                                                                                             ;                           ; ram16:c2|ram_data_read[11], ram16:c2|ram_data_read[10], ram16:c2|ram_data_read[9],                                                                     ;
-;                                                                                                                             ;                           ; ram16:c2|ram_data_read[8], ram16:c2|ram_data_read[7], ram16:c2|ram_data_read[6],                                                                       ;
-;                                                                                                                             ;                           ; ram16:c2|ram_data_read[5], ram16:c2|ram_data_read[4], ram16:c2|ram_data_read[3],                                                                       ;
-;                                                                                                                             ;                           ; ram16:c2|ram_data_read[2], ram16:c2|ram_data_read[1], ram16:c2|ram_data_read[0],                                                                       ;
-;                                                                                                                             ;                           ; net:c3|incVGA[21], net:c3|incVGA[20], net:c3|incVGA[19], net:c3|incVGA[18],                                                                            ;
-;                                                                                                                             ;                           ; net:c3|incVGA[17], net:c3|incVGA[16], net:c3|incVGA[15], net:c3|incVGA[14],                                                                            ;
-;                                                                                                                             ;                           ; net:c3|incVGA[13], net:c3|incVGA[12], net:c3|incVGA[11], net:c3|incVGA[10],                                                                            ;
-;                                                                                                                             ;                           ; net:c3|incVGA[9], net:c3|incVGA[8], net:c3|incVGA[7], net:c3|incVGA[6], net:c3|incVGA[5],                                                              ;
-;                                                                                                                             ;                           ; net:c3|incVGA[4], net:c3|incVGA[3], net:c3|incVGA[2], net:c3|incVGA[1], net:c3|incVGA[0],                                                              ;
-;                                                                                                                             ;                           ; net:c3|ram_row_addr[12], net:c3|ram_data_read_do, net:c3|outs[15],                                                                                     ;
-;                                                                                                                             ;                           ; net:c3|ram_row_addr[9], net:c3|outs[8], VGA:c4|SYNC:C1|R, ram16:c2|BA[0], ram16:c2|RA[9]                                                               ;
-; net:c3|compMulv0[31]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|man_out_dffe5[3],                                       ;
-;                                                                                                                             ;                           ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|man_out_dffe5[2],                                       ;
-;                                                                                                                             ;                           ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|man_out_dffe5[1],                                       ;
-;                                                                                                                             ;                           ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|man_out_dffe5[0],                                       ;
-;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[2],                                                      ;
-;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[1],                                                      ;
-;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[0]                                                       ;
+; net:c3|CMD[1]                                                                                                               ; Stuck at GND              ; ram16:c2|ram_data_read[15], ram16:c2|ram_data_read[14], ram16:c2|ram_data_read[13],                                                                    ;
+;                                                                                                                             ; due to stuck port data_in ; ram16:c2|ram_data_read[12], ram16:c2|ram_data_read[11], ram16:c2|ram_data_read[10],                                                                    ;
+;                                                                                                                             ;                           ; ram16:c2|ram_data_read[9], ram16:c2|ram_data_read[8], ram16:c2|ram_data_read[7],                                                                       ;
+;                                                                                                                             ;                           ; ram16:c2|ram_data_read[6], ram16:c2|ram_data_read[5], ram16:c2|ram_data_read[4],                                                                       ;
+;                                                                                                                             ;                           ; ram16:c2|ram_data_read[3], ram16:c2|ram_data_read[2], ram16:c2|ram_data_read[1],                                                                       ;
+;                                                                                                                             ;                           ; ram16:c2|ram_data_read[0], net:c3|incVGA[21], net:c3|incVGA[20], net:c3|incVGA[19],                                                                    ;
+;                                                                                                                             ;                           ; net:c3|incVGA[18], net:c3|incVGA[17], net:c3|incVGA[16], net:c3|incVGA[15],                                                                            ;
+;                                                                                                                             ;                           ; net:c3|incVGA[14], net:c3|incVGA[13], net:c3|incVGA[12], net:c3|incVGA[11],                                                                            ;
+;                                                                                                                             ;                           ; net:c3|incVGA[10], net:c3|incVGA[9], net:c3|incVGA[8], net:c3|incVGA[7],                                                                               ;
+;                                                                                                                             ;                           ; net:c3|incVGA[6], net:c3|incVGA[5], net:c3|incVGA[4], net:c3|incVGA[3], net:c3|incVGA[2],                                                              ;
+;                                                                                                                             ;                           ; net:c3|incVGA[1], net:c3|incVGA[0], net:c3|outs[15], net:c3|ram_data_read_do,                                                                          ;
+;                                                                                                                             ;                           ; net:c3|ram_col_addr[1], net:c3|ram_row_addr[9], net:c3|outs[8], VGA:c4|SYNC:C1|R,                                                                      ;
+;                                                                                                                             ;                           ; net:c3|doOperCycles[3], ram16:c2|BA[0], net:c3|doOperCycles[0], ram16:c2|RA[9]                                                                         ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[9]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[9],                                                     ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[8],                                                         ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[7],                                                         ;
@@ -841,32 +1027,35 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe79,             ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe80,             ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe81              ;
-; net:c3|compAddv1[28]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[5]                                                       ;
-; net:c3|compAddv1[27]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[4]                                                       ;
-; net:c3|compAddv1[26]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[3]                                                       ;
-; net:c3|compAddv1[25]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[2]                                                       ;
-; net:c3|compAddv1[24]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[1]                                                       ;
-; net:c3|compAddv1[23]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[0]                                                       ;
-; net:c3|compAddv1[22]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[22]                                                      ;
-; net:c3|compAddv1[21]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[21]                                                      ;
-; net:c3|compAddv1[20]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[20]                                                      ;
-; net:c3|compAddv1[19]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[19]                                                      ;
-; net:c3|compAddv1[18]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[18]                                                      ;
-; net:c3|compAddv1[17]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[17]                                                      ;
-; net:c3|compAddv1[16]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[16]                                                      ;
-; net:c3|compAddv1[15]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[15]                                                      ;
-; net:c3|compAddv1[14]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[14]                                                      ;
-; net:c3|compAddv1[13]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[13]                                                      ;
-; net:c3|compAddv1[12]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[12]                                                      ;
-; net:c3|compAddv1[11]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[11]                                                      ;
-; net:c3|compAddv1[10]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[10]                                                      ;
-; net:c3|compAddv1[9]                                                                                                         ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[9]                                                       ;
-; net:c3|compAddv1[8]                                                                                                         ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[8]                                                       ;
-; net:c3|compAddv1[7]                                                                                                         ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[7]                                                       ;
-; net:c3|compAddv1[6]                                                                                                         ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[6]                                                       ;
-; net:c3|compAddv1[5]                                                                                                         ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[5]                                                       ;
-; net:c3|compAddv1[4]                                                                                                         ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[4]                                                       ;
-; net:c3|compAddv1[3]                                                                                                         ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[3]                                                       ;
+; net:c3|geomNeuronOut[2][5]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[5]                                                       ;
+; net:c3|geomNeuronOut[2][4]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[4]                                                       ;
+; net:c3|geomNeuronOut[2][3]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[3]                                                       ;
+; net:c3|geomNeuronOut[2][2]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[2]                                                       ;
+; net:c3|geomNeuronOut[2][1]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[1]                                                       ;
+; net:c3|geomNeuronOut[2][0]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[0]                                                       ;
+; net:c3|geomNeuronOut[3][31]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|sign_node_ff4                                                          ;
+; net:c3|geomNeuronOut[3][30]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[7]                                                       ;
+; net:c3|geomNeuronOut[3][29]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[6]                                                       ;
+; net:c3|geomNeuronOut[3][28]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[5]                                                       ;
+; net:c3|geomNeuronOut[3][27]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[4]                                                       ;
+; net:c3|geomNeuronOut[3][26]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[3]                                                       ;
+; net:c3|geomNeuronOut[3][25]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[2]                                                       ;
+; net:c3|geomNeuronOut[3][24]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[1]                                                       ;
+; net:c3|geomNeuronOut[3][23]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[0]                                                       ;
+; net:c3|geomNeuronOut[3][22]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[22]                                                      ;
+; net:c3|geomNeuronOut[3][21]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[21]                                                      ;
+; net:c3|geomNeuronOut[3][20]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[20]                                                      ;
+; net:c3|geomNeuronOut[3][19]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[19]                                                      ;
+; net:c3|geomNeuronOut[3][18]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[18]                                                      ;
+; net:c3|geomNeuronOut[3][17]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[17]                                                      ;
+; net:c3|geomNeuronOut[3][16]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[16]                                                      ;
+; net:c3|geomNeuronOut[3][15]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[15]                                                      ;
+; net:c3|geomNeuronOut[3][14]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[14]                                                      ;
+; net:c3|geomNeuronOut[3][13]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[13]                                                      ;
+; net:c3|geomNeuronOut[3][12]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[12]                                                      ;
+; net:c3|geomNeuronOut[3][11]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[11]                                                      ;
+; net:c3|geomNeuronOut[3][10]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[10]                                                      ;
+; net:c3|geomNeuronOut[3][9]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[9]                                                       ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|infinite_output_sign_dffe3   ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|infinite_output_sign_dffe31                             ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|infinity_magnitude_sub_dffe3 ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|infinity_magnitude_sub_dffe31                           ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|input_is_infinite_dffe3      ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|input_is_infinite_dffe31                                ;
@@ -874,7 +1063,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|man_res_is_not_zero_dffe3    ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|man_res_is_not_zero_dffe31                              ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|round_bit_dffe3              ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|round_bit_dffe31                                        ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|sticky_bit_dffe3             ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|sticky_bit_dffe31                                       ;
-; net:c3|compAddv1[31]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|sign_node_ff4                                                          ;
+; net:c3|geomNeuronOut[2][8]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[8]                                                       ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[8]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[8]                                                      ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[7]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[7]                                                      ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[6]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[6]                                                      ;
@@ -884,14 +1073,14 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[2]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[2]                                                      ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[1]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[1]                                                      ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[0]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[0]                                                      ;
-; net:c3|compAddv1[30]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[7]                                                       ;
+; net:c3|geomNeuronOut[2][7]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[7]                                                       ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[5]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[5]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[4]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[4]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[3]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[3]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[2]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[2]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[1]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[1]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[0]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[0]  ;
-; net:c3|compAddv1[29]                                                                                                        ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[6]                                                       ;
+; net:c3|geomNeuronOut[2][6]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[6]                                                       ;
 ; net:c3|ram_data_save[3]                                                                                                     ; Stuck at GND              ; ram16:c2|DQ[3]~reg0                                                                                                                                    ;
 ;                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                        ;
 ; net:c3|ram_data_save[7]                                                                                                     ; Stuck at GND              ; ram16:c2|DQ[7]~reg0                                                                                                                                    ;
@@ -908,12 +1097,12 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 134   ;
+; Total registers                              ; 135   ;
 ; Number of registers using Synchronous Clear  ; 37    ;
-; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Synchronous Load   ; 12    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 86    ;
+; Number of registers using Clock Enable       ; 87    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -923,10 +1112,10 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
+; net:c3|currentOperCycles[5]            ; 4       ;
+; net:c3|currentOperCycles[6]            ; 4       ;
+; net:c3|currentOperCycles[2]            ; 5       ;
 ; net:c3|currGeomNeuronId[1]             ; 4       ;
-; net:c3|currentOperCycles[6]            ; 6       ;
-; net:c3|currentOperCycles[5]            ; 6       ;
-; net:c3|currentOperCycles[2]            ; 4       ;
 ; Total number of inverted registers = 4 ;         ;
 +----------------------------------------+---------+
 
@@ -936,17 +1125,17 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpgabrain|VGA:c4|SYNC:C1|B            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpgabrain|VGA:c4|SYNC:C1|G            ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currLinksArrayId[3]  ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|currentOperCycles[0] ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_row_addr[4]      ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currAdjNeuronData[2] ;
-; 9:1                ; 13 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_data_save[15]    ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[5]              ;
-; 24:1               ; 2 bits    ; 32 LEs        ; 10 LEs               ; 22 LEs                 ; Yes        ; |fpgabrain|ram16:c2|CMD[1]             ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_row_addr[8]      ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currAdjNeuronData[0] ;
+; 9:1                ; 13 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_data_save[12]    ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[6]              ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|currentOperCycles[3] ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 10 LEs               ; 22 LEs                 ; Yes        ; |fpgabrain|ram16:c2|CMD[0]             ;
 ; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[2]             ;
-; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[10]~reg0        ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|currentOperCycles[6] ;
+; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[2]~reg0         ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currentOperCycles[2] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 
 
@@ -3047,28 +3236,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 45                          ;
-; cycloneiii_ff         ; 134                         ;
-;     ENA               ; 53                          ;
+; cycloneiii_ff         ; 135                         ;
+;     ENA               ; 50                          ;
 ;     ENA SCLR          ; 26                          ;
-;     ENA SLD           ; 7                           ;
+;     ENA SLD           ; 11                          ;
 ;     SCLR              ; 11                          ;
 ;     SLD               ; 1                           ;
 ;     plain             ; 36                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 382                         ;
+; cycloneiii_lcell_comb ; 392                         ;
 ;     arith             ; 76                          ;
 ;         2 data inputs ; 57                          ;
 ;         3 data inputs ; 19                          ;
-;     normal            ; 306                         ;
+;     normal            ; 316                         ;
 ;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 21                          ;
-;         3 data inputs ; 69                          ;
-;         4 data inputs ; 209                         ;
+;         2 data inputs ; 26                          ;
+;         3 data inputs ; 70                          ;
+;         4 data inputs ; 213                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 4.80                        ;
+; Average LUT depth     ; 4.79                        ;
 +-----------------------+-----------------------------+
 
 
@@ -3087,7 +3276,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Aug 27 14:36:09 2019
+    Info: Processing started: Wed Aug 28 05:00:56 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -3595,19 +3784,19 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "BA[0]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 27
     Warning (13410): Pin "BA[1]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 27
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 746 registers lost all their fanouts during netlist optimizations.
+Info (17049): 938 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 457 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 471 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 28 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 411 logic cells
+    Info (21061): Implemented 425 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 110 warnings
-    Info: Peak virtual memory: 4867 megabytes
-    Info: Processing ended: Tue Aug 27 14:36:44 2019
-    Info: Elapsed time: 00:00:35
+    Info: Peak virtual memory: 4856 megabytes
+    Info: Processing ended: Wed Aug 28 05:01:17 2019
+    Info: Elapsed time: 00:00:21
     Info: Total CPU time (on all processors): 00:00:24
 
 
