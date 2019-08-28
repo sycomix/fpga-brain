@@ -139,7 +139,13 @@ type tAdjMatrixNeuronIdInv is array (0 to 35) of INTEGER RANGE 0 TO 5;
 signal adjMatrixNeuronIdInv: tAdjMatrixNeuronIdInv;
 
 type tGeomNeuronOut is array (0 to 5) of std_logic_vector(31 downto 0);
-signal geomNeuronOut: tGeomNeuronOut;
+signal geomNeuronOut: tGeomNeuronOut :=(
+   x"3e4ccccd", -- 0.2
+   x"3e99999a", -- 0.3
+   x"3c611900",
+   x"3c611900",
+   x"3c611900",
+   x"3c611900");
 
 type tLinksArray is array (0 to 15 ) of INTEGER RANGE 0 TO 5;
 signal linksArray: tLinksArray :=(
@@ -157,17 +163,23 @@ SIGNAL linksArraySize: INTEGER RANGE 0 TO 16:=16;
 
 type tLinksWeightArray is array (0 to 7 ) of std_logic_vector(31 downto 0);
 signal linksWeightArray: tLinksWeightArray :=(
-   x"3c611900",
-   x"3c601900",
-   x"3c521900",
-   x"3c421900",
-   x"3c520900",
-   x"bc621900",
-   x"bc521900",
-   x"3c621900"
+   x"3c611900", -- 0.0137388706207275390625
+   x"3c601900", -- 0.0136778354644775390625
+   x"3c521900", -- 0.0128233432769775390625
+   x"3c421900", -- 0.0118467807769775390625
+   x"3c520900", -- 0.0128195285797119140625
+   x"bc621900", -- -0.0137999057769775390625
+   x"bc521900", -- -0.0128233432769775390625
+   x"3c621900" -- 0.0137999057769775390625
    );
 --SIGNAL currLinksWeightArrayId: INTEGER RANGE 0 TO 7:=0;
 --SIGNAL linksWeightArraySize: INTEGER RANGE 0 TO 8:=8;
+-- We going to test with neuronId2
+-- 0-2 1-2 ===> 2 = (0.2×0.0137388706207275390625)+(0.3×0.0128233432769775390625) = 0.006594777 = 0x3bd81900
+-- Now check result is between:
+-- 0.0064 = 0x3bd1b717 = 		00111011110100011011011100010111 <--
+-- 0.006594777 = 0x3bd81900 = 	00111011110110000001100100000000
+-- 0.0068 = 0x3bded289 = 		00111011110111101101001010001001 <--
    
 type tchildLayerArray is array (0 to 7 ) of INTEGER RANGE 0 TO 4;
 signal childLayerArray: tchildLayerArray :=(
