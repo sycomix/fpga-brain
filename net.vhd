@@ -184,13 +184,19 @@ signal childLayerArray: tchildLayerArray :=(
 --SIGNAL childLayerArraySize: INTEGER RANGE 0 TO 8:=8;
 
 type tneuronsLayerArraySub is array (0 to 1 ) of INTEGER RANGE 0 TO 15;
-type tneuronsLayerArray is array (0 to 1 ) of tneuronsLayerArraySub;
+type tneuronsLayerArray is array (0 to 2 ) of tneuronsLayerArraySub;
 signal neuronsLayerArrayArray: tneuronsLayerArray :=(
    (0,1),
-   (2,3)
-   );
-SIGNAL currNeuronsLayerArrayId: INTEGER RANGE 0 TO 1:=0;
+   (2,3),
+   (4,5));
+SIGNAL currNeuronsLayerArrayId: INTEGER RANGE 0 TO 2:=0;
 SIGNAL currNeuronsLayerArraySubId: INTEGER RANGE 0 TO 1:=0;
+
+type tneuronsLayerSizeArray is array (0 to 2 ) of INTEGER RANGE 0 TO 15;
+signal neuronsLayerSizeArray: tneuronsLayerSizeArray :=(
+   2,
+   2,
+   2);
    
 SIGNAL neuronSize: INTEGER RANGE 0 TO 6:=6;
 SIGNAL neuronAdjRAMrowSize: INTEGER RANGE 0 TO 5:=5;
@@ -223,7 +229,7 @@ BEGIN
 		
 			IF currentOperCycles < doOperCycles THEN
 				currentOperCycles <= currentOperCycles+1;
-			ELSIF currentOperCycles = doOperCycles-1 THEN -- next is ready (100)
+			ELSIF currentOperCycles = doOperCycles THEN
 				currentOperCycles <= 100;
 			END IF;
 			
@@ -363,13 +369,14 @@ BEGIN
 								doOperCycles <= 5;currentOperCycles <= 0;
 							ELSIF currentOperCycles = doOperCycles-1 THEN -- next is ready
 								inferenceMulOK <= 1;
+								currentOperCycles <= 100;
 							END IF;
 						ELSIF inferenceMulOK = 1 THEN
 							IF currNeuronsLayerArraySubId = 0 THEN
 								geomNeuronOut(currGeomNeuronId) <= compMulResult;			
 								
 								currNeuronsLayerArraySubId <= currNeuronsLayerArraySubId+1;
-							ELSIF currNeuronsLayerArraySubId < 1 THEN
+							ELSIF currNeuronsLayerArraySubId < (neuronsLayerSizeArray(currNeuronsLayerArrayId)-1) THEN
 								compAddv0 <= geomNeuronOut(currGeomNeuronId);
 								compAddv1 <= compMulResult;
 								IF currentOperCycles = 100 THEN
@@ -382,7 +389,7 @@ BEGIN
 									inferenceMulOK <= 0;
 								END IF;	
 							END IF;															
-							IF currNeuronsLayerArraySubId = 1 THEN
+							IF currNeuronsLayerArraySubId = (neuronsLayerSizeArray(currNeuronsLayerArrayId)-1) THEN
 								compAddv0 <= geomNeuronOut(currGeomNeuronId);
 								compAddv1 <= compMulResult;
 								IF currentOperCycles = 100 THEN
@@ -394,12 +401,17 @@ BEGIN
 									currNeuronsLayerArraySubId <= 0;	
 									inferenceMulOK <= 0;
 									
+									IF currGeomNeuronId = neuronsLayerArrayArray(currNeuronsLayerArrayId+1)(neuronsLayerSizeArray(currNeuronsLayerArrayId+1)-1) THEN
+                                        currNeuronsLayerArrayId <= currNeuronsLayerArrayId+1;
+									END IF;
+									
 									IF currGeomNeuronId < (neuronSize-1) THEN
 										outs <= "00000001"&"11111111";
 										currGeomNeuronId <= currGeomNeuronId+1;
-									ELSE
+									ELSIF currGeomNeuronId = (neuronSize-1) THEN
 										outs <= "00000011"&"11111111";
 										currGeomNeuronId <= 0;
+										currNeuronsLayerArrayId <= 0;
 									END IF;
 								END IF;	
 							END IF;

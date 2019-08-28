@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Wed Aug 28 05:01:17 2019
+Wed Aug 28 13:28:31 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -74,13 +74,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug 28 05:01:16 2019       ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug 28 13:28:31 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 419                                         ;
-;     Total combinational functions  ; 391                                         ;
+; Total logic elements               ; 424                                         ;
+;     Total combinational functions  ; 396                                         ;
 ;     Dedicated logic registers      ; 135                                         ;
 ; Total registers                    ; 135                                         ;
 ; Total pins                         ; 45                                          ;
@@ -247,16 +247,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 419                                                                        ;
+; Estimated Total logic elements              ; 424                                                                        ;
 ;                                             ;                                                                            ;
-; Total combinational functions               ; 391                                                                        ;
+; Total combinational functions               ; 396                                                                        ;
 ; Logic element usage by number of LUT inputs ;                                                                            ;
-;     -- 4 input functions                    ; 213                                                                        ;
-;     -- 3 input functions                    ; 89                                                                         ;
+;     -- 4 input functions                    ; 223                                                                        ;
+;     -- 3 input functions                    ; 84                                                                         ;
 ;     -- <=2 input functions                  ; 89                                                                         ;
 ;                                             ;                                                                            ;
 ; Logic elements by mode                      ;                                                                            ;
-;     -- normal mode                          ; 315                                                                        ;
+;     -- normal mode                          ; 320                                                                        ;
 ;     -- arithmetic mode                      ; 76                                                                         ;
 ;                                             ;                                                                            ;
 ; Total registers                             ; 135                                                                        ;
@@ -272,8 +272,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                                            ;
 ; Maximum fan-out node                        ; pll:c1|altpll:altpll_component|pll_altpll1:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 137                                                                        ;
-; Total fan-out                               ; 1814                                                                       ;
-; Average fan-out                             ; 2.87                                                                       ;
+; Total fan-out                               ; 1837                                                                       ;
+; Average fan-out                             ; 2.88                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -282,14 +282,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
-; |fpgabrain                            ; 391 (0)             ; 135 (0)                   ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |fpgabrain                                                           ; fpgabrain   ; work         ;
-;    |VGA:c4|                           ; 45 (0)              ; 25 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4                                                    ; VGA         ; work         ;
-;       |SYNC:C1|                       ; 45 (45)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4|SYNC:C1                                            ; SYNC        ; work         ;
-;    |net:c3|                           ; 154 (154)           ; 44 (44)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3                                                    ; net         ; work         ;
+; |fpgabrain                            ; 396 (0)             ; 135 (0)                   ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |fpgabrain                                                           ; fpgabrain   ; work         ;
+;    |VGA:c4|                           ; 46 (0)              ; 25 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4                                                    ; VGA         ; work         ;
+;       |SYNC:C1|                       ; 46 (46)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4|SYNC:C1                                            ; SYNC        ; work         ;
+;    |net:c3|                           ; 159 (159)           ; 44 (44)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3                                                    ; net         ; work         ;
 ;    |pll:c1|                           ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1                                                    ; pll         ; work         ;
 ;       |altpll:altpll_component|       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component                            ; altpll      ; work         ;
 ;          |pll_altpll1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component|pll_altpll1:auto_generated ; pll_altpll1 ; work         ;
-;    |ram16:c2|                         ; 192 (192)           ; 66 (66)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|ram16:c2                                                  ; ram16       ; work         ;
+;    |ram16:c2|                         ; 191 (191)           ; 66 (66)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|ram16:c2                                                  ; ram16       ; work         ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -323,10 +323,6 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Register name                                                                                                                                                               ; Reason for Removal                          ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 ; ram16:c2|CS                                                                                                                                                                 ; Stuck at GND due to stuck port data_in      ;
-; net:c3|geomNeuronOut[2][8]                                                                                                                                                  ; Lost fanout                                 ;
-; net:c3|geomNeuronOut[2][7]                                                                                                                                                  ; Lost fanout                                 ;
-; net:c3|geomNeuronOut[2][6]                                                                                                                                                  ; Lost fanout                                 ;
-; net:c3|geomNeuronOut[2][5]                                                                                                                                                  ; Lost fanout                                 ;
 ; net:c3|geomNeuronOut[2][4]                                                                                                                                                  ; Lost fanout                                 ;
 ; net:c3|geomNeuronOut[2][3]                                                                                                                                                  ; Lost fanout                                 ;
 ; net:c3|geomNeuronOut[2][2]                                                                                                                                                  ; Lost fanout                                 ;
@@ -430,6 +426,10 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|geomNeuronOut[5][0]                                                                                                                                                  ; Lost fanout                                 ;
 ; net:c3|compAddv0[0..31]                                                                                                                                                     ; Lost fanout                                 ;
 ; net:c3|compAddv1[0..31]                                                                                                                                                     ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][5]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][6]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][7]                                                                                                                                                  ; Lost fanout                                 ;
+; net:c3|geomNeuronOut[2][8]                                                                                                                                                  ; Lost fanout                                 ;
 ; net:c3|geomNeuronOut[2][9]                                                                                                                                                  ; Lost fanout                                 ;
 ; net:c3|geomNeuronOut[2][10]                                                                                                                                                 ; Lost fanout                                 ;
 ; net:c3|geomNeuronOut[2][11]                                                                                                                                                 ; Lost fanout                                 ;
@@ -702,6 +702,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe81                                   ; Lost fanout                                 ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe9                                    ; Lost fanout                                 ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[0..8]                    ; Lost fanout                                 ;
+; net:c3|currNeuronsLayerArrayId[0,1]                                                                                                                                         ; Lost fanout                                 ;
 ; net:c3|adjNeuronParentId1D[0..11]                                                                                                                                           ; Lost fanout                                 ;
 ; net:c3|CMD[1..3]                                                                                                                                                            ; Stuck at GND due to stuck port data_in      ;
 ; net:c3|currLinksArrayId[0]                                                                                                                                                  ; Stuck at GND due to stuck port data_in      ;
@@ -710,10 +711,11 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|s_addrRow[0..9]                                                                                                                                                      ; Stuck at GND due to stuck port clock_enable ;
 ; net:c3|outs[10..14]                                                                                                                                                         ; Merged with net:c3|outs[15]                 ;
 ; net:c3|outs[0..7]                                                                                                                                                           ; Merged with net:c3|outs[8]                  ;
-; net:c3|ram_row_addr[12]                                                                                                                                                     ; Merged with net:c3|ram_col_addr[1]          ;
-; net:c3|ram_col_addr[6,8]                                                                                                                                                    ; Merged with net:c3|ram_col_addr[1]          ;
+; net:c3|ram_col_addr[4,7,9]                                                                                                                                                  ; Merged with net:c3|ram_col_addr[1]          ;
 ; net:c3|ram_row_addr[11]                                                                                                                                                     ; Merged with net:c3|ram_col_addr[1]          ;
-; net:c3|ram_col_addr[2..5,7,9,11,12]                                                                                                                                         ; Merged with net:c3|ram_col_addr[1]          ;
+; net:c3|ram_col_addr[5]                                                                                                                                                      ; Merged with net:c3|ram_col_addr[1]          ;
+; net:c3|ram_row_addr[12]                                                                                                                                                     ; Merged with net:c3|ram_col_addr[1]          ;
+; net:c3|ram_col_addr[2,3,6,8,11,12]                                                                                                                                          ; Merged with net:c3|ram_col_addr[1]          ;
 ; ram16:c2|UMQM                                                                                                                                                               ; Merged with ram16:c2|LDQM                   ;
 ; ram16:c2|BA[1]                                                                                                                                                              ; Merged with ram16:c2|BA[0]                  ;
 ; ram16:c2|RA[12]                                                                                                                                                             ; Merged with ram16:c2|RA[11]                 ;
@@ -994,7 +996,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|ram_data_save[10,13]                                                                                                                                                 ; Merged with net:c3|ram_data_save[6]         ;
 ; ram16:c2|RA[9]                                                                                                                                                              ; Stuck at GND due to stuck port data_in      ;
 ; ram16:c2|n_sb[3]                                                                                                                                                            ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 1284                                                                                                                                    ;                                             ;
+; Total Number of Removed Registers = 1286                                                                                                                                    ;                                             ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 
 
@@ -1027,10 +1029,6 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe79,             ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe80,             ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe81              ;
-; net:c3|geomNeuronOut[2][5]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[5]                                                       ;
-; net:c3|geomNeuronOut[2][4]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[4]                                                       ;
-; net:c3|geomNeuronOut[2][3]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[3]                                                       ;
-; net:c3|geomNeuronOut[2][2]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[2]                                                       ;
 ; net:c3|geomNeuronOut[2][1]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[1]                                                       ;
 ; net:c3|geomNeuronOut[2][0]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[0]                                                       ;
 ; net:c3|geomNeuronOut[3][31]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|sign_node_ff4                                                          ;
@@ -1056,6 +1054,10 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|geomNeuronOut[3][11]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[11]                                                      ;
 ; net:c3|geomNeuronOut[3][10]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[10]                                                      ;
 ; net:c3|geomNeuronOut[3][9]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[9]                                                       ;
+; net:c3|geomNeuronOut[3][8]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[8]                                                       ;
+; net:c3|geomNeuronOut[3][7]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[7]                                                       ;
+; net:c3|geomNeuronOut[3][6]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[6]                                                       ;
+; net:c3|geomNeuronOut[3][5]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[5]                                                       ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|infinite_output_sign_dffe3   ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|infinite_output_sign_dffe31                             ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|infinity_magnitude_sub_dffe3 ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|infinity_magnitude_sub_dffe31                           ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|input_is_infinite_dffe3      ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|input_is_infinite_dffe31                                ;
@@ -1063,7 +1065,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|man_res_is_not_zero_dffe3    ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|man_res_is_not_zero_dffe31                              ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|round_bit_dffe3              ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|round_bit_dffe31                                        ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|sticky_bit_dffe3             ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|sticky_bit_dffe31                                       ;
-; net:c3|geomNeuronOut[2][8]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[8]                                                       ;
+; net:c3|geomNeuronOut[2][4]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[4]                                                       ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[8]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[8]                                                      ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[7]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[7]                                                      ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[6]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[6]                                                      ;
@@ -1073,14 +1075,14 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[2]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[2]                                                      ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[1]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[1]                                                      ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[0]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[0]                                                      ;
-; net:c3|geomNeuronOut[2][7]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[7]                                                       ;
+; net:c3|geomNeuronOut[2][3]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[3]                                                       ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[5]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[5]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[4]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[4]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[3]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[3]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[2]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[2]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[1]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[1]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[0]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[0]  ;
-; net:c3|geomNeuronOut[2][6]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[6]                                                       ;
+; net:c3|geomNeuronOut[2][2]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[2]                                                       ;
 ; net:c3|ram_data_save[3]                                                                                                     ; Stuck at GND              ; ram16:c2|DQ[3]~reg0                                                                                                                                    ;
 ;                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                        ;
 ; net:c3|ram_data_save[7]                                                                                                     ; Stuck at GND              ; ram16:c2|DQ[7]~reg0                                                                                                                                    ;
@@ -1102,7 +1104,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Number of registers using Synchronous Load   ; 12    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 87    ;
+; Number of registers using Clock Enable       ; 85    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1112,10 +1114,10 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
+; net:c3|currGeomNeuronId[1]             ; 5       ;
 ; net:c3|currentOperCycles[5]            ; 4       ;
 ; net:c3|currentOperCycles[6]            ; 4       ;
 ; net:c3|currentOperCycles[2]            ; 5       ;
-; net:c3|currGeomNeuronId[1]             ; 4       ;
 ; Total number of inverted registers = 4 ;         ;
 +----------------------------------------+---------+
 
@@ -1125,17 +1127,19 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpgabrain|VGA:c4|SYNC:C1|G            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currLinksArrayId[3]  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_row_addr[8]      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpgabrain|net:c3|currGeomNeuronId[0]  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currLinksArrayId[1]  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpgabrain|net:c3|outs[9]              ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_row_addr[5]      ;
 ; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currAdjNeuronData[0] ;
-; 9:1                ; 13 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_data_save[12]    ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[6]              ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|currentOperCycles[3] ;
+; 9:1                ; 13 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_data_save[15]    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|VGA:c4|SYNC:C1|G            ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[3]              ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |fpgabrain|net:c3|currentOperCycles[4] ;
 ; 24:1               ; 2 bits    ; 32 LEs        ; 10 LEs               ; 22 LEs                 ; Yes        ; |fpgabrain|ram16:c2|CMD[0]             ;
-; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[2]             ;
-; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[2]~reg0         ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currentOperCycles[2] ;
+; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[0]             ;
+; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[3]~reg0         ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currentOperCycles[2] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 
 
@@ -3237,27 +3241,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; boundary_port         ; 45                          ;
 ; cycloneiii_ff         ; 135                         ;
-;     ENA               ; 50                          ;
+;     ENA               ; 48                          ;
 ;     ENA SCLR          ; 26                          ;
 ;     ENA SLD           ; 11                          ;
 ;     SCLR              ; 11                          ;
 ;     SLD               ; 1                           ;
-;     plain             ; 36                          ;
+;     plain             ; 38                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 392                         ;
+; cycloneiii_lcell_comb ; 397                         ;
 ;     arith             ; 76                          ;
 ;         2 data inputs ; 57                          ;
 ;         3 data inputs ; 19                          ;
-;     normal            ; 316                         ;
+;     normal            ; 321                         ;
 ;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 4                           ;
 ;         2 data inputs ; 26                          ;
-;         3 data inputs ; 70                          ;
-;         4 data inputs ; 213                         ;
+;         3 data inputs ; 65                          ;
+;         4 data inputs ; 223                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 4.79                        ;
+; Average LUT depth     ; 4.90                        ;
 +-----------------------+-----------------------------+
 
 
@@ -3276,7 +3280,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Aug 28 05:00:56 2019
+    Info: Processing started: Wed Aug 28 13:28:10 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -3511,11 +3515,11 @@ Warning (10540): VHDL Signal Declaration warning at net.vhd(145): used explicit 
 Warning (10540): VHDL Signal Declaration warning at net.vhd(156): used explicit default value for signal "linksArraySize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 156
 Warning (10540): VHDL Signal Declaration warning at net.vhd(173): used explicit default value for signal "childLayerArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 173
 Warning (10540): VHDL Signal Declaration warning at net.vhd(188): used explicit default value for signal "neuronsLayerArrayArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 188
-Warning (10540): VHDL Signal Declaration warning at net.vhd(192): used explicit default value for signal "currNeuronsLayerArrayId" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 192
-Warning (10540): VHDL Signal Declaration warning at net.vhd(195): used explicit default value for signal "neuronSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 195
-Warning (10540): VHDL Signal Declaration warning at net.vhd(196): used explicit default value for signal "neuronAdjRAMrowSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 196
-Warning (10542): VHDL Variable Declaration warning at net.vhd(217): used initial value expression for variable "adjNeuronIdColStartAddr" because variable was never assigned a value File: G:/fpga-brain/net.vhd Line: 217
-Info (12128): Elaborating entity "altfp_mul" for hierarchy "net:c3|altfp_mul:c0" File: G:/fpga-brain/net.vhd Line: 212
+Warning (10540): VHDL Signal Declaration warning at net.vhd(196): used explicit default value for signal "neuronsLayerSizeArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 196
+Warning (10540): VHDL Signal Declaration warning at net.vhd(201): used explicit default value for signal "neuronSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 201
+Warning (10540): VHDL Signal Declaration warning at net.vhd(202): used explicit default value for signal "neuronAdjRAMrowSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 202
+Warning (10542): VHDL Variable Declaration warning at net.vhd(223): used initial value expression for variable "adjNeuronIdColStartAddr" because variable was never assigned a value File: G:/fpga-brain/net.vhd Line: 223
+Info (12128): Elaborating entity "altfp_mul" for hierarchy "net:c3|altfp_mul:c0" File: G:/fpga-brain/net.vhd Line: 218
 Info (12128): Elaborating entity "altfp_mul_altfp_mult_trn" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component" File: G:/fpga-brain/altfp_mul.vhd Line: 1451
 Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder" File: G:/fpga-brain/altfp_mul.vhd Line: 1294
 Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder" File: G:/fpga-brain/altfp_mul.vhd Line: 1294
@@ -3579,7 +3583,7 @@ Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mul
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_5ks.tdf
     Info (12023): Found entity 1: mult_5ks File: G:/fpga-brain/db/mult_5ks.tdf Line: 33
 Info (12128): Elaborating entity "mult_5ks" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 376
-Info (12128): Elaborating entity "altfp_addsub" for hierarchy "net:c3|altfp_addsub:c1" File: G:/fpga-brain/net.vhd Line: 213
+Info (12128): Elaborating entity "altfp_addsub" for hierarchy "net:c3|altfp_addsub:c1" File: G:/fpga-brain/net.vhd Line: 219
 Info (12128): Elaborating entity "altfp_addsub_altfp_add_sub_55j" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component" File: G:/fpga-brain/altfp_addsub.vhd Line: 4790
 Info (12128): Elaborating entity "altfp_addsub_altbarrel_shift_35e" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift" File: G:/fpga-brain/altfp_addsub.vhd Line: 3974
 Info (12128): Elaborating entity "altfp_addsub_altbarrel_shift_olb" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift" File: G:/fpga-brain/altfp_addsub.vhd Line: 3984
@@ -3784,19 +3788,19 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "BA[0]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 27
     Warning (13410): Pin "BA[1]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 27
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 938 registers lost all their fanouts during netlist optimizations.
+Info (17049): 940 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 471 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 477 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 28 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 425 logic cells
+    Info (21061): Implemented 431 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 110 warnings
-    Info: Peak virtual memory: 4856 megabytes
-    Info: Processing ended: Wed Aug 28 05:01:17 2019
+    Info: Peak virtual memory: 4858 megabytes
+    Info: Processing ended: Wed Aug 28 13:28:31 2019
     Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:23
 
 
