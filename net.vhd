@@ -158,14 +158,14 @@ signal linksArray: tLinksArray :=(
    3,4,
    3,5
    );
-SIGNAL currLinksArrayId: INTEGER RANGE 0 TO 15:=0;
+SIGNAL currLinksArrayId: INTEGER RANGE 0 TO 16:=0;
 SIGNAL linksArraySize: INTEGER RANGE 0 TO 16:=16;
 
 type tLinksWeightArray is array (0 to 7 ) of std_logic_vector(31 downto 0);
 signal linksWeightArray: tLinksWeightArray :=(
-   x"3c611900", -- 0.0137388706207275390625
+   x"3c611900", -- 0.0137388706207275390625 -- 0.013738871
    x"3c601900", -- 0.0136778354644775390625
-   x"3c521900", -- 0.0128233432769775390625
+   x"3c521900", -- 0.0128233432769775390625 -- 0.012823343
    x"3c421900", -- 0.0118467807769775390625
    x"3c520900", -- 0.0128195285797119140625
    x"bc621900", -- -0.0137999057769775390625
@@ -175,7 +175,7 @@ signal linksWeightArray: tLinksWeightArray :=(
 --SIGNAL currLinksWeightArrayId: INTEGER RANGE 0 TO 7:=0;
 --SIGNAL linksWeightArraySize: INTEGER RANGE 0 TO 8:=8;
 -- We going to test with neuronId2
--- 0-2 1-2 ===> 2 = (0.2×0.0137388706207275390625)+(0.3×0.0128233432769775390625) = 0.006594777 = 0x3bd81900
+-- 0-2 1-2 ===> 2 = (0.2×0.013738871)+(0.3×0.012823343) = 0.006594777 = 0x3bd81900
 -- Now check result is between:
 -- 0.0064 = 0x3bd1b717 = 		00111011110100011011011100010111 <--
 -- 0.006594777 = 0x3bd81900 = 	00111011110110000001100100000000
@@ -265,14 +265,7 @@ BEGIN
 					--   X   X
 					-- 1/-\3/-\5
 					-- 0-2 0-3 1-2 1-3 2-4 2-5 3-4 3-5 (8 relations=16 integers of linksArray)
-					IF CMD = 0 THEN -- INIT RAM ADJACENCY MATRIX VALUES
-						IF adjMatField = 0 THEN
-							adjNeuronParentId1D := (linksArray(currLinksArrayId+1)*neuronSize)+linksArray(currLinksArrayId); -- parents
-						ELSIF adjMatField = 1 THEN
-							adjNeuronParentId1D := (linksArray(currLinksArrayId)*neuronSize)+linksArray(currLinksArrayId+1); -- childs											
-						END IF;
-						adjNeuronIdRowStartAddr := adjNeuronParentId1D*neuronAdjRAMrowSize;
-					
+					IF CMD = 0 THEN -- INIT RAM ADJACENCY MATRIX VALUES					
 						--IF data_s = 4095 THEN
 						--	data_s <= 511;		
 						--	ram_data_save <= "00000001"&"11111111";	
@@ -290,7 +283,14 @@ BEGIN
 						--ram_data_save <= STD_LOGIC_VECTOR(to_signed(data_s, ram_data_save'length));
 						ram_data_save_do <= '1';
 						
-						IF currLinksArrayId < (linksArraySize-2) THEN
+						IF currLinksArrayId < (linksArraySize) THEN
+							IF adjMatField = 0 THEN
+								adjNeuronParentId1D := (linksArray(currLinksArrayId+1)*neuronSize)+linksArray(currLinksArrayId); -- parents
+							ELSIF adjMatField = 1 THEN
+								adjNeuronParentId1D := (linksArray(currLinksArrayId)*neuronSize)+linksArray(currLinksArrayId+1); -- childs											
+							END IF;
+							adjNeuronIdRowStartAddr := adjNeuronParentId1D*neuronAdjRAMrowSize;
+							
 							IF currAdjNeuronData = 0 THEN
 								ram_row_addr <= STD_LOGIC_VECTOR(to_signed(adjNeuronIdRowStartAddr, ram_row_addr'length)); -- first is linkWeight
 								
@@ -388,6 +388,7 @@ BEGIN
 								geomNeuronOut(currGeomNeuronId) <= compMulResult;			
 								
 								currNeuronsLayerArraySubId <= currNeuronsLayerArraySubId+1;
+								inferenceMulOK <= 0;
 							ELSIF currNeuronsLayerArraySubId < (neuronsLayerSizeArray(currNeuronsLayerArrayId)-1) THEN
 								compAddv0 <= geomNeuronOut(currGeomNeuronId);
 								compAddv1 <= compMulResult;
@@ -422,8 +423,14 @@ BEGIN
 										currGeomNeuronId <= currGeomNeuronId+1;
 									ELSIF currGeomNeuronId = (neuronSize-1) THEN
 										outs <= "00000011"&"11111111";
-										currGeomNeuronId <= 0;
+										currGeomNeuronId <= neuronsLayerArrayArray(1)(0);
 										currNeuronsLayerArrayId <= 0;
+									END IF;
+									
+									IF currGeomNeuronId = 2 THEN
+										IF compAddResult > x"3bd1b717" AND compAddResult < x"3bded289" THEN
+											outs <= "00001111"&"11111111";
+										END IF;
 									END IF;
 								END IF;	
 							END IF;

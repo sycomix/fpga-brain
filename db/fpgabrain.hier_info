@@ -791,6 +791,7 @@ CLK_IN => currLinksArrayId[0].CLK
 CLK_IN => currLinksArrayId[1].CLK
 CLK_IN => currLinksArrayId[2].CLK
 CLK_IN => currLinksArrayId[3].CLK
+CLK_IN => currLinksArrayId[4].CLK
 CLK_IN => currAdjNeuronData[0].CLK
 CLK_IN => currAdjNeuronData[1].CLK
 CLK_IN => currAdjNeuronData[2].CLK
