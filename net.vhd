@@ -239,7 +239,7 @@ SIGNAL repeatReadCount: INTEGER RANGE 0 TO 100000:=0;
 type tMPUslaveArray is array (0 to 1 ) of STD_LOGIC_VECTOR(7 downto 0);
 signal MPUslaveArray: tMPUslaveArray :=(
    "1101000"&"0", -- slave + write
-   "1101000"&"0" -- slave + write
+   "1101000"&"1" -- slave + write
    );
 signal MPUaddrsArray: tMPUslaveArray :=(
    "0010"&"0011", -- x23
@@ -534,11 +534,16 @@ BEGIN
 						io_sda <= '0';
 						
 					ELSIF i2CburstCounter < 9 THEN -- slave addr bits
-						IF (i2CbitCount) <= 7 THEN
-							io_sda <= MPUslaveArray(currMPUcmdsArrayId)(i2CbitCount);
-						END IF;		
+						IF currMPUcmdsArrayId = 0 THEN
+							io_sda <= MPUslaveArray(0)(i2CbitCount);
+						ELSE
+							io_sda <= MPUslaveArray(1)(i2CbitCount);						
+						END IF;	
 						IF i2CbitCount > 0 THEN
 							i2CbitCount <= i2CbitCount-1;
+						END IF;
+						IF i2CbitCount = 0 THEN
+							io_sda <= '0'; -- this always write to write the register address
 						END IF;
 						
 					ELSIF i2CburstCounter = 9 THEN -- ACK
@@ -560,12 +565,18 @@ BEGIN
 						i2CbitCount <= 7;
 						
 					ELSIF i2CburstCounter < 27 THEN -- data bits
-						IF MPUslaveArray(currMPUcmdsArrayId)(0) = '1' THEN -- READ
-							io_sda <= 'Z';	
+						IF MPUslaveArray(currMPUcmdsArrayId)(0) = '1' THEN -- READ -- stop cond
+							io_sda <= '1';	
+							o_scl <= '1';
+							
+							i2CburstCounter <= 28;
+							i2CbitCount <= 7;
 						ELSIF MPUslaveArray(currMPUcmdsArrayId)(0) = '0' THEN -- WRITE
-							IF (i2CbitCount) <= 7 THEN
-								io_sda <= MPUdatasArray(currMPUcmdsArrayId)(i2CbitCount);
-							END IF;		
+							IF currMPUcmdsArrayId = 0 THEN
+								io_sda <= MPUdatasArray(0)(i2CbitCount);
+							ELSE
+								io_sda <= MPUdatasArray(1)(i2CbitCount);						
+							END IF;	
 							IF i2CbitCount > 0 THEN
 								i2CbitCount <= i2CbitCount-1;
 							END IF;								
@@ -579,20 +590,22 @@ BEGIN
 							repeatReadCount <= repeatReadCount+1;
 						ELSE
 							i2CburstCounter <= 0;
-							repeatReadCount <= 0;
 							i2CbitCount <= 7;
+							repeatReadCount <= 0;
 							
 							IF currMPUcmdsArrayId < (currMPUcmdsArraySize-1) THEN
 								currMPUcmdsArrayId <= currMPUcmdsArrayId+1;	
 							END IF;
 						END IF;	
-					END IF;
-				END IF;
-				IF i2CclockCounter = 7000 THEN
-				
+					ELSIF i2CburstCounter = 28 THEN -- READ continue here. now start again (after the last stop)
+					
+					END IF;			
+						
 					IF i2CburstCounter < 27 THEN
-						i2CburstCounter <= i2CburstCounter+1;							
-					END IF;	  										
+						i2CburstCounter <= i2CburstCounter+1;	
+					ELSIF i2CburstCounter >= 28 AND i2CburstCounter < 35 THEN
+						i2CburstCounter <= i2CburstCounter+1;												
+					END IF;	  
 				END IF;
 			END IF;
 				
