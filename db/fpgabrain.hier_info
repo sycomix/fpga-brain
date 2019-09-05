@@ -44,6 +44,8 @@ CAS << ram16:c2.CAS
 WE << ram16:c2.WE
 BA[0] << ram16:c2.BA[0]
 BA[1] << ram16:c2.BA[1]
+o_scl << net:c3.o_scl
+io_sda <> net:c3.io_sda
 
 
 |fpgabrain|pll:c1
@@ -400,6 +402,57 @@ CLK_IN => adjMatrixLinkWeight~34.CLK
 CLK_IN => adjMatrixLinkWeight~35.CLK
 CLK_IN => adjMatrixLinkWeight~36.CLK
 CLK_IN => adjMatrixLinkWeight~37.CLK
+CLK_IN => currMPUcmdsArrayId.CLK
+CLK_IN => i2CburstCounter[0].CLK
+CLK_IN => i2CburstCounter[1].CLK
+CLK_IN => i2CburstCounter[2].CLK
+CLK_IN => i2CburstCounter[3].CLK
+CLK_IN => i2CburstCounter[4].CLK
+CLK_IN => i2CburstCounter[5].CLK
+CLK_IN => i2CburstCounter[6].CLK
+CLK_IN => i2CburstCounter[7].CLK
+CLK_IN => i2CburstCounter[8].CLK
+CLK_IN => i2CburstCounter[9].CLK
+CLK_IN => repeatReadCount[0].CLK
+CLK_IN => repeatReadCount[1].CLK
+CLK_IN => repeatReadCount[2].CLK
+CLK_IN => repeatReadCount[3].CLK
+CLK_IN => repeatReadCount[4].CLK
+CLK_IN => repeatReadCount[5].CLK
+CLK_IN => repeatReadCount[6].CLK
+CLK_IN => repeatReadCount[7].CLK
+CLK_IN => repeatReadCount[8].CLK
+CLK_IN => repeatReadCount[9].CLK
+CLK_IN => repeatReadCount[10].CLK
+CLK_IN => repeatReadCount[11].CLK
+CLK_IN => repeatReadCount[12].CLK
+CLK_IN => repeatReadCount[13].CLK
+CLK_IN => repeatReadCount[14].CLK
+CLK_IN => repeatReadCount[15].CLK
+CLK_IN => repeatReadCount[16].CLK
+CLK_IN => i2CbitCount[0].CLK
+CLK_IN => i2CbitCount[1].CLK
+CLK_IN => i2CbitCount[2].CLK
+CLK_IN => io_sda~reg0.CLK
+CLK_IN => io_sda~en.CLK
+CLK_IN => o_scl~reg0.CLK
+CLK_IN => i2CclockState.CLK
+CLK_IN => i2CclockCounter[0].CLK
+CLK_IN => i2CclockCounter[1].CLK
+CLK_IN => i2CclockCounter[2].CLK
+CLK_IN => i2CclockCounter[3].CLK
+CLK_IN => i2CclockCounter[4].CLK
+CLK_IN => i2CclockCounter[5].CLK
+CLK_IN => i2CclockCounter[6].CLK
+CLK_IN => i2CclockCounter[7].CLK
+CLK_IN => i2CclockCounter[8].CLK
+CLK_IN => i2CclockCounter[9].CLK
+CLK_IN => i2CclockCounter[10].CLK
+CLK_IN => i2CclockCounter[11].CLK
+CLK_IN => i2CclockCounter[12].CLK
+CLK_IN => i2CclockCounter[13].CLK
+CLK_IN => i2CclockCounter[14].CLK
+CLK_IN => i2CclockCounter[15].CLK
 CLK_IN => s_addrRow[0].CLK
 CLK_IN => s_addrRow[1].CLK
 CLK_IN => s_addrRow[2].CLK
@@ -3179,6 +3232,8 @@ ram_data_read[12] => outs.DATAB
 ram_data_read[13] => outs.DATAB
 ram_data_read[14] => outs.DATAB
 ram_data_read[15] => outs.DATAB
+o_scl <= o_scl~reg0.DB_MAX_OUTPUT_PORT_TYPE
+io_sda <> io_sda
 
 
 |fpgabrain|net:c3|altfp_mul:c0

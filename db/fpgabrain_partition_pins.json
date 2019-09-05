@@ -84,6 +84,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "o_scl",
+					"strict" : false
+				},
+				{
 					"name" : "DQ[0]",
 					"strict" : false
 				},
@@ -145,6 +149,10 @@
 				},
 				{
 					"name" : "DQ[15]",
+					"strict" : false
+				},
+				{
+					"name" : "io_sda",
 					"strict" : false
 				}
 			]

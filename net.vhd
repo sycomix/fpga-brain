@@ -92,7 +92,10 @@ ENTITY net IS
 		
 		ram_data_read_do: OUT STD_LOGIC:='0';
 		ram_data_read_ready: IN STD_LOGIC;
-		ram_data_read: IN STD_LOGIC_VECTOR(15 DOWNTO 0)
+		ram_data_read: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+		
+		o_scl  :  OUT  STD_LOGIC:='1';
+		io_sda  : INOUT  STD_LOGIC:='1'
 	);
 END net;
 
@@ -225,6 +228,29 @@ SIGNAL inferenceAddOK: INTEGER RANGE 0 TO 1:=0;
 SIGNAL CMD: INTEGER RANGE 0 TO 13:=0; -- 0 = INIT RAM VALUES
 	
 SIGNAL incVGA: INTEGER RANGE 0 TO 5000001:=0;
+
+
+SIGNAL i2CclockCounter: INTEGER RANGE 0 TO 64000:=0;
+SIGNAL i2CclockState : STD_LOGIC:='0';
+SIGNAL i2CburstCounter: INTEGER RANGE 0 TO 1000:=27;
+SIGNAL i2CbitCount: INTEGER RANGE 0 TO 7:=7;
+SIGNAL repeatReadCount: INTEGER RANGE 0 TO 100000:=0;
+
+type tMPUslaveArray is array (0 to 1 ) of STD_LOGIC_VECTOR(7 downto 0);
+signal MPUslaveArray: tMPUslaveArray :=(
+   "1101000"&"0", -- slave + write
+   "1101000"&"0" -- slave + write
+   );
+signal MPUaddrsArray: tMPUslaveArray :=(
+   "0010"&"0011", -- x23
+   "0100"&"0100" -- x74
+   );
+signal MPUdatasArray: tMPUslaveArray :=(
+   "0100"&"0000",
+   "0000"&"0000"
+   );
+SIGNAL currMPUcmdsArrayId: INTEGER RANGE 0 TO 1:=0;
+SIGNAL currMPUcmdsArraySize: INTEGER RANGE 0 TO 2:=1;
 
 BEGIN 	
 	c0: altfp_mul PORT MAP (CLK_IN, compMulv0, compMulv1, compMulResult);
@@ -430,8 +456,11 @@ BEGIN
 									IF currGeomNeuronId = 2 THEN
 										IF compAddResult > x"3bd1b717" AND compAddResult < x"3bded289" THEN
 											outs <= "00001111"&"11111111";
+						--outs <= rot_x;
 										END IF;
 									END IF;
+									
+									
 								END IF;	
 							END IF;
 						END IF;
@@ -470,6 +499,103 @@ BEGIN
 				
 			--END IF;
 			
+		END IF;
+	END PROCESS;
+	
+	
+	PROCESS(CLK_IN)
+	BEGIN
+		IF (rising_edge(CLK_IN)) THEN
+		
+			i2CclockCounter <= i2CclockCounter+1;
+			IF i2CclockCounter = 8000 THEN
+				i2CclockCounter <= 0;
+				
+				IF i2CclockState = '1' THEN
+					i2CclockState <= '0';
+					IF i2CburstCounter /= 27 THEN
+						o_scl <= '0';	
+					END IF;		
+				ELSE
+					i2CclockState <= '1';		
+					o_scl <= '1';		
+				END IF;
+			END IF;
+			
+			IF i2CclockState = '1' THEN
+				IF i2CclockCounter = 7000 THEN
+					IF i2CburstCounter = 0 THEN 
+						io_sda <= '0';
+					END IF; 										
+				END IF;
+			ELSE
+				IF i2CclockCounter = 7000 THEN
+					IF i2CburstCounter = 0 THEN -- start cond
+						io_sda <= '0';
+						
+					ELSIF i2CburstCounter < 9 THEN -- slave addr bits
+						IF (i2CbitCount) <= 7 THEN
+							io_sda <= MPUslaveArray(currMPUcmdsArrayId)(i2CbitCount);
+						END IF;		
+						IF i2CbitCount > 0 THEN
+							i2CbitCount <= i2CbitCount-1;
+						END IF;
+						
+					ELSIF i2CburstCounter = 9 THEN -- ACK
+						io_sda <= 'Z';		
+						i2CbitCount <= 7;
+						
+					ELSIF i2CburstCounter < 18 THEN -- register bits
+						IF currMPUcmdsArrayId = 0 THEN
+							io_sda <= MPUaddrsArray(0)(i2CbitCount);
+						ELSE
+							io_sda <= MPUaddrsArray(1)(i2CbitCount);						
+						END IF;		
+						IF i2CbitCount > 0 THEN
+							i2CbitCount <= i2CbitCount-1;
+						END IF;
+						
+					ELSIF i2CburstCounter = 18 THEN -- ACK
+						io_sda <= 'Z';		
+						i2CbitCount <= 7;
+						
+					ELSIF i2CburstCounter < 27 THEN -- data bits
+						IF MPUslaveArray(currMPUcmdsArrayId)(0) = '1' THEN -- READ
+							io_sda <= 'Z';	
+						ELSIF MPUslaveArray(currMPUcmdsArrayId)(0) = '0' THEN -- WRITE
+							IF (i2CbitCount) <= 7 THEN
+								io_sda <= MPUdatasArray(currMPUcmdsArrayId)(i2CbitCount);
+							END IF;		
+							IF i2CbitCount > 0 THEN
+								i2CbitCount <= i2CbitCount-1;
+							END IF;								
+						END IF;
+						
+					ELSIF i2CburstCounter = 27 THEN -- stop cond
+						io_sda <= '1';	
+						o_scl <= '1';	
+						
+						IF repeatReadCount < 350 THEN
+							repeatReadCount <= repeatReadCount+1;
+						ELSE
+							i2CburstCounter <= 0;
+							repeatReadCount <= 0;
+							i2CbitCount <= 7;
+							
+							IF currMPUcmdsArrayId < (currMPUcmdsArraySize-1) THEN
+								currMPUcmdsArrayId <= currMPUcmdsArrayId+1;	
+							END IF;
+						END IF;	
+					END IF;
+				END IF;
+				IF i2CclockCounter = 7000 THEN
+				
+					IF i2CburstCounter < 27 THEN
+						i2CburstCounter <= i2CburstCounter+1;							
+					END IF;	  										
+				END IF;
+			END IF;
+				
 		END IF;
 	END PROCESS;
  

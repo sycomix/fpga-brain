@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Thu Aug 29 08:29:32 2019
+Thu Sep 05 03:24:43 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -82,16 +82,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Aug 29 08:29:32 2019       ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 05 03:24:43 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 2,009                                       ;
-;     Total combinational functions  ; 1,708                                       ;
-;     Dedicated logic registers      ; 973                                         ;
-; Total registers                    ; 973                                         ;
-; Total pins                         ; 45                                          ;
+; Total logic elements               ; 2,130                                       ;
+;     Total combinational functions  ; 1,829                                       ;
+;     Dedicated logic registers      ; 1,023                                       ;
+; Total registers                    ; 1023                                        ;
+; Total pins                         ; 47                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 1,197                                       ;
 ; Embedded Multiplier 9-bit elements ; 7                                           ;
@@ -274,23 +274,23 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 2,009                                                                      ;
+; Estimated Total logic elements              ; 2,130                                                                      ;
 ;                                             ;                                                                            ;
-; Total combinational functions               ; 1708                                                                       ;
+; Total combinational functions               ; 1829                                                                       ;
 ; Logic element usage by number of LUT inputs ;                                                                            ;
-;     -- 4 input functions                    ; 786                                                                        ;
-;     -- 3 input functions                    ; 627                                                                        ;
-;     -- <=2 input functions                  ; 295                                                                        ;
+;     -- 4 input functions                    ; 835                                                                        ;
+;     -- 3 input functions                    ; 639                                                                        ;
+;     -- <=2 input functions                  ; 355                                                                        ;
 ;                                             ;                                                                            ;
 ; Logic elements by mode                      ;                                                                            ;
-;     -- normal mode                          ; 1392                                                                       ;
-;     -- arithmetic mode                      ; 316                                                                        ;
+;     -- normal mode                          ; 1473                                                                       ;
+;     -- arithmetic mode                      ; 356                                                                        ;
 ;                                             ;                                                                            ;
-; Total registers                             ; 973                                                                        ;
-;     -- Dedicated logic registers            ; 973                                                                        ;
+; Total registers                             ; 1023                                                                       ;
+;     -- Dedicated logic registers            ; 1023                                                                       ;
 ;     -- I/O registers                        ; 0                                                                          ;
 ;                                             ;                                                                            ;
-; I/O pins                                    ; 45                                                                         ;
+; I/O pins                                    ; 47                                                                         ;
 ; Total memory bits                           ; 1197                                                                       ;
 ;                                             ;                                                                            ;
 ; Embedded Multiplier 9-bit elements          ; 7                                                                          ;
@@ -299,9 +299,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                          ;
 ;                                             ;                                                                            ;
 ; Maximum fan-out node                        ; pll:c1|altpll:altpll_component|pll_altpll1:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 1026                                                                       ;
-; Total fan-out                               ; 8901                                                                       ;
-; Average fan-out                             ; 3.13                                                                       ;
+; Maximum fan-out                             ; 1076                                                                       ;
+; Total fan-out                               ; 9396                                                                       ;
+; Average fan-out                             ; 3.11                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -310,12 +310,12 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                                                                           ; Entity Name                          ; Library Name ;
 +--------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+--------------+
-; |fpgabrain                                                                           ; 1708 (2)            ; 973 (0)                   ; 1197        ; 7            ; 1       ; 3         ; 45   ; 0            ; |fpgabrain                                                                                                                                                                                                                                                                                                                                                                                                    ; fpgabrain                            ; work         ;
+; |fpgabrain                                                                           ; 1829 (2)            ; 1023 (0)                  ; 1197        ; 7            ; 1       ; 3         ; 47   ; 0            ; |fpgabrain                                                                                                                                                                                                                                                                                                                                                                                                    ; fpgabrain                            ; work         ;
 ;    |VGA:c4|                                                                          ; 45 (0)              ; 26 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4                                                                                                                                                                                                                                                                                                                                                                                             ; VGA                                  ; work         ;
 ;       |SYNC:C1|                                                                      ; 45 (45)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4|SYNC:C1                                                                                                                                                                                                                                                                                                                                                                                     ; SYNC                                 ; work         ;
-;    |net:c3|                                                                          ; 1466 (453)          ; 882 (335)                 ; 1197        ; 7            ; 1       ; 3         ; 0    ; 0            ; |fpgabrain|net:c3                                                                                                                                                                                                                                                                                                                                                                                             ; net                                  ; work         ;
-;       |altfp_addsub:c1|                                                              ; 792 (0)             ; 339 (0)                   ; 45          ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1                                                                                                                                                                                                                                                                                                                                                                             ; altfp_addsub                         ; work         ;
-;          |altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|   ; 792 (298)           ; 339 (218)                 ; 45          ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component                                                                                                                                                                                                                                                                                                     ; altfp_addsub_altfp_add_sub_55j       ; work         ;
+;    |net:c3|                                                                          ; 1587 (575)          ; 932 (385)                 ; 1197        ; 7            ; 1       ; 3         ; 0    ; 0            ; |fpgabrain|net:c3                                                                                                                                                                                                                                                                                                                                                                                             ; net                                  ; work         ;
+;       |altfp_addsub:c1|                                                              ; 791 (0)             ; 339 (0)                   ; 45          ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1                                                                                                                                                                                                                                                                                                                                                                             ; altfp_addsub                         ; work         ;
+;          |altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|   ; 791 (297)           ; 339 (218)                 ; 45          ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component                                                                                                                                                                                                                                                                                                     ; altfp_addsub_altfp_add_sub_55j       ; work         ;
 ;             |altfp_addsub_altbarrel_shift_35e:lbarrel_shift|                         ; 111 (111)           ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift                                                                                                                                                                                                                                                      ; altfp_addsub_altbarrel_shift_35e     ; work         ;
 ;             |altfp_addsub_altbarrel_shift_olb:rbarrel_shift|                         ; 106 (106)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift                                                                                                                                                                                                                                                      ; altfp_addsub_altbarrel_shift_olb     ; work         ;
 ;             |altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|                ; 33 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt                                                                                                                                                                                                                                             ; altfp_addsub_altpriority_encoder_e48 ; work         ;
@@ -441,10 +441,11 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; net:c3|outs[12..14]                                                                                              ; Merged with net:c3|outs[15]                                                                                                  ;
 ; net:c3|outs[10]                                                                                                  ; Merged with net:c3|outs[11]                                                                                                  ;
 ; net:c3|outs[0..7]                                                                                                ; Merged with net:c3|outs[8]                                                                                                   ;
+; net:c3|ram_col_addr[2,5,7]                                                                                       ; Merged with net:c3|ram_col_addr[1]                                                                                           ;
 ; net:c3|ram_row_addr[12]                                                                                          ; Merged with net:c3|ram_col_addr[1]                                                                                           ;
-; net:c3|ram_col_addr[4..6,11]                                                                                     ; Merged with net:c3|ram_col_addr[1]                                                                                           ;
+; net:c3|ram_col_addr[3,4,8,9,11,12]                                                                               ; Merged with net:c3|ram_col_addr[1]                                                                                           ;
 ; net:c3|ram_row_addr[11]                                                                                          ; Merged with net:c3|ram_col_addr[1]                                                                                           ;
-; net:c3|ram_col_addr[2,3,7..9,12]                                                                                 ; Merged with net:c3|ram_col_addr[1]                                                                                           ;
+; net:c3|ram_col_addr[6]                                                                                           ; Merged with net:c3|ram_col_addr[1]                                                                                           ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|exp_adj_dffe21[0] ; Merged with net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|exp_adj_dffe21[1] ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_round_p[0]                   ; Merged with net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lsb_dffe                         ;
 ; ram16:c2|UMQM                                                                                                    ; Merged with ram16:c2|LDQM                                                                                                    ;
@@ -454,6 +455,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; net:c3|doOperCycles[2]                                                                                           ; Merged with net:c3|doOperCycles[0]                                                                                           ;
 ; net:c3|ram_data_read_do                                                                                          ; Stuck at GND due to stuck port data_in                                                                                       ;
 ; net:c3|ram_col_addr[1]                                                                                           ; Stuck at GND due to stuck port data_in                                                                                       ;
+; net:c3|currMPUcmdsArrayId                                                                                        ; Stuck at GND due to stuck port clock_enable                                                                                  ;
 ; net:c3|ram_row_addr[9]                                                                                           ; Stuck at GND due to stuck port data_in                                                                                       ;
 ; ram16:c2|RA[11]                                                                                                  ; Merged with ram16:c2|RA[9]                                                                                                   ;
 ; net:c3|outs[15]                                                                                                  ; Stuck at GND due to stuck port data_in                                                                                       ;
@@ -718,6 +720,22 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; net:c3|linksWeightArray~253                                                                                      ; Stuck at GND due to stuck port clock                                                                                         ;
 ; net:c3|linksWeightArray~254                                                                                      ; Stuck at GND due to stuck port clock                                                                                         ;
 ; net:c3|linksWeightArray~255                                                                                      ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~0                                                                                           ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~1                                                                                           ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~2                                                                                           ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~3                                                                                           ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~4                                                                                           ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~5                                                                                           ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~6                                                                                           ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~7                                                                                           ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~8                                                                                           ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~9                                                                                           ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~10                                                                                          ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~11                                                                                          ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~12                                                                                          ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~13                                                                                          ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~14                                                                                          ; Stuck at GND due to stuck port clock                                                                                         ;
+; net:c3|MPUslaveArray~15                                                                                          ; Stuck at GND due to stuck port clock                                                                                         ;
 ; net:c3|ram_data_save[3,7,9,14]                                                                                   ; Stuck at GND due to stuck port data_in                                                                                       ;
 ; ram16:c2|DQ[3]~reg0                                                                                              ; Stuck at GND due to stuck port data_in                                                                                       ;
 ; ram16:c2|DQ[7]~reg0                                                                                              ; Stuck at GND due to stuck port data_in                                                                                       ;
@@ -727,7 +745,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; net:c3|ram_data_save[10,13]                                                                                      ; Merged with net:c3|ram_data_save[6]                                                                                          ;
 ; ram16:c2|RA[9]                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                       ;
 ; ram16:c2|n_sb[3]                                                                                                 ; Stuck at GND due to stuck port data_in                                                                                       ;
-; Total Number of Removed Registers = 376                                                                          ;                                                                                                                              ;
+; Total Number of Removed Registers = 393                                                                          ;                                                                                                                              ;
 +------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -766,12 +784,12 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 973   ;
-; Number of registers using Synchronous Clear  ; 43    ;
+; Total registers                              ; 1023  ;
+; Number of registers using Synchronous Clear  ; 60    ;
 ; Number of registers using Synchronous Load   ; 104   ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 377   ;
+; Number of registers using Clock Enable       ; 400   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -781,10 +799,19 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
+; net:c3|o_scl                            ; 2       ;
+; net:c3|i2CburstCounter[4]               ; 10      ;
+; net:c3|i2CburstCounter[1]               ; 5       ;
+; net:c3|i2CburstCounter[3]               ; 13      ;
+; net:c3|i2CburstCounter[0]               ; 10      ;
 ; net:c3|currGeomNeuronId[1]              ; 78      ;
 ; net:c3|currentOperCycles[5]             ; 4       ;
 ; net:c3|currentOperCycles[6]             ; 4       ;
 ; net:c3|currentOperCycles[2]             ; 5       ;
+; net:c3|i2CbitCount[0]                   ; 5       ;
+; net:c3|i2CbitCount[1]                   ; 4       ;
+; net:c3|i2CbitCount[2]                   ; 3       ;
+; net:c3|geomNeuronOut[1][23]             ; 2       ;
 ; net:c3|geomNeuronOut[4][29]             ; 2       ;
 ; net:c3|geomNeuronOut[5][29]             ; 2       ;
 ; net:c3|geomNeuronOut[2][29]             ; 2       ;
@@ -811,9 +838,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; net:c3|geomNeuronOut[3][26]             ; 2       ;
 ; net:c3|geomNeuronOut[1][25]             ; 2       ;
 ; net:c3|geomNeuronOut[0][25]             ; 2       ;
-; net:c3|geomNeuronOut[1][23]             ; 2       ;
-; net:c3|geomNeuronOut[1][7]              ; 2       ;
-; net:c3|geomNeuronOut[0][7]              ; 2       ;
+; net:c3|geomNeuronOut[0][6]              ; 2       ;
 ; net:c3|geomNeuronOut[4][22]             ; 2       ;
 ; net:c3|geomNeuronOut[5][22]             ; 2       ;
 ; net:c3|geomNeuronOut[2][22]             ; 2       ;
@@ -852,14 +877,15 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; net:c3|geomNeuronOut[2][8]              ; 2       ;
 ; net:c3|geomNeuronOut[1][8]              ; 2       ;
 ; net:c3|geomNeuronOut[3][8]              ; 2       ;
-; net:c3|geomNeuronOut[0][6]              ; 2       ;
+; net:c3|geomNeuronOut[1][7]              ; 2       ;
+; net:c3|geomNeuronOut[0][7]              ; 2       ;
 ; net:c3|geomNeuronOut[1][4]              ; 2       ;
 ; net:c3|geomNeuronOut[1][3]              ; 2       ;
 ; net:c3|geomNeuronOut[0][3]              ; 2       ;
 ; net:c3|geomNeuronOut[0][2]              ; 2       ;
 ; net:c3|geomNeuronOut[1][1]              ; 2       ;
 ; net:c3|geomNeuronOut[0][0]              ; 2       ;
-; Total number of inverted registers = 78 ;         ;
+; Total number of inverted registers = 86 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -902,40 +928,43 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpgabrain|net:c3|currGeomNeuronId[2]                                                                                                                                     ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|currLinksArrayId[4]                                                                                                                                     ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |fpgabrain|net:c3|i2CburstCounter[2]                                                                                                                                      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|currLinksArrayId[1]                                                                                                                                     ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift|sbit_piper1d[17] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpgabrain|net:c3|currNeuronsLayerArrayId[1]                                                                                                                              ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|compAddv0[27]                                                                                                                                           ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|compMulv0[29]                                                                                                                                           ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|compAddv0[14]                                                                                                                                           ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|compMulv0[10]                                                                                                                                           ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift|sbit_piper1d[21] ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|outs[8]                                                                                                                                                 ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_row_addr[8]                                                                                                                                         ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_row_addr[6]                                                                                                                                         ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift|sbit_piper1d[22] ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currAdjNeuronData[1]                                                                                                                                    ;
-; 9:1                ; 13 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_data_save[8]                                                                                                                                        ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currAdjNeuronData[0]                                                                                                                                    ;
+; 9:1                ; 13 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_data_save[7]                                                                                                                                        ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift|sbit_piper1d[25] ;
-; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[5][4]                                                                                                                                     ;
-; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[4][7]                                                                                                                                     ;
-; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[3][18]                                                                                                                                    ;
-; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[2][10]                                                                                                                                    ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[1][24]                                                                                                                                    ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[0][13]                                                                                                                                    ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[7]                                                                                                                                                 ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |fpgabrain|net:c3|currentOperCycles[4]                                                                                                                                    ;
+; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[5][7]                                                                                                                                     ;
+; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[4][1]                                                                                                                                     ;
+; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[3][15]                                                                                                                                    ;
+; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[2][24]                                                                                                                                    ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[1][13]                                                                                                                                    ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[0][5]                                                                                                                                     ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[2]                                                                                                                                                 ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |fpgabrain|net:c3|currentOperCycles[3]                                                                                                                                    ;
 ; 24:1               ; 2 bits    ; 32 LEs        ; 10 LEs               ; 22 LEs                 ; Yes        ; |fpgabrain|ram16:c2|CMD[1]                                                                                                                                                ;
-; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[9]                                                                                                                                                ;
-; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[0]~reg0                                                                                                                                            ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[5][28]                                                                                                                                    ;
+; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[3]                                                                                                                                                ;
+; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[15]~reg0                                                                                                                                           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|i2CburstCounter[3]                                                                                                                                      ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[5][12]                                                                                                                                    ;
 ; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[4][12]                                                                                                                                    ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[3][22]                                                                                                                                    ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[2][29]                                                                                                                                    ;
-; 5:1                ; 17 bits   ; 51 LEs        ; 17 LEs               ; 34 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[1][11]                                                                                                                                    ;
-; 5:1                ; 17 bits   ; 51 LEs        ; 17 LEs               ; 34 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[0][25]                                                                                                                                    ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[3][16]                                                                                                                                    ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[2][22]                                                                                                                                    ;
+; 5:1                ; 17 bits   ; 51 LEs        ; 17 LEs               ; 34 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[1][8]                                                                                                                                     ;
+; 5:1                ; 17 bits   ; 51 LEs        ; 17 LEs               ; 34 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[0][10]                                                                                                                                    ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |fpgabrain|net:c3|i2CbitCount[0]                                                                                                                                          ;
 ; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currentOperCycles[6]                                                                                                                                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift|result[9]        ;
-; 4:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|wire_w_man_add_sub_res_mag_dffe27_wo_range413w[13]              ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift|result[0]        ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift|result[1]        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift|result[8]        ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|wire_w_man_add_sub_res_mag_dffe27_wo_range413w[25]              ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift|result[4]        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift|result[2]        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -3162,33 +3191,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 45                          ;
-; cycloneiii_ff         ; 973                         ;
-;     ENA               ; 279                         ;
-;     ENA SCLR          ; 26                          ;
+; boundary_port         ; 47                          ;
+; cycloneiii_ff         ; 1023                        ;
+;     ENA               ; 285                         ;
+;     ENA SCLR          ; 43                          ;
 ;     ENA SLD           ; 72                          ;
 ;     SCLR              ; 17                          ;
 ;     SLD               ; 32                          ;
-;     plain             ; 547                         ;
-; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 1708                        ;
-;     arith             ; 316                         ;
+;     plain             ; 574                         ;
+; cycloneiii_io_obuf    ; 17                          ;
+; cycloneiii_lcell_comb ; 1830                        ;
+;     arith             ; 356                         ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 131                         ;
+;         2 data inputs ; 171                         ;
 ;         3 data inputs ; 184                         ;
-;     normal            ; 1392                        ;
+;     normal            ; 1474                        ;
 ;         0 data inputs ; 13                          ;
-;         1 data inputs ; 65                          ;
-;         2 data inputs ; 85                          ;
-;         3 data inputs ; 443                         ;
-;         4 data inputs ; 786                         ;
+;         1 data inputs ; 69                          ;
+;         2 data inputs ; 102                         ;
+;         3 data inputs ; 455                         ;
+;         4 data inputs ; 835                         ;
 ; cycloneiii_mac_mult   ; 4                           ;
 ; cycloneiii_mac_out    ; 4                           ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 47                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.30                       ;
-; Average LUT depth     ; 4.01                        ;
+; Average LUT depth     ; 4.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -3207,12 +3236,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Aug 29 08:29:06 2019
+    Info: Processing started: Thu Sep 05 03:24:17 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file fpgabrain.vhdl
-    Info (12022): Found design unit 1: fpgabrain-bhv File: G:/fpga-brain/fpgabrain.vhdl Line: 31
+    Info (12022): Found design unit 1: fpgabrain-bhv File: G:/fpga-brain/fpgabrain.vhdl Line: 34
     Info (12023): Found entity 1: fpgabrain File: G:/fpga-brain/fpgabrain.vhdl Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file vga.vhd
     Info (12022): Found design unit 1: VGA-MAIN File: G:/fpga-brain/VGA.vhd Line: 14
@@ -3228,7 +3257,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file fulladd
 Info (12021): Found 1 design units, including 1 entities, in source file sum8.bdf
     Info (12023): Found entity 1: sum8
 Info (12021): Found 2 design units, including 1 entities, in source file net.vhd
-    Info (12022): Found design unit 1: net-bhv File: G:/fpga-brain/net.vhd Line: 99
+    Info (12022): Found design unit 1: net-bhv File: G:/fpga-brain/net.vhd Line: 102
     Info (12023): Found entity 1: net File: G:/fpga-brain/net.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file neuron.vhd
     Info (12022): Found design unit 1: neuron-bdf_type File: G:/fpga-brain/neuron.vhd Line: 25
@@ -3295,79 +3324,79 @@ Info (12021): Found 2 design units, including 1 entities, in source file ram16.v
     Info (12022): Found design unit 1: ram16-bhv File: G:/fpga-brain/ram16.vhd Line: 37
     Info (12023): Found entity 1: ram16 File: G:/fpga-brain/ram16.vhd Line: 6
 Info (12127): Elaborating entity "fpgabrain" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at fpgabrain.vhdl(179): used implicit default value for signal "areset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/fpgabrain.vhdl Line: 179
-Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(180): object "locked" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 180
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(183): used explicit default value for signal "i0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 183
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(184): used explicit default value for signal "i1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 184
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(185): used explicit default value for signal "i2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 185
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(186): used explicit default value for signal "i3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 186
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(187): used explicit default value for signal "i4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 187
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(188): used explicit default value for signal "wi0_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 188
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(189): used explicit default value for signal "wi0_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 189
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(190): used explicit default value for signal "wi0_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 190
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(191): used explicit default value for signal "wi0_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 191
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(192): used explicit default value for signal "wi0_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 192
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(193): used explicit default value for signal "wi1_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 193
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(194): used explicit default value for signal "wi1_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 194
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(195): used explicit default value for signal "wi1_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 195
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(196): used explicit default value for signal "wi1_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 196
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(197): used explicit default value for signal "wi1_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 197
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(198): used explicit default value for signal "wi2_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 198
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(199): used explicit default value for signal "wi2_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 199
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(200): used explicit default value for signal "wi2_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 200
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(201): used explicit default value for signal "wi2_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 201
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(202): used explicit default value for signal "wi2_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 202
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(203): used explicit default value for signal "wi3_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 203
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(204): used explicit default value for signal "wi3_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 204
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(205): used explicit default value for signal "wi3_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 205
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(206): used explicit default value for signal "wi3_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 206
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(207): used explicit default value for signal "wi3_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 207
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(208): used explicit default value for signal "wi4_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 208
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(209): used explicit default value for signal "wi4_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 209
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(210): used explicit default value for signal "wi4_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 210
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(211): used explicit default value for signal "wi4_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 211
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(212): used explicit default value for signal "wi4_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 212
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(214): used explicit default value for signal "wh0_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 214
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(215): used explicit default value for signal "wh0_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 215
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(216): used explicit default value for signal "wh0_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 216
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(217): used explicit default value for signal "wh0_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 217
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(218): used explicit default value for signal "wh0_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 218
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(219): used explicit default value for signal "wh1_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 219
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(220): used explicit default value for signal "wh1_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 220
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(221): used explicit default value for signal "wh1_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 221
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(222): used explicit default value for signal "wh1_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 222
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(223): used explicit default value for signal "wh1_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 223
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(224): used explicit default value for signal "wh2_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 224
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(225): used explicit default value for signal "wh2_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 225
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(226): used explicit default value for signal "wh2_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 226
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(227): used explicit default value for signal "wh2_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 227
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(228): used explicit default value for signal "wh2_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 228
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(229): used explicit default value for signal "wh3_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 229
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(230): used explicit default value for signal "wh3_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 230
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(231): used explicit default value for signal "wh3_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 231
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(232): used explicit default value for signal "wh3_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 232
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(233): used explicit default value for signal "wh3_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 233
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(234): used explicit default value for signal "wh4_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 234
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(235): used explicit default value for signal "wh4_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 235
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(236): used explicit default value for signal "wh4_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 236
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(237): used explicit default value for signal "wh4_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 237
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(238): used explicit default value for signal "wh4_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 238
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(240): used explicit default value for signal "wh5_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 240
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(241): used explicit default value for signal "wh5_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 241
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(242): used explicit default value for signal "wh5_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 242
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(243): used explicit default value for signal "wh6_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 243
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(244): used explicit default value for signal "wh6_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 244
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(245): used explicit default value for signal "wh6_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 245
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(246): used explicit default value for signal "wh7_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 246
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(247): used explicit default value for signal "wh7_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 247
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(248): used explicit default value for signal "wh7_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 248
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(249): used explicit default value for signal "wh8_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 249
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(250): used explicit default value for signal "wh8_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 250
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(251): used explicit default value for signal "wh8_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 251
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(252): used explicit default value for signal "wh9_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 252
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(253): used explicit default value for signal "wh9_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 253
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(254): used explicit default value for signal "wh9_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 254
-Info (12128): Elaborating entity "pll" for hierarchy "pll:c1" File: G:/fpga-brain/fpgabrain.vhdl Line: 272
+Warning (10541): VHDL Signal Declaration warning at fpgabrain.vhdl(185): used implicit default value for signal "areset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/fpgabrain.vhdl Line: 185
+Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(186): object "locked" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 186
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(189): used explicit default value for signal "i0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 189
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(190): used explicit default value for signal "i1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 190
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(191): used explicit default value for signal "i2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 191
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(192): used explicit default value for signal "i3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 192
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(193): used explicit default value for signal "i4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 193
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(194): used explicit default value for signal "wi0_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 194
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(195): used explicit default value for signal "wi0_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 195
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(196): used explicit default value for signal "wi0_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 196
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(197): used explicit default value for signal "wi0_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 197
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(198): used explicit default value for signal "wi0_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 198
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(199): used explicit default value for signal "wi1_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 199
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(200): used explicit default value for signal "wi1_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 200
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(201): used explicit default value for signal "wi1_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 201
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(202): used explicit default value for signal "wi1_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 202
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(203): used explicit default value for signal "wi1_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 203
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(204): used explicit default value for signal "wi2_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 204
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(205): used explicit default value for signal "wi2_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 205
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(206): used explicit default value for signal "wi2_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 206
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(207): used explicit default value for signal "wi2_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 207
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(208): used explicit default value for signal "wi2_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 208
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(209): used explicit default value for signal "wi3_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 209
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(210): used explicit default value for signal "wi3_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 210
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(211): used explicit default value for signal "wi3_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 211
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(212): used explicit default value for signal "wi3_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 212
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(213): used explicit default value for signal "wi3_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 213
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(214): used explicit default value for signal "wi4_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 214
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(215): used explicit default value for signal "wi4_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 215
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(216): used explicit default value for signal "wi4_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 216
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(217): used explicit default value for signal "wi4_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 217
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(218): used explicit default value for signal "wi4_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 218
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(220): used explicit default value for signal "wh0_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 220
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(221): used explicit default value for signal "wh0_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 221
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(222): used explicit default value for signal "wh0_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 222
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(223): used explicit default value for signal "wh0_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 223
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(224): used explicit default value for signal "wh0_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 224
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(225): used explicit default value for signal "wh1_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 225
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(226): used explicit default value for signal "wh1_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 226
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(227): used explicit default value for signal "wh1_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 227
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(228): used explicit default value for signal "wh1_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 228
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(229): used explicit default value for signal "wh1_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 229
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(230): used explicit default value for signal "wh2_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 230
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(231): used explicit default value for signal "wh2_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 231
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(232): used explicit default value for signal "wh2_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 232
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(233): used explicit default value for signal "wh2_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 233
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(234): used explicit default value for signal "wh2_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 234
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(235): used explicit default value for signal "wh3_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 235
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(236): used explicit default value for signal "wh3_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 236
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(237): used explicit default value for signal "wh3_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 237
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(238): used explicit default value for signal "wh3_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 238
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(239): used explicit default value for signal "wh3_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 239
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(240): used explicit default value for signal "wh4_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 240
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(241): used explicit default value for signal "wh4_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 241
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(242): used explicit default value for signal "wh4_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 242
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(243): used explicit default value for signal "wh4_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 243
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(244): used explicit default value for signal "wh4_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 244
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(246): used explicit default value for signal "wh5_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 246
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(247): used explicit default value for signal "wh5_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 247
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(248): used explicit default value for signal "wh5_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 248
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(249): used explicit default value for signal "wh6_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 249
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(250): used explicit default value for signal "wh6_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 250
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(251): used explicit default value for signal "wh6_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 251
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(252): used explicit default value for signal "wh7_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 252
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(253): used explicit default value for signal "wh7_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 253
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(254): used explicit default value for signal "wh7_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 254
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(255): used explicit default value for signal "wh8_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 255
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(256): used explicit default value for signal "wh8_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 256
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(257): used explicit default value for signal "wh8_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 257
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(258): used explicit default value for signal "wh9_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 258
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(259): used explicit default value for signal "wh9_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 259
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(260): used explicit default value for signal "wh9_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 260
+Info (12128): Elaborating entity "pll" for hierarchy "pll:c1" File: G:/fpga-brain/fpgabrain.vhdl Line: 278
 Info (12128): Elaborating entity "altpll" for hierarchy "pll:c1|altpll:altpll_component" File: G:/fpga-brain/pll.vhd Line: 148
 Info (12130): Elaborated megafunction instantiation "pll:c1|altpll:altpll_component" File: G:/fpga-brain/pll.vhd Line: 148
 Info (12133): Instantiated megafunction "pll:c1|altpll:altpll_component" with the following parameter: File: G:/fpga-brain/pll.vhd Line: 148
@@ -3433,20 +3462,22 @@ Info (12133): Instantiated megafunction "pll:c1|altpll:altpll_component" with th
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll1.v
     Info (12023): Found entity 1: pll_altpll1 File: G:/fpga-brain/db/pll_altpll1.v Line: 30
 Info (12128): Elaborating entity "pll_altpll1" for hierarchy "pll:c1|altpll:altpll_component|pll_altpll1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "ram16" for hierarchy "ram16:c2" File: G:/fpga-brain/fpgabrain.vhdl Line: 276
-Info (12128): Elaborating entity "net" for hierarchy "net:c3" File: G:/fpga-brain/fpgabrain.vhdl Line: 278
-Warning (10540): VHDL Signal Declaration warning at net.vhd(103): used explicit default value for signal "s_addrCol" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 103
-Warning (10036): Verilog HDL or VHDL warning at net.vhd(136): object "adjMatrixNeuronId" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 136
-Warning (10036): Verilog HDL or VHDL warning at net.vhd(139): object "adjMatrixNeuronIdInv" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 139
-Warning (10540): VHDL Signal Declaration warning at net.vhd(151): used explicit default value for signal "linksArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 151
-Warning (10540): VHDL Signal Declaration warning at net.vhd(162): used explicit default value for signal "linksArraySize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 162
-Warning (10540): VHDL Signal Declaration warning at net.vhd(185): used explicit default value for signal "childLayerArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 185
-Warning (10540): VHDL Signal Declaration warning at net.vhd(200): used explicit default value for signal "neuronsLayerArrayArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 200
-Warning (10540): VHDL Signal Declaration warning at net.vhd(208): used explicit default value for signal "neuronsLayerSizeArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 208
-Warning (10540): VHDL Signal Declaration warning at net.vhd(213): used explicit default value for signal "neuronSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 213
-Warning (10540): VHDL Signal Declaration warning at net.vhd(214): used explicit default value for signal "neuronAdjRAMrowSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 214
-Warning (10542): VHDL Variable Declaration warning at net.vhd(235): used initial value expression for variable "adjNeuronIdColStartAddr" because variable was never assigned a value File: G:/fpga-brain/net.vhd Line: 235
-Info (12128): Elaborating entity "altfp_mul" for hierarchy "net:c3|altfp_mul:c0" File: G:/fpga-brain/net.vhd Line: 230
+Info (12128): Elaborating entity "ram16" for hierarchy "ram16:c2" File: G:/fpga-brain/fpgabrain.vhdl Line: 282
+Info (12128): Elaborating entity "net" for hierarchy "net:c3" File: G:/fpga-brain/fpgabrain.vhdl Line: 284
+Warning (10540): VHDL Signal Declaration warning at net.vhd(106): used explicit default value for signal "s_addrCol" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 106
+Warning (10036): Verilog HDL or VHDL warning at net.vhd(139): object "adjMatrixNeuronId" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 139
+Warning (10036): Verilog HDL or VHDL warning at net.vhd(142): object "adjMatrixNeuronIdInv" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 142
+Warning (10540): VHDL Signal Declaration warning at net.vhd(154): used explicit default value for signal "linksArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 154
+Warning (10540): VHDL Signal Declaration warning at net.vhd(165): used explicit default value for signal "linksArraySize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 165
+Warning (10540): VHDL Signal Declaration warning at net.vhd(188): used explicit default value for signal "childLayerArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 188
+Warning (10540): VHDL Signal Declaration warning at net.vhd(203): used explicit default value for signal "neuronsLayerArrayArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 203
+Warning (10540): VHDL Signal Declaration warning at net.vhd(211): used explicit default value for signal "neuronsLayerSizeArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 211
+Warning (10540): VHDL Signal Declaration warning at net.vhd(216): used explicit default value for signal "neuronSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 216
+Warning (10540): VHDL Signal Declaration warning at net.vhd(217): used explicit default value for signal "neuronAdjRAMrowSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 217
+Warning (10540): VHDL Signal Declaration warning at net.vhd(244): used explicit default value for signal "MPUaddrsArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 244
+Warning (10540): VHDL Signal Declaration warning at net.vhd(253): used explicit default value for signal "currMPUcmdsArraySize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 253
+Warning (10542): VHDL Variable Declaration warning at net.vhd(261): used initial value expression for variable "adjNeuronIdColStartAddr" because variable was never assigned a value File: G:/fpga-brain/net.vhd Line: 261
+Info (12128): Elaborating entity "altfp_mul" for hierarchy "net:c3|altfp_mul:c0" File: G:/fpga-brain/net.vhd Line: 256
 Info (12128): Elaborating entity "altfp_mul_altfp_mult_trn" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component" File: G:/fpga-brain/altfp_mul.vhd Line: 1451
 Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder" File: G:/fpga-brain/altfp_mul.vhd Line: 1294
 Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder" File: G:/fpga-brain/altfp_mul.vhd Line: 1294
@@ -3510,7 +3541,7 @@ Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mul
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_5ks.tdf
     Info (12023): Found entity 1: mult_5ks File: G:/fpga-brain/db/mult_5ks.tdf Line: 33
 Info (12128): Elaborating entity "mult_5ks" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 376
-Info (12128): Elaborating entity "altfp_addsub" for hierarchy "net:c3|altfp_addsub:c1" File: G:/fpga-brain/net.vhd Line: 231
+Info (12128): Elaborating entity "altfp_addsub" for hierarchy "net:c3|altfp_addsub:c1" File: G:/fpga-brain/net.vhd Line: 257
 Info (12128): Elaborating entity "altfp_addsub_altfp_add_sub_55j" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component" File: G:/fpga-brain/altfp_addsub.vhd Line: 4790
 Info (12128): Elaborating entity "altfp_addsub_altbarrel_shift_35e" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift" File: G:/fpga-brain/altfp_addsub.vhd Line: 3974
 Info (12128): Elaborating entity "altfp_addsub_altbarrel_shift_olb" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift" File: G:/fpga-brain/altfp_addsub.vhd Line: 3984
@@ -3684,7 +3715,7 @@ Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_alt
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_7rh.tdf
     Info (12023): Found entity 1: cmpr_7rh File: G:/fpga-brain/db/cmpr_7rh.tdf Line: 22
 Info (12128): Elaborating entity "cmpr_7rh" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_compare:trailing_zeros_limit_comparator|cmpr_7rh:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_compare.tdf Line: 280
-Info (12128): Elaborating entity "VGA" for hierarchy "VGA:c4" File: G:/fpga-brain/fpgabrain.vhdl Line: 297
+Info (12128): Elaborating entity "VGA" for hierarchy "VGA:c4" File: G:/fpga-brain/fpgabrain.vhdl Line: 304
 Info (12128): Elaborating entity "SYNC" for hierarchy "VGA:c4|SYNC:C1" File: G:/fpga-brain/VGA.vhd Line: 26
 Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(15): used explicit default value for signal "WW" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 15
 Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(16): used explicit default value for signal "HH" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 16
@@ -3697,8 +3728,12 @@ Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(22): used explicit 
 Info (13014): Ignored 158 buffer(s)
     Info (13019): Ignored 158 SOFT buffer(s)
 Warning (276027): Inferred dual-clock RAM node "net:c3|adjMatrixLinkWeight_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "net:c3|linksWeightArray" is uninferred due to inappropriate RAM size File: G:/fpga-brain/net.vhd Line: 165
+Info (276014): Found 3 instances of uninferred RAM logic
+    Info (276004): RAM logic "net:c3|MPUdatasArray" is uninferred due to inappropriate RAM size File: G:/fpga-brain/net.vhd Line: 248
+    Info (276004): RAM logic "net:c3|MPUslaveArray" is uninferred due to inappropriate RAM size File: G:/fpga-brain/net.vhd Line: 240
+    Info (276004): RAM logic "net:c3|linksWeightArray" is uninferred due to inappropriate RAM size File: G:/fpga-brain/net.vhd Line: 168
+Warning (113018): Width of data items in "fpgabrain.ram2_net_1c791.hdl.mif" is greater than the memory width. Truncating data items to fit in memory. File: G:/fpga-brain/db/fpgabrain.ram2_net_1c791.hdl.mif Line: 10
+Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (2) in the Memory Initialization File "G:/fpga-brain/db/fpgabrain.ram2_net_1c791.hdl.mif" -- setting initial value for remaining addresses to 0
 Info (19000): Inferred 2 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "net:c3|adjMatrixLinkWeight_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
@@ -3764,18 +3799,18 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 28 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2184 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2308 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 28 output pins
-    Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 2084 logic cells
+    Info (21059): Implemented 29 output pins
+    Info (21060): Implemented 17 bidirectional pins
+    Info (21061): Implemented 2206 logic cells
     Info (21064): Implemented 47 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 7 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 101 warnings
-    Info: Peak virtual memory: 4870 megabytes
-    Info: Processing ended: Thu Aug 29 08:29:32 2019
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 105 warnings
+    Info: Peak virtual memory: 4867 megabytes
+    Info: Processing ended: Thu Sep 05 03:24:43 2019
     Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Total CPU time (on all processors): 00:00:29
 
 

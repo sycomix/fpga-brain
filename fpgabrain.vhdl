@@ -24,7 +24,10 @@ ENTITY fpgabrain IS
 		RAS: OUT STD_LOGIC;
 		CAS: OUT STD_LOGIC;
 		WE: OUT STD_LOGIC;
-		BA: OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+		BA: OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+		
+		o_scl  :  OUT  STD_LOGIC;
+		io_sda  : INOUT  STD_LOGIC
 	);
 END fpgabrain;
 
@@ -139,7 +142,10 @@ COMPONENT net
 		
 		ram_data_read_do: OUT STD_LOGIC:='0';
 		ram_data_read_ready: IN STD_LOGIC;
-		ram_data_read: IN STD_LOGIC_VECTOR(15 DOWNTO 0)
+		ram_data_read: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+		
+		o_scl  :  OUT  STD_LOGIC;
+		io_sda  : INOUT  STD_LOGIC
 	);
 END COMPONENT;
 
@@ -292,7 +298,8 @@ c3 : net PORT MAP(CLK_RAMM,
 				wh8_out0, wh8_out1, wh8_out2,
 				wh9_out0, wh9_out1, wh9_out2,
 				outs,
-				ram_initialized, ram_row_addr, ram_col_addr, ram_data_save_do, ram_data_save, ram_data_save_ready, ram_data_read_do, ram_data_read_ready, ram_data_read);
+				ram_initialized, ram_row_addr, ram_col_addr, ram_data_save_do, ram_data_save, ram_data_save_ready, ram_data_read_do, ram_data_read_ready, ram_data_read,
+				o_scl, io_sda);
 				
 c4 : vga PORT MAP(CLK_VGA, outs, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B);
 
