@@ -232,25 +232,24 @@ SIGNAL incVGA: INTEGER RANGE 0 TO 5000001:=0;
 
 SIGNAL i2CclockCounter: INTEGER RANGE 0 TO 64000:=0;
 SIGNAL i2CclockState : STD_LOGIC:='0';
-SIGNAL i2CburstCounter: INTEGER RANGE 0 TO 1000:=27;
 SIGNAL i2CbitCount: INTEGER RANGE 0 TO 7:=7;
 SIGNAL repeatReadCount: INTEGER RANGE 0 TO 100000:=0;
 
 type tMPUslaveArray is array (0 to 1 ) of STD_LOGIC_VECTOR(7 downto 0);
 signal MPUslaveArray: tMPUslaveArray :=(
    "1101000"&"0", -- slave + write
-   "1101000"&"1" -- slave + write
+   "1101000"&"1" -- slave + read
    );
-signal MPUaddrsArray: tMPUslaveArray :=(
+signal MPUregAddrArray: tMPUslaveArray :=(
    "0010"&"0011", -- x23
-   "0100"&"0100" -- x74
+   "0100"&"0100" -- x44
    );
 signal MPUdatasArray: tMPUslaveArray :=(
    "0100"&"0000",
    "0000"&"0000"
    );
 SIGNAL currMPUcmdsArrayId: INTEGER RANGE 0 TO 1:=0;
-SIGNAL currMPUcmdsArraySize: INTEGER RANGE 0 TO 2:=1;
+SIGNAL currMPUcmdsArraySize: INTEGER RANGE 0 TO 2:=2;
 
 BEGIN 	
 	c0: altfp_mul PORT MAP (CLK_IN, compMulv0, compMulv1, compMulResult);
@@ -504,6 +503,7 @@ BEGIN
 	
 	
 	PROCESS(CLK_IN)
+VARIABLE i2CburstCounter: INTEGER RANGE 0 TO 1000:=28;
 	BEGIN
 		IF (rising_edge(CLK_IN)) THEN
 		
@@ -513,7 +513,7 @@ BEGIN
 				
 				IF i2CclockState = '1' THEN
 					i2CclockState <= '0';
-					IF i2CburstCounter /= 27 THEN
+					IF i2CburstCounter /= 29 AND i2CburstCounter /= 49 THEN
 						o_scl <= '0';	
 					END IF;		
 				ELSE
@@ -524,16 +524,22 @@ BEGIN
 			
 			IF i2CclockState = '1' THEN
 				IF i2CclockCounter = 7000 THEN
-					IF i2CburstCounter = 0 THEN 
+					IF i2CburstCounter = 0 OR i2CburstCounter = 30 THEN 
 						io_sda <= '0';
 					END IF; 										
 				END IF;
 			ELSE
 				IF i2CclockCounter = 7000 THEN
+					IF i2CburstCounter < 28 THEN
+						i2CburstCounter := i2CburstCounter+1;	
+					ELSIF i2CburstCounter >= 29 AND i2CburstCounter < 49 THEN
+						i2CburstCounter := i2CburstCounter+1;												
+					END IF;	
+					
 					IF i2CburstCounter = 0 THEN -- start cond
 						io_sda <= '0';
 						
-					ELSIF i2CburstCounter < 9 THEN -- slave addr bits
+					ELSIF i2CburstCounter < 9 THEN -- slave address bits
 						IF currMPUcmdsArrayId = 0 THEN
 							io_sda <= MPUslaveArray(0)(i2CbitCount);
 						ELSE
@@ -546,32 +552,32 @@ BEGIN
 							io_sda <= '0'; -- this always write to write the register address
 						END IF;
 						
-					ELSIF i2CburstCounter = 9 THEN -- ACK
+					ELSIF i2CburstCounter = 9 THEN -- ACK slave adress
 						io_sda <= 'Z';		
 						i2CbitCount <= 7;
 						
-					ELSIF i2CburstCounter < 18 THEN -- register bits
+					ELSIF i2CburstCounter < 18 THEN -- register address bits
 						IF currMPUcmdsArrayId = 0 THEN
-							io_sda <= MPUaddrsArray(0)(i2CbitCount);
+							io_sda <= MPUregAddrArray(0)(i2CbitCount);
 						ELSE
-							io_sda <= MPUaddrsArray(1)(i2CbitCount);						
+							io_sda <= MPUregAddrArray(1)(i2CbitCount);						
 						END IF;		
 						IF i2CbitCount > 0 THEN
 							i2CbitCount <= i2CbitCount-1;
 						END IF;
 						
-					ELSIF i2CburstCounter = 18 THEN -- ACK
+					ELSIF i2CburstCounter = 18 THEN -- ACK register address
 						io_sda <= 'Z';		
 						i2CbitCount <= 7;
 						
 					ELSIF i2CburstCounter < 27 THEN -- data bits
-						IF MPUslaveArray(currMPUcmdsArrayId)(0) = '1' THEN -- READ -- stop cond
+						IF MPUslaveArray(currMPUcmdsArrayId)(0) = '1' THEN -- IF READ -- stop cond
 							io_sda <= '1';	
 							o_scl <= '1';
 							
-							i2CburstCounter <= 28;
+							i2CburstCounter := 29;
 							i2CbitCount <= 7;
-						ELSIF MPUslaveArray(currMPUcmdsArrayId)(0) = '0' THEN -- WRITE
+						ELSIF MPUslaveArray(currMPUcmdsArrayId)(0) = '0' THEN -- IF WRITE -- write data
 							IF currMPUcmdsArrayId = 0 THEN
 								io_sda <= MPUdatasArray(0)(i2CbitCount);
 							ELSE
@@ -582,14 +588,18 @@ BEGIN
 							END IF;								
 						END IF;
 						
-					ELSIF i2CburstCounter = 27 THEN -- stop cond
+					ELSIF i2CburstCounter = 27 THEN -- ACK data write
+						io_sda <= 'Z';		
+						i2CbitCount <= 7;
+						
+					ELSIF i2CburstCounter = 28 THEN -- stop cond if WRITE
 						io_sda <= '1';	
 						o_scl <= '1';	
 						
 						IF repeatReadCount < 350 THEN
 							repeatReadCount <= repeatReadCount+1;
 						ELSE
-							i2CburstCounter <= 0;
+							i2CburstCounter := 0;
 							i2CbitCount <= 7;
 							repeatReadCount <= 0;
 							
@@ -597,15 +607,45 @@ BEGIN
 								currMPUcmdsArrayId <= currMPUcmdsArrayId+1;	
 							END IF;
 						END IF;	
-					ELSIF i2CburstCounter = 28 THEN -- READ continue here. now start again (after the last stop)
-					
-					END IF;			
+					ELSIF i2CburstCounter = 30 THEN -- ///////> READ continue here. now start again (after the last stop)
+						io_sda <= '0';
 						
-					IF i2CburstCounter < 27 THEN
-						i2CburstCounter <= i2CburstCounter+1;	
-					ELSIF i2CburstCounter >= 28 AND i2CburstCounter < 35 THEN
-						i2CburstCounter <= i2CburstCounter+1;												
-					END IF;	  
+					ELSIF i2CburstCounter < 39 THEN -- slave addr bits
+						IF currMPUcmdsArrayId = 0 THEN
+							io_sda <= MPUslaveArray(0)(i2CbitCount);
+						ELSE
+							io_sda <= MPUslaveArray(1)(i2CbitCount);						
+						END IF;	
+						IF i2CbitCount > 0 THEN
+							i2CbitCount <= i2CbitCount-1;
+						END IF;
+						
+					ELSIF i2CburstCounter = 39 THEN -- ACK
+						io_sda <= 'Z';		
+						i2CbitCount <= 7;
+						
+					ELSIF i2CburstCounter < 48 THEN -- receive data
+						
+					ELSIF i2CburstCounter = 48 THEN -- NACK
+						io_sda <= '1';		
+						
+					ELSIF i2CburstCounter = 49 THEN -- stop cond
+						io_sda <= '1';	
+						o_scl <= '1';	
+						
+						IF repeatReadCount < 350 THEN
+							repeatReadCount <= repeatReadCount+1;
+						ELSE
+							i2CburstCounter := 0;
+							i2CbitCount <= 7;
+							repeatReadCount <= 0;
+							
+							IF currMPUcmdsArrayId < (currMPUcmdsArraySize-1) THEN
+								currMPUcmdsArrayId <= currMPUcmdsArrayId+1;	
+							END IF;
+						END IF;	
+					END IF;			
+						  
 				END IF;
 			END IF;
 				
