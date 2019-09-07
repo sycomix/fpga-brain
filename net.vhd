@@ -521,7 +521,7 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 			IF i2CclockState = '0' THEN
 				o_scl <= '0';	
 				
-				IF (i2CburstCounter = 0 OR i2CburstCounter = 1 OR i2CburstCounter = 31 OR i2CburstCounter = 50) THEN
+				IF (i2CburstCounter = 0 OR i2CburstCounter = 1 OR i2CburstCounter = 31 OR i2CburstCounter = 51) THEN
 					o_scl <= '1';
 				END IF;
 				
@@ -633,11 +633,13 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 					ELSIF i2CburstCounter < 49 THEN -- receive data
 						
 					ELSIF i2CburstCounter = 49 THEN -- NACK
-						io_sda <= '1';		
+						io_sda <= 'Z';		
 						
 					ELSIF i2CburstCounter = 50 THEN -- stop cond
+						io_sda <= '0';		
+						
+					ELSIF i2CburstCounter = 51 THEN -- stop cond if WRITE
 						io_sda <= '1';	
-						o_scl <= '1';	
 						
 						IF repeatReadCount < 1000 THEN
 							repeatReadCount <= repeatReadCount+1;
@@ -658,13 +660,13 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 				IF i2CburstCounter > 0 AND i2CclockCounter = 6000 THEN
 					IF i2CburstCounter < 29 THEN
 						i2CburstCounter := i2CburstCounter+1;	
-					ELSIF i2CburstCounter >= 30 AND i2CburstCounter < 50 THEN
+					ELSIF i2CburstCounter >= 30 AND i2CburstCounter < 51 THEN
 						i2CburstCounter := i2CburstCounter+1;												
 					END IF;	
 				ELSIF i2CburstCounter = 0 AND i2CclockCounter = 0 THEN
 					IF i2CburstCounter < 29 THEN
 						i2CburstCounter := i2CburstCounter+1;	
-					ELSIF i2CburstCounter >= 30 AND i2CburstCounter < 50 THEN
+					ELSIF i2CburstCounter >= 30 AND i2CburstCounter < 51 THEN
 						i2CburstCounter := i2CburstCounter+1;												
 					END IF;	
 				END IF;		
