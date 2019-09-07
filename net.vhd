@@ -521,7 +521,7 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 			IF i2CclockState = '0' THEN
 				o_scl <= '0';	
 				
-				IF (i2CburstCounter = 0 OR i2CburstCounter = 1 OR i2CburstCounter = 31 OR i2CburstCounter = 51) THEN
+				IF (i2CburstCounter = 0 OR i2CburstCounter = 1 OR i2CburstCounter = 29 OR i2CburstCounter = 31 OR i2CburstCounter = 51) THEN
 					o_scl <= '1';
 				END IF;
 				
