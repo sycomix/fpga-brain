@@ -517,16 +517,21 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 					i2CclockState := '1';			
 				END IF;
 			END IF;
-			o_scl <= '1';
+				
 			IF i2CclockState = '0' THEN
-				IF i2CburstCounter > 0 THEN
-					o_scl <= '0';	
+				o_scl <= '0';	
+				
+				IF (i2CburstCounter = 0 OR i2CburstCounter = 1 OR i2CburstCounter = 29 OR i2CburstCounter = 51) THEN
+					o_scl <= '1';
 				END IF;
 				
-				IF i2CclockCounter = 6500 THEN
+				IF i2CburstCounter = 2 AND i2CclockCounter > 6000 THEN	 
+					o_scl <= '1';
+				END IF;
+				
+				IF i2CclockCounter = 6000 THEN					
 					IF i2CburstCounter = 0 THEN -- start cond
-						io_sda <= '0';
-					
+									
 					ELSIF i2CburstCounter = 1 THEN -- start cond
 						io_sda <= '0';
 						
@@ -593,6 +598,8 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 							i2CburstCounter := 0;
 							i2CbitCount <= 7;
 							repeatReadCount <= 0;
+							i2CclockState := '1';
+							i2CclockCounter := 8000;	
 							
 							IF currMPUcmdsArrayId < (currMPUcmdsArraySize-1) THEN
 								currMPUcmdsArrayId <= currMPUcmdsArrayId+1;	
@@ -637,6 +644,8 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 							i2CburstCounter := 0;
 							i2CbitCount <= 7;
 							repeatReadCount <= 0;
+							i2CclockState := '1';	
+							i2CclockCounter := 8000;
 							
 							IF currMPUcmdsArrayId < (currMPUcmdsArraySize-1) THEN
 								currMPUcmdsArrayId <= currMPUcmdsArrayId+1;	
@@ -644,18 +653,29 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 						END IF;	
 					END IF;			
 				END IF;
-				
-				IF i2CburstCounter = 0 OR i2CburstCounter = 1 OR i2CburstCounter = 29 OR i2CburstCounter = 51 THEN
-					o_scl <= '1';
-				END IF;
-				
-				IF i2CclockCounter = 6500 THEN
+							
+				IF i2CburstCounter > 0 AND i2CclockCounter = 6000 THEN
 					IF i2CburstCounter < 29 THEN
 						i2CburstCounter := i2CburstCounter+1;	
 					ELSIF i2CburstCounter >= 30 AND i2CburstCounter < 51 THEN
 						i2CburstCounter := i2CburstCounter+1;												
 					END IF;	
-				END IF;							
+				ELSIF i2CburstCounter = 0 AND i2CclockCounter = 0 THEN
+					IF i2CburstCounter < 29 THEN
+						i2CburstCounter := i2CburstCounter+1;	
+					ELSIF i2CburstCounter >= 30 AND i2CburstCounter < 51 THEN
+						i2CburstCounter := i2CburstCounter+1;												
+					END IF;	
+				END IF;		
+			ELSIF i2CclockState = '1' THEN				
+				o_scl <= '1';
+				
+				IF i2CburstCounter = 1 THEN
+					o_scl <= '0';
+				END IF;				
+				IF i2CburstCounter = 2 THEN
+					o_scl <= '0';
+				END IF;
 			END IF;
 				
 		END IF;
