@@ -521,11 +521,11 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 			IF i2CclockState = '0' THEN
 				o_scl <= '0';	
 				
-				IF (i2CburstCounter = 0 OR i2CburstCounter = 1 OR i2CburstCounter = 29 OR i2CburstCounter = 51) THEN
+				IF (i2CburstCounter = 0 OR i2CburstCounter = 1 OR i2CburstCounter = 31 OR i2CburstCounter = 50) THEN
 					o_scl <= '1';
 				END IF;
 				
-				IF i2CburstCounter = 2 AND i2CclockCounter > 6000 THEN	 
+				IF (i2CburstCounter = 2 OR i2CburstCounter = 32) AND i2CclockCounter > 6000 THEN	 
 					o_scl <= '1';
 				END IF;
 				
@@ -607,15 +607,16 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 						END IF;	
 						
 					ELSIF i2CburstCounter = 30 THEN -- stop cond if WRITE
+						io_sda <= '1';	
 						
 					ELSIF i2CburstCounter = 31 THEN -- stop cond if WRITE
-						io_sda <= '1';	
+						io_sda <= '0';	
 						o_scl <= '1';	
 						
 						i2CbitCount <= 7;
 						repeatReadCount <= 0;
 						
-					ELSIF i2CburstCounter < 41 THEN -- slave addr bits
+					ELSIF i2CburstCounter < 40 THEN -- slave addr bits
 						IF currMPUcmdsArrayId = 0 THEN
 							io_sda <= MPUslaveArray(0)(i2CbitCount);
 						ELSE
@@ -625,16 +626,16 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 							i2CbitCount <= i2CbitCount-1;
 						END IF;
 						
-					ELSIF i2CburstCounter = 41 THEN -- ACK
+					ELSIF i2CburstCounter = 40 THEN -- ACK
 						io_sda <= 'Z';		
 						i2CbitCount <= 7;
 						
-					ELSIF i2CburstCounter < 50 THEN -- receive data
+					ELSIF i2CburstCounter < 49 THEN -- receive data
 						
-					ELSIF i2CburstCounter = 50 THEN -- NACK
+					ELSIF i2CburstCounter = 49 THEN -- NACK
 						io_sda <= '1';		
 						
-					ELSIF i2CburstCounter = 51 THEN -- stop cond
+					ELSIF i2CburstCounter = 50 THEN -- stop cond
 						io_sda <= '1';	
 						o_scl <= '1';	
 						
@@ -657,13 +658,13 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 				IF i2CburstCounter > 0 AND i2CclockCounter = 6000 THEN
 					IF i2CburstCounter < 29 THEN
 						i2CburstCounter := i2CburstCounter+1;	
-					ELSIF i2CburstCounter >= 30 AND i2CburstCounter < 51 THEN
+					ELSIF i2CburstCounter >= 30 AND i2CburstCounter < 50 THEN
 						i2CburstCounter := i2CburstCounter+1;												
 					END IF;	
 				ELSIF i2CburstCounter = 0 AND i2CclockCounter = 0 THEN
 					IF i2CburstCounter < 29 THEN
 						i2CburstCounter := i2CburstCounter+1;	
-					ELSIF i2CburstCounter >= 30 AND i2CburstCounter < 51 THEN
+					ELSIF i2CburstCounter >= 30 AND i2CburstCounter < 50 THEN
 						i2CburstCounter := i2CburstCounter+1;												
 					END IF;	
 				END IF;		
@@ -675,6 +676,9 @@ VARIABLE i2CclockState : STD_LOGIC:='1';
 				END IF;				
 				IF i2CburstCounter = 2 THEN
 					o_scl <= '0';
+				END IF;		
+				IF i2CburstCounter = 31 THEN
+					io_sda <= '1';	
 				END IF;
 			END IF;
 				

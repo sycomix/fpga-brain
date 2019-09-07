@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Sat Sep 07 19:53:07 2019
+Sat Sep 07 23:51:22 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -82,13 +82,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 07 19:53:07 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep 07 23:51:22 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 2,176                                       ;
-;     Total combinational functions  ; 1,875                                       ;
+; Total logic elements               ; 2,177                                       ;
+;     Total combinational functions  ; 1,876                                       ;
 ;     Dedicated logic registers      ; 1,024                                       ;
 ; Total registers                    ; 1024                                        ;
 ; Total pins                         ; 47                                          ;
@@ -198,7 +198,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
@@ -274,16 +274,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 2,176                                                                      ;
+; Estimated Total logic elements              ; 2,177                                                                      ;
 ;                                             ;                                                                            ;
-; Total combinational functions               ; 1875                                                                       ;
+; Total combinational functions               ; 1876                                                                       ;
 ; Logic element usage by number of LUT inputs ;                                                                            ;
-;     -- 4 input functions                    ; 880                                                                        ;
-;     -- 3 input functions                    ; 641                                                                        ;
-;     -- <=2 input functions                  ; 354                                                                        ;
+;     -- 4 input functions                    ; 885                                                                        ;
+;     -- 3 input functions                    ; 636                                                                        ;
+;     -- <=2 input functions                  ; 355                                                                        ;
 ;                                             ;                                                                            ;
 ; Logic elements by mode                      ;                                                                            ;
-;     -- normal mode                          ; 1519                                                                       ;
+;     -- normal mode                          ; 1520                                                                       ;
 ;     -- arithmetic mode                      ; 356                                                                        ;
 ;                                             ;                                                                            ;
 ; Total registers                             ; 1024                                                                       ;
@@ -300,7 +300,7 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                                            ;
 ; Maximum fan-out node                        ; pll:c1|altpll:altpll_component|pll_altpll1:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 1077                                                                       ;
-; Total fan-out                               ; 9585                                                                       ;
+; Total fan-out                               ; 9592                                                                       ;
 ; Average fan-out                             ; 3.13                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------+
 
@@ -310,7 +310,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                                                                           ; Entity Name                          ; Library Name ;
 +--------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+--------------+
-; |fpgabrain                                                                           ; 1875 (2)            ; 1024 (0)                  ; 1197        ; 7            ; 1       ; 3         ; 47   ; 0            ; |fpgabrain                                                                                                                                                                                                                                                                                                                                                                                                    ; fpgabrain                            ; work         ;
+; |fpgabrain                                                                           ; 1876 (2)            ; 1024 (0)                  ; 1197        ; 7            ; 1       ; 3         ; 47   ; 0            ; |fpgabrain                                                                                                                                                                                                                                                                                                                                                                                                    ; fpgabrain                            ; work         ;
 ;    |VGA:c4|                                                                          ; 45 (0)              ; 26 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4                                                                                                                                                                                                                                                                                                                                                                                             ; VGA                                  ; work         ;
 ;       |SYNC:C1|                                                                      ; 45 (45)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4|SYNC:C1                                                                                                                                                                                                                                                                                                                                                                                     ; SYNC                                 ; work         ;
 ;    |net:c3|                                                                          ; 1640 (633)          ; 933 (386)                 ; 1197        ; 7            ; 1       ; 3         ; 0    ; 0            ; |fpgabrain|net:c3                                                                                                                                                                                                                                                                                                                                                                                             ; net                                  ; work         ;
@@ -318,9 +318,9 @@ refer to the applicable agreement for further details.
 ;          |altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|   ; 786 (296)           ; 339 (218)                 ; 45          ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component                                                                                                                                                                                                                                                                                                     ; altfp_addsub_altfp_add_sub_55j       ; work         ;
 ;             |altfp_addsub_altbarrel_shift_35e:lbarrel_shift|                         ; 111 (111)           ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift                                                                                                                                                                                                                                                      ; altfp_addsub_altbarrel_shift_35e     ; work         ;
 ;             |altfp_addsub_altbarrel_shift_olb:rbarrel_shift|                         ; 103 (103)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift                                                                                                                                                                                                                                                      ; altfp_addsub_altbarrel_shift_olb     ; work         ;
-;             |altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|                ; 32 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt                                                                                                                                                                                                                                             ; altfp_addsub_altpriority_encoder_e48 ; work         ;
-;                |altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|          ; 15 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21                                                                                                                                                                                  ; altfp_addsub_altpriority_encoder_fj8 ; work         ;
-;                   |altfp_addsub_altpriority_encoder_vh8:altpriority_encoder23|       ; 2 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|altfp_addsub_altpriority_encoder_vh8:altpriority_encoder23                                                                                                                       ; altfp_addsub_altpriority_encoder_vh8 ; work         ;
+;             |altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|                ; 32 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt                                                                                                                                                                                                                                             ; altfp_addsub_altpriority_encoder_e48 ; work         ;
+;                |altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|          ; 16 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21                                                                                                                                                                                  ; altfp_addsub_altpriority_encoder_fj8 ; work         ;
+;                   |altfp_addsub_altpriority_encoder_vh8:altpriority_encoder23|       ; 3 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|altfp_addsub_altpriority_encoder_vh8:altpriority_encoder23                                                                                                                       ; altfp_addsub_altpriority_encoder_vh8 ; work         ;
 ;                      |altfp_addsub_altpriority_encoder_qh8:altpriority_encoder25|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|altfp_addsub_altpriority_encoder_vh8:altpriority_encoder23|altfp_addsub_altpriority_encoder_qh8:altpriority_encoder25                                                            ; altfp_addsub_altpriority_encoder_qh8 ; work         ;
 ;                   |altfp_addsub_altpriority_encoder_vh8:altpriority_encoder24|       ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|altfp_addsub_altpriority_encoder_vh8:altpriority_encoder24                                                                                                                       ; altfp_addsub_altpriority_encoder_vh8 ; work         ;
 ;                      |altfp_addsub_altpriority_encoder_qh8:altpriority_encoder25|    ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|altfp_addsub_altpriority_encoder_vh8:altpriority_encoder24|altfp_addsub_altpriority_encoder_qh8:altpriority_encoder25                                                            ; altfp_addsub_altpriority_encoder_qh8 ; work         ;
@@ -382,7 +382,7 @@ refer to the applicable agreement for further details.
 ;    |pll:c1|                                                                          ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1                                                                                                                                                                                                                                                                                                                                                                                             ; pll                                  ; work         ;
 ;       |altpll:altpll_component|                                                      ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component                                                                                                                                                                                                                                                                                                                                                                     ; altpll                               ; work         ;
 ;          |pll_altpll1:auto_generated|                                                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component|pll_altpll1:auto_generated                                                                                                                                                                                                                                                                                                                                          ; pll_altpll1                          ; work         ;
-;    |ram16:c2|                                                                        ; 188 (188)           ; 65 (65)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|ram16:c2                                                                                                                                                                                                                                                                                                                                                                                           ; ram16                                ; work         ;
+;    |ram16:c2|                                                                        ; 189 (189)           ; 65 (65)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|ram16:c2                                                                                                                                                                                                                                                                                                                                                                                           ; ram16                                ; work         ;
 +--------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -783,18 +783,18 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
 ; net:c3|o_scl                            ; 1       ;
-; net:c3|i2CburstCounter[3]               ; 14      ;
+; net:c3|i2CburstCounter[4]               ; 11      ;
+; net:c3|i2CburstCounter[3]               ; 17      ;
 ; net:c3|i2CburstCounter[2]               ; 12      ;
-; net:c3|i2CburstCounter[4]               ; 13      ;
-; net:c3|i2CburstCounter[0]               ; 21      ;
-; net:c3|i2CclockState                    ; 4       ;
+; net:c3|i2CburstCounter[0]               ; 18      ;
+; net:c3|i2CclockState                    ; 3       ;
 ; net:c3|currGeomNeuronId[1]              ; 78      ;
 ; net:c3|currentOperCycles[5]             ; 4       ;
 ; net:c3|currentOperCycles[6]             ; 4       ;
 ; net:c3|currentOperCycles[2]             ; 5       ;
-; net:c3|i2CbitCount[0]                   ; 8       ;
-; net:c3|i2CbitCount[1]                   ; 7       ;
-; net:c3|i2CbitCount[2]                   ; 7       ;
+; net:c3|i2CbitCount[0]                   ; 7       ;
+; net:c3|i2CbitCount[1]                   ; 6       ;
+; net:c3|i2CbitCount[2]                   ; 6       ;
 ; net:c3|geomNeuronOut[4][29]             ; 2       ;
 ; net:c3|geomNeuronOut[5][29]             ; 2       ;
 ; net:c3|geomNeuronOut[2][29]             ; 2       ;
@@ -822,8 +822,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; net:c3|geomNeuronOut[1][25]             ; 2       ;
 ; net:c3|geomNeuronOut[0][25]             ; 2       ;
 ; net:c3|geomNeuronOut[1][23]             ; 2       ;
-; net:c3|geomNeuronOut[1][7]              ; 2       ;
-; net:c3|geomNeuronOut[0][7]              ; 2       ;
+; net:c3|geomNeuronOut[0][6]              ; 2       ;
 ; net:c3|geomNeuronOut[4][22]             ; 2       ;
 ; net:c3|geomNeuronOut[5][22]             ; 2       ;
 ; net:c3|geomNeuronOut[2][22]             ; 2       ;
@@ -862,7 +861,8 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; net:c3|geomNeuronOut[2][8]              ; 2       ;
 ; net:c3|geomNeuronOut[1][8]              ; 2       ;
 ; net:c3|geomNeuronOut[3][8]              ; 2       ;
-; net:c3|geomNeuronOut[0][6]              ; 2       ;
+; net:c3|geomNeuronOut[1][7]              ; 2       ;
+; net:c3|geomNeuronOut[0][7]              ; 2       ;
 ; net:c3|geomNeuronOut[1][4]              ; 2       ;
 ; net:c3|geomNeuronOut[1][3]              ; 2       ;
 ; net:c3|geomNeuronOut[0][3]              ; 2       ;
@@ -911,47 +911,47 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpgabrain|net:c3|currGeomNeuronId[2]                                                                                                                                     ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |fpgabrain|net:c3|i2CburstCounter[9]                                                                                                                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpgabrain|net:c3|currGeomNeuronId[0]                                                                                                                                     ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |fpgabrain|net:c3|i2CburstCounter[8]                                                                                                                                      ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|currLinksArrayId[3]                                                                                                                                     ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift|sbit_piper1d[16] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpgabrain|net:c3|currNeuronsLayerArrayId[1]                                                                                                                              ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|compAddv0[4]                                                                                                                                            ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|compMulv0[16]                                                                                                                                           ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift|sbit_piper1d[21] ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|outs[11]                                                                                                                                                ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_row_addr[7]                                                                                                                                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpgabrain|net:c3|currNeuronsLayerArrayId[0]                                                                                                                              ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|compAddv0[7]                                                                                                                                            ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|compMulv0[13]                                                                                                                                           ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift|sbit_piper1d[18] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|outs[9]                                                                                                                                                 ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_row_addr[8]                                                                                                                                         ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift|sbit_piper1d[22] ;
 ; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currAdjNeuronData[2]                                                                                                                                    ;
-; 9:1                ; 13 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_data_save[6]                                                                                                                                        ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift|sbit_piper1d[25] ;
-; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[5][9]                                                                                                                                     ;
-; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[4][20]                                                                                                                                    ;
-; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[3][3]                                                                                                                                     ;
-; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[2][20]                                                                                                                                    ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[1][9]                                                                                                                                     ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[0][12]                                                                                                                                    ;
-; 5:1                ; 17 bits   ; 51 LEs        ; 17 LEs               ; 34 LEs                 ; Yes        ; |fpgabrain|net:c3|repeatReadCount[9]                                                                                                                                      ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[8]                                                                                                                                                 ;
+; 9:1                ; 13 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_data_save[5]                                                                                                                                        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift|sbit_piper1d[24] ;
+; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[5][15]                                                                                                                                    ;
+; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[4][5]                                                                                                                                     ;
+; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[3][0]                                                                                                                                     ;
+; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[2][23]                                                                                                                                    ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[1][14]                                                                                                                                    ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[0][9]                                                                                                                                     ;
+; 5:1                ; 17 bits   ; 51 LEs        ; 17 LEs               ; 34 LEs                 ; Yes        ; |fpgabrain|net:c3|repeatReadCount[12]                                                                                                                                     ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[1]                                                                                                                                                 ;
 ; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |fpgabrain|net:c3|currentOperCycles[4]                                                                                                                                    ;
 ; 24:1               ; 2 bits    ; 32 LEs        ; 10 LEs               ; 22 LEs                 ; Yes        ; |fpgabrain|ram16:c2|CMD[1]                                                                                                                                                ;
-; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[8]                                                                                                                                                ;
-; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[3]~reg0                                                                                                                                            ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|i2CburstCounter[0]                                                                                                                                      ;
+; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[3]                                                                                                                                                ;
+; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[0]~reg0                                                                                                                                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|i2CburstCounter[4]                                                                                                                                      ;
 ; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[5][22]                                                                                                                                    ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[4][16]                                                                                                                                    ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[3][26]                                                                                                                                    ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[2][28]                                                                                                                                    ;
-; 5:1                ; 17 bits   ; 51 LEs        ; 17 LEs               ; 34 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[1][12]                                                                                                                                    ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[4][22]                                                                                                                                    ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[3][16]                                                                                                                                    ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[2][8]                                                                                                                                     ;
+; 5:1                ; 17 bits   ; 51 LEs        ; 17 LEs               ; 34 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[1][26]                                                                                                                                    ;
 ; 5:1                ; 17 bits   ; 51 LEs        ; 17 LEs               ; 34 LEs                 ; Yes        ; |fpgabrain|net:c3|geomNeuronOut[0][27]                                                                                                                                    ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currentOperCycles[5]                                                                                                                                    ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currentOperCycles[6]                                                                                                                                    ;
 ; 12:1               ; 3 bits    ; 24 LEs        ; 3 LEs                ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|i2CbitCount[0]                                                                                                                                          ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift|result[9]        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift|result[8]        ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |fpgabrain|net:c3|i2CclockCounter                                                                                                                                         ;
 ; 4:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|wire_w_man_add_sub_res_mag_dffe27_wo_range413w[23]              ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift|result[6]        ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift|result[7]        ;
 ; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|i2CburstCounter                                                                                                                                         ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift|result[3]        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |fpgabrain|net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift|result[1]        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -3187,24 +3187,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SLD               ; 32                          ;
 ;     plain             ; 569                         ;
 ; cycloneiii_io_obuf    ; 17                          ;
-; cycloneiii_lcell_comb ; 1876                        ;
+; cycloneiii_lcell_comb ; 1877                        ;
 ;     arith             ; 356                         ;
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 166                         ;
 ;         3 data inputs ; 189                         ;
-;     normal            ; 1520                        ;
+;     normal            ; 1521                        ;
 ;         0 data inputs ; 13                          ;
 ;         1 data inputs ; 72                          ;
-;         2 data inputs ; 103                         ;
-;         3 data inputs ; 452                         ;
-;         4 data inputs ; 880                         ;
+;         2 data inputs ; 104                         ;
+;         3 data inputs ; 447                         ;
+;         4 data inputs ; 885                         ;
 ; cycloneiii_mac_mult   ; 4                           ;
 ; cycloneiii_mac_out    ; 4                           ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 47                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.40                       ;
-; Average LUT depth     ; 4.41                        ;
+; Max LUT depth         ; 12.90                       ;
+; Average LUT depth     ; 4.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -3223,7 +3223,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Sep 07 19:52:42 2019
+    Info: Processing started: Sat Sep 07 23:50:55 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -3784,18 +3784,18 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 28 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2362 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2368 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 29 output pins
     Info (21060): Implemented 17 bidirectional pins
-    Info (21061): Implemented 2260 logic cells
+    Info (21061): Implemented 2266 logic cells
     Info (21064): Implemented 47 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 7 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 105 warnings
-    Info: Peak virtual memory: 4870 megabytes
-    Info: Processing ended: Sat Sep 07 19:53:07 2019
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 4871 megabytes
+    Info: Processing ended: Sat Sep 07 23:51:22 2019
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:29
 
 
