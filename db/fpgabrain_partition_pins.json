@@ -12,10 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_G",
 					"strict" : false
 				},
@@ -60,6 +56,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "RA[8]",
+					"strict" : false
+				},
+				{
 					"name" : "RA[10]",
 					"strict" : false
 				},
@@ -81,10 +81,6 @@
 				},
 				{
 					"name" : "WE",
-					"strict" : false
-				},
-				{
-					"name" : "o_scl",
 					"strict" : false
 				},
 				{
@@ -149,6 +145,10 @@
 				},
 				{
 					"name" : "DQ[15]",
+					"strict" : false
+				},
+				{
+					"name" : "o_scl",
 					"strict" : false
 				},
 				{

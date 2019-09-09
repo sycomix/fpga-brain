@@ -60,19 +60,6 @@ set_location_assignment PIN_144 -to VGA_HS
 set_location_assignment PIN_143 -to VGA_VS
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-set_global_assignment -name VHDL_FILE fpgabrain.vhdl
-set_global_assignment -name VHDL_FILE VGA.vhd
-set_global_assignment -name VHDL_FILE SYNC.vhd
-set_global_assignment -name QIP_FILE pll.qip
-set_global_assignment -name BDF_FILE fulladder.bdf
-set_global_assignment -name BDF_FILE sum8.bdf
-set_global_assignment -name VHDL_FILE net.vhd
-set_global_assignment -name VHDL_FILE neuron.vhd
-set_global_assignment -name QIP_FILE altfp_mul.qip
-set_global_assignment -name QIP_FILE altfp_addsub.qip
-set_global_assignment -name QIP_FILE altfpcompM.qip
-set_global_assignment -name QIP_FILE ram1port.qip
-set_global_assignment -name VHDL_FILE ram16.vhd
 set_location_assignment PIN_52 -to BA[1]
 set_location_assignment PIN_49 -to BA[0]
 set_location_assignment PIN_46 -to CAS
@@ -115,4 +102,18 @@ set_location_assignment PIN_73 -to UMQM
 set_location_assignment PIN_42 -to WE
 set_location_assignment PIN_138 -to io_sda
 set_location_assignment PIN_10 -to o_scl
+set_global_assignment -name VHDL_FILE i2c_master.vhd
+set_global_assignment -name VHDL_FILE fpgabrain.vhdl
+set_global_assignment -name VHDL_FILE VGA.vhd
+set_global_assignment -name VHDL_FILE SYNC.vhd
+set_global_assignment -name QIP_FILE pll.qip
+set_global_assignment -name BDF_FILE fulladder.bdf
+set_global_assignment -name BDF_FILE sum8.bdf
+set_global_assignment -name VHDL_FILE net.vhd
+set_global_assignment -name VHDL_FILE neuron.vhd
+set_global_assignment -name QIP_FILE altfp_mul.qip
+set_global_assignment -name QIP_FILE altfp_addsub.qip
+set_global_assignment -name QIP_FILE altfpcompM.qip
+set_global_assignment -name QIP_FILE ram1port.qip
+set_global_assignment -name VHDL_FILE ram16.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

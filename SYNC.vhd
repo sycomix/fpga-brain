@@ -55,7 +55,73 @@ BEGIN
 				R<='0';
 				G<='1';
 				B<='1';
-			END IF;			
+			END IF;
+			
+			IF HPOS = 201 THEN
+				R<='0';
+				G<=netOuts(15);
+				B<='0';			
+			ELSIF HPOS = 202 THEN
+				R<='0';
+				G<=netOuts(14);
+				B<='0';		
+			ELSIF HPOS = 203 THEN
+				R<='0';
+				G<=netOuts(13);
+				B<='0';		
+			ELSIF HPOS = 204 THEN
+				R<='0';
+				G<=netOuts(12);
+				B<='0';		
+			ELSIF HPOS = 205 THEN
+				R<='0';
+				G<=netOuts(11);
+				B<='0';		
+			ELSIF HPOS = 206 THEN
+				R<='0';
+				G<=netOuts(10);
+				B<='0';		
+			ELSIF HPOS = 207 THEN
+				R<='0';
+				G<=netOuts(9);
+				B<='0';		
+			ELSIF HPOS = 208 THEN
+				R<='0';
+				G<=netOuts(8);
+				B<='0';		
+			ELSIF HPOS = 209 THEN
+				R<='0';
+				G<=netOuts(7);
+				B<='0';		
+			ELSIF HPOS = 210 THEN
+				R<='0';
+				G<=netOuts(6);
+				B<='0';		
+			ELSIF HPOS = 211 THEN
+				R<='0';
+				G<=netOuts(5);
+				B<='0';		
+			ELSIF HPOS = 212 THEN
+				R<='0';
+				G<=netOuts(4);
+				B<='0';		
+			ELSIF HPOS = 213 THEN
+				R<='0';
+				G<=netOuts(3);
+				B<='0';		
+			ELSIF HPOS = 214 THEN
+				R<='0';
+				G<=netOuts(2);
+				B<='0';		
+			ELSIF HPOS = 215 THEN
+				R<='0';
+				G<=netOuts(1);
+				B<='0';		
+			ELSIF HPOS = 216 THEN
+				R<='0';
+				G<=netOuts(0);
+				B<='0';		
+			END IF;
 		ELSE
 			R<='0';
 			G<='0';
@@ -84,12 +150,6 @@ BEGIN
 		else
 			VSYNC <= '0';
 		end if;
- 
-		IF ((HPOS>0 AND HPOS<240) OR (VPOS>0 AND VPOS<66)) THEN
-			R<='0';
-			G<='0';
-			B<='0';
-		END IF;
 	END IF;
 END PROCESS;
  

@@ -94,7 +94,8 @@ ENTITY net IS
 		ram_data_read_ready: IN STD_LOGIC;
 		ram_data_read: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 		
-		o_scl  :  OUT  STD_LOGIC:='1';
+		CLK_50: IN STD_LOGIC;
+		o_scl  :  INOUT  STD_LOGIC:='1';
 		io_sda  : INOUT  STD_LOGIC:='1'
 	);
 END net;
@@ -105,6 +106,37 @@ ARCHITECTURE bhv OF net IS
 SIGNAL s_addrRow: INTEGER RANGE 0 TO 512:=0;
 SIGNAL s_addrCol: INTEGER RANGE 0 TO 255:=0;
 SIGNAL data_s: INTEGER RANGE 0 TO 4096:=4095;
+
+
+COMPONENT i2c_master IS
+  GENERIC(
+    input_clk : INTEGER := 50_000_000; --input clock speed from user logic in Hz
+    bus_clk   : INTEGER := 400_000);   --speed the i2c bus (scl) will run at in Hz
+  PORT(
+    clk       : IN     STD_LOGIC;                    --system clock
+    reset_n   : IN     STD_LOGIC;                    --active low reset
+    ena       : IN     STD_LOGIC;                    --latch in command
+    addr      : IN     STD_LOGIC_VECTOR(6 DOWNTO 0); --address of target slave
+    rw        : IN     STD_LOGIC;                    --'0' is write, '1' is read
+    data_wr   : IN     STD_LOGIC_VECTOR(7 DOWNTO 0); --data to write to slave
+    busy      : OUT    STD_LOGIC;                    --indicates transaction in progress
+    data_rd   : OUT    STD_LOGIC_VECTOR(7 DOWNTO 0); --data read from slave
+    ack_error : BUFFER STD_LOGIC;                    --flag if improper acknowledge from slave
+    sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
+    scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
+END COMPONENT i2c_master;
+SIGNAL busy_prev: STD_LOGIC :='0';
+SIGNAL i2c_state: STD_LOGIC :='1';
+SIGNAL i2cStoredData: STD_LOGIC_VECTOR(15 DOWNTO 0):="01000011"&"01000011";
+SIGNAL s_i2c_reset_n: STD_LOGIC :='1';
+SIGNAL s_i2c_ena: STD_LOGIC :='1';
+SIGNAL s_i2c_addr: STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL s_i2c_rw: STD_LOGIC :='1';
+SIGNAL s_i2c_data_wr: STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL s_i2c_busy: STD_LOGIC;
+SIGNAL s_i2c_data_rd: STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL s_i2c_ack_error: STD_LOGIC;
+
 
 COMPONENT altfp_addsub IS
 	PORT
@@ -250,6 +282,7 @@ SIGNAL currMPUcmdsArrayId: INTEGER RANGE 0 TO 1:=0;
 SIGNAL currMPUcmdsArraySize: INTEGER RANGE 0 TO 2:=2;
 
 BEGIN 	
+	ci2c: i2c_master GENERIC MAP(133_000_000, 400_000) PORT MAP(CLK_IN, s_i2c_reset_n, s_i2c_ena, s_i2c_addr, s_i2c_rw, s_i2c_data_wr, s_i2c_busy, s_i2c_data_rd, s_i2c_ack_error, io_sda, o_scl);
 	c0: altfp_mul PORT MAP (CLK_IN, compMulv0, compMulv1, compMulResult);
 	c1: altfp_addsub PORT MAP (CLK_IN, compAddv0, compAddv1, compAddResult);
 
@@ -442,17 +475,18 @@ BEGIN
 									END IF;
 									
 									IF currGeomNeuronId < (neuronSize-1) THEN
-										outs <= "00000001"&"11111111";
+										--------tempComment------outs <= "00000001"&"11111111";
 										currGeomNeuronId <= currGeomNeuronId+1;
 									ELSIF currGeomNeuronId = (neuronSize-1) THEN
-										outs <= "00000011"&"11111111";
+										--------tempComment------outs <= "00000011"&"11111111";
+						outs <= i2cStoredData;
 										currGeomNeuronId <= neuronsLayerArrayArray(1)(0);
 										currNeuronsLayerArrayId <= 0;
 									END IF;
 									
 									IF currGeomNeuronId = 2 THEN
 										IF compAddResult > x"3bd1b717" AND compAddResult < x"3bded289" THEN
-											outs <= "00001111"&"11111111";
+											------tempComment--------outs <= "00001111"&"11111111";
 						--outs <= rot_x;
 										END IF;
 									END IF;
@@ -501,187 +535,41 @@ BEGIN
 	
 	
 	PROCESS(CLK_IN)
-VARIABLE i2CclockCounter: INTEGER RANGE 0 TO 64000:=0;
-VARIABLE i2CburstCounter: INTEGER RANGE 0 TO 1000:=29; 
-VARIABLE i2CclockState : STD_LOGIC:='1';
+	VARIABLE busy_cnt : INTEGER RANGE 0 TO 1000:=0; 
 	BEGIN
 		IF (rising_edge(CLK_IN)) THEN
-		
-			i2CclockCounter := i2CclockCounter+1;
-			IF i2CclockCounter = 8000 THEN
-				i2CclockCounter := 0;
-				
-				IF i2CclockState = '1' THEN
-					i2CclockState := '0';	
-				ELSE
-					i2CclockState := '1';			
+			IF i2c_state = '1' THEN
+				busy_prev <= s_i2c_busy;                       --capture the value of the previous i2c busy signal
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN  --i2c busy just went high
+					busy_cnt := busy_cnt + 1;                    --counts the times busy has gone from low to high during transaction
 				END IF;
-			END IF;
-				
-			IF i2CclockState = '0' THEN
-				o_scl <= '0';	
-				
-				IF (i2CburstCounter = 0 OR i2CburstCounter = 1 OR i2CburstCounter = 29 OR i2CburstCounter = 31 OR i2CburstCounter = 51) THEN
-					o_scl <= '1';
-				END IF;
-				
-				IF (i2CburstCounter = 2 OR i2CburstCounter = 32) AND i2CclockCounter > 6000 THEN	 
-					o_scl <= '1';
-				END IF;
-				
-				IF i2CclockCounter = 6000 THEN					
-					IF i2CburstCounter = 0 THEN -- start cond
-									
-					ELSIF i2CburstCounter = 1 THEN -- start cond
-						io_sda <= '0';
-						
-					ELSIF i2CburstCounter < 10 THEN -- slave address bits
-						IF currMPUcmdsArrayId = 0 THEN
-							io_sda <= MPUslaveArray(0)(i2CbitCount);
-						ELSE
-							io_sda <= MPUslaveArray(1)(i2CbitCount);						
-						END IF;	
-						IF i2CbitCount > 0 THEN
-							i2CbitCount <= i2CbitCount-1;
+				CASE busy_cnt IS                             --busy_cnt keeps track of which command we are on
+					WHEN 0 =>                                  --no command latched in yet
+						s_i2c_ena <= '1';                            --initiate the transaction
+						s_i2c_addr <= "1101000";                    --set the address of the slave
+						s_i2c_rw <= '0';                             --command 1 is a write
+						s_i2c_data_wr <= "01000011";              --data to be written
+					WHEN 1 =>                                  --1st busy high: command 1 latched, okay to issue command 2
+						s_i2c_rw <= '1';                             --command 2 is a read (addr stays the same)
+					WHEN 2 =>                                  --2nd busy high: command 2 latched, okay to issue command 3
+						s_i2c_rw <= '0';                             --command 3 is a write
+						s_i2c_data_wr <= "01000100";          --data to be written
+						IF(s_i2c_busy = '0') THEN                    --indicates data read in command 2 is ready
+							i2cStoredData(15 DOWNTO 8) <= s_i2c_data_rd;          --retrieve data from command 2
 						END IF;
-						IF i2CbitCount = 0 THEN
-							io_sda <= '0'; -- this always write to write the register address
-						END IF;
-						
-					ELSIF i2CburstCounter = 10 THEN -- ACK slave adress
-						io_sda <= 'Z';		
-						i2CbitCount <= 7;
-						
-					ELSIF i2CburstCounter < 19 THEN -- register address bits
-						IF currMPUcmdsArrayId = 0 THEN
-							io_sda <= MPUregAddrArray(0)(i2CbitCount);
-						ELSE
-							io_sda <= MPUregAddrArray(1)(i2CbitCount);						
-						END IF;		
-						IF i2CbitCount > 0 THEN
-							i2CbitCount <= i2CbitCount-1;
-						END IF;
-						
-					ELSIF i2CburstCounter = 19 THEN -- ACK register address
-						io_sda <= 'Z';		
-						i2CbitCount <= 7;
-						
-					ELSIF i2CburstCounter < 28 THEN -- data bits
-						IF MPUslaveArray(currMPUcmdsArrayId)(0) = '1' THEN -- IF READ -- stop cond
-							io_sda <= '0';	
-							o_scl <= '1';
+					WHEN 3 =>                                  --3rd busy high: command 3 latched, okay to issue command 4
+						s_i2c_rw <= '1';                             --command 4 is read (addr stays the same)
+					WHEN 4 =>                                  --4th busy high: command 4 latched, ready to stop
+						s_i2c_ena <= '0';                            --deassert enable to stop transaction after command 4
+						IF(s_i2c_busy = '0') THEN                    --indicates data read in command 4 is ready
+							--i2cStoredData(7 DOWNTO 0) <= s_i2c_data_rd;           --retrieve data from command 4
+							busy_cnt := 0;                             --reset busy_cnt for next transaction
+							i2c_state <= '1';                             --transaction complete, go to next state in design
 							
-							i2CburstCounter := 30;
-							i2CbitCount <= 7;
-						ELSIF MPUslaveArray(currMPUcmdsArrayId)(0) = '0' THEN -- IF WRITE -- write data
-							IF currMPUcmdsArrayId = 0 THEN
-								io_sda <= MPUdatasArray(0)(i2CbitCount);
-							ELSE
-								io_sda <= MPUdatasArray(1)(i2CbitCount);						
-							END IF;	
-							IF i2CbitCount > 0 THEN
-								i2CbitCount <= i2CbitCount-1;
-							END IF;								
+							--outs <= "00001111"&"11111111";
 						END IF;
-						
-					ELSIF i2CburstCounter = 28 THEN -- ACK data write
-						io_sda <= 'Z';		
-						i2CbitCount <= 7;
-						
-					ELSIF i2CburstCounter = 29 THEN -- stop cond if WRITE
-						io_sda <= '1';	
-						o_scl <= '1';	
-						
-						IF repeatReadCount < 1000 THEN
-							repeatReadCount <= repeatReadCount+1;
-						ELSE
-							i2CburstCounter := 0;
-							i2CbitCount <= 7;
-							repeatReadCount <= 0;
-							i2CclockState := '1';
-							i2CclockCounter := 8000;	
-							
-							IF currMPUcmdsArrayId < (currMPUcmdsArraySize-1) THEN
-								currMPUcmdsArrayId <= currMPUcmdsArrayId+1;	
-							END IF;
-						END IF;	
-						
-					ELSIF i2CburstCounter = 30 THEN -- stop cond if WRITE
-						io_sda <= '1';	
-						
-					ELSIF i2CburstCounter = 31 THEN -- stop cond if WRITE
-						io_sda <= '0';	
-						o_scl <= '1';	
-						
-						i2CbitCount <= 7;
-						repeatReadCount <= 0;
-						
-					ELSIF i2CburstCounter < 40 THEN -- slave addr bits
-						IF currMPUcmdsArrayId = 0 THEN
-							io_sda <= MPUslaveArray(0)(i2CbitCount);
-						ELSE
-							io_sda <= MPUslaveArray(1)(i2CbitCount);						
-						END IF;	
-						IF i2CbitCount > 0 THEN
-							i2CbitCount <= i2CbitCount-1;
-						END IF;
-						
-					ELSIF i2CburstCounter = 40 THEN -- ACK
-						io_sda <= 'Z';		
-						i2CbitCount <= 7;
-						
-					ELSIF i2CburstCounter < 49 THEN -- receive data
-						
-					ELSIF i2CburstCounter = 49 THEN -- NACK
-						io_sda <= 'Z';		
-						
-					ELSIF i2CburstCounter = 50 THEN -- stop cond
-						io_sda <= '0';		
-						
-					ELSIF i2CburstCounter = 51 THEN -- stop cond if WRITE
-						io_sda <= '1';	
-						
-						IF repeatReadCount < 1000 THEN
-							repeatReadCount <= repeatReadCount+1;
-						ELSE
-							i2CburstCounter := 0;
-							i2CbitCount <= 7;
-							repeatReadCount <= 0;
-							i2CclockState := '1';	
-							i2CclockCounter := 8000;
-							
-							IF currMPUcmdsArrayId < (currMPUcmdsArraySize-1) THEN
-								currMPUcmdsArrayId <= currMPUcmdsArrayId+1;	
-							END IF;
-						END IF;	
-					END IF;			
-				END IF;
-							
-				IF i2CburstCounter > 0 AND i2CclockCounter = 6000 THEN
-					IF i2CburstCounter < 29 THEN
-						i2CburstCounter := i2CburstCounter+1;	
-					ELSIF i2CburstCounter >= 30 AND i2CburstCounter < 51 THEN
-						i2CburstCounter := i2CburstCounter+1;												
-					END IF;	
-				ELSIF i2CburstCounter = 0 AND i2CclockCounter = 0 THEN
-					IF i2CburstCounter < 29 THEN
-						i2CburstCounter := i2CburstCounter+1;	
-					ELSIF i2CburstCounter >= 30 AND i2CburstCounter < 51 THEN
-						i2CburstCounter := i2CburstCounter+1;												
-					END IF;	
-				END IF;		
-			ELSIF i2CclockState = '1' THEN				
-				o_scl <= '1';
-				
-				IF i2CburstCounter = 1 THEN
-					o_scl <= '0';
-				END IF;				
-				IF i2CburstCounter = 2 THEN
-					o_scl <= '0';
-				END IF;		
-				IF i2CburstCounter = 31 THEN
-					io_sda <= '1';	
-				END IF;
+					WHEN OTHERS => NULL;
+				END CASE;
 			END IF;
 				
 		END IF;
