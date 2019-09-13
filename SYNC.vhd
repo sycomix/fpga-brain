@@ -38,6 +38,32 @@ BEGIN
 		-- add 240 horiz. FP, BP, SYNC and 66 vert. FP, BP, SYNC
 		-- display a green rectangle in the middle of the screen
 		IF ((HPOS>=200 AND HPOS<300) AND (VPOS>300 AND VPOS<400)) THEN		
+			IF netOuts = "0000000000000000" THEN
+				R<='1';	
+				G<='0';	
+				B<='0';	
+			ELSIF netOuts = "00000001"&"11111111" THEN	
+				R<='0';					
+				G<='1';					
+				B<='0';					
+			ELSIF netOuts = "00000011"&"11111111" THEN
+				R<='0';	
+				G<='0';	
+				B<='1';	
+			ELSIF netOuts = "00000111"&"11111111" THEN	
+				R<='1';	
+				G<='1';	
+				B<='0';	
+			ELSIF netOuts = "00001111"&"11111111" THEN	
+				R<='1';	
+				G<='1';	
+				B<='1';	
+			ELSE	
+				R<='0';	
+				G<='1';	
+				B<='1';	
+			END IF;
+			
 			IF HPOS = 200 THEN
 				R<='0';
 				G<='1';

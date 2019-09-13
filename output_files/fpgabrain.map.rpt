@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Fri Sep 13 21:41:58 2019
+Fri Sep 13 22:04:11 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -77,15 +77,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Sep 13 21:41:58 2019       ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep 13 22:04:11 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 844                                         ;
-;     Total combinational functions  ; 787                                         ;
-;     Dedicated logic registers      ; 272                                         ;
-; Total registers                    ; 272                                         ;
+; Total logic elements               ; 855                                         ;
+;     Total combinational functions  ; 798                                         ;
+;     Dedicated logic registers      ; 273                                         ;
+; Total registers                    ; 273                                         ;
 ; Total pins                         ; 47                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -252,20 +252,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 844                                                                        ;
+; Estimated Total logic elements              ; 855                                                                        ;
 ;                                             ;                                                                            ;
-; Total combinational functions               ; 787                                                                        ;
+; Total combinational functions               ; 798                                                                        ;
 ; Logic element usage by number of LUT inputs ;                                                                            ;
-;     -- 4 input functions                    ; 383                                                                        ;
-;     -- 3 input functions                    ; 162                                                                        ;
+;     -- 4 input functions                    ; 388                                                                        ;
+;     -- 3 input functions                    ; 168                                                                        ;
 ;     -- <=2 input functions                  ; 242                                                                        ;
 ;                                             ;                                                                            ;
 ; Logic elements by mode                      ;                                                                            ;
-;     -- normal mode                          ; 629                                                                        ;
+;     -- normal mode                          ; 640                                                                        ;
 ;     -- arithmetic mode                      ; 158                                                                        ;
 ;                                             ;                                                                            ;
-; Total registers                             ; 272                                                                        ;
-;     -- Dedicated logic registers            ; 272                                                                        ;
+; Total registers                             ; 273                                                                        ;
+;     -- Dedicated logic registers            ; 273                                                                        ;
 ;     -- I/O registers                        ; 0                                                                          ;
 ;                                             ;                                                                            ;
 ; I/O pins                                    ; 47                                                                         ;
@@ -276,9 +276,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                          ;
 ;                                             ;                                                                            ;
 ; Maximum fan-out node                        ; pll:c1|altpll:altpll_component|pll_altpll1:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 274                                                                        ;
-; Total fan-out                               ; 3391                                                                       ;
-; Average fan-out                             ; 2.89                                                                       ;
+; Maximum fan-out                             ; 275                                                                        ;
+; Total fan-out                               ; 3432                                                                       ;
+; Average fan-out                             ; 2.90                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -287,10 +287,10 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
-; |fpgabrain                            ; 787 (0)             ; 272 (0)                   ; 0           ; 0            ; 0       ; 0         ; 47   ; 0            ; |fpgabrain                                                           ; fpgabrain   ; work         ;
-;    |VGA:c4|                           ; 73 (0)              ; 26 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4                                                    ; VGA         ; work         ;
-;       |SYNC:C1|                       ; 73 (73)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4|SYNC:C1                                            ; SYNC        ; work         ;
-;    |net:c3|                           ; 523 (425)           ; 180 (133)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3                                                    ; net         ; work         ;
+; |fpgabrain                            ; 798 (0)             ; 273 (0)                   ; 0           ; 0            ; 0       ; 0         ; 47   ; 0            ; |fpgabrain                                                           ; fpgabrain   ; work         ;
+;    |VGA:c4|                           ; 89 (0)              ; 27 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4                                                    ; VGA         ; work         ;
+;       |SYNC:C1|                       ; 89 (89)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4|SYNC:C1                                            ; SYNC        ; work         ;
+;    |net:c3|                           ; 518 (420)           ; 180 (133)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3                                                    ; net         ; work         ;
 ;       |i2c_master:ci2c|               ; 98 (98)             ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|i2c_master:ci2c                                    ; i2c_master  ; work         ;
 ;    |pll:c1|                           ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1                                                    ; pll         ; work         ;
 ;       |altpll:altpll_component|       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component                            ; altpll      ; work         ;
@@ -740,10 +740,11 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|s_addrRow[0..9]                                                                                                                                                      ; Stuck at GND due to stuck port clock_enable   ;
 ; net:c3|s_i2c_addr[3,5]                                                                                                                                                      ; Merged with net:c3|s_i2c_addr[6]              ;
 ; net:c3|s_i2c_addr[0..2]                                                                                                                                                     ; Merged with net:c3|s_i2c_addr[4]              ;
-; net:c3|ram_col_addr[2..5,8,9,11,12]                                                                                                                                         ; Merged with net:c3|ram_col_addr[1]            ;
-; net:c3|ram_row_addr[11]                                                                                                                                                     ; Merged with net:c3|ram_col_addr[1]            ;
-; net:c3|ram_col_addr[6,7]                                                                                                                                                    ; Merged with net:c3|ram_col_addr[1]            ;
+; net:c3|ram_col_addr[2,5,8,9,11,12]                                                                                                                                          ; Merged with net:c3|ram_col_addr[1]            ;
 ; net:c3|ram_row_addr[12]                                                                                                                                                     ; Merged with net:c3|ram_col_addr[1]            ;
+; net:c3|ram_col_addr[6]                                                                                                                                                      ; Merged with net:c3|ram_col_addr[1]            ;
+; net:c3|ram_row_addr[11]                                                                                                                                                     ; Merged with net:c3|ram_col_addr[1]            ;
+; net:c3|ram_col_addr[3,4,7]                                                                                                                                                  ; Merged with net:c3|ram_col_addr[1]            ;
 ; net:c3|w[0]                                                                                                                                                                 ; Merged with net:c3|outs[0]                    ;
 ; net:c3|w[1]                                                                                                                                                                 ; Merged with net:c3|outs[1]                    ;
 ; net:c3|w[2]                                                                                                                                                                 ; Merged with net:c3|outs[2]                    ;
@@ -778,7 +779,6 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|i2c_state[3]                                                                                                                                                         ; Stuck at GND due to stuck port data_in        ;
 ; net:c3|s_i2c_addr[4]                                                                                                                                                        ; Stuck at GND due to stuck port data_in        ;
 ; net:c3|i2c_master:ci2c|addr_rw[1]                                                                                                                                           ; Stuck at GND due to stuck port data_in        ;
-; VGA:c4|SYNC:C1|R                                                                                                                                                            ; Stuck at GND due to stuck port data_in        ;
 ; net:c3|s_i2c_addr[6]                                                                                                                                                        ; Stuck at VCC due to stuck port data_in        ;
 ; net:c3|s_i2c_data_wr[4]                                                                                                                                                     ; Stuck at GND due to stuck port data_in        ;
 ; net:c3|i2c_master:ci2c|addr_rw[4]                                                                                                                                           ; Stuck at VCC due to stuck port data_in        ;
@@ -1048,7 +1048,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|ram_data_save[10,13]                                                                                                                                                 ; Merged with net:c3|ram_data_save[6]           ;
 ; ram16:c2|RA[9]                                                                                                                                                              ; Stuck at GND due to stuck port data_in        ;
 ; ram16:c2|n_sb[3]                                                                                                                                                            ; Stuck at GND due to stuck port data_in        ;
-; Total Number of Removed Registers = 1323                                                                                                                                    ;                                               ;
+; Total Number of Removed Registers = 1322                                                                                                                                    ;                                               ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------+
 
 
@@ -1188,7 +1188,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 272   ;
+; Total registers                              ; 273   ;
 ; Number of registers using Synchronous Clear  ; 37    ;
 ; Number of registers using Synchronous Load   ; 22    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -1203,14 +1203,14 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; net:c3|i2cStoredData[15]                ; 1       ;
-; net:c3|i2cStoredData[7]                 ; 1       ;
-; net:c3|i2cStoredData[5]                 ; 1       ;
-; net:c3|i2cStoredData[3]                 ; 1       ;
-; net:c3|i2cStoredData[1]                 ; 1       ;
-; net:c3|i2cStoredData[13]                ; 1       ;
 ; net:c3|i2cStoredData[11]                ; 1       ;
 ; net:c3|i2cStoredData[9]                 ; 1       ;
+; net:c3|i2cStoredData[13]                ; 1       ;
+; net:c3|i2cStoredData[15]                ; 1       ;
+; net:c3|i2cStoredData[1]                 ; 1       ;
+; net:c3|i2cStoredData[3]                 ; 1       ;
+; net:c3|i2cStoredData[5]                 ; 1       ;
+; net:c3|i2cStoredData[7]                 ; 1       ;
 ; net:c3|i2c_master:ci2c|sda_int          ; 2       ;
 ; net:c3|s_i2c_rw                         ; 6       ;
 ; net:c3|s_i2c_ena                        ; 9       ;
@@ -1226,25 +1226,25 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |fpgabrain|net:c3|i2c_master:ci2c|addr_rw[0] ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |fpgabrain|net:c3|i2c_startCounter[0]        ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|busy_cnt[2]                ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|i2cStoredData[8]           ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |fpgabrain|net:c3|i2c_master:ci2c|data_tx[2] ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |fpgabrain|net:c3|i2c_startCounter[3]        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|busy_cnt[3]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|i2cStoredData[12]          ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|i2cStoredData[4]           ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|currLinksArrayId[3]        ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_row_addr[3]            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|currLinksArrayId[1]        ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_row_addr[2]            ;
 ; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currAdjNeuronData[0]       ;
-; 9:1                ; 13 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_data_save[3]           ;
+; 9:1                ; 13 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_data_save[6]           ;
 ; 6:1                ; 24 bits   ; 96 LEs        ; 24 LEs               ; 72 LEs                 ; Yes        ; |fpgabrain|net:c3|i2c_startCounterB[18]      ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[6]                    ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|i2c_state[2]               ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[3]                    ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|i2c_state[0]               ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|s_i2c_data_wr[6]           ;
-; 24:1               ; 2 bits    ; 32 LEs        ; 10 LEs               ; 22 LEs                 ; Yes        ; |fpgabrain|ram16:c2|CMD[1]                   ;
-; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[10]                  ;
-; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[8]~reg0               ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 10 LEs               ; 22 LEs                 ; Yes        ; |fpgabrain|ram16:c2|CMD[0]                   ;
+; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[9]                   ;
+; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[4]~reg0               ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|i2c_master:ci2c|bit_cnt[0] ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|i2cStoredData[9]           ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|i2cStoredData[1]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|i2cStoredData[7]           ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|busy_cnt                   ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|busy_cnt                   ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|busy_cnt                   ;
@@ -3369,28 +3369,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 47                          ;
-; cycloneiii_ff         ; 272                         ;
+; cycloneiii_ff         ; 273                         ;
 ;     ENA               ; 146                         ;
 ;     ENA SCLR          ; 26                          ;
 ;     ENA SLD           ; 10                          ;
 ;     SCLR              ; 11                          ;
 ;     SLD               ; 12                          ;
-;     plain             ; 67                          ;
+;     plain             ; 68                          ;
 ; cycloneiii_io_obuf    ; 18                          ;
-; cycloneiii_lcell_comb ; 788                         ;
+; cycloneiii_lcell_comb ; 799                         ;
 ;     arith             ; 158                         ;
 ;         2 data inputs ; 135                         ;
 ;         3 data inputs ; 23                          ;
-;     normal            ; 630                         ;
+;     normal            ; 641                         ;
 ;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 28                          ;
 ;         2 data inputs ; 77                          ;
-;         3 data inputs ; 139                         ;
-;         4 data inputs ; 383                         ;
+;         3 data inputs ; 145                         ;
+;         4 data inputs ; 388                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 22.60                       ;
-; Average LUT depth     ; 7.68                        ;
+; Max LUT depth         ; 21.70                       ;
+; Average LUT depth     ; 7.52                        ;
 +-----------------------+-----------------------------+
 
 
@@ -3409,7 +3409,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Sep 13 21:41:34 2019
+    Info: Processing started: Fri Sep 13 22:03:47 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -3915,7 +3915,6 @@ Warning (14284): Synthesized away the following node(s):
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "net:c3|linksWeightArray" is uninferred due to inappropriate RAM size File: G:/fpga-brain/net.vhd Line: 228
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_R" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 13
     Warning (13410): Pin "RA[9]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 19
     Warning (13410): Pin "RA[11]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 19
     Warning (13410): Pin "RA[12]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 19
@@ -3926,15 +3925,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 957 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 914 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 925 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 28 output pins
     Info (21060): Implemented 18 bidirectional pins
-    Info (21061): Implemented 866 logic cells
+    Info (21061): Implemented 877 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 112 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 111 warnings
     Info: Peak virtual memory: 4859 megabytes
-    Info: Processing ended: Fri Sep 13 21:41:58 2019
+    Info: Processing ended: Fri Sep 13 22:04:11 2019
     Info: Elapsed time: 00:00:24
     Info: Total CPU time (on all processors): 00:00:26
 
