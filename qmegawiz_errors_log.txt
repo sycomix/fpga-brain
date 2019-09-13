@@ -1,7 +1,0 @@
-
-
-G:/fpga-brain/altfp_mult.vhd
-
-Jul 28 12PM:31:46>: Variation file name (altfp_mult) is identical with the name of one of its sub-components.
-
-MegaWizard Plug-In Manager will rename the variation to "altfp_mula" to prevent compilation errors

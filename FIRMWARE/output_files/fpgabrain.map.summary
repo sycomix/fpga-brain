@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Sep 13 22:04:11 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : fpgabrain
+Top-level Entity Name : fpgabrain
+Family : Cyclone IV E
+Total logic elements : 855
+    Total combinational functions : 798
+    Dedicated logic registers : 273
+Total registers : 273
+Total pins : 47
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1
