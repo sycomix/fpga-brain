@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Mon Sep 09 06:22:56 2019
+Fri Sep 13 21:41:58 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -77,15 +77,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 09 06:22:56 2019       ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep 13 21:41:58 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 598                                         ;
-;     Total combinational functions  ; 548                                         ;
-;     Dedicated logic registers      ; 213                                         ;
-; Total registers                    ; 213                                         ;
+; Total logic elements               ; 844                                         ;
+;     Total combinational functions  ; 787                                         ;
+;     Dedicated logic registers      ; 272                                         ;
+; Total registers                    ; 272                                         ;
 ; Total pins                         ; 47                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -194,7 +194,8 @@ refer to the applicable agreement for further details.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -251,20 +252,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 598                                                                        ;
+; Estimated Total logic elements              ; 844                                                                        ;
 ;                                             ;                                                                            ;
-; Total combinational functions               ; 548                                                                        ;
+; Total combinational functions               ; 787                                                                        ;
 ; Logic element usage by number of LUT inputs ;                                                                            ;
-;     -- 4 input functions                    ; 302                                                                        ;
-;     -- 3 input functions                    ; 123                                                                        ;
-;     -- <=2 input functions                  ; 123                                                                        ;
+;     -- 4 input functions                    ; 383                                                                        ;
+;     -- 3 input functions                    ; 162                                                                        ;
+;     -- <=2 input functions                  ; 242                                                                        ;
 ;                                             ;                                                                            ;
 ; Logic elements by mode                      ;                                                                            ;
-;     -- normal mode                          ; 455                                                                        ;
-;     -- arithmetic mode                      ; 93                                                                         ;
+;     -- normal mode                          ; 629                                                                        ;
+;     -- arithmetic mode                      ; 158                                                                        ;
 ;                                             ;                                                                            ;
-; Total registers                             ; 213                                                                        ;
-;     -- Dedicated logic registers            ; 213                                                                        ;
+; Total registers                             ; 272                                                                        ;
+;     -- Dedicated logic registers            ; 272                                                                        ;
 ;     -- I/O registers                        ; 0                                                                          ;
 ;                                             ;                                                                            ;
 ; I/O pins                                    ; 47                                                                         ;
@@ -275,9 +276,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                          ;
 ;                                             ;                                                                            ;
 ; Maximum fan-out node                        ; pll:c1|altpll:altpll_component|pll_altpll1:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 215                                                                        ;
-; Total fan-out                               ; 2533                                                                       ;
-; Average fan-out                             ; 2.90                                                                       ;
+; Maximum fan-out                             ; 274                                                                        ;
+; Total fan-out                               ; 3391                                                                       ;
+; Average fan-out                             ; 2.89                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -286,15 +287,15 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
-; |fpgabrain                            ; 548 (0)             ; 213 (0)                   ; 0           ; 0            ; 0       ; 0         ; 47   ; 0            ; |fpgabrain                                                           ; fpgabrain   ; work         ;
-;    |VGA:c4|                           ; 67 (0)              ; 25 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4                                                    ; VGA         ; work         ;
-;       |SYNC:C1|                       ; 67 (67)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4|SYNC:C1                                            ; SYNC        ; work         ;
-;    |net:c3|                           ; 285 (186)           ; 122 (75)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3                                                    ; net         ; work         ;
-;       |i2c_master:ci2c|               ; 99 (99)             ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|i2c_master:ci2c                                    ; i2c_master  ; work         ;
+; |fpgabrain                            ; 787 (0)             ; 272 (0)                   ; 0           ; 0            ; 0       ; 0         ; 47   ; 0            ; |fpgabrain                                                           ; fpgabrain   ; work         ;
+;    |VGA:c4|                           ; 73 (0)              ; 26 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4                                                    ; VGA         ; work         ;
+;       |SYNC:C1|                       ; 73 (73)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|VGA:c4|SYNC:C1                                            ; SYNC        ; work         ;
+;    |net:c3|                           ; 523 (425)           ; 180 (133)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3                                                    ; net         ; work         ;
+;       |i2c_master:ci2c|               ; 98 (98)             ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|net:c3|i2c_master:ci2c                                    ; i2c_master  ; work         ;
 ;    |pll:c1|                           ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1                                                    ; pll         ; work         ;
 ;       |altpll:altpll_component|       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component                            ; altpll      ; work         ;
 ;          |pll_altpll1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|pll:c1|altpll:altpll_component|pll_altpll1:auto_generated ; pll_altpll1 ; work         ;
-;    |ram16:c2|                         ; 196 (196)           ; 66 (66)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|ram16:c2                                                  ; ram16       ; work         ;
+;    |ram16:c2|                         ; 191 (191)           ; 66 (66)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpgabrain|ram16:c2                                                  ; ram16       ; work         ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -346,40 +347,6 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Register name                                                                                                                                                               ; Reason for Removal                            ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------+
 ; ram16:c2|CS                                                                                                                                                                 ; Stuck at GND due to stuck port data_in        ;
-; net:c3|geomNeuronOut[3][27]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][26]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][25]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][24]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][23]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][22]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][21]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][20]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][19]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][18]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][17]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][16]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][15]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][14]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][13]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][12]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][11]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][10]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][9]                                                                                                                                                  ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][8]                                                                                                                                                  ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][7]                                                                                                                                                  ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][6]                                                                                                                                                  ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][5]                                                                                                                                                  ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][4]                                                                                                                                                  ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][3]                                                                                                                                                  ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][2]                                                                                                                                                  ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][1]                                                                                                                                                  ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[3][0]                                                                                                                                                  ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[4][31]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[4][30]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[4][29]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[4][28]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[4][27]                                                                                                                                                 ; Lost fanout                                   ;
-; net:c3|geomNeuronOut[4][26]                                                                                                                                                 ; Lost fanout                                   ;
 ; net:c3|geomNeuronOut[4][25]                                                                                                                                                 ; Lost fanout                                   ;
 ; net:c3|geomNeuronOut[4][24]                                                                                                                                                 ; Lost fanout                                   ;
 ; net:c3|geomNeuronOut[4][23]                                                                                                                                                 ; Lost fanout                                   ;
@@ -440,6 +407,40 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|geomNeuronOut[5][0]                                                                                                                                                  ; Lost fanout                                   ;
 ; net:c3|compAddv0[0..31]                                                                                                                                                     ; Lost fanout                                   ;
 ; net:c3|compAddv1[0..31]                                                                                                                                                     ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[4][26]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[4][27]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[4][28]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[4][29]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[4][30]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[4][31]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][0]                                                                                                                                                  ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][1]                                                                                                                                                  ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][2]                                                                                                                                                  ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][3]                                                                                                                                                  ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][4]                                                                                                                                                  ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][5]                                                                                                                                                  ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][6]                                                                                                                                                  ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][7]                                                                                                                                                  ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][8]                                                                                                                                                  ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][9]                                                                                                                                                  ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][10]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][11]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][12]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][13]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][14]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][15]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][16]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][17]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][18]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][19]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][20]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][21]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][22]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][23]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][24]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][25]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][26]                                                                                                                                                 ; Lost fanout                                   ;
+; net:c3|geomNeuronOut[3][27]                                                                                                                                                 ; Lost fanout                                   ;
 ; net:c3|geomNeuronOut[3][28]                                                                                                                                                 ; Lost fanout                                   ;
 ; net:c3|geomNeuronOut[3][29]                                                                                                                                                 ; Lost fanout                                   ;
 ; net:c3|geomNeuronOut[3][30]                                                                                                                                                 ; Lost fanout                                   ;
@@ -725,49 +726,63 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe81                                   ; Lost fanout                                   ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe9                                    ; Lost fanout                                   ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[0..8]                    ; Lost fanout                                   ;
+; net:c3|currNeuronsLayerArraySubId                                                                                                                                           ; Lost fanout                                   ;
 ; net:c3|currNeuronsLayerArrayId[0,1]                                                                                                                                         ; Lost fanout                                   ;
+; net:c3|currGeomNeuronId[0..2]                                                                                                                                               ; Lost fanout                                   ;
+; net:c3|inferenceMulOK                                                                                                                                                       ; Lost fanout                                   ;
+; net:c3|doOperCycles[0..4]                                                                                                                                                   ; Lost fanout                                   ;
+; net:c3|currentOperCycles[0..6]                                                                                                                                              ; Lost fanout                                   ;
 ; net:c3|adjNeuronParentId1D[0..11]                                                                                                                                           ; Lost fanout                                   ;
-; net:c3|s_i2c_addr[5,6]                                                                                                                                                      ; Stuck at VCC due to stuck port data_in        ;
-; net:c3|s_i2c_addr[4]                                                                                                                                                        ; Stuck at GND due to stuck port data_in        ;
-; net:c3|s_i2c_addr[3]                                                                                                                                                        ; Stuck at VCC due to stuck port data_in        ;
-; net:c3|s_i2c_addr[0..2]                                                                                                                                                     ; Stuck at GND due to stuck port data_in        ;
-; net:c3|s_i2c_data_wr[7]                                                                                                                                                     ; Stuck at GND due to stuck port data_in        ;
-; net:c3|s_i2c_data_wr[6]                                                                                                                                                     ; Stuck at VCC due to stuck port data_in        ;
-; net:c3|s_i2c_data_wr[3..5]                                                                                                                                                  ; Stuck at GND due to stuck port data_in        ;
 ; net:c3|CMD[1..3]                                                                                                                                                            ; Stuck at GND due to stuck port data_in        ;
 ; net:c3|currLinksArrayId[0]                                                                                                                                                  ; Stuck at GND due to stuck port data_in        ;
 ; ram16:c2|ram_data_read[0..15]                                                                                                                                               ; Lost fanout                                   ;
 ; net:c3|incVGA[0..22]                                                                                                                                                        ; Stuck at GND due to stuck port clock_enable   ;
 ; net:c3|s_addrRow[0..9]                                                                                                                                                      ; Stuck at GND due to stuck port clock_enable   ;
-; net:c3|outs[2..5]                                                                                                                                                           ; Merged with net:c3|outs[7]                    ;
-; net:c3|outs[0,1]                                                                                                                                                            ; Merged with net:c3|outs[6]                    ;
-; net:c3|ram_col_addr[2,3,6,8,9,12]                                                                                                                                           ; Merged with net:c3|ram_col_addr[1]            ;
+; net:c3|s_i2c_addr[3,5]                                                                                                                                                      ; Merged with net:c3|s_i2c_addr[6]              ;
+; net:c3|s_i2c_addr[0..2]                                                                                                                                                     ; Merged with net:c3|s_i2c_addr[4]              ;
+; net:c3|ram_col_addr[2..5,8,9,11,12]                                                                                                                                         ; Merged with net:c3|ram_col_addr[1]            ;
 ; net:c3|ram_row_addr[11]                                                                                                                                                     ; Merged with net:c3|ram_col_addr[1]            ;
-; net:c3|ram_col_addr[5,11]                                                                                                                                                   ; Merged with net:c3|ram_col_addr[1]            ;
+; net:c3|ram_col_addr[6,7]                                                                                                                                                    ; Merged with net:c3|ram_col_addr[1]            ;
 ; net:c3|ram_row_addr[12]                                                                                                                                                     ; Merged with net:c3|ram_col_addr[1]            ;
-; net:c3|ram_col_addr[4,7]                                                                                                                                                    ; Merged with net:c3|ram_col_addr[1]            ;
+; net:c3|w[0]                                                                                                                                                                 ; Merged with net:c3|outs[0]                    ;
+; net:c3|w[1]                                                                                                                                                                 ; Merged with net:c3|outs[1]                    ;
+; net:c3|w[2]                                                                                                                                                                 ; Merged with net:c3|outs[2]                    ;
+; net:c3|w[3]                                                                                                                                                                 ; Merged with net:c3|outs[3]                    ;
+; net:c3|w[4]                                                                                                                                                                 ; Merged with net:c3|outs[4]                    ;
+; net:c3|w[5]                                                                                                                                                                 ; Merged with net:c3|outs[5]                    ;
+; net:c3|w[6]                                                                                                                                                                 ; Merged with net:c3|outs[6]                    ;
+; net:c3|w[7]                                                                                                                                                                 ; Merged with net:c3|outs[7]                    ;
+; net:c3|w[8]                                                                                                                                                                 ; Merged with net:c3|outs[8]                    ;
+; net:c3|w[9]                                                                                                                                                                 ; Merged with net:c3|outs[9]                    ;
+; net:c3|w[10]                                                                                                                                                                ; Merged with net:c3|outs[10]                   ;
+; net:c3|w[11]                                                                                                                                                                ; Merged with net:c3|outs[11]                   ;
+; net:c3|w[12]                                                                                                                                                                ; Merged with net:c3|outs[12]                   ;
+; net:c3|w[13]                                                                                                                                                                ; Merged with net:c3|outs[13]                   ;
+; net:c3|w[14]                                                                                                                                                                ; Merged with net:c3|outs[14]                   ;
+; net:c3|w[15]                                                                                                                                                                ; Merged with net:c3|outs[15]                   ;
 ; ram16:c2|UMQM                                                                                                                                                               ; Merged with ram16:c2|LDQM                     ;
 ; ram16:c2|BA[1]                                                                                                                                                              ; Merged with ram16:c2|BA[0]                    ;
 ; ram16:c2|RA[12]                                                                                                                                                             ; Merged with ram16:c2|RA[11]                   ;
 ; net:c3|i2c_master:ci2c|addr_rw[6,7]                                                                                                                                         ; Merged with net:c3|i2c_master:ci2c|addr_rw[4] ;
-; net:c3|i2c_master:ci2c|data_tx[6]                                                                                                                                           ; Merged with net:c3|i2c_master:ci2c|addr_rw[4] ;
 ; net:c3|i2c_master:ci2c|addr_rw[2,3,5]                                                                                                                                       ; Merged with net:c3|i2c_master:ci2c|addr_rw[1] ;
-; net:c3|i2c_master:ci2c|data_tx[3..5,7]                                                                                                                                      ; Merged with net:c3|i2c_master:ci2c|addr_rw[1] ;
-; net:c3|doOperCycles[4]                                                                                                                                                      ; Merged with net:c3|doOperCycles[3]            ;
-; net:c3|doOperCycles[2]                                                                                                                                                      ; Merged with net:c3|doOperCycles[0]            ;
-; net:c3|s_i2c_data_wr[1]                                                                                                                                                     ; Merged with net:c3|s_i2c_data_wr[0]           ;
+; net:c3|i2c_master:ci2c|data_tx[7]                                                                                                                                           ; Merged with net:c3|i2c_master:ci2c|data_tx[4] ;
+; net:c3|i2c_master:ci2c|data_tx[5]                                                                                                                                           ; Merged with net:c3|i2c_master:ci2c|data_tx[3] ;
 ; net:c3|i2c_master:ci2c|data_tx[1]                                                                                                                                           ; Merged with net:c3|i2c_master:ci2c|data_tx[0] ;
-; net:c3|outs[7]                                                                                                                                                              ; Stuck at GND due to stuck port data_in        ;
+; net:c3|s_i2c_data_wr[7]                                                                                                                                                     ; Merged with net:c3|s_i2c_data_wr[4]           ;
+; net:c3|s_i2c_data_wr[5]                                                                                                                                                     ; Merged with net:c3|s_i2c_data_wr[3]           ;
+; net:c3|s_i2c_data_wr[1]                                                                                                                                                     ; Merged with net:c3|s_i2c_data_wr[0]           ;
 ; net:c3|ram_data_read_do                                                                                                                                                     ; Stuck at GND due to stuck port data_in        ;
 ; net:c3|ram_col_addr[1]                                                                                                                                                      ; Stuck at GND due to stuck port data_in        ;
 ; net:c3|ram_row_addr[9]                                                                                                                                                      ; Stuck at GND due to stuck port data_in        ;
 ; ram16:c2|RA[11]                                                                                                                                                             ; Merged with ram16:c2|RA[9]                    ;
-; net:c3|outs[6]                                                                                                                                                              ; Stuck at VCC due to stuck port data_in        ;
+; net:c3|i2c_state[3]                                                                                                                                                         ; Stuck at GND due to stuck port data_in        ;
+; net:c3|s_i2c_addr[4]                                                                                                                                                        ; Stuck at GND due to stuck port data_in        ;
 ; net:c3|i2c_master:ci2c|addr_rw[1]                                                                                                                                           ; Stuck at GND due to stuck port data_in        ;
 ; VGA:c4|SYNC:C1|R                                                                                                                                                            ; Stuck at GND due to stuck port data_in        ;
+; net:c3|s_i2c_addr[6]                                                                                                                                                        ; Stuck at VCC due to stuck port data_in        ;
+; net:c3|s_i2c_data_wr[4]                                                                                                                                                     ; Stuck at GND due to stuck port data_in        ;
 ; net:c3|i2c_master:ci2c|addr_rw[4]                                                                                                                                           ; Stuck at VCC due to stuck port data_in        ;
-; net:c3|i2c_state                                                                                                                                                            ; Stuck at VCC due to stuck port clock_enable   ;
-; net:c3|doOperCycles[3]                                                                                                                                                      ; Stuck at GND due to stuck port data_in        ;
+; net:c3|i2c_master:ci2c|data_tx[4]                                                                                                                                           ; Stuck at GND due to stuck port data_in        ;
 ; ram16:c2|BA[0]                                                                                                                                                              ; Stuck at GND due to stuck port data_in        ;
 ; net:c3|linksWeightArray~0                                                                                                                                                   ; Stuck at GND due to stuck port clock          ;
 ; net:c3|linksWeightArray~1                                                                                                                                                   ; Stuck at GND due to stuck port clock          ;
@@ -1030,11 +1045,10 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; ram16:c2|DQ[7]~reg0                                                                                                                                                         ; Stuck at GND due to stuck port data_in        ;
 ; ram16:c2|DQ[9]~reg0                                                                                                                                                         ; Stuck at GND due to stuck port data_in        ;
 ; ram16:c2|DQ[14]~reg0                                                                                                                                                        ; Stuck at GND due to stuck port data_in        ;
-; net:c3|doOperCycles[0]                                                                                                                                                      ; Stuck at VCC due to stuck port data_in        ;
 ; net:c3|ram_data_save[10,13]                                                                                                                                                 ; Merged with net:c3|ram_data_save[6]           ;
 ; ram16:c2|RA[9]                                                                                                                                                              ; Stuck at GND due to stuck port data_in        ;
 ; ram16:c2|n_sb[3]                                                                                                                                                            ; Stuck at GND due to stuck port data_in        ;
-; Total Number of Removed Registers = 1306                                                                                                                                    ;                                               ;
+; Total Number of Removed Registers = 1323                                                                                                                                    ;                                               ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------+
 
 
@@ -1053,9 +1067,8 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ;                                                                                                                             ;                           ; net:c3|incVGA[14], net:c3|incVGA[13], net:c3|incVGA[12], net:c3|incVGA[11],                                                                            ;
 ;                                                                                                                             ;                           ; net:c3|incVGA[10], net:c3|incVGA[9], net:c3|incVGA[8], net:c3|incVGA[7],                                                                               ;
 ;                                                                                                                             ;                           ; net:c3|incVGA[6], net:c3|incVGA[5], net:c3|incVGA[4], net:c3|incVGA[3], net:c3|incVGA[2],                                                              ;
-;                                                                                                                             ;                           ; net:c3|incVGA[1], net:c3|incVGA[0], net:c3|outs[7], net:c3|ram_data_read_do,                                                                           ;
-;                                                                                                                             ;                           ; net:c3|ram_col_addr[1], net:c3|ram_row_addr[9], net:c3|outs[6], net:c3|doOperCycles[3],                                                                ;
-;                                                                                                                             ;                           ; ram16:c2|BA[0], net:c3|doOperCycles[0], ram16:c2|RA[9]                                                                                                 ;
+;                                                                                                                             ;                           ; net:c3|incVGA[1], net:c3|incVGA[0], net:c3|ram_data_read_do, net:c3|ram_col_addr[1],                                                                   ;
+;                                                                                                                             ;                           ; net:c3|ram_row_addr[9], ram16:c2|BA[0], ram16:c2|RA[9]                                                                                                 ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[9]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[9],                                                     ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[8],                                                         ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[7],                                                         ;
@@ -1063,39 +1076,74 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[8], ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[7], ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[6]  ;
+; net:c3|geomNeuronOut[4][25]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[2],                                                      ;
+;                                                                                                                             ;                           ; net:c3|currNeuronsLayerArraySubId, net:c3|inferenceMulOK,                                                                                              ;
+;                                                                                                                             ;                           ; net:c3|currentOperCycles[6]                                                                                                                            ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_man_product_msb                       ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_man_product_msb_p0,                                              ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe79,             ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe80,             ;
 ;                                                                                                                             ;                           ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|dffe81              ;
-; net:c3|geomNeuronOut[3][24]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[1]                                                       ;
-; net:c3|geomNeuronOut[3][23]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[0]                                                       ;
-; net:c3|geomNeuronOut[3][22]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[22]                                                      ;
-; net:c3|geomNeuronOut[3][21]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[21]                                                      ;
-; net:c3|geomNeuronOut[3][20]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[20]                                                      ;
-; net:c3|geomNeuronOut[3][19]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[19]                                                      ;
-; net:c3|geomNeuronOut[3][18]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[18]                                                      ;
-; net:c3|geomNeuronOut[3][17]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[17]                                                      ;
-; net:c3|geomNeuronOut[3][16]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[16]                                                      ;
-; net:c3|geomNeuronOut[3][15]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[15]                                                      ;
-; net:c3|geomNeuronOut[3][14]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[14]                                                      ;
-; net:c3|geomNeuronOut[3][13]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[13]                                                      ;
-; net:c3|geomNeuronOut[3][12]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[12]                                                      ;
-; net:c3|geomNeuronOut[3][11]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[11]                                                      ;
-; net:c3|geomNeuronOut[3][10]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[10]                                                      ;
-; net:c3|geomNeuronOut[3][9]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[9]                                                       ;
-; net:c3|geomNeuronOut[3][8]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[8]                                                       ;
-; net:c3|geomNeuronOut[3][7]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[7]                                                       ;
-; net:c3|geomNeuronOut[3][6]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[6]                                                       ;
-; net:c3|geomNeuronOut[3][5]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[5]                                                       ;
-; net:c3|geomNeuronOut[3][4]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[4]                                                       ;
-; net:c3|geomNeuronOut[3][3]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[3]                                                       ;
-; net:c3|geomNeuronOut[3][2]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[2]                                                       ;
-; net:c3|geomNeuronOut[3][1]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[1]                                                       ;
-; net:c3|geomNeuronOut[3][0]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[0]                                                       ;
-; net:c3|geomNeuronOut[4][31]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|sign_node_ff4                                                          ;
-; net:c3|geomNeuronOut[4][30]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[7]                                                       ;
-; net:c3|geomNeuronOut[4][29]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[6]                                                       ;
-; net:c3|geomNeuronOut[4][28]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[5]                                                       ;
+; net:c3|i2c_state[3]                                                                                                         ; Stuck at GND              ; net:c3|s_i2c_addr[6], net:c3|s_i2c_data_wr[4], net:c3|i2c_master:ci2c|data_tx[4]                                                                       ;
+;                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                        ;
+; net:c3|compAddv0[31]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][31], net:c3|geomNeuronOut[0][31]                                                                                               ;
+; net:c3|compAddv0[30]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][30], net:c3|geomNeuronOut[0][30]                                                                                               ;
+; net:c3|compAddv0[29]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][29], net:c3|geomNeuronOut[0][29]                                                                                               ;
+; net:c3|compAddv0[28]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][28], net:c3|geomNeuronOut[0][28]                                                                                               ;
+; net:c3|compAddv0[27]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][27], net:c3|geomNeuronOut[0][27]                                                                                               ;
+; net:c3|compAddv0[26]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][26], net:c3|geomNeuronOut[0][26]                                                                                               ;
+; net:c3|compAddv0[25]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][25], net:c3|geomNeuronOut[0][25]                                                                                               ;
+; net:c3|compAddv0[24]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][24], net:c3|geomNeuronOut[0][24]                                                                                               ;
+; net:c3|compAddv0[23]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][23], net:c3|geomNeuronOut[0][23]                                                                                               ;
+; net:c3|compAddv0[22]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][22], net:c3|geomNeuronOut[0][22]                                                                                               ;
+; net:c3|compAddv0[16]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][16], net:c3|geomNeuronOut[0][16]                                                                                               ;
+; net:c3|compAddv0[21]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][21], net:c3|geomNeuronOut[0][21]                                                                                               ;
+; net:c3|compAddv0[20]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][20], net:c3|geomNeuronOut[0][20]                                                                                               ;
+; net:c3|compAddv0[19]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][19], net:c3|geomNeuronOut[0][19]                                                                                               ;
+; net:c3|compAddv0[13]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][13], net:c3|geomNeuronOut[0][13]                                                                                               ;
+; net:c3|compAddv0[12]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][12], net:c3|geomNeuronOut[0][12]                                                                                               ;
+; net:c3|compAddv0[11]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][11], net:c3|geomNeuronOut[0][11]                                                                                               ;
+; net:c3|compAddv0[10]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][10], net:c3|geomNeuronOut[0][10]                                                                                               ;
+; net:c3|compAddv0[9]                                                                                                         ; Lost Fanouts              ; net:c3|geomNeuronOut[1][9], net:c3|geomNeuronOut[0][9]                                                                                                 ;
+; net:c3|compAddv0[8]                                                                                                         ; Lost Fanouts              ; net:c3|geomNeuronOut[1][8], net:c3|geomNeuronOut[0][8]                                                                                                 ;
+; net:c3|compAddv0[7]                                                                                                         ; Lost Fanouts              ; net:c3|geomNeuronOut[1][7], net:c3|geomNeuronOut[0][7]                                                                                                 ;
+; net:c3|compAddv0[6]                                                                                                         ; Lost Fanouts              ; net:c3|geomNeuronOut[1][6], net:c3|geomNeuronOut[0][6]                                                                                                 ;
+; net:c3|compAddv0[5]                                                                                                         ; Lost Fanouts              ; net:c3|geomNeuronOut[1][5], net:c3|geomNeuronOut[0][5]                                                                                                 ;
+; net:c3|compAddv0[4]                                                                                                         ; Lost Fanouts              ; net:c3|geomNeuronOut[1][4], net:c3|geomNeuronOut[0][4]                                                                                                 ;
+; net:c3|compAddv0[3]                                                                                                         ; Lost Fanouts              ; net:c3|geomNeuronOut[1][3], net:c3|geomNeuronOut[0][3]                                                                                                 ;
+; net:c3|compAddv0[2]                                                                                                         ; Lost Fanouts              ; net:c3|geomNeuronOut[1][2], net:c3|geomNeuronOut[0][2]                                                                                                 ;
+; net:c3|compAddv0[1]                                                                                                         ; Lost Fanouts              ; net:c3|geomNeuronOut[1][1], net:c3|geomNeuronOut[0][1]                                                                                                 ;
+; net:c3|compAddv0[0]                                                                                                         ; Lost Fanouts              ; net:c3|geomNeuronOut[1][0], net:c3|geomNeuronOut[0][0]                                                                                                 ;
+; net:c3|compAddv0[15]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][15], net:c3|geomNeuronOut[0][15]                                                                                               ;
+; net:c3|compAddv0[17]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][17], net:c3|geomNeuronOut[0][17]                                                                                               ;
+; net:c3|compAddv0[18]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][18], net:c3|geomNeuronOut[0][18]                                                                                               ;
+; net:c3|compAddv0[14]                                                                                                        ; Lost Fanouts              ; net:c3|geomNeuronOut[1][14], net:c3|geomNeuronOut[0][14]                                                                                               ;
+; net:c3|geomNeuronOut[4][3]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[3]                                                       ;
+; net:c3|geomNeuronOut[4][2]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[2]                                                       ;
+; net:c3|geomNeuronOut[4][1]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[1]                                                       ;
+; net:c3|geomNeuronOut[4][0]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[0]                                                       ;
+; net:c3|geomNeuronOut[5][31]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|sign_node_ff4                                                          ;
+; net:c3|geomNeuronOut[5][30]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[7]                                                       ;
+; net:c3|geomNeuronOut[5][29]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[6]                                                       ;
+; net:c3|geomNeuronOut[5][28]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[5]                                                       ;
+; net:c3|geomNeuronOut[5][27]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[4]                                                       ;
+; net:c3|geomNeuronOut[5][26]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[3]                                                       ;
+; net:c3|geomNeuronOut[4][14]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[14]                                                      ;
+; net:c3|geomNeuronOut[4][24]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[1]                                                       ;
+; net:c3|geomNeuronOut[4][23]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[0]                                                       ;
+; net:c3|geomNeuronOut[4][22]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[22]                                                      ;
+; net:c3|geomNeuronOut[4][21]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[21]                                                      ;
+; net:c3|geomNeuronOut[4][20]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[20]                                                      ;
+; net:c3|geomNeuronOut[4][19]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[19]                                                      ;
+; net:c3|geomNeuronOut[4][18]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[18]                                                      ;
+; net:c3|geomNeuronOut[4][17]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[17]                                                      ;
+; net:c3|geomNeuronOut[4][16]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[16]                                                      ;
+; net:c3|geomNeuronOut[4][15]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[15]                                                      ;
+; net:c3|geomNeuronOut[4][13]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[13]                                                      ;
+; net:c3|geomNeuronOut[4][12]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[12]                                                      ;
+; net:c3|geomNeuronOut[4][11]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[11]                                                      ;
+; net:c3|geomNeuronOut[4][10]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[10]                                                      ;
+; net:c3|geomNeuronOut[4][9]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[9]                                                       ;
+; net:c3|geomNeuronOut[4][8]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[8]                                                       ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|infinite_output_sign_dffe3   ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|infinite_output_sign_dffe31                             ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|infinity_magnitude_sub_dffe3 ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|infinity_magnitude_sub_dffe31                           ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|input_is_infinite_dffe3      ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|input_is_infinite_dffe31                                ;
@@ -1103,7 +1151,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|man_res_is_not_zero_dffe3    ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|man_res_is_not_zero_dffe31                              ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|round_bit_dffe3              ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|round_bit_dffe31                                        ;
 ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|sticky_bit_dffe3             ; Lost Fanouts              ; net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|sticky_bit_dffe31                                       ;
-; net:c3|geomNeuronOut[3][27]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[4]                                                       ;
+; net:c3|geomNeuronOut[4][7]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[7]                                                       ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[8]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[8]                                                      ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[7]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[7]                                                      ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[6]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[6]                                                      ;
@@ -1113,18 +1161,17 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[2]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[2]                                                      ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[1]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[1]                                                      ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp2_bias[0]                          ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|delay_exp_bias[0]                                                      ;
-; net:c3|geomNeuronOut[3][26]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[3]                                                       ;
+; net:c3|geomNeuronOut[4][6]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[6]                                                       ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[5]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[5]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[4]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[4]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[3]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[3]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[2]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[2]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[1]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[1]  ;
 ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_add_p1[0]                               ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated|pipeline_dffe[0]  ;
-; net:c3|s_i2c_addr[3]                                                                                                        ; Stuck at VCC              ; net:c3|i2c_master:ci2c|addr_rw[4]                                                                                                                      ;
+; net:c3|geomNeuronOut[4][5]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[5]                                                       ;
+; net:c3|geomNeuronOut[4][4]                                                                                                  ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|man_result_ff[4]                                                       ;
+; net:c3|s_i2c_addr[4]                                                                                                        ; Stuck at GND              ; net:c3|i2c_master:ci2c|addr_rw[1]                                                                                                                      ;
 ;                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                        ;
-; net:c3|s_i2c_addr[0]                                                                                                        ; Stuck at GND              ; net:c3|i2c_master:ci2c|addr_rw[1]                                                                                                                      ;
-;                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                        ;
-; net:c3|geomNeuronOut[3][25]                                                                                                 ; Lost Fanouts              ; net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|exp_result_ff[2]                                                       ;
 ; net:c3|ram_data_save[3]                                                                                                     ; Stuck at GND              ; ram16:c2|DQ[3]~reg0                                                                                                                                    ;
 ;                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                        ;
 ; net:c3|ram_data_save[7]                                                                                                     ; Stuck at GND              ; ram16:c2|DQ[7]~reg0                                                                                                                                    ;
@@ -1141,12 +1188,12 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 213   ;
+; Total registers                              ; 272   ;
 ; Number of registers using Synchronous Clear  ; 37    ;
-; Number of registers using Synchronous Load   ; 12    ;
+; Number of registers using Synchronous Load   ; 22    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 128   ;
+; Number of registers using Clock Enable       ; 182   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1156,20 +1203,21 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; net:c3|currentOperCycles[5]             ; 4       ;
-; net:c3|currentOperCycles[6]             ; 4       ;
-; net:c3|currentOperCycles[2]             ; 5       ;
-; net:c3|currGeomNeuronId[1]              ; 4       ;
-; net:c3|i2cStoredData[14]                ; 1       ;
-; net:c3|i2cStoredData[8]                 ; 1       ;
+; net:c3|i2cStoredData[15]                ; 1       ;
+; net:c3|i2cStoredData[7]                 ; 1       ;
+; net:c3|i2cStoredData[5]                 ; 1       ;
+; net:c3|i2cStoredData[3]                 ; 1       ;
+; net:c3|i2cStoredData[1]                 ; 1       ;
+; net:c3|i2cStoredData[13]                ; 1       ;
+; net:c3|i2cStoredData[11]                ; 1       ;
 ; net:c3|i2cStoredData[9]                 ; 1       ;
 ; net:c3|i2c_master:ci2c|sda_int          ; 2       ;
-; net:c3|s_i2c_rw                         ; 5       ;
-; net:c3|s_i2c_ena                        ; 8       ;
-; net:c3|i2c_master:ci2c|bit_cnt[2]       ; 20      ;
-; net:c3|i2c_master:ci2c|bit_cnt[1]       ; 20      ;
-; net:c3|i2c_master:ci2c|bit_cnt[0]       ; 21      ;
-; Total number of inverted registers = 13 ;         ;
+; net:c3|s_i2c_rw                         ; 6       ;
+; net:c3|s_i2c_ena                        ; 9       ;
+; net:c3|i2c_master:ci2c|bit_cnt[2]       ; 21      ;
+; net:c3|i2c_master:ci2c|bit_cnt[1]       ; 22      ;
+; net:c3|i2c_master:ci2c|bit_cnt[0]       ; 24      ;
+; Total number of inverted registers = 14 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -1178,19 +1226,28 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |fpgabrain|net:c3|i2c_master:ci2c|addr_rw[0] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpgabrain|net:c3|currGeomNeuronId[2]        ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|currLinksArrayId[4]        ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_row_addr[7]            ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currAdjNeuronData[2]       ;
-; 9:1                ; 13 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_data_save[10]          ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[8]                    ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |fpgabrain|net:c3|currentOperCycles[4]       ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |fpgabrain|net:c3|i2c_master:ci2c|addr_rw[0] ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |fpgabrain|net:c3|i2c_startCounter[0]        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |fpgabrain|net:c3|busy_cnt[2]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|i2cStoredData[8]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|i2cStoredData[4]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|currLinksArrayId[3]        ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_row_addr[3]            ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currAdjNeuronData[0]       ;
+; 9:1                ; 13 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |fpgabrain|net:c3|ram_data_save[3]           ;
+; 6:1                ; 24 bits   ; 96 LEs        ; 24 LEs               ; 72 LEs                 ; Yes        ; |fpgabrain|net:c3|i2c_startCounterB[18]      ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpgabrain|ram16:c2|RA[6]                    ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|i2c_state[2]               ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |fpgabrain|net:c3|s_i2c_data_wr[6]           ;
 ; 24:1               ; 2 bits    ; 32 LEs        ; 10 LEs               ; 22 LEs                 ; Yes        ; |fpgabrain|ram16:c2|CMD[1]                   ;
-; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[12]                  ;
-; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[7]~reg0               ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|i2c_master:ci2c|bit_cnt[1] ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|currentOperCycles[2]       ;
+; 19:1               ; 15 bits   ; 180 LEs       ; 15 LEs               ; 165 LEs                ; Yes        ; |fpgabrain|ram16:c2|n_s[10]                  ;
+; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; Yes        ; |fpgabrain|ram16:c2|DQ[8]~reg0               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fpgabrain|net:c3|i2c_master:ci2c|bit_cnt[0] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|i2cStoredData[9]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |fpgabrain|net:c3|i2cStoredData[1]           ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|busy_cnt                   ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|busy_cnt                   ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |fpgabrain|net:c3|busy_cnt                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
@@ -1651,12 +1708,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +---------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: net:c3|i2c_master:ci2c ;
-+----------------+-----------+----------------------------------------+
-; Parameter Name ; Value     ; Type                                   ;
-+----------------+-----------+----------------------------------------+
-; input_clk      ; 133000000 ; Signed Integer                         ;
-; bus_clk        ; 400000    ; Signed Integer                         ;
-+----------------+-----------+----------------------------------------+
++----------------+----------+-----------------------------------------+
+; Parameter Name ; Value    ; Type                                    ;
++----------------+----------+-----------------------------------------+
+; input_clk      ; 50000000 ; Signed Integer                          ;
+; bus_clk        ; 400000   ; Signed Integer                          ;
++----------------+----------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -3312,28 +3369,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 47                          ;
-; cycloneiii_ff         ; 213                         ;
-;     ENA               ; 91                          ;
+; cycloneiii_ff         ; 272                         ;
+;     ENA               ; 146                         ;
 ;     ENA SCLR          ; 26                          ;
-;     ENA SLD           ; 11                          ;
+;     ENA SLD           ; 10                          ;
 ;     SCLR              ; 11                          ;
-;     SLD               ; 1                           ;
-;     plain             ; 73                          ;
+;     SLD               ; 12                          ;
+;     plain             ; 67                          ;
 ; cycloneiii_io_obuf    ; 18                          ;
-; cycloneiii_lcell_comb ; 549                         ;
-;     arith             ; 93                          ;
-;         2 data inputs ; 72                          ;
-;         3 data inputs ; 21                          ;
-;     normal            ; 456                         ;
+; cycloneiii_lcell_comb ; 788                         ;
+;     arith             ; 158                         ;
+;         2 data inputs ; 135                         ;
+;         3 data inputs ; 23                          ;
+;     normal            ; 630                         ;
 ;         0 data inputs ; 3                           ;
-;         1 data inputs ; 14                          ;
-;         2 data inputs ; 35                          ;
-;         3 data inputs ; 102                         ;
-;         4 data inputs ; 302                         ;
+;         1 data inputs ; 28                          ;
+;         2 data inputs ; 77                          ;
+;         3 data inputs ; 139                         ;
+;         4 data inputs ; 383                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 4.76                        ;
+; Max LUT depth         ; 22.60                       ;
+; Average LUT depth     ; 7.68                        ;
 +-----------------------+-----------------------------+
 
 
@@ -3352,7 +3409,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Sep 09 06:22:31 2019
+    Info: Processing started: Fri Sep 13 21:41:34 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -3363,10 +3420,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file fpgabra
     Info (12022): Found design unit 1: fpgabrain-bhv File: G:/fpga-brain/fpgabrain.vhdl Line: 34
     Info (12023): Found entity 1: fpgabrain File: G:/fpga-brain/fpgabrain.vhdl Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file vga.vhd
-    Info (12022): Found design unit 1: VGA-MAIN File: G:/fpga-brain/VGA.vhd Line: 14
+    Info (12022): Found design unit 1: VGA-MAIN File: G:/fpga-brain/VGA.vhd Line: 15
     Info (12023): Found entity 1: VGA File: G:/fpga-brain/VGA.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file sync.vhd
-    Info (12022): Found design unit 1: SYNC-MAIN File: G:/fpga-brain/SYNC.vhd Line: 14
+    Info (12022): Found design unit 1: SYNC-MAIN File: G:/fpga-brain/SYNC.vhd Line: 15
     Info (12023): Found entity 1: SYNC File: G:/fpga-brain/SYNC.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file pll.vhd
     Info (12022): Found design unit 1: pll-SYN File: G:/fpga-brain/pll.vhd Line: 54
@@ -3376,7 +3433,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file fulladd
 Info (12021): Found 1 design units, including 1 entities, in source file sum8.bdf
     Info (12023): Found entity 1: sum8
 Info (12021): Found 2 design units, including 1 entities, in source file net.vhd
-    Info (12022): Found design unit 1: net-bhv File: G:/fpga-brain/net.vhd Line: 103
+    Info (12022): Found design unit 1: net-bhv File: G:/fpga-brain/net.vhd Line: 104
     Info (12023): Found entity 1: net File: G:/fpga-brain/net.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file neuron.vhd
     Info (12022): Found design unit 1: neuron-bdf_type File: G:/fpga-brain/neuron.vhd Line: 25
@@ -3443,79 +3500,79 @@ Info (12021): Found 2 design units, including 1 entities, in source file ram16.v
     Info (12022): Found design unit 1: ram16-bhv File: G:/fpga-brain/ram16.vhd Line: 37
     Info (12023): Found entity 1: ram16 File: G:/fpga-brain/ram16.vhd Line: 6
 Info (12127): Elaborating entity "fpgabrain" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at fpgabrain.vhdl(186): used implicit default value for signal "areset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/fpgabrain.vhdl Line: 186
-Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(187): object "locked" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 187
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(190): used explicit default value for signal "i0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 190
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(191): used explicit default value for signal "i1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 191
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(192): used explicit default value for signal "i2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 192
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(193): used explicit default value for signal "i3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 193
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(194): used explicit default value for signal "i4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 194
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(195): used explicit default value for signal "wi0_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 195
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(196): used explicit default value for signal "wi0_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 196
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(197): used explicit default value for signal "wi0_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 197
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(198): used explicit default value for signal "wi0_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 198
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(199): used explicit default value for signal "wi0_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 199
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(200): used explicit default value for signal "wi1_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 200
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(201): used explicit default value for signal "wi1_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 201
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(202): used explicit default value for signal "wi1_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 202
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(203): used explicit default value for signal "wi1_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 203
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(204): used explicit default value for signal "wi1_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 204
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(205): used explicit default value for signal "wi2_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 205
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(206): used explicit default value for signal "wi2_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 206
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(207): used explicit default value for signal "wi2_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 207
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(208): used explicit default value for signal "wi2_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 208
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(209): used explicit default value for signal "wi2_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 209
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(210): used explicit default value for signal "wi3_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 210
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(211): used explicit default value for signal "wi3_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 211
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(212): used explicit default value for signal "wi3_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 212
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(213): used explicit default value for signal "wi3_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 213
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(214): used explicit default value for signal "wi3_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 214
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(215): used explicit default value for signal "wi4_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 215
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(216): used explicit default value for signal "wi4_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 216
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(217): used explicit default value for signal "wi4_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 217
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(218): used explicit default value for signal "wi4_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 218
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(219): used explicit default value for signal "wi4_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 219
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(221): used explicit default value for signal "wh0_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 221
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(222): used explicit default value for signal "wh0_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 222
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(223): used explicit default value for signal "wh0_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 223
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(224): used explicit default value for signal "wh0_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 224
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(225): used explicit default value for signal "wh0_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 225
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(226): used explicit default value for signal "wh1_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 226
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(227): used explicit default value for signal "wh1_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 227
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(228): used explicit default value for signal "wh1_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 228
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(229): used explicit default value for signal "wh1_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 229
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(230): used explicit default value for signal "wh1_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 230
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(231): used explicit default value for signal "wh2_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 231
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(232): used explicit default value for signal "wh2_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 232
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(233): used explicit default value for signal "wh2_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 233
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(234): used explicit default value for signal "wh2_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 234
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(235): used explicit default value for signal "wh2_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 235
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(236): used explicit default value for signal "wh3_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 236
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(237): used explicit default value for signal "wh3_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 237
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(238): used explicit default value for signal "wh3_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 238
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(239): used explicit default value for signal "wh3_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 239
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(240): used explicit default value for signal "wh3_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 240
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(241): used explicit default value for signal "wh4_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 241
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(242): used explicit default value for signal "wh4_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 242
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(243): used explicit default value for signal "wh4_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 243
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(244): used explicit default value for signal "wh4_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 244
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(245): used explicit default value for signal "wh4_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 245
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(247): used explicit default value for signal "wh5_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 247
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(248): used explicit default value for signal "wh5_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 248
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(249): used explicit default value for signal "wh5_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 249
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(250): used explicit default value for signal "wh6_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 250
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(251): used explicit default value for signal "wh6_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 251
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(252): used explicit default value for signal "wh6_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 252
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(253): used explicit default value for signal "wh7_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 253
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(254): used explicit default value for signal "wh7_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 254
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(255): used explicit default value for signal "wh7_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 255
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(256): used explicit default value for signal "wh8_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 256
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(257): used explicit default value for signal "wh8_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 257
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(258): used explicit default value for signal "wh8_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 258
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(259): used explicit default value for signal "wh9_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 259
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(260): used explicit default value for signal "wh9_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 260
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(261): used explicit default value for signal "wh9_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 261
-Info (12128): Elaborating entity "pll" for hierarchy "pll:c1" File: G:/fpga-brain/fpgabrain.vhdl Line: 279
+Warning (10541): VHDL Signal Declaration warning at fpgabrain.vhdl(190): used implicit default value for signal "areset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/fpgabrain.vhdl Line: 190
+Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(191): object "locked" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 191
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(194): used explicit default value for signal "i0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 194
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(195): used explicit default value for signal "i1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 195
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(196): used explicit default value for signal "i2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 196
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(197): used explicit default value for signal "i3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 197
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(198): used explicit default value for signal "i4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 198
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(199): used explicit default value for signal "wi0_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 199
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(200): used explicit default value for signal "wi0_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 200
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(201): used explicit default value for signal "wi0_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 201
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(202): used explicit default value for signal "wi0_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 202
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(203): used explicit default value for signal "wi0_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 203
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(204): used explicit default value for signal "wi1_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 204
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(205): used explicit default value for signal "wi1_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 205
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(206): used explicit default value for signal "wi1_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 206
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(207): used explicit default value for signal "wi1_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 207
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(208): used explicit default value for signal "wi1_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 208
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(209): used explicit default value for signal "wi2_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 209
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(210): used explicit default value for signal "wi2_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 210
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(211): used explicit default value for signal "wi2_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 211
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(212): used explicit default value for signal "wi2_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 212
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(213): used explicit default value for signal "wi2_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 213
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(214): used explicit default value for signal "wi3_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 214
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(215): used explicit default value for signal "wi3_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 215
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(216): used explicit default value for signal "wi3_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 216
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(217): used explicit default value for signal "wi3_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 217
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(218): used explicit default value for signal "wi3_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 218
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(219): used explicit default value for signal "wi4_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 219
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(220): used explicit default value for signal "wi4_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 220
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(221): used explicit default value for signal "wi4_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 221
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(222): used explicit default value for signal "wi4_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 222
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(223): used explicit default value for signal "wi4_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 223
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(225): used explicit default value for signal "wh0_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 225
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(226): used explicit default value for signal "wh0_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 226
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(227): used explicit default value for signal "wh0_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 227
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(228): used explicit default value for signal "wh0_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 228
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(229): used explicit default value for signal "wh0_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 229
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(230): used explicit default value for signal "wh1_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 230
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(231): used explicit default value for signal "wh1_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 231
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(232): used explicit default value for signal "wh1_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 232
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(233): used explicit default value for signal "wh1_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 233
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(234): used explicit default value for signal "wh1_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 234
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(235): used explicit default value for signal "wh2_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 235
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(236): used explicit default value for signal "wh2_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 236
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(237): used explicit default value for signal "wh2_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 237
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(238): used explicit default value for signal "wh2_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 238
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(239): used explicit default value for signal "wh2_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 239
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(240): used explicit default value for signal "wh3_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 240
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(241): used explicit default value for signal "wh3_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 241
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(242): used explicit default value for signal "wh3_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 242
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(243): used explicit default value for signal "wh3_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 243
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(244): used explicit default value for signal "wh3_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 244
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(245): used explicit default value for signal "wh4_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 245
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(246): used explicit default value for signal "wh4_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 246
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(247): used explicit default value for signal "wh4_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 247
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(248): used explicit default value for signal "wh4_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 248
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(249): used explicit default value for signal "wh4_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 249
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(251): used explicit default value for signal "wh5_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 251
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(252): used explicit default value for signal "wh5_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 252
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(253): used explicit default value for signal "wh5_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 253
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(254): used explicit default value for signal "wh6_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 254
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(255): used explicit default value for signal "wh6_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 255
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(256): used explicit default value for signal "wh6_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 256
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(257): used explicit default value for signal "wh7_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 257
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(258): used explicit default value for signal "wh7_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 258
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(259): used explicit default value for signal "wh7_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 259
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(260): used explicit default value for signal "wh8_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 260
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(261): used explicit default value for signal "wh8_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 261
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(262): used explicit default value for signal "wh8_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 262
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(263): used explicit default value for signal "wh9_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 263
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(264): used explicit default value for signal "wh9_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 264
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(265): used explicit default value for signal "wh9_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 265
+Info (12128): Elaborating entity "pll" for hierarchy "pll:c1" File: G:/fpga-brain/fpgabrain.vhdl Line: 283
 Info (12128): Elaborating entity "altpll" for hierarchy "pll:c1|altpll:altpll_component" File: G:/fpga-brain/pll.vhd Line: 148
 Info (12130): Elaborated megafunction instantiation "pll:c1|altpll:altpll_component" File: G:/fpga-brain/pll.vhd Line: 148
 Info (12133): Instantiated megafunction "pll:c1|altpll:altpll_component" with the following parameter: File: G:/fpga-brain/pll.vhd Line: 148
@@ -3581,23 +3638,23 @@ Info (12133): Instantiated megafunction "pll:c1|altpll:altpll_component" with th
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll1.v
     Info (12023): Found entity 1: pll_altpll1 File: G:/fpga-brain/db/pll_altpll1.v Line: 30
 Info (12128): Elaborating entity "pll_altpll1" for hierarchy "pll:c1|altpll:altpll_component|pll_altpll1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "ram16" for hierarchy "ram16:c2" File: G:/fpga-brain/fpgabrain.vhdl Line: 283
-Info (12128): Elaborating entity "net" for hierarchy "net:c3" File: G:/fpga-brain/fpgabrain.vhdl Line: 285
-Warning (10540): VHDL Signal Declaration warning at net.vhd(107): used explicit default value for signal "s_addrCol" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 107
-Warning (10540): VHDL Signal Declaration warning at net.vhd(131): used explicit default value for signal "s_i2c_reset_n" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 131
-Warning (10036): Verilog HDL or VHDL warning at net.vhd(138): object "s_i2c_ack_error" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 138
-Warning (10036): Verilog HDL or VHDL warning at net.vhd(171): object "adjMatrixNeuronId" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 171
-Warning (10036): Verilog HDL or VHDL warning at net.vhd(174): object "adjMatrixNeuronIdInv" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 174
-Warning (10540): VHDL Signal Declaration warning at net.vhd(186): used explicit default value for signal "linksArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 186
-Warning (10540): VHDL Signal Declaration warning at net.vhd(197): used explicit default value for signal "linksArraySize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 197
-Warning (10540): VHDL Signal Declaration warning at net.vhd(220): used explicit default value for signal "childLayerArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 220
-Warning (10540): VHDL Signal Declaration warning at net.vhd(235): used explicit default value for signal "neuronsLayerArrayArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 235
-Warning (10540): VHDL Signal Declaration warning at net.vhd(243): used explicit default value for signal "neuronsLayerSizeArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 243
-Warning (10540): VHDL Signal Declaration warning at net.vhd(248): used explicit default value for signal "neuronSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 248
-Warning (10540): VHDL Signal Declaration warning at net.vhd(249): used explicit default value for signal "neuronAdjRAMrowSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 249
-Warning (10542): VHDL Variable Declaration warning at net.vhd(291): used initial value expression for variable "adjNeuronIdColStartAddr" because variable was never assigned a value File: G:/fpga-brain/net.vhd Line: 291
-Info (12128): Elaborating entity "i2c_master" for hierarchy "net:c3|i2c_master:ci2c" File: G:/fpga-brain/net.vhd Line: 285
-Info (12128): Elaborating entity "altfp_mul" for hierarchy "net:c3|altfp_mul:c0" File: G:/fpga-brain/net.vhd Line: 286
+Info (12128): Elaborating entity "ram16" for hierarchy "ram16:c2" File: G:/fpga-brain/fpgabrain.vhdl Line: 287
+Info (12128): Elaborating entity "net" for hierarchy "net:c3" File: G:/fpga-brain/fpgabrain.vhdl Line: 289
+Warning (10540): VHDL Signal Declaration warning at net.vhd(108): used explicit default value for signal "s_addrCol" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 108
+Warning (10540): VHDL Signal Declaration warning at net.vhd(159): used explicit default value for signal "s_i2c_reset_n" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 159
+Warning (10036): Verilog HDL or VHDL warning at net.vhd(166): object "s_i2c_ack_error" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 166
+Warning (10036): Verilog HDL or VHDL warning at net.vhd(199): object "adjMatrixNeuronId" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 199
+Warning (10036): Verilog HDL or VHDL warning at net.vhd(202): object "adjMatrixNeuronIdInv" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 202
+Warning (10540): VHDL Signal Declaration warning at net.vhd(214): used explicit default value for signal "linksArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 214
+Warning (10540): VHDL Signal Declaration warning at net.vhd(225): used explicit default value for signal "linksArraySize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 225
+Warning (10540): VHDL Signal Declaration warning at net.vhd(248): used explicit default value for signal "childLayerArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 248
+Warning (10540): VHDL Signal Declaration warning at net.vhd(263): used explicit default value for signal "neuronsLayerArrayArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 263
+Warning (10540): VHDL Signal Declaration warning at net.vhd(271): used explicit default value for signal "neuronsLayerSizeArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 271
+Warning (10540): VHDL Signal Declaration warning at net.vhd(276): used explicit default value for signal "neuronSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 276
+Warning (10540): VHDL Signal Declaration warning at net.vhd(277): used explicit default value for signal "neuronAdjRAMrowSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 277
+Warning (10542): VHDL Variable Declaration warning at net.vhd(319): used initial value expression for variable "adjNeuronIdColStartAddr" because variable was never assigned a value File: G:/fpga-brain/net.vhd Line: 319
+Info (12128): Elaborating entity "i2c_master" for hierarchy "net:c3|i2c_master:ci2c" File: G:/fpga-brain/net.vhd Line: 313
+Info (12128): Elaborating entity "altfp_mul" for hierarchy "net:c3|altfp_mul:c0" File: G:/fpga-brain/net.vhd Line: 314
 Info (12128): Elaborating entity "altfp_mul_altfp_mult_trn" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component" File: G:/fpga-brain/altfp_mul.vhd Line: 1451
 Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder" File: G:/fpga-brain/altfp_mul.vhd Line: 1294
 Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder" File: G:/fpga-brain/altfp_mul.vhd Line: 1294
@@ -3661,7 +3718,7 @@ Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mul
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_5ks.tdf
     Info (12023): Found entity 1: mult_5ks File: G:/fpga-brain/db/mult_5ks.tdf Line: 33
 Info (12128): Elaborating entity "mult_5ks" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 376
-Info (12128): Elaborating entity "altfp_addsub" for hierarchy "net:c3|altfp_addsub:c1" File: G:/fpga-brain/net.vhd Line: 287
+Info (12128): Elaborating entity "altfp_addsub" for hierarchy "net:c3|altfp_addsub:c1" File: G:/fpga-brain/net.vhd Line: 315
 Info (12128): Elaborating entity "altfp_addsub_altfp_add_sub_55j" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component" File: G:/fpga-brain/altfp_addsub.vhd Line: 4790
 Info (12128): Elaborating entity "altfp_addsub_altbarrel_shift_35e" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift" File: G:/fpga-brain/altfp_addsub.vhd Line: 3974
 Info (12128): Elaborating entity "altfp_addsub_altbarrel_shift_olb" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift" File: G:/fpga-brain/altfp_addsub.vhd Line: 3984
@@ -3835,16 +3892,16 @@ Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_alt
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_7rh.tdf
     Info (12023): Found entity 1: cmpr_7rh File: G:/fpga-brain/db/cmpr_7rh.tdf Line: 22
 Info (12128): Elaborating entity "cmpr_7rh" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_compare:trailing_zeros_limit_comparator|cmpr_7rh:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_compare.tdf Line: 280
-Info (12128): Elaborating entity "VGA" for hierarchy "VGA:c4" File: G:/fpga-brain/fpgabrain.vhdl Line: 305
-Info (12128): Elaborating entity "SYNC" for hierarchy "VGA:c4|SYNC:C1" File: G:/fpga-brain/VGA.vhd Line: 26
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(15): used explicit default value for signal "WW" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 15
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(16): used explicit default value for signal "HH" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 16
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(17): used explicit default value for signal "HFP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 17
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(18): used explicit default value for signal "HS" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 18
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(19): used explicit default value for signal "HBP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 19
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(20): used explicit default value for signal "VFP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 20
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(21): used explicit default value for signal "VS" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 21
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(22): used explicit default value for signal "VBP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 22
+Info (12128): Elaborating entity "VGA" for hierarchy "VGA:c4" File: G:/fpga-brain/fpgabrain.vhdl Line: 310
+Info (12128): Elaborating entity "SYNC" for hierarchy "VGA:c4|SYNC:C1" File: G:/fpga-brain/VGA.vhd Line: 28
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(16): used explicit default value for signal "WW" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 16
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(17): used explicit default value for signal "HH" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 17
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(18): used explicit default value for signal "HFP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 18
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(19): used explicit default value for signal "HS" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 19
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(20): used explicit default value for signal "HBP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 20
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(21): used explicit default value for signal "VFP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 21
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(22): used explicit default value for signal "VS" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 22
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(23): used explicit default value for signal "VBP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 23
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following DSP element node(s):
         Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_mult1" File: G:/fpga-brain/db/mult_5ks.tdf Line: 43
@@ -3856,7 +3913,7 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_out6" File: G:/fpga-brain/db/mult_5ks.tdf Line: 89
         Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_out8" File: G:/fpga-brain/db/mult_5ks.tdf Line: 94
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "net:c3|linksWeightArray" is uninferred due to inappropriate RAM size File: G:/fpga-brain/net.vhd Line: 200
+    Info (276004): RAM logic "net:c3|linksWeightArray" is uninferred due to inappropriate RAM size File: G:/fpga-brain/net.vhd Line: 228
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_R" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 13
     Warning (13410): Pin "RA[9]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 19
@@ -3866,19 +3923,19 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "BA[0]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 27
     Warning (13410): Pin "BA[1]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 27
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 940 registers lost all their fanouts during netlist optimizations.
+Info (17049): 957 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 673 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 914 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 28 output pins
     Info (21060): Implemented 18 bidirectional pins
-    Info (21061): Implemented 625 logic cells
+    Info (21061): Implemented 866 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 112 warnings
-    Info: Peak virtual memory: 4857 megabytes
-    Info: Processing ended: Mon Sep 09 06:22:56 2019
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Peak virtual memory: 4859 megabytes
+    Info: Processing ended: Fri Sep 13 21:41:58 2019
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:26
 
 

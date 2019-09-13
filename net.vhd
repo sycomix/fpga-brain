@@ -6,6 +6,7 @@ ENTITY net IS
 	PORT
 	(
 		CLK_IN: IN STD_LOGIC;
+		vgaTick: IN STD_LOGIC;
 	
 		i0 :  IN  STD_LOGIC_VECTOR(31 downto 0);
 		i1 :  IN  STD_LOGIC_VECTOR(31 downto 0);
@@ -125,9 +126,36 @@ COMPONENT i2c_master IS
     sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
     scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
 END COMPONENT i2c_master;
+CONSTANT IMU_ADDRESS: STD_LOGIC_VECTOR(6 DOWNTO 0) := "1101000";
+CONSTANT IMU_SMPLRT_DIV: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"19";
+CONSTANT IMU_CONFIG: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"1A";
+CONSTANT IMU_GYRO_CONFIG: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"1B";
+CONSTANT IMU_ACCEL_CONFIG: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"1C";
+CONSTANT IMU_FIFO_EN: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"23";
+CONSTANT IMU_I2C_MST_CTRL: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"24";
+CONSTANT IMU_I2C_SLV0_ADDR: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"25";
+CONSTANT IMU_I2C_SLV0_REG: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"26";
+CONSTANT IMU_I2C_SLV0_CTRL: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"27";
+CONSTANT IMU_I2C_MST_STATUS: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"36";
+CONSTANT IMU_PIN_CFG: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"37";
+CONSTANT IMU_INT_ENABLE: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"38";
+CONSTANT IMU_INT_STATUS: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"3A";
+CONSTANT IMU_GYRO_XOUT_H: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"43";
+CONSTANT IMU_GYRO_XOUT_L: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"44";
+CONSTANT IMU_USER_CTRL: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"6A";
+CONSTANT IMU_PWR_MGMT_1: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"6B";
+CONSTANT IMU_PWR_MGMT_2: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"6C";
+CONSTANT IMU_FIFO_COUNTH: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"72";
+CONSTANT IMU_FIFO_COUNTL: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"73";
+CONSTANT IMU_FIFO_R_W: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"74";
+CONSTANT IMU_WHO_AM_I: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"75";
 SIGNAL busy_prev: STD_LOGIC :='0';
-SIGNAL i2c_state: STD_LOGIC :='1';
-SIGNAL i2cStoredData: STD_LOGIC_VECTOR(15 DOWNTO 0):="01000011"&"01000011";
+SIGNAL i2c_state: INTEGER RANGE 0 TO 10 :=0;
+SIGNAL i2c_startCounter: INTEGER RANGE 0 TO 10000000:=0;
+SIGNAL i2c_startCounterB: INTEGER RANGE 0 TO 10000000:=0;
+SIGNAL i2cStoredData: STD_LOGIC_VECTOR(15 DOWNTO 0):="10101010"&"10101010";
+SIGNAL outputChange: STD_LOGIC := '0';
+SIGNAL i2cNewDataExists: STD_LOGIC :='0';
 SIGNAL s_i2c_reset_n: STD_LOGIC :='1';
 SIGNAL s_i2c_ena: STD_LOGIC :='1';
 SIGNAL s_i2c_addr: STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -282,7 +310,7 @@ SIGNAL currMPUcmdsArrayId: INTEGER RANGE 0 TO 1:=0;
 SIGNAL currMPUcmdsArraySize: INTEGER RANGE 0 TO 2:=2;
 
 BEGIN 	
-	ci2c: i2c_master GENERIC MAP(133_000_000, 400_000) PORT MAP(CLK_IN, s_i2c_reset_n, s_i2c_ena, s_i2c_addr, s_i2c_rw, s_i2c_data_wr, s_i2c_busy, s_i2c_data_rd, s_i2c_ack_error, io_sda, o_scl);
+	ci2c: i2c_master GENERIC MAP(50_000_000, 400_000) PORT MAP(CLK_IN, s_i2c_reset_n, s_i2c_ena, s_i2c_addr, s_i2c_rw, s_i2c_data_wr, s_i2c_busy, s_i2c_data_rd, s_i2c_ack_error, io_sda, o_scl);
 	c0: altfp_mul PORT MAP (CLK_IN, compMulv0, compMulv1, compMulResult);
 	c1: altfp_addsub PORT MAP (CLK_IN, compAddv0, compAddv1, compAddResult);
 
@@ -290,10 +318,20 @@ BEGIN
 	VARIABLE adjNeuronIdRowStartAddr : INTEGER range 0 to 2097 := 0;
 	VARIABLE adjNeuronIdColStartAddr : INTEGER range 0 to 152 := 0;
 	VARIABLE adjNeuronParentId1D : INTEGER range 0 to 2097 := 0;
-	VARIABLE w : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	VARIABLE w : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	BEGIN
 		IF (rising_edge(CLK_IN)) THEN
 			--outs <= "0000000000000000";
+			
+			IF i2cNewDataExists = '1' AND vgaTick = '1' AND outputChange = '0' THEN 
+				w := i2cStoredData;		
+				outputChange <= '1';
+			END IF;
+			IF vgaTick = '0' THEN
+				outputChange <= '0';
+			END IF;
+			
+			outs <= w;		
 		
 			IF currentOperCycles < doOperCycles THEN
 				currentOperCycles <= currentOperCycles+1;
@@ -479,7 +517,6 @@ BEGIN
 										currGeomNeuronId <= currGeomNeuronId+1;
 									ELSIF currGeomNeuronId = (neuronSize-1) THEN
 										--------tempComment------outs <= "00000011"&"11111111";
-						outs <= i2cStoredData;
 										currGeomNeuronId <= neuronsLayerArrayArray(1)(0);
 										currNeuronsLayerArrayId <= 0;
 									END IF;
@@ -538,7 +575,14 @@ BEGIN
 	VARIABLE busy_cnt : INTEGER RANGE 0 TO 1000:=0; 
 	BEGIN
 		IF (rising_edge(CLK_IN)) THEN
-			IF i2c_state = '1' THEN
+			IF i2c_state = 0 AND i2c_startCounter >= 5000000 THEN
+				i2c_state <= 1;
+				i2c_startCounter <= 1000001;
+			ELSIF i2c_state = 0 THEN
+				i2c_startCounter <= i2c_startCounter+1;
+			END IF;
+			
+			IF i2c_state = 1 THEN
 				busy_prev <= s_i2c_busy;                       --capture the value of the previous i2c busy signal
 				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN  --i2c busy just went high
 					busy_cnt := busy_cnt + 1;                    --counts the times busy has gone from low to high during transaction
@@ -546,29 +590,134 @@ BEGIN
 				CASE busy_cnt IS                             --busy_cnt keeps track of which command we are on
 					WHEN 0 =>                                  --no command latched in yet
 						s_i2c_ena <= '1';                            --initiate the transaction
-						s_i2c_addr <= "1101000";                    --set the address of the slave
+						s_i2c_addr <= IMU_ADDRESS;                    --set the address of the slave
 						s_i2c_rw <= '0';                             --command 1 is a write
-						s_i2c_data_wr <= "01000011";              --data to be written
+						--s_i2c_data_wr <= "01000011";              --data to be written
+						s_i2c_data_wr <= IMU_PWR_MGMT_1;              --data to be written
+						i2cNewDataExists <= '0';
+					WHEN 1 =>
+						s_i2c_ena <= '0'; 
+						IF(s_i2c_busy = '0') THEN
+							s_i2c_data_wr <= "00000000";              --data to be written	
+							busy_cnt := 0;	
+							i2c_state <= 6;	
+						END IF;
+					WHEN OTHERS => NULL;
+				END CASE;
+			END IF;
+			
+			IF i2c_state = 2 AND i2c_startCounterB >= 5000 THEN
+				i2c_state <= 3;
+			ELSIF i2c_state = 2 THEN
+				i2c_startCounterB <= i2c_startCounterB+1;
+			END IF;
+			
+			IF i2c_state = 3 THEN
+				busy_prev <= s_i2c_busy;                       --capture the value of the previous i2c busy signal
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN  --i2c busy just went high
+					busy_cnt := busy_cnt + 1;                    --counts the times busy has gone from low to high during transaction
+				END IF;
+				CASE busy_cnt IS                             --busy_cnt keeps track of which command we are on
+					WHEN 0 =>                                  --no command latched in yet
+						s_i2c_ena <= '1';                            --initiate the transaction
+						s_i2c_addr <= IMU_ADDRESS;                    --set the address of the slave
+						s_i2c_rw <= '0';                             --command 1 is a write
+						--s_i2c_data_wr <= "01000011";              --data to be written
+						s_i2c_data_wr <= IMU_GYRO_XOUT_H;              --data to be written
+						i2cNewDataExists <= '0';			
+					WHEN 1 =>                                  --1st busy high: command 1 latched, okay to issue command 2
+						s_i2c_rw <= '1';                             --command 2 is a read (addr stays the same)
+					WHEN 2 =>                                  --2nd busy high: command 2 latched, okay to issue command 3
+						s_i2c_ena <= '0';                            --deassert enable to stop transaction after command 4
+						IF(s_i2c_busy = '0') THEN                    --indicates data read in command 4 is ready
+							i2cStoredData(15 DOWNTO 8) <= s_i2c_data_rd;           --retrieve data from command 4
+							busy_cnt := 0;                             --reset busy_cnt for next transaction 
+							i2c_state <= 4;                             --transaction complete, go to next state in design
+							i2cNewDataExists <= '1';
+							i2c_startCounterB <= 0;
+						END IF;
+					WHEN OTHERS => NULL;
+				END CASE;
+			END IF;
+			
+			IF i2c_state = 4 AND i2c_startCounterB >= 5000 THEN
+				i2c_state <= 5;
+			ELSIF i2c_state = 4 THEN
+				i2c_startCounterB <= i2c_startCounterB+1;
+			END IF;
+			
+			IF i2c_state = 5 THEN
+				busy_prev <= s_i2c_busy;                       --capture the value of the previous i2c busy signal
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN  --i2c busy just went high
+					busy_cnt := busy_cnt + 1;                    --counts the times busy has gone from low to high during transaction
+				END IF;
+				CASE busy_cnt IS                             --busy_cnt keeps track of which command we are on
+					WHEN 0 =>                                  --no command latched in yet
+						s_i2c_ena <= '1';                            --initiate the transaction
+						s_i2c_addr <= IMU_ADDRESS;                    --set the address of the slave
+						s_i2c_rw <= '0';                             --command 1 is a write
+						--s_i2c_data_wr <= "01000011";              --data to be written
+						s_i2c_data_wr <= IMU_GYRO_XOUT_L;              --data to be written
+						i2cNewDataExists <= '0';			
+					WHEN 1 =>                                  --1st busy high: command 1 latched, okay to issue command 2
+						s_i2c_rw <= '1';                             --command 2 is a read (addr stays the same)
+					WHEN 2 =>                                  --2nd busy high: command 2 latched, okay to issue command 3
+						s_i2c_ena <= '0';                            --deassert enable to stop transaction after command 4
+						IF(s_i2c_busy = '0') THEN                    --indicates data read in command 4 is ready
+							i2cStoredData(7 DOWNTO 0) <= s_i2c_data_rd;           --retrieve data from command 4
+							busy_cnt := 0;                             --reset busy_cnt for next transaction 
+							i2c_state <= 2;                              --transaction complete, go to next state in design
+							i2cNewDataExists <= '1';
+							--i2c_startCounter <= 0;   
+							i2c_startCounterB <= 0;
+						END IF;
+					WHEN OTHERS => NULL;
+					
+				END CASE;
+			END IF;
+			
+			IF i2c_state = 6 AND i2c_startCounterB >= 5000 THEN
+				i2c_state <= 7;
+			ELSIF i2c_state = 6 THEN
+				i2c_startCounterB <= i2c_startCounterB+1;
+			END IF;
+			
+			IF i2c_state = 7 THEN
+				busy_prev <= s_i2c_busy;                       --capture the value of the previous i2c busy signal
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN  --i2c busy just went high
+					busy_cnt := busy_cnt + 1;                    --counts the times busy has gone from low to high during transaction
+				END IF;
+				CASE busy_cnt IS                             --busy_cnt keeps track of which command we are on	
+					WHEN 0 =>                                  --no command latched in yet
+						s_i2c_ena <= '1';                            --initiate the transaction
+						s_i2c_addr <= IMU_ADDRESS;                    --set the address of the slave
+						s_i2c_rw <= '0';                             --command 1 is a write
+						--s_i2c_data_wr <= "01000011";              --data to be written
+						s_i2c_data_wr <= IMU_GYRO_XOUT_H;              --data to be written
+						i2cNewDataExists <= '0';			
 					WHEN 1 =>                                  --1st busy high: command 1 latched, okay to issue command 2
 						s_i2c_rw <= '1';                             --command 2 is a read (addr stays the same)
 					WHEN 2 =>                                  --2nd busy high: command 2 latched, okay to issue command 3
 						s_i2c_rw <= '0';                             --command 3 is a write
-						s_i2c_data_wr <= "01000100";          --data to be written
+						s_i2c_data_wr <= IMU_GYRO_XOUT_L;          --data to be written
 						IF(s_i2c_busy = '0') THEN                    --indicates data read in command 2 is ready
 							i2cStoredData(15 DOWNTO 8) <= s_i2c_data_rd;          --retrieve data from command 2
 						END IF;
 					WHEN 3 =>                                  --3rd busy high: command 3 latched, okay to issue command 4
 						s_i2c_rw <= '1';                             --command 4 is read (addr stays the same)
 					WHEN 4 =>                                  --4th busy high: command 4 latched, ready to stop
-						s_i2c_ena <= '0';                            --deassert enable to stop transaction after command 4
+						--s_i2c_ena <= '0';                            --deassert enable to stop transaction after command 4
+						s_i2c_rw <= '0';                             --command 1 is a write
+						s_i2c_data_wr <= IMU_GYRO_XOUT_H;              --data to be written
 						IF(s_i2c_busy = '0') THEN                    --indicates data read in command 4 is ready
-							--i2cStoredData(7 DOWNTO 0) <= s_i2c_data_rd;           --retrieve data from command 4
-							busy_cnt := 0;                             --reset busy_cnt for next transaction
-							i2c_state <= '1';                             --transaction complete, go to next state in design
-							
-							--outs <= "00001111"&"11111111";
+							i2cStoredData(7 DOWNTO 0) <= s_i2c_data_rd;           --retrieve data from command 4
+							busy_cnt := 1;                             --reset busy_cnt for next transaction 
+							--i2c_state <= 2;                             --transaction complete, go to next state in design
+							i2cNewDataExists <= '1';
+							--i2c_startCounterB <= 0;
 						END IF;
 					WHEN OTHERS => NULL;
+					
 				END CASE;
 			END IF;
 				

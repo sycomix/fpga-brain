@@ -7,7 +7,8 @@ PORT(
 	CLK: IN STD_LOGIC;
 	netOuts: IN STD_LOGIC_VECTOR(15 downto 0);
 	HSYNC, VSYNC: OUT STD_LOGIC;
-	R, G, B: OUT STD_LOGIC
+	R, G, B: OUT STD_LOGIC;
+	vgaTick: OUT STD_LOGIC
 );
 END SYNC;
  
@@ -28,36 +29,20 @@ BEGIN
 PROCESS(CLK)
 BEGIN
 	IF (rising_edge(CLK)) THEN
+		IF VPOS < 100 THEN
+			vgaTick <= '1';
+		ELSE
+			vgaTick <= '0';		
+		END IF;
+		
 		-- add 240 horiz. FP, BP, SYNC and 66 vert. FP, BP, SYNC
 		-- display a green rectangle in the middle of the screen
-		IF ((HPOS>200 AND HPOS<300) AND (VPOS>300 AND VPOS<400)) THEN
-			IF netOuts = "0000000000000000" THEN
-				R<='1';
-				G<='0';
-				B<='0';
-			ELSIF netOuts = "00000001"&"11111111" THEN
+		IF ((HPOS>=200 AND HPOS<300) AND (VPOS>300 AND VPOS<400)) THEN		
+			IF HPOS = 200 THEN
 				R<='0';
 				G<='1';
-				B<='0';
-			ELSIF netOuts = "00000011"&"11111111" THEN
-				R<='0';
-				G<='0';
-				B<='1';
-			ELSIF netOuts = "00000111"&"11111111" THEN
-				R<='1';
-				G<='1';
-				B<='0';
-			ELSIF netOuts = "00001111"&"11111111" THEN
-				R<='1';
-				G<='1';
-				B<='1';
-			ELSE
-				R<='0';
-				G<='1';
-				B<='1';
-			END IF;
-			
-			IF HPOS = 201 THEN
+				B<='1';				
+			ELSIF HPOS = 201 THEN
 				R<='0';
 				G<=netOuts(15);
 				B<='0';			
@@ -121,6 +106,10 @@ BEGIN
 				R<='0';
 				G<=netOuts(0);
 				B<='0';		
+			ELSIF HPOS = 217 THEN
+				R<='0';
+				G<='0';
+				B<='1';		
 			END IF;
 		ELSE
 			R<='0';

@@ -100,8 +100,8 @@ set_location_assignment PIN_54 -to RA[0]
 set_location_assignment PIN_44 -to RAS
 set_location_assignment PIN_73 -to UMQM
 set_location_assignment PIN_42 -to WE
-set_location_assignment PIN_138 -to io_sda
-set_location_assignment PIN_10 -to o_scl
+set_location_assignment PIN_110 -to io_sda
+set_location_assignment PIN_111 -to o_scl
 set_global_assignment -name VHDL_FILE i2c_master.vhd
 set_global_assignment -name VHDL_FILE fpgabrain.vhdl
 set_global_assignment -name VHDL_FILE VGA.vhd

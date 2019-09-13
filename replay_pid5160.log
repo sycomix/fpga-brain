@@ -1,0 +1,61 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 323 ciObject found
+ciMethod java/lang/Object hashCode ()I 2049 1 256 0 -1
+ciMethod java/lang/Object equals (Ljava/lang/Object;)Z 2169 1 2818 0 -1
+ciMethod java/lang/String <init> ([CII)V 4097 1 5773 0 -1
+ciMethod java/lang/String length ()I 4097 1 58526 0 -1
+ciMethod java/lang/String charAt (I)C 4097 1 320521 0 -1
+ciMethod java/lang/String equals (Ljava/lang/Object;)Z 2177 32769 1748 0 -1
+ciMethod java/lang/System arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V 27649 1 3456 0 -1
+ciMethod java/lang/Throwable addSuppressed (Ljava/lang/Throwable;)V 0 0 1 0 0
+ciMethod java/lang/ref/Reference get ()Ljava/lang/Object; 1033 1 129 0 -1
+ciMethod java/lang/Thread holdsLock (Ljava/lang/Object;)Z 0 0 1 0 -1
+ciMethod java/util/Map remove (Ljava/lang/Object;)Ljava/lang/Object; 0 0 1 0 -1
+ciMethod java/lang/Byte toUnsignedInt (B)I 1 1 6032 0 0
+ciMethod java/util/List add (Ljava/lang/Object;)Z 0 0 1 0 -1
+ciMethod java/lang/ref/ReferenceQueue poll ()Ljava/lang/ref/Reference; 2089 1 6844 0 -1
+ciMethod java/lang/Math min (II)I 4097 1 33906 0 -1
+ciMethod java/io/InputStream read ()I 0 0 1 0 -1
+ciMethod java/io/InputStream read ([BII)I 0 0 1 0 -1
+ciMethod java/io/InputStream close ()V 0 0 1 0 -1
+ciMethod java/util/ArrayList <init> (I)V 2153 1 4661 0 -1
+ciMethod java/io/OutputStream write (I)V 0 0 1 0 -1
+ciMethod java/io/OutputStream write ([BII)V 0 0 1 0 -1
+ciMethod java/io/OutputStream flush ()V 2081 1 649 0 -1
+ciMethod java/io/OutputStream close ()V 0 0 1 0 -1
+ciMethod java/io/BufferedInputStream getInIfOpen ()Ljava/io/InputStream; 105 1 63 0 -1
+ciMethod java/io/BufferedInputStream getBufIfOpen ()[B 4049 1 10830 0 64
+ciMethod java/io/BufferedInputStream fill ()V 105 1 37 0 0
+ciMethod java/io/BufferedInputStream read ()I 4097 1 8561 0 1088
+ciMethod java/io/FilterInputStream read ()I 2545 1 6034 0 192
+ciMethod java/io/FilterInputStream read ([BII)I 2097 1 5469 0 128
+ciMethod java/io/FilterInputStream close ()V 1777 1 1270 0 0
+ciMethod java/util/concurrent/atomic/AtomicReferenceFieldUpdater compareAndSet (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z 0 0 1 0 -1
+ciMethod java/util/WeakHashMap maskNull (Ljava/lang/Object;)Ljava/lang/Object; 2081 1 8902 0 0
+ciMethod java/util/WeakHashMap eq (Ljava/lang/Object;Ljava/lang/Object;)Z 1601 1 5224 0 0
+ciMethod java/util/WeakHashMap hash (Ljava/lang/Object;)I 3185 1 8902 0 0
+ciMethod java/util/WeakHashMap indexFor (II)I 4097 1 8433 0 0
+ciMethod java/util/WeakHashMap expungeStaleEntries ()V 3185 1 5669 0 2560
+ciMethod java/util/WeakHashMap getTable ()[Ljava/util/WeakHashMap$Entry; 3185 1 8902 0 0
+ciMethod java/util/WeakHashMap remove (Ljava/lang/Object;)Ljava/lang/Object; 3081 65 3586 0 0
+ciMethod java/io/FilterOutputStream flush ()V 0 0 1 0 -1
+ciMethod java/io/FilterOutputStream close ()V 841 1 619 0 0
+ciMethod java/util/Arrays copyOf ([BI)[B 2057 1 11586 0 0
+ciMethod java/util/zip/ZipFile freeEntry (JJ)V 2049 1 256 0 -1
+ciMethod java/util/zip/ZipFile releaseInflater (Ljava/util/zip/Inflater;)V 1729 1 1786 0 0
+ciMethod java/util/zip/ZipFile close ()V 265 217 33 0 -1
+ciMethod java/util/zip/ZipFile access$000 (Ljava/util/zip/ZipFile;)Ljava/util/Map; 1025 1 128 0 0
+ciMethod java/util/zip/ZipFile access$100 (Ljava/util/zip/ZipFile;Ljava/util/zip/Inflater;)V 1729 1 1785 0 0
+ciMethod java/util/zip/ZipFile access$400 (Ljava/util/zip/ZipFile;)J 2065 1 5533 0 0
+ciMethod java/util/zip/ZipFile access$1000 (JJ)V 1513 1 2402 0 0
+ciMethod java/util/Deque add (Ljava/lang/Object;)Z 0 0 1 0 -1
+ciMethod java/util/ArrayDeque doubleCapacity ()V 0 0 1 0 0
+ciMethod java/util/ArrayDeque addLast (Ljava/lang/Object;)V 3073 1 1786 0 0
+ciMethod java/util/ArrayDeque add (Ljava/lang/Object;)Z 3073 1 1786 0 0
+ciMethod java/io/DataInput readFully ([BII)V 0 0 1 0 -1
+ciMethod java/io/DataInput readUnsignedShort ()I 0 0 1 0 -1
+ciMethod java/io/DataInputStream <init> (Ljava/io/InputStream;)V 849 1 622 0 -1
+ciMethod java/io/DataInputStream read ([B)I 1665 1 1238 0 0
+ciMethod java/io/DataInputStream 

@@ -1,5 +1,5 @@
 Flow report for fpgabrain
-Mon Sep 09 06:23:15 2019
+Fri Sep 13 21:42:17 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Sep 09 06:23:15 2019       ;
+; Flow Status                        ; Successful - Fri Sep 13 21:42:17 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 590 / 6,272 ( 9 % )                         ;
-;     Total combinational functions  ; 549 / 6,272 ( 9 % )                         ;
-;     Dedicated logic registers      ; 213 / 6,272 ( 3 % )                         ;
-; Total registers                    ; 213                                         ;
+; Total logic elements               ; 834 / 6,272 ( 13 % )                        ;
+;     Total combinational functions  ; 788 / 6,272 ( 13 % )                        ;
+;     Dedicated logic registers      ; 272 / 6,272 ( 4 % )                         ;
+; Total registers                    ; 272                                         ;
 ; Total pins                         ; 47 / 92 ( 51 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 276,480 ( 0 % )                         ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/09/2019 06:22:33 ;
+; Start date & time ; 09/13/2019 21:41:36 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; fpgabrain           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 8796757229156.156800295303016          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 8796757229156.156840369505756          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
@@ -108,12 +108,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:24     ; 1.0                     ; 4857 MB             ; 00:00:27                           ;
-; Fitter               ; 00:00:07     ; 1.1                     ; 5517 MB             ; 00:00:07                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4690 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 4778 MB             ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:23     ; 1.0                     ; 4859 MB             ; 00:00:25                           ;
+; Fitter               ; 00:00:07     ; 1.1                     ; 5521 MB             ; 00:00:08                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4692 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 4780 MB             ; 00:00:02                           ;
 ; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4671 MB             ; 00:00:02                           ;
-; Total                ; 00:00:37     ; --                      ; --                  ; 00:00:39                           ;
+; Total                ; 00:00:36     ; --                      ; --                  ; 00:00:38                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

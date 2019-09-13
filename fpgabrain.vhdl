@@ -49,13 +49,15 @@ COMPONENT vga
 		 VGA_VS : OUT STD_LOGIC;
 		 VGA_R : OUT STD_LOGIC;
 		 VGA_G : OUT STD_LOGIC;
-		 VGA_B : OUT STD_LOGIC
+		 VGA_B : OUT STD_LOGIC;
+		vgaTick: OUT STD_LOGIC
 	);
 END COMPONENT;
 
 COMPONENT net
 	PORT(
 		CLK_IN: IN STD_LOGIC;
+		vgaTick: IN STD_LOGIC;
 		
 		 i0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 i1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -179,6 +181,8 @@ COMPONENT ram16 IS
 	);
 END COMPONENT ram16;
 
+SIGNAL	vgaTick :  STD_LOGIC;
+
 -- PLL
 SIGNAL	CLK_VGA :  STD_LOGIC;
 SIGNAL	CLK_RAMM :  STD_LOGIC;
@@ -283,6 +287,7 @@ CLK_OUT <= CLK_RAMM;
 c2 : ram16 PORT MAP(CLK_RAMM, CKE, RA, DQ, UMQM, LDQM, CS, RAS, CAS, WE, BA, ram_initialized, ram_row_addr, ram_col_addr, ram_data_save_do, ram_data_save, ram_data_save_ready, ram_data_read_do, ram_data_read_ready, ram_data_read);
 
 c3 : net PORT MAP(CLK_RAMM,
+				vgaTick,
 				i0, i1, i2, i3, i4,  wi0_h0, wi0_h1, wi0_h2, wi0_h3, wi0_h4,
 				wi1_h0, wi1_h1, wi1_h2, wi1_h3, wi1_h4,
 				wi2_h0, wi2_h1, wi2_h2, wi2_h3, wi2_h4,
@@ -302,7 +307,7 @@ c3 : net PORT MAP(CLK_RAMM,
 				ram_initialized, ram_row_addr, ram_col_addr, ram_data_save_do, ram_data_save, ram_data_save_ready, ram_data_read_do, ram_data_read_ready, ram_data_read,
 				CLK, o_scl, io_sda);
 				
-c4 : vga PORT MAP(CLK_VGA, outs, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B);
+c4 : vga PORT MAP(CLK_VGA, outs, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B, vgaTick);
 
 
 END bhv;
