@@ -583,22 +583,22 @@ BEGIN
 			END IF;
 			
 			IF i2c_state = 1 THEN
-				busy_prev <= s_i2c_busy;                       --capture the value of the previous i2c busy signal
-				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN  --i2c busy just went high
-					busy_cnt := busy_cnt + 1;                    --counts the times busy has gone from low to high during transaction
+				busy_prev <= s_i2c_busy;
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
+					busy_cnt := busy_cnt + 1;
 				END IF;
-				CASE busy_cnt IS                             --busy_cnt keeps track of which command we are on
-					WHEN 0 =>                                  --no command latched in yet
-						s_i2c_ena <= '1';                            --initiate the transaction
-						s_i2c_addr <= IMU_ADDRESS;                    --set the address of the slave
-						s_i2c_rw <= '0';                             --command 1 is a write
-						--s_i2c_data_wr <= "01000011";              --data to be written
-						s_i2c_data_wr <= IMU_PWR_MGMT_1;              --data to be written
+				CASE busy_cnt IS
+					WHEN 0 =>
+						s_i2c_ena <= '1'; --initiate
+						s_i2c_addr <= IMU_ADDRESS;
+						s_i2c_rw <= '0'; --write
+						s_i2c_data_wr <= IMU_PWR_MGMT_1;
+						
 						i2cNewDataExists <= '0';
 					WHEN 1 =>
 						s_i2c_ena <= '0'; 
 						IF(s_i2c_busy = '0') THEN
-							s_i2c_data_wr <= "00000000";              --data to be written	
+							s_i2c_data_wr <= "00000000";
 							busy_cnt := 0;	
 							i2c_state <= 6;	
 						END IF;
@@ -613,26 +613,27 @@ BEGIN
 			END IF;
 			
 			IF i2c_state = 3 THEN
-				busy_prev <= s_i2c_busy;                       --capture the value of the previous i2c busy signal
-				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN  --i2c busy just went high
-					busy_cnt := busy_cnt + 1;                    --counts the times busy has gone from low to high during transaction
+				busy_prev <= s_i2c_busy;
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
+					busy_cnt := busy_cnt + 1;
 				END IF;
-				CASE busy_cnt IS                             --busy_cnt keeps track of which command we are on
-					WHEN 0 =>                                  --no command latched in yet
-						s_i2c_ena <= '1';                            --initiate the transaction
-						s_i2c_addr <= IMU_ADDRESS;                    --set the address of the slave
-						s_i2c_rw <= '0';                             --command 1 is a write
-						--s_i2c_data_wr <= "01000011";              --data to be written
-						s_i2c_data_wr <= IMU_GYRO_XOUT_H;              --data to be written
+				CASE busy_cnt IS
+					WHEN 0 =>
+						s_i2c_ena <= '1'; --initiate
+						s_i2c_addr <= IMU_ADDRESS;
+						s_i2c_rw <= '0'; --write
+						s_i2c_data_wr <= IMU_GYRO_XOUT_H;
+						
 						i2cNewDataExists <= '0';			
-					WHEN 1 =>                                  --1st busy high: command 1 latched, okay to issue command 2
-						s_i2c_rw <= '1';                             --command 2 is a read (addr stays the same)
-					WHEN 2 =>                                  --2nd busy high: command 2 latched, okay to issue command 3
-						s_i2c_ena <= '0';                            --deassert enable to stop transaction after command 4
-						IF(s_i2c_busy = '0') THEN                    --indicates data read in command 4 is ready
-							i2cStoredData(15 DOWNTO 8) <= s_i2c_data_rd;           --retrieve data from command 4
-							busy_cnt := 0;                             --reset busy_cnt for next transaction 
-							i2c_state <= 4;                             --transaction complete, go to next state in design
+					WHEN 1 =>
+						s_i2c_rw <= '1'; -- read
+					WHEN 2 =>
+						s_i2c_ena <= '0';
+						IF(s_i2c_busy = '0') THEN
+							i2cStoredData(15 DOWNTO 8) <= s_i2c_data_rd;
+							busy_cnt := 0;
+							i2c_state <= 4;
+							
 							i2cNewDataExists <= '1';
 							i2c_startCounterB <= 0;
 						END IF;
@@ -647,28 +648,28 @@ BEGIN
 			END IF;
 			
 			IF i2c_state = 5 THEN
-				busy_prev <= s_i2c_busy;                       --capture the value of the previous i2c busy signal
-				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN  --i2c busy just went high
-					busy_cnt := busy_cnt + 1;                    --counts the times busy has gone from low to high during transaction
+				busy_prev <= s_i2c_busy;
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
+					busy_cnt := busy_cnt + 1;
 				END IF;
-				CASE busy_cnt IS                             --busy_cnt keeps track of which command we are on
-					WHEN 0 =>                                  --no command latched in yet
-						s_i2c_ena <= '1';                            --initiate the transaction
-						s_i2c_addr <= IMU_ADDRESS;                    --set the address of the slave
-						s_i2c_rw <= '0';                             --command 1 is a write
-						--s_i2c_data_wr <= "01000011";              --data to be written
-						s_i2c_data_wr <= IMU_GYRO_XOUT_L;              --data to be written
+				CASE busy_cnt IS
+					WHEN 0 =>
+						s_i2c_ena <= '1'; --initiate
+						s_i2c_addr <= IMU_ADDRESS;
+						s_i2c_rw <= '0'; -- write
+						s_i2c_data_wr <= IMU_GYRO_XOUT_L;
+						
 						i2cNewDataExists <= '0';			
-					WHEN 1 =>                                  --1st busy high: command 1 latched, okay to issue command 2
-						s_i2c_rw <= '1';                             --command 2 is a read (addr stays the same)
-					WHEN 2 =>                                  --2nd busy high: command 2 latched, okay to issue command 3
-						s_i2c_ena <= '0';                            --deassert enable to stop transaction after command 4
-						IF(s_i2c_busy = '0') THEN                    --indicates data read in command 4 is ready
-							i2cStoredData(7 DOWNTO 0) <= s_i2c_data_rd;           --retrieve data from command 4
-							busy_cnt := 0;                             --reset busy_cnt for next transaction 
-							i2c_state <= 2;                              --transaction complete, go to next state in design
+					WHEN 1 =>
+						s_i2c_rw <= '1'; -- read
+					WHEN 2 =>
+						s_i2c_ena <= '0';
+						IF(s_i2c_busy = '0') THEN
+							i2cStoredData(7 DOWNTO 0) <= s_i2c_data_rd;
+							busy_cnt := 0;
+							i2c_state <= 2;
+							
 							i2cNewDataExists <= '1';
-							--i2c_startCounter <= 0;   
 							i2c_startCounterB <= 0;
 						END IF;
 					WHEN OTHERS => NULL;
@@ -683,38 +684,38 @@ BEGIN
 			END IF;
 			
 			IF i2c_state = 7 THEN
-				busy_prev <= s_i2c_busy;                       --capture the value of the previous i2c busy signal
-				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN  --i2c busy just went high
-					busy_cnt := busy_cnt + 1;                    --counts the times busy has gone from low to high during transaction
+				busy_prev <= s_i2c_busy;
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
+					busy_cnt := busy_cnt + 1;
 				END IF;
-				CASE busy_cnt IS                             --busy_cnt keeps track of which command we are on	
-					WHEN 0 =>                                  --no command latched in yet
-						s_i2c_ena <= '1';                            --initiate the transaction
-						s_i2c_addr <= IMU_ADDRESS;                    --set the address of the slave
-						s_i2c_rw <= '0';                             --command 1 is a write
-						--s_i2c_data_wr <= "01000011";              --data to be written
-						s_i2c_data_wr <= IMU_GYRO_XOUT_H;              --data to be written
+				CASE busy_cnt IS
+					WHEN 0 =>
+						s_i2c_ena <= '1'; --initiate
+						s_i2c_addr <= IMU_ADDRESS;
+						s_i2c_rw <= '0'; -- write
+						s_i2c_data_wr <= IMU_GYRO_XOUT_H;
+						
 						i2cNewDataExists <= '0';			
-					WHEN 1 =>                                  --1st busy high: command 1 latched, okay to issue command 2
-						s_i2c_rw <= '1';                             --command 2 is a read (addr stays the same)
-					WHEN 2 =>                                  --2nd busy high: command 2 latched, okay to issue command 3
-						s_i2c_rw <= '0';                             --command 3 is a write
-						s_i2c_data_wr <= IMU_GYRO_XOUT_L;          --data to be written
-						IF(s_i2c_busy = '0') THEN                    --indicates data read in command 2 is ready
-							i2cStoredData(15 DOWNTO 8) <= s_i2c_data_rd;          --retrieve data from command 2
+					WHEN 1 =>
+						s_i2c_rw <= '1'; -- read
+					WHEN 2 =>
+						s_i2c_rw <= '0';
+						s_i2c_data_wr <= IMU_GYRO_XOUT_L;
+						IF(s_i2c_busy = '0') THEN
+							i2cStoredData(15 DOWNTO 8) <= s_i2c_data_rd;
 						END IF;
-					WHEN 3 =>                                  --3rd busy high: command 3 latched, okay to issue command 4
-						s_i2c_rw <= '1';                             --command 4 is read (addr stays the same)
-					WHEN 4 =>                                  --4th busy high: command 4 latched, ready to stop
-						--s_i2c_ena <= '0';                            --deassert enable to stop transaction after command 4
-						s_i2c_rw <= '0';                             --command 1 is a write
-						s_i2c_data_wr <= IMU_GYRO_XOUT_H;              --data to be written
-						IF(s_i2c_busy = '0') THEN                    --indicates data read in command 4 is ready
-							i2cStoredData(7 DOWNTO 0) <= s_i2c_data_rd;           --retrieve data from command 4
-							busy_cnt := 1;                             --reset busy_cnt for next transaction 
-							--i2c_state <= 2;                             --transaction complete, go to next state in design
+					WHEN 3 =>
+						s_i2c_rw <= '1'; -- read
+					WHEN 4 =>
+						--s_i2c_ena <= '0';
+						s_i2c_rw <= '0'; -- write
+						s_i2c_data_wr <= IMU_GYRO_XOUT_H;
+						IF(s_i2c_busy = '0') THEN
+							i2cStoredData(7 DOWNTO 0) <= s_i2c_data_rd;
+							busy_cnt := 1;
+							--i2c_state <= 2;
+							
 							i2cNewDataExists <= '1';
-							--i2c_startCounterB <= 0;
 						END IF;
 					WHEN OTHERS => NULL;
 					

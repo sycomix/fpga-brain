@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpgabrain
-Fri Sep 13 22:04:11 2019
+Sat Sep 14 23:32:54 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Sep 13 22:04:11 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep 14 23:32:54 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; fpgabrain                                   ;
 ; Top-level Entity Name              ; fpgabrain                                   ;
@@ -204,46 +204,46 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                   ; Library ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
-; i2c_master.vhd                   ; yes             ; User VHDL File               ; G:/fpga-brain/i2c_master.vhd                                                   ;         ;
-; fpgabrain.vhdl                   ; yes             ; User VHDL File               ; G:/fpga-brain/fpgabrain.vhdl                                                   ;         ;
-; VGA.vhd                          ; yes             ; User VHDL File               ; G:/fpga-brain/VGA.vhd                                                          ;         ;
-; SYNC.vhd                         ; yes             ; User VHDL File               ; G:/fpga-brain/SYNC.vhd                                                         ;         ;
-; pll.vhd                          ; yes             ; User Wizard-Generated File   ; G:/fpga-brain/pll.vhd                                                          ;         ;
-; net.vhd                          ; yes             ; User VHDL File               ; G:/fpga-brain/net.vhd                                                          ;         ;
-; altfp_mul.vhd                    ; yes             ; User Wizard-Generated File   ; G:/fpga-brain/altfp_mul.vhd                                                    ;         ;
-; altfp_addsub.vhd                 ; yes             ; User Wizard-Generated File   ; G:/fpga-brain/altfp_addsub.vhd                                                 ;         ;
-; ram16.vhd                        ; yes             ; User VHDL File               ; G:/fpga-brain/ram16.vhd                                                        ;         ;
+; i2c_master.vhd                   ; yes             ; User VHDL File               ; G:/fpga-brain/FIRMWARE/i2c_master.vhd                                          ;         ;
+; fpgabrain.vhdl                   ; yes             ; User VHDL File               ; G:/fpga-brain/FIRMWARE/fpgabrain.vhdl                                          ;         ;
+; VGA.vhd                          ; yes             ; User VHDL File               ; G:/fpga-brain/FIRMWARE/VGA.vhd                                                 ;         ;
+; SYNC.vhd                         ; yes             ; User VHDL File               ; G:/fpga-brain/FIRMWARE/SYNC.vhd                                                ;         ;
+; pll.vhd                          ; yes             ; User Wizard-Generated File   ; G:/fpga-brain/FIRMWARE/pll.vhd                                                 ;         ;
+; net.vhd                          ; yes             ; User VHDL File               ; G:/fpga-brain/FIRMWARE/net.vhd                                                 ;         ;
+; altfp_mul.vhd                    ; yes             ; User Wizard-Generated File   ; G:/fpga-brain/FIRMWARE/altfp_mul.vhd                                           ;         ;
+; altfp_addsub.vhd                 ; yes             ; User Wizard-Generated File   ; G:/fpga-brain/FIRMWARE/altfp_addsub.vhd                                        ;         ;
+; ram16.vhd                        ; yes             ; User VHDL File               ; G:/fpga-brain/FIRMWARE/ram16.vhd                                               ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf              ;         ;
 ; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc          ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc         ;         ;
 ; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc       ;         ;
 ; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc       ;         ;
-; db/pll_altpll1.v                 ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/pll_altpll1.v                                                 ;         ;
+; db/pll_altpll1.v                 ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/pll_altpll1.v                                        ;         ;
 ; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
 ; addcore.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
 ; look_add.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/look_add.inc            ;         ;
 ; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
 ; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
 ; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
-; db/add_sub_tdj.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/add_sub_tdj.tdf                                               ;         ;
-; db/add_sub_i5h.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/add_sub_i5h.tdf                                               ;         ;
-; db/add_sub_0lg.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/add_sub_0lg.tdf                                               ;         ;
-; db/add_sub_uqg.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/add_sub_uqg.tdf                                               ;         ;
+; db/add_sub_tdj.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/add_sub_tdj.tdf                                      ;         ;
+; db/add_sub_i5h.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/add_sub_i5h.tdf                                      ;         ;
+; db/add_sub_0lg.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/add_sub_0lg.tdf                                      ;         ;
+; db/add_sub_uqg.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/add_sub_uqg.tdf                                      ;         ;
 ; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
 ; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
 ; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.inc            ;         ;
-; db/mult_5ks.tdf                  ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/mult_5ks.tdf                                                  ;         ;
-; db/add_sub_lcg.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/add_sub_lcg.tdf                                               ;         ;
-; db/add_sub_icg.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/add_sub_icg.tdf                                               ;         ;
-; db/add_sub_kbg.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/add_sub_kbg.tdf                                               ;         ;
-; db/add_sub_kpj.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/add_sub_kpj.tdf                                               ;         ;
-; db/add_sub_3ql.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/add_sub_3ql.tdf                                               ;         ;
-; db/add_sub_8bl.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/add_sub_8bl.tdf                                               ;         ;
-; db/add_sub_qrg.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/add_sub_qrg.tdf                                               ;         ;
-; db/add_sub_34h.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/add_sub_34h.tdf                                               ;         ;
+; db/mult_5ks.tdf                  ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/mult_5ks.tdf                                         ;         ;
+; db/add_sub_lcg.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/add_sub_lcg.tdf                                      ;         ;
+; db/add_sub_icg.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/add_sub_icg.tdf                                      ;         ;
+; db/add_sub_kbg.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/add_sub_kbg.tdf                                      ;         ;
+; db/add_sub_kpj.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/add_sub_kpj.tdf                                      ;         ;
+; db/add_sub_3ql.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/add_sub_3ql.tdf                                      ;         ;
+; db/add_sub_8bl.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/add_sub_8bl.tdf                                      ;         ;
+; db/add_sub_qrg.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/add_sub_qrg.tdf                                      ;         ;
+; db/add_sub_34h.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/add_sub_34h.tdf                                      ;         ;
 ; lpm_compare.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_compare.tdf         ;         ;
 ; comptree.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/comptree.inc            ;         ;
-; db/cmpr_7rh.tdf                  ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/db/cmpr_7rh.tdf                                                  ;         ;
+; db/cmpr_7rh.tdf                  ; yes             ; Auto-Generated Megafunction  ; G:/fpga-brain/FIRMWARE/db/cmpr_7rh.tdf                                         ;         ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
 
 
@@ -3409,173 +3409,173 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Sep 13 22:03:47 2019
+    Info: Processing started: Sat Sep 14 23:32:31 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpgabrain -c fpgabrain
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_master.vhd
-    Info (12022): Found design unit 1: i2c_master-logic File: G:/fpga-brain/i2c_master.vhd Line: 54
-    Info (12023): Found entity 1: i2c_master File: G:/fpga-brain/i2c_master.vhd Line: 36
+    Info (12022): Found design unit 1: i2c_master-logic File: G:/fpga-brain/FIRMWARE/i2c_master.vhd Line: 54
+    Info (12023): Found entity 1: i2c_master File: G:/fpga-brain/FIRMWARE/i2c_master.vhd Line: 36
 Info (12021): Found 2 design units, including 1 entities, in source file fpgabrain.vhdl
-    Info (12022): Found design unit 1: fpgabrain-bhv File: G:/fpga-brain/fpgabrain.vhdl Line: 34
-    Info (12023): Found entity 1: fpgabrain File: G:/fpga-brain/fpgabrain.vhdl Line: 7
+    Info (12022): Found design unit 1: fpgabrain-bhv File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 34
+    Info (12023): Found entity 1: fpgabrain File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file vga.vhd
-    Info (12022): Found design unit 1: VGA-MAIN File: G:/fpga-brain/VGA.vhd Line: 15
-    Info (12023): Found entity 1: VGA File: G:/fpga-brain/VGA.vhd Line: 5
+    Info (12022): Found design unit 1: VGA-MAIN File: G:/fpga-brain/FIRMWARE/VGA.vhd Line: 15
+    Info (12023): Found entity 1: VGA File: G:/fpga-brain/FIRMWARE/VGA.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file sync.vhd
-    Info (12022): Found design unit 1: SYNC-MAIN File: G:/fpga-brain/SYNC.vhd Line: 15
-    Info (12023): Found entity 1: SYNC File: G:/fpga-brain/SYNC.vhd Line: 5
+    Info (12022): Found design unit 1: SYNC-MAIN File: G:/fpga-brain/FIRMWARE/SYNC.vhd Line: 15
+    Info (12023): Found entity 1: SYNC File: G:/fpga-brain/FIRMWARE/SYNC.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file pll.vhd
-    Info (12022): Found design unit 1: pll-SYN File: G:/fpga-brain/pll.vhd Line: 54
-    Info (12023): Found entity 1: pll File: G:/fpga-brain/pll.vhd Line: 42
+    Info (12022): Found design unit 1: pll-SYN File: G:/fpga-brain/FIRMWARE/pll.vhd Line: 54
+    Info (12023): Found entity 1: pll File: G:/fpga-brain/FIRMWARE/pll.vhd Line: 42
 Info (12021): Found 1 design units, including 1 entities, in source file fulladder.bdf
     Info (12023): Found entity 1: fulladder
 Info (12021): Found 1 design units, including 1 entities, in source file sum8.bdf
     Info (12023): Found entity 1: sum8
 Info (12021): Found 2 design units, including 1 entities, in source file net.vhd
-    Info (12022): Found design unit 1: net-bhv File: G:/fpga-brain/net.vhd Line: 104
-    Info (12023): Found entity 1: net File: G:/fpga-brain/net.vhd Line: 5
+    Info (12022): Found design unit 1: net-bhv File: G:/fpga-brain/FIRMWARE/net.vhd Line: 104
+    Info (12023): Found entity 1: net File: G:/fpga-brain/FIRMWARE/net.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file neuron.vhd
-    Info (12022): Found design unit 1: neuron-bdf_type File: G:/fpga-brain/neuron.vhd Line: 25
-    Info (12023): Found entity 1: neuron File: G:/fpga-brain/neuron.vhd Line: 7
+    Info (12022): Found design unit 1: neuron-bdf_type File: G:/fpga-brain/FIRMWARE/neuron.vhd Line: 25
+    Info (12023): Found entity 1: neuron File: G:/fpga-brain/FIRMWARE/neuron.vhd Line: 7
 Info (12021): Found 4 design units, including 2 entities, in source file altfp_mul.vhd
-    Info (12022): Found design unit 1: altfp_mul_altfp_mult_trn-RTL File: G:/fpga-brain/altfp_mul.vhd Line: 56
-    Info (12022): Found design unit 2: altfp_mul-RTL File: G:/fpga-brain/altfp_mul.vhd Line: 1433
-    Info (12023): Found entity 1: altfp_mul_altfp_mult_trn File: G:/fpga-brain/altfp_mul.vhd Line: 46
-    Info (12023): Found entity 2: altfp_mul File: G:/fpga-brain/altfp_mul.vhd Line: 1422
+    Info (12022): Found design unit 1: altfp_mul_altfp_mult_trn-RTL File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 56
+    Info (12022): Found design unit 2: altfp_mul-RTL File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1433
+    Info (12023): Found entity 1: altfp_mul_altfp_mult_trn File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 46
+    Info (12023): Found entity 2: altfp_mul File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1422
 Info (12021): Found 44 design units, including 22 entities, in source file altfp_addsub.vhd
-    Info (12022): Found design unit 1: altfp_addsub_altbarrel_shift_35e-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 59
-    Info (12022): Found design unit 2: altfp_addsub_altbarrel_shift_olb-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 314
-    Info (12022): Found design unit 3: altfp_addsub_altpriority_encoder_3e8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 557
-    Info (12022): Found design unit 4: altfp_addsub_altpriority_encoder_6e8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 579
-    Info (12022): Found design unit 5: altfp_addsub_altpriority_encoder_be8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 633
-    Info (12022): Found design unit 6: altfp_addsub_altpriority_encoder_3v7-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 704
-    Info (12022): Found design unit 7: altfp_addsub_altpriority_encoder_6v7-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 724
-    Info (12022): Found design unit 8: altfp_addsub_altpriority_encoder_bv7-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 781
-    Info (12022): Found design unit 9: altfp_addsub_altpriority_encoder_r08-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 844
-    Info (12022): Found design unit 10: altfp_addsub_altpriority_encoder_rf8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 912
-    Info (12022): Found design unit 11: altfp_addsub_altpriority_encoder_qb6-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 971
-    Info (12022): Found design unit 12: altfp_addsub_altpriority_encoder_nh8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1055
-    Info (12022): Found design unit 13: altfp_addsub_altpriority_encoder_qh8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1081
-    Info (12022): Found design unit 14: altfp_addsub_altpriority_encoder_vh8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1135
-    Info (12022): Found design unit 15: altfp_addsub_altpriority_encoder_fj8-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1195
-    Info (12022): Found design unit 16: altfp_addsub_altpriority_encoder_n28-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1270
-    Info (12022): Found design unit 17: altfp_addsub_altpriority_encoder_q28-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1294
-    Info (12022): Found design unit 18: altfp_addsub_altpriority_encoder_v28-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1351
-    Info (12022): Found design unit 19: altfp_addsub_altpriority_encoder_f48-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1414
-    Info (12022): Found design unit 20: altfp_addsub_altpriority_encoder_e48-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1477
-    Info (12022): Found design unit 21: altfp_addsub_altfp_add_sub_55j-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 1545
-    Info (12022): Found design unit 22: altfp_addsub-RTL File: G:/fpga-brain/altfp_addsub.vhd Line: 4772
-    Info (12023): Found entity 1: altfp_addsub_altbarrel_shift_35e File: G:/fpga-brain/altfp_addsub.vhd Line: 47
-    Info (12023): Found entity 2: altfp_addsub_altbarrel_shift_olb File: G:/fpga-brain/altfp_addsub.vhd Line: 305
-    Info (12023): Found entity 3: altfp_addsub_altpriority_encoder_3e8 File: G:/fpga-brain/altfp_addsub.vhd Line: 548
-    Info (12023): Found entity 4: altfp_addsub_altpriority_encoder_6e8 File: G:/fpga-brain/altfp_addsub.vhd Line: 570
-    Info (12023): Found entity 5: altfp_addsub_altpriority_encoder_be8 File: G:/fpga-brain/altfp_addsub.vhd Line: 624
-    Info (12023): Found entity 6: altfp_addsub_altpriority_encoder_3v7 File: G:/fpga-brain/altfp_addsub.vhd Line: 696
-    Info (12023): Found entity 7: altfp_addsub_altpriority_encoder_6v7 File: G:/fpga-brain/altfp_addsub.vhd Line: 716
-    Info (12023): Found entity 8: altfp_addsub_altpriority_encoder_bv7 File: G:/fpga-brain/altfp_addsub.vhd Line: 773
-    Info (12023): Found entity 9: altfp_addsub_altpriority_encoder_r08 File: G:/fpga-brain/altfp_addsub.vhd Line: 836
-    Info (12023): Found entity 10: altfp_addsub_altpriority_encoder_rf8 File: G:/fpga-brain/altfp_addsub.vhd Line: 903
-    Info (12023): Found entity 11: altfp_addsub_altpriority_encoder_qb6 File: G:/fpga-brain/altfp_addsub.vhd Line: 963
-    Info (12023): Found entity 12: altfp_addsub_altpriority_encoder_nh8 File: G:/fpga-brain/altfp_addsub.vhd Line: 1046
-    Info (12023): Found entity 13: altfp_addsub_altpriority_encoder_qh8 File: G:/fpga-brain/altfp_addsub.vhd Line: 1072
-    Info (12023): Found entity 14: altfp_addsub_altpriority_encoder_vh8 File: G:/fpga-brain/altfp_addsub.vhd Line: 1126
-    Info (12023): Found entity 15: altfp_addsub_altpriority_encoder_fj8 File: G:/fpga-brain/altfp_addsub.vhd Line: 1186
-    Info (12023): Found entity 16: altfp_addsub_altpriority_encoder_n28 File: G:/fpga-brain/altfp_addsub.vhd Line: 1262
-    Info (12023): Found entity 17: altfp_addsub_altpriority_encoder_q28 File: G:/fpga-brain/altfp_addsub.vhd Line: 1286
-    Info (12023): Found entity 18: altfp_addsub_altpriority_encoder_v28 File: G:/fpga-brain/altfp_addsub.vhd Line: 1343
-    Info (12023): Found entity 19: altfp_addsub_altpriority_encoder_f48 File: G:/fpga-brain/altfp_addsub.vhd Line: 1406
-    Info (12023): Found entity 20: altfp_addsub_altpriority_encoder_e48 File: G:/fpga-brain/altfp_addsub.vhd Line: 1469
-    Info (12023): Found entity 21: altfp_addsub_altfp_add_sub_55j File: G:/fpga-brain/altfp_addsub.vhd Line: 1535
-    Info (12023): Found entity 22: altfp_addsub File: G:/fpga-brain/altfp_addsub.vhd Line: 4761
+    Info (12022): Found design unit 1: altfp_addsub_altbarrel_shift_35e-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 59
+    Info (12022): Found design unit 2: altfp_addsub_altbarrel_shift_olb-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 314
+    Info (12022): Found design unit 3: altfp_addsub_altpriority_encoder_3e8-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 557
+    Info (12022): Found design unit 4: altfp_addsub_altpriority_encoder_6e8-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 579
+    Info (12022): Found design unit 5: altfp_addsub_altpriority_encoder_be8-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 633
+    Info (12022): Found design unit 6: altfp_addsub_altpriority_encoder_3v7-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 704
+    Info (12022): Found design unit 7: altfp_addsub_altpriority_encoder_6v7-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 724
+    Info (12022): Found design unit 8: altfp_addsub_altpriority_encoder_bv7-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 781
+    Info (12022): Found design unit 9: altfp_addsub_altpriority_encoder_r08-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 844
+    Info (12022): Found design unit 10: altfp_addsub_altpriority_encoder_rf8-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 912
+    Info (12022): Found design unit 11: altfp_addsub_altpriority_encoder_qb6-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 971
+    Info (12022): Found design unit 12: altfp_addsub_altpriority_encoder_nh8-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1055
+    Info (12022): Found design unit 13: altfp_addsub_altpriority_encoder_qh8-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1081
+    Info (12022): Found design unit 14: altfp_addsub_altpriority_encoder_vh8-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1135
+    Info (12022): Found design unit 15: altfp_addsub_altpriority_encoder_fj8-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1195
+    Info (12022): Found design unit 16: altfp_addsub_altpriority_encoder_n28-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1270
+    Info (12022): Found design unit 17: altfp_addsub_altpriority_encoder_q28-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1294
+    Info (12022): Found design unit 18: altfp_addsub_altpriority_encoder_v28-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1351
+    Info (12022): Found design unit 19: altfp_addsub_altpriority_encoder_f48-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1414
+    Info (12022): Found design unit 20: altfp_addsub_altpriority_encoder_e48-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1477
+    Info (12022): Found design unit 21: altfp_addsub_altfp_add_sub_55j-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1545
+    Info (12022): Found design unit 22: altfp_addsub-RTL File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4772
+    Info (12023): Found entity 1: altfp_addsub_altbarrel_shift_35e File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 47
+    Info (12023): Found entity 2: altfp_addsub_altbarrel_shift_olb File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 305
+    Info (12023): Found entity 3: altfp_addsub_altpriority_encoder_3e8 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 548
+    Info (12023): Found entity 4: altfp_addsub_altpriority_encoder_6e8 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 570
+    Info (12023): Found entity 5: altfp_addsub_altpriority_encoder_be8 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 624
+    Info (12023): Found entity 6: altfp_addsub_altpriority_encoder_3v7 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 696
+    Info (12023): Found entity 7: altfp_addsub_altpriority_encoder_6v7 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 716
+    Info (12023): Found entity 8: altfp_addsub_altpriority_encoder_bv7 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 773
+    Info (12023): Found entity 9: altfp_addsub_altpriority_encoder_r08 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 836
+    Info (12023): Found entity 10: altfp_addsub_altpriority_encoder_rf8 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 903
+    Info (12023): Found entity 11: altfp_addsub_altpriority_encoder_qb6 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 963
+    Info (12023): Found entity 12: altfp_addsub_altpriority_encoder_nh8 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1046
+    Info (12023): Found entity 13: altfp_addsub_altpriority_encoder_qh8 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1072
+    Info (12023): Found entity 14: altfp_addsub_altpriority_encoder_vh8 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1126
+    Info (12023): Found entity 15: altfp_addsub_altpriority_encoder_fj8 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1186
+    Info (12023): Found entity 16: altfp_addsub_altpriority_encoder_n28 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1262
+    Info (12023): Found entity 17: altfp_addsub_altpriority_encoder_q28 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1286
+    Info (12023): Found entity 18: altfp_addsub_altpriority_encoder_v28 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1343
+    Info (12023): Found entity 19: altfp_addsub_altpriority_encoder_f48 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1406
+    Info (12023): Found entity 20: altfp_addsub_altpriority_encoder_e48 File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1469
+    Info (12023): Found entity 21: altfp_addsub_altfp_add_sub_55j File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1535
+    Info (12023): Found entity 22: altfp_addsub File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4761
 Info (12021): Found 4 design units, including 2 entities, in source file altfpcompm.vhd
-    Info (12022): Found design unit 1: altfpcompM_altfp_compare_58b-RTL File: G:/fpga-brain/altfpcompM.vhd Line: 56
-    Info (12022): Found design unit 2: altfpcompm-RTL File: G:/fpga-brain/altfpcompM.vhd Line: 1021
-    Info (12023): Found entity 1: altfpcompM_altfp_compare_58b File: G:/fpga-brain/altfpcompM.vhd Line: 46
-    Info (12023): Found entity 2: altfpcompM File: G:/fpga-brain/altfpcompM.vhd Line: 1010
+    Info (12022): Found design unit 1: altfpcompM_altfp_compare_58b-RTL File: G:/fpga-brain/FIRMWARE/altfpcompM.vhd Line: 56
+    Info (12022): Found design unit 2: altfpcompm-RTL File: G:/fpga-brain/FIRMWARE/altfpcompM.vhd Line: 1021
+    Info (12023): Found entity 1: altfpcompM_altfp_compare_58b File: G:/fpga-brain/FIRMWARE/altfpcompM.vhd Line: 46
+    Info (12023): Found entity 2: altfpcompM File: G:/fpga-brain/FIRMWARE/altfpcompM.vhd Line: 1010
 Info (12021): Found 2 design units, including 1 entities, in source file ram1port.vhd
-    Info (12022): Found design unit 1: ram1port-SYN File: G:/fpga-brain/ram1port.vhd Line: 54
-    Info (12023): Found entity 1: ram1port File: G:/fpga-brain/ram1port.vhd Line: 42
+    Info (12022): Found design unit 1: ram1port-SYN File: G:/fpga-brain/FIRMWARE/ram1port.vhd Line: 54
+    Info (12023): Found entity 1: ram1port File: G:/fpga-brain/FIRMWARE/ram1port.vhd Line: 42
 Info (12021): Found 2 design units, including 1 entities, in source file ram16.vhd
-    Info (12022): Found design unit 1: ram16-bhv File: G:/fpga-brain/ram16.vhd Line: 37
-    Info (12023): Found entity 1: ram16 File: G:/fpga-brain/ram16.vhd Line: 6
+    Info (12022): Found design unit 1: ram16-bhv File: G:/fpga-brain/FIRMWARE/ram16.vhd Line: 37
+    Info (12023): Found entity 1: ram16 File: G:/fpga-brain/FIRMWARE/ram16.vhd Line: 6
 Info (12127): Elaborating entity "fpgabrain" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at fpgabrain.vhdl(190): used implicit default value for signal "areset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/fpgabrain.vhdl Line: 190
-Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(191): object "locked" assigned a value but never read File: G:/fpga-brain/fpgabrain.vhdl Line: 191
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(194): used explicit default value for signal "i0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 194
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(195): used explicit default value for signal "i1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 195
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(196): used explicit default value for signal "i2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 196
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(197): used explicit default value for signal "i3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 197
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(198): used explicit default value for signal "i4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 198
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(199): used explicit default value for signal "wi0_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 199
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(200): used explicit default value for signal "wi0_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 200
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(201): used explicit default value for signal "wi0_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 201
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(202): used explicit default value for signal "wi0_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 202
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(203): used explicit default value for signal "wi0_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 203
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(204): used explicit default value for signal "wi1_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 204
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(205): used explicit default value for signal "wi1_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 205
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(206): used explicit default value for signal "wi1_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 206
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(207): used explicit default value for signal "wi1_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 207
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(208): used explicit default value for signal "wi1_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 208
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(209): used explicit default value for signal "wi2_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 209
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(210): used explicit default value for signal "wi2_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 210
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(211): used explicit default value for signal "wi2_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 211
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(212): used explicit default value for signal "wi2_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 212
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(213): used explicit default value for signal "wi2_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 213
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(214): used explicit default value for signal "wi3_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 214
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(215): used explicit default value for signal "wi3_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 215
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(216): used explicit default value for signal "wi3_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 216
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(217): used explicit default value for signal "wi3_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 217
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(218): used explicit default value for signal "wi3_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 218
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(219): used explicit default value for signal "wi4_h0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 219
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(220): used explicit default value for signal "wi4_h1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 220
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(221): used explicit default value for signal "wi4_h2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 221
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(222): used explicit default value for signal "wi4_h3" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 222
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(223): used explicit default value for signal "wi4_h4" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 223
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(225): used explicit default value for signal "wh0_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 225
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(226): used explicit default value for signal "wh0_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 226
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(227): used explicit default value for signal "wh0_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 227
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(228): used explicit default value for signal "wh0_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 228
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(229): used explicit default value for signal "wh0_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 229
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(230): used explicit default value for signal "wh1_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 230
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(231): used explicit default value for signal "wh1_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 231
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(232): used explicit default value for signal "wh1_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 232
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(233): used explicit default value for signal "wh1_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 233
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(234): used explicit default value for signal "wh1_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 234
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(235): used explicit default value for signal "wh2_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 235
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(236): used explicit default value for signal "wh2_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 236
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(237): used explicit default value for signal "wh2_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 237
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(238): used explicit default value for signal "wh2_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 238
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(239): used explicit default value for signal "wh2_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 239
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(240): used explicit default value for signal "wh3_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 240
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(241): used explicit default value for signal "wh3_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 241
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(242): used explicit default value for signal "wh3_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 242
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(243): used explicit default value for signal "wh3_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 243
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(244): used explicit default value for signal "wh3_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 244
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(245): used explicit default value for signal "wh4_h5" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 245
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(246): used explicit default value for signal "wh4_h6" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 246
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(247): used explicit default value for signal "wh4_h7" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 247
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(248): used explicit default value for signal "wh4_h8" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 248
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(249): used explicit default value for signal "wh4_h9" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 249
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(251): used explicit default value for signal "wh5_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 251
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(252): used explicit default value for signal "wh5_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 252
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(253): used explicit default value for signal "wh5_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 253
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(254): used explicit default value for signal "wh6_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 254
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(255): used explicit default value for signal "wh6_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 255
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(256): used explicit default value for signal "wh6_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 256
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(257): used explicit default value for signal "wh7_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 257
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(258): used explicit default value for signal "wh7_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 258
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(259): used explicit default value for signal "wh7_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 259
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(260): used explicit default value for signal "wh8_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 260
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(261): used explicit default value for signal "wh8_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 261
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(262): used explicit default value for signal "wh8_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 262
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(263): used explicit default value for signal "wh9_out0" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 263
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(264): used explicit default value for signal "wh9_out1" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 264
-Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(265): used explicit default value for signal "wh9_out2" because signal was never assigned a value File: G:/fpga-brain/fpgabrain.vhdl Line: 265
-Info (12128): Elaborating entity "pll" for hierarchy "pll:c1" File: G:/fpga-brain/fpgabrain.vhdl Line: 283
-Info (12128): Elaborating entity "altpll" for hierarchy "pll:c1|altpll:altpll_component" File: G:/fpga-brain/pll.vhd Line: 148
-Info (12130): Elaborated megafunction instantiation "pll:c1|altpll:altpll_component" File: G:/fpga-brain/pll.vhd Line: 148
-Info (12133): Instantiated megafunction "pll:c1|altpll:altpll_component" with the following parameter: File: G:/fpga-brain/pll.vhd Line: 148
+Warning (10541): VHDL Signal Declaration warning at fpgabrain.vhdl(190): used implicit default value for signal "areset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 190
+Warning (10036): Verilog HDL or VHDL warning at fpgabrain.vhdl(191): object "locked" assigned a value but never read File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 191
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(194): used explicit default value for signal "i0" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 194
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(195): used explicit default value for signal "i1" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 195
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(196): used explicit default value for signal "i2" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 196
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(197): used explicit default value for signal "i3" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 197
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(198): used explicit default value for signal "i4" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 198
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(199): used explicit default value for signal "wi0_h0" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 199
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(200): used explicit default value for signal "wi0_h1" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 200
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(201): used explicit default value for signal "wi0_h2" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 201
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(202): used explicit default value for signal "wi0_h3" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 202
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(203): used explicit default value for signal "wi0_h4" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 203
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(204): used explicit default value for signal "wi1_h0" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 204
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(205): used explicit default value for signal "wi1_h1" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 205
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(206): used explicit default value for signal "wi1_h2" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 206
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(207): used explicit default value for signal "wi1_h3" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 207
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(208): used explicit default value for signal "wi1_h4" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 208
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(209): used explicit default value for signal "wi2_h0" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 209
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(210): used explicit default value for signal "wi2_h1" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 210
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(211): used explicit default value for signal "wi2_h2" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 211
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(212): used explicit default value for signal "wi2_h3" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 212
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(213): used explicit default value for signal "wi2_h4" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 213
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(214): used explicit default value for signal "wi3_h0" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 214
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(215): used explicit default value for signal "wi3_h1" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 215
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(216): used explicit default value for signal "wi3_h2" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 216
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(217): used explicit default value for signal "wi3_h3" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 217
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(218): used explicit default value for signal "wi3_h4" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 218
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(219): used explicit default value for signal "wi4_h0" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 219
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(220): used explicit default value for signal "wi4_h1" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 220
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(221): used explicit default value for signal "wi4_h2" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 221
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(222): used explicit default value for signal "wi4_h3" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 222
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(223): used explicit default value for signal "wi4_h4" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 223
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(225): used explicit default value for signal "wh0_h5" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 225
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(226): used explicit default value for signal "wh0_h6" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 226
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(227): used explicit default value for signal "wh0_h7" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 227
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(228): used explicit default value for signal "wh0_h8" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 228
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(229): used explicit default value for signal "wh0_h9" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 229
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(230): used explicit default value for signal "wh1_h5" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 230
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(231): used explicit default value for signal "wh1_h6" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 231
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(232): used explicit default value for signal "wh1_h7" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 232
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(233): used explicit default value for signal "wh1_h8" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 233
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(234): used explicit default value for signal "wh1_h9" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 234
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(235): used explicit default value for signal "wh2_h5" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 235
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(236): used explicit default value for signal "wh2_h6" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 236
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(237): used explicit default value for signal "wh2_h7" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 237
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(238): used explicit default value for signal "wh2_h8" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 238
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(239): used explicit default value for signal "wh2_h9" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 239
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(240): used explicit default value for signal "wh3_h5" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 240
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(241): used explicit default value for signal "wh3_h6" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 241
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(242): used explicit default value for signal "wh3_h7" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 242
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(243): used explicit default value for signal "wh3_h8" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 243
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(244): used explicit default value for signal "wh3_h9" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 244
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(245): used explicit default value for signal "wh4_h5" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 245
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(246): used explicit default value for signal "wh4_h6" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 246
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(247): used explicit default value for signal "wh4_h7" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 247
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(248): used explicit default value for signal "wh4_h8" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 248
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(249): used explicit default value for signal "wh4_h9" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 249
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(251): used explicit default value for signal "wh5_out0" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 251
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(252): used explicit default value for signal "wh5_out1" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 252
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(253): used explicit default value for signal "wh5_out2" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 253
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(254): used explicit default value for signal "wh6_out0" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 254
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(255): used explicit default value for signal "wh6_out1" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 255
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(256): used explicit default value for signal "wh6_out2" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 256
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(257): used explicit default value for signal "wh7_out0" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 257
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(258): used explicit default value for signal "wh7_out1" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 258
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(259): used explicit default value for signal "wh7_out2" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 259
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(260): used explicit default value for signal "wh8_out0" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 260
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(261): used explicit default value for signal "wh8_out1" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 261
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(262): used explicit default value for signal "wh8_out2" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 262
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(263): used explicit default value for signal "wh9_out0" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 263
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(264): used explicit default value for signal "wh9_out1" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 264
+Warning (10540): VHDL Signal Declaration warning at fpgabrain.vhdl(265): used explicit default value for signal "wh9_out2" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 265
+Info (12128): Elaborating entity "pll" for hierarchy "pll:c1" File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 283
+Info (12128): Elaborating entity "altpll" for hierarchy "pll:c1|altpll:altpll_component" File: G:/fpga-brain/FIRMWARE/pll.vhd Line: 148
+Info (12130): Elaborated megafunction instantiation "pll:c1|altpll:altpll_component" File: G:/fpga-brain/FIRMWARE/pll.vhd Line: 148
+Info (12133): Instantiated megafunction "pll:c1|altpll:altpll_component" with the following parameter: File: G:/fpga-brain/FIRMWARE/pll.vhd Line: 148
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "147"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -3636,29 +3636,29 @@ Info (12133): Instantiated megafunction "pll:c1|altpll:altpll_component" with th
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll1.v
-    Info (12023): Found entity 1: pll_altpll1 File: G:/fpga-brain/db/pll_altpll1.v Line: 30
+    Info (12023): Found entity 1: pll_altpll1 File: G:/fpga-brain/FIRMWARE/db/pll_altpll1.v Line: 30
 Info (12128): Elaborating entity "pll_altpll1" for hierarchy "pll:c1|altpll:altpll_component|pll_altpll1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "ram16" for hierarchy "ram16:c2" File: G:/fpga-brain/fpgabrain.vhdl Line: 287
-Info (12128): Elaborating entity "net" for hierarchy "net:c3" File: G:/fpga-brain/fpgabrain.vhdl Line: 289
-Warning (10540): VHDL Signal Declaration warning at net.vhd(108): used explicit default value for signal "s_addrCol" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 108
-Warning (10540): VHDL Signal Declaration warning at net.vhd(159): used explicit default value for signal "s_i2c_reset_n" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 159
-Warning (10036): Verilog HDL or VHDL warning at net.vhd(166): object "s_i2c_ack_error" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 166
-Warning (10036): Verilog HDL or VHDL warning at net.vhd(199): object "adjMatrixNeuronId" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 199
-Warning (10036): Verilog HDL or VHDL warning at net.vhd(202): object "adjMatrixNeuronIdInv" assigned a value but never read File: G:/fpga-brain/net.vhd Line: 202
-Warning (10540): VHDL Signal Declaration warning at net.vhd(214): used explicit default value for signal "linksArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 214
-Warning (10540): VHDL Signal Declaration warning at net.vhd(225): used explicit default value for signal "linksArraySize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 225
-Warning (10540): VHDL Signal Declaration warning at net.vhd(248): used explicit default value for signal "childLayerArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 248
-Warning (10540): VHDL Signal Declaration warning at net.vhd(263): used explicit default value for signal "neuronsLayerArrayArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 263
-Warning (10540): VHDL Signal Declaration warning at net.vhd(271): used explicit default value for signal "neuronsLayerSizeArray" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 271
-Warning (10540): VHDL Signal Declaration warning at net.vhd(276): used explicit default value for signal "neuronSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 276
-Warning (10540): VHDL Signal Declaration warning at net.vhd(277): used explicit default value for signal "neuronAdjRAMrowSize" because signal was never assigned a value File: G:/fpga-brain/net.vhd Line: 277
-Warning (10542): VHDL Variable Declaration warning at net.vhd(319): used initial value expression for variable "adjNeuronIdColStartAddr" because variable was never assigned a value File: G:/fpga-brain/net.vhd Line: 319
-Info (12128): Elaborating entity "i2c_master" for hierarchy "net:c3|i2c_master:ci2c" File: G:/fpga-brain/net.vhd Line: 313
-Info (12128): Elaborating entity "altfp_mul" for hierarchy "net:c3|altfp_mul:c0" File: G:/fpga-brain/net.vhd Line: 314
-Info (12128): Elaborating entity "altfp_mul_altfp_mult_trn" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component" File: G:/fpga-brain/altfp_mul.vhd Line: 1451
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder" File: G:/fpga-brain/altfp_mul.vhd Line: 1294
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder" File: G:/fpga-brain/altfp_mul.vhd Line: 1294
-Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder" with the following parameter: File: G:/fpga-brain/altfp_mul.vhd Line: 1294
+Info (12128): Elaborating entity "ram16" for hierarchy "ram16:c2" File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 287
+Info (12128): Elaborating entity "net" for hierarchy "net:c3" File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 289
+Warning (10540): VHDL Signal Declaration warning at net.vhd(108): used explicit default value for signal "s_addrCol" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/net.vhd Line: 108
+Warning (10540): VHDL Signal Declaration warning at net.vhd(159): used explicit default value for signal "s_i2c_reset_n" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/net.vhd Line: 159
+Warning (10036): Verilog HDL or VHDL warning at net.vhd(166): object "s_i2c_ack_error" assigned a value but never read File: G:/fpga-brain/FIRMWARE/net.vhd Line: 166
+Warning (10036): Verilog HDL or VHDL warning at net.vhd(199): object "adjMatrixNeuronId" assigned a value but never read File: G:/fpga-brain/FIRMWARE/net.vhd Line: 199
+Warning (10036): Verilog HDL or VHDL warning at net.vhd(202): object "adjMatrixNeuronIdInv" assigned a value but never read File: G:/fpga-brain/FIRMWARE/net.vhd Line: 202
+Warning (10540): VHDL Signal Declaration warning at net.vhd(214): used explicit default value for signal "linksArray" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/net.vhd Line: 214
+Warning (10540): VHDL Signal Declaration warning at net.vhd(225): used explicit default value for signal "linksArraySize" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/net.vhd Line: 225
+Warning (10540): VHDL Signal Declaration warning at net.vhd(248): used explicit default value for signal "childLayerArray" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/net.vhd Line: 248
+Warning (10540): VHDL Signal Declaration warning at net.vhd(263): used explicit default value for signal "neuronsLayerArrayArray" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/net.vhd Line: 263
+Warning (10540): VHDL Signal Declaration warning at net.vhd(271): used explicit default value for signal "neuronsLayerSizeArray" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/net.vhd Line: 271
+Warning (10540): VHDL Signal Declaration warning at net.vhd(276): used explicit default value for signal "neuronSize" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/net.vhd Line: 276
+Warning (10540): VHDL Signal Declaration warning at net.vhd(277): used explicit default value for signal "neuronAdjRAMrowSize" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/net.vhd Line: 277
+Warning (10542): VHDL Variable Declaration warning at net.vhd(319): used initial value expression for variable "adjNeuronIdColStartAddr" because variable was never assigned a value File: G:/fpga-brain/FIRMWARE/net.vhd Line: 319
+Info (12128): Elaborating entity "i2c_master" for hierarchy "net:c3|i2c_master:ci2c" File: G:/fpga-brain/FIRMWARE/net.vhd Line: 313
+Info (12128): Elaborating entity "altfp_mul" for hierarchy "net:c3|altfp_mul:c0" File: G:/fpga-brain/FIRMWARE/net.vhd Line: 314
+Info (12128): Elaborating entity "altfp_mul_altfp_mult_trn" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component" File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1451
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder" File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1294
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder" File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1294
+Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1294
     Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
     Info (12134): Parameter "LPM_PIPELINE" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
@@ -3666,11 +3666,11 @@ Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mul
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_tdj.tdf
-    Info (12023): Found entity 1: add_sub_tdj File: G:/fpga-brain/db/add_sub_tdj.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_tdj File: G:/fpga-brain/FIRMWARE/db/add_sub_tdj.tdf Line: 22
 Info (12128): Elaborating entity "add_sub_tdj" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_add_adder|add_sub_tdj:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_adj_adder" File: G:/fpga-brain/altfp_mul.vhd Line: 1325
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_adj_adder" File: G:/fpga-brain/altfp_mul.vhd Line: 1325
-Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_adj_adder" with the following parameter: File: G:/fpga-brain/altfp_mul.vhd Line: 1325
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_adj_adder" File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1325
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_adj_adder" File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1325
+Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_adj_adder" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1325
     Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
     Info (12134): Parameter "LPM_PIPELINE" = "0"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
@@ -3678,11 +3678,11 @@ Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mul
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_i5h.tdf
-    Info (12023): Found entity 1: add_sub_i5h File: G:/fpga-brain/db/add_sub_i5h.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_i5h File: G:/fpga-brain/FIRMWARE/db/add_sub_i5h.tdf Line: 22
 Info (12128): Elaborating entity "add_sub_i5h" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_adj_adder|add_sub_i5h:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_bias_subtr" File: G:/fpga-brain/altfp_mul.vhd Line: 1337
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_bias_subtr" File: G:/fpga-brain/altfp_mul.vhd Line: 1337
-Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_bias_subtr" with the following parameter: File: G:/fpga-brain/altfp_mul.vhd Line: 1337
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_bias_subtr" File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1337
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_bias_subtr" File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1337
+Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_bias_subtr" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1337
     Info (12134): Parameter "LPM_DIRECTION" = "SUB"
     Info (12134): Parameter "LPM_PIPELINE" = "0"
     Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
@@ -3690,11 +3690,11 @@ Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mul
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_0lg.tdf
-    Info (12023): Found entity 1: add_sub_0lg File: G:/fpga-brain/db/add_sub_0lg.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_0lg File: G:/fpga-brain/FIRMWARE/db/add_sub_0lg.tdf Line: 22
 Info (12128): Elaborating entity "add_sub_0lg" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:exp_bias_subtr|add_sub_0lg:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:man_round_adder" File: G:/fpga-brain/altfp_mul.vhd Line: 1351
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:man_round_adder" File: G:/fpga-brain/altfp_mul.vhd Line: 1351
-Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:man_round_adder" with the following parameter: File: G:/fpga-brain/altfp_mul.vhd Line: 1351
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:man_round_adder" File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1351
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:man_round_adder" File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1351
+Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:man_round_adder" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1351
     Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
     Info (12134): Parameter "LPM_PIPELINE" = "0"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
@@ -3702,11 +3702,11 @@ Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mul
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_uqg.tdf
-    Info (12023): Found entity 1: add_sub_uqg File: G:/fpga-brain/db/add_sub_uqg.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_uqg File: G:/fpga-brain/FIRMWARE/db/add_sub_uqg.tdf Line: 22
 Info (12128): Elaborating entity "add_sub_uqg" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_add_sub:man_round_adder|add_sub_uqg:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
-Info (12128): Elaborating entity "lpm_mult" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult" File: G:/fpga-brain/altfp_mul.vhd Line: 1396
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult" File: G:/fpga-brain/altfp_mul.vhd Line: 1396
-Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult" with the following parameter: File: G:/fpga-brain/altfp_mul.vhd Line: 1396
+Info (12128): Elaborating entity "lpm_mult" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult" File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1396
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult" File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1396
+Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_mul.vhd Line: 1396
     Info (12134): Parameter "LPM_PIPELINE" = "2"
     Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_WIDTHA" = "24"
@@ -3716,33 +3716,33 @@ Info (12133): Instantiated megafunction "net:c3|altfp_mul:c0|altfp_mul_altfp_mul
     Info (12134): Parameter "lpm_hint" = "DEDICATED_MULTIPLIER_CIRCUITRY=YES"
     Info (12134): Parameter "lpm_type" = "lpm_mult"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_5ks.tdf
-    Info (12023): Found entity 1: mult_5ks File: G:/fpga-brain/db/mult_5ks.tdf Line: 33
+    Info (12023): Found entity 1: mult_5ks File: G:/fpga-brain/FIRMWARE/db/mult_5ks.tdf Line: 33
 Info (12128): Elaborating entity "mult_5ks" for hierarchy "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 376
-Info (12128): Elaborating entity "altfp_addsub" for hierarchy "net:c3|altfp_addsub:c1" File: G:/fpga-brain/net.vhd Line: 315
-Info (12128): Elaborating entity "altfp_addsub_altfp_add_sub_55j" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component" File: G:/fpga-brain/altfp_addsub.vhd Line: 4790
-Info (12128): Elaborating entity "altfp_addsub_altbarrel_shift_35e" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift" File: G:/fpga-brain/altfp_addsub.vhd Line: 3974
-Info (12128): Elaborating entity "altfp_addsub_altbarrel_shift_olb" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift" File: G:/fpga-brain/altfp_addsub.vhd Line: 3984
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_qb6" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt" File: G:/fpga-brain/altfp_addsub.vhd Line: 3991
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_r08" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7" File: G:/fpga-brain/altfp_addsub.vhd Line: 998
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_be8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7|altfp_addsub_altpriority_encoder_be8:altpriority_encoder10" File: G:/fpga-brain/altfp_addsub.vhd Line: 881
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_6e8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7|altfp_addsub_altpriority_encoder_be8:altpriority_encoder10|altfp_addsub_altpriority_encoder_6e8:altpriority_encoder11" File: G:/fpga-brain/altfp_addsub.vhd Line: 655
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_3e8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7|altfp_addsub_altpriority_encoder_be8:altpriority_encoder10|altfp_addsub_altpriority_encoder_6e8:altpriority_encoder11|altfp_addsub_altpriority_encoder_3e8:altpriority_encoder13" File: G:/fpga-brain/altfp_addsub.vhd Line: 601
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_bv7" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7|altfp_addsub_altpriority_encoder_bv7:altpriority_encoder9" File: G:/fpga-brain/altfp_addsub.vhd Line: 887
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_6v7" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7|altfp_addsub_altpriority_encoder_bv7:altpriority_encoder9|altfp_addsub_altpriority_encoder_6v7:altpriority_encoder15" File: G:/fpga-brain/altfp_addsub.vhd Line: 808
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_3v7" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7|altfp_addsub_altpriority_encoder_bv7:altpriority_encoder9|altfp_addsub_altpriority_encoder_6v7:altpriority_encoder15|altfp_addsub_altpriority_encoder_3v7:altpriority_encoder17" File: G:/fpga-brain/altfp_addsub.vhd Line: 751
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_rf8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_rf8:altpriority_encoder8" File: G:/fpga-brain/altfp_addsub.vhd Line: 1013
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_e48" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt" File: G:/fpga-brain/altfp_addsub.vhd Line: 3997
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_fj8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21" File: G:/fpga-brain/altfp_addsub.vhd Line: 1514
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_vh8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|altfp_addsub_altpriority_encoder_vh8:altpriority_encoder23" File: G:/fpga-brain/altfp_addsub.vhd Line: 1227
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_qh8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|altfp_addsub_altpriority_encoder_vh8:altpriority_encoder23|altfp_addsub_altpriority_encoder_qh8:altpriority_encoder25" File: G:/fpga-brain/altfp_addsub.vhd Line: 1167
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_nh8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|altfp_addsub_altpriority_encoder_vh8:altpriority_encoder23|altfp_addsub_altpriority_encoder_qh8:altpriority_encoder25|altfp_addsub_altpriority_encoder_nh8:altpriority_encoder27" File: G:/fpga-brain/altfp_addsub.vhd Line: 1107
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_f48" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_f48:altpriority_encoder22" File: G:/fpga-brain/altfp_addsub.vhd Line: 1520
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_v28" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_f48:altpriority_encoder22|altfp_addsub_altpriority_encoder_v28:altpriority_encoder30" File: G:/fpga-brain/altfp_addsub.vhd Line: 1457
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_q28" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_f48:altpriority_encoder22|altfp_addsub_altpriority_encoder_v28:altpriority_encoder30|altfp_addsub_altpriority_encoder_q28:altpriority_encoder32" File: G:/fpga-brain/altfp_addsub.vhd Line: 1394
-Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_n28" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_f48:altpriority_encoder22|altfp_addsub_altpriority_encoder_v28:altpriority_encoder30|altfp_addsub_altpriority_encoder_q28:altpriority_encoder32|altfp_addsub_altpriority_encoder_n28:altpriority_encoder34" File: G:/fpga-brain/altfp_addsub.vhd Line: 1331
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub1" File: G:/fpga-brain/altfp_addsub.vhd Line: 4514
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub1" File: G:/fpga-brain/altfp_addsub.vhd Line: 4514
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub1" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4514
+Info (12128): Elaborating entity "altfp_addsub" for hierarchy "net:c3|altfp_addsub:c1" File: G:/fpga-brain/FIRMWARE/net.vhd Line: 315
+Info (12128): Elaborating entity "altfp_addsub_altfp_add_sub_55j" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4790
+Info (12128): Elaborating entity "altfp_addsub_altbarrel_shift_35e" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_35e:lbarrel_shift" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 3974
+Info (12128): Elaborating entity "altfp_addsub_altbarrel_shift_olb" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altbarrel_shift_olb:rbarrel_shift" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 3984
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_qb6" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 3991
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_r08" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 998
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_be8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7|altfp_addsub_altpriority_encoder_be8:altpriority_encoder10" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 881
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_6e8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7|altfp_addsub_altpriority_encoder_be8:altpriority_encoder10|altfp_addsub_altpriority_encoder_6e8:altpriority_encoder11" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 655
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_3e8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7|altfp_addsub_altpriority_encoder_be8:altpriority_encoder10|altfp_addsub_altpriority_encoder_6e8:altpriority_encoder11|altfp_addsub_altpriority_encoder_3e8:altpriority_encoder13" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 601
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_bv7" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7|altfp_addsub_altpriority_encoder_bv7:altpriority_encoder9" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 887
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_6v7" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7|altfp_addsub_altpriority_encoder_bv7:altpriority_encoder9|altfp_addsub_altpriority_encoder_6v7:altpriority_encoder15" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 808
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_3v7" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_r08:altpriority_encoder7|altfp_addsub_altpriority_encoder_bv7:altpriority_encoder9|altfp_addsub_altpriority_encoder_6v7:altpriority_encoder15|altfp_addsub_altpriority_encoder_3v7:altpriority_encoder17" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 751
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_rf8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_qb6:leading_zeroes_cnt|altfp_addsub_altpriority_encoder_rf8:altpriority_encoder8" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1013
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_e48" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 3997
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_fj8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1514
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_vh8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|altfp_addsub_altpriority_encoder_vh8:altpriority_encoder23" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1227
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_qh8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|altfp_addsub_altpriority_encoder_vh8:altpriority_encoder23|altfp_addsub_altpriority_encoder_qh8:altpriority_encoder25" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1167
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_nh8" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_fj8:altpriority_encoder21|altfp_addsub_altpriority_encoder_vh8:altpriority_encoder23|altfp_addsub_altpriority_encoder_qh8:altpriority_encoder25|altfp_addsub_altpriority_encoder_nh8:altpriority_encoder27" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1107
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_f48" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_f48:altpriority_encoder22" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1520
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_v28" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_f48:altpriority_encoder22|altfp_addsub_altpriority_encoder_v28:altpriority_encoder30" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1457
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_q28" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_f48:altpriority_encoder22|altfp_addsub_altpriority_encoder_v28:altpriority_encoder30|altfp_addsub_altpriority_encoder_q28:altpriority_encoder32" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1394
+Info (12128): Elaborating entity "altfp_addsub_altpriority_encoder_n28" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|altfp_addsub_altpriority_encoder_e48:trailing_zeros_cnt|altfp_addsub_altpriority_encoder_f48:altpriority_encoder22|altfp_addsub_altpriority_encoder_v28:altpriority_encoder30|altfp_addsub_altpriority_encoder_q28:altpriority_encoder32|altfp_addsub_altpriority_encoder_n28:altpriority_encoder34" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 1331
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub1" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4514
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub1" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4514
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub1" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4514
     Info (12134): Parameter "LPM_DIRECTION" = "SUB"
     Info (12134): Parameter "LPM_PIPELINE" = "0"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
@@ -3750,20 +3750,20 @@ Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_alt
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lcg.tdf
-    Info (12023): Found entity 1: add_sub_lcg File: G:/fpga-brain/db/add_sub_lcg.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_lcg File: G:/fpga-brain/FIRMWARE/db/add_sub_lcg.tdf Line: 22
 Info (12128): Elaborating entity "add_sub_lcg" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub1|add_sub_lcg:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub2" File: G:/fpga-brain/altfp_addsub.vhd Line: 4525
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub2" File: G:/fpga-brain/altfp_addsub.vhd Line: 4525
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub2" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4525
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub2" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4525
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub2" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4525
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub2" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4525
     Info (12134): Parameter "LPM_DIRECTION" = "SUB"
     Info (12134): Parameter "LPM_PIPELINE" = "0"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_WIDTH" = "9"
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub3" File: G:/fpga-brain/altfp_addsub.vhd Line: 4536
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub3" File: G:/fpga-brain/altfp_addsub.vhd Line: 4536
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub3" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4536
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub3" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4536
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub3" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4536
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub3" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4536
     Info (12134): Parameter "LPM_DIRECTION" = "SUB"
     Info (12134): Parameter "LPM_PIPELINE" = "0"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
@@ -3771,11 +3771,11 @@ Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_alt
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_icg.tdf
-    Info (12023): Found entity 1: add_sub_icg File: G:/fpga-brain/db/add_sub_icg.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_icg File: G:/fpga-brain/FIRMWARE/db/add_sub_icg.tdf Line: 22
 Info (12128): Elaborating entity "add_sub_icg" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub3|add_sub_icg:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub4" File: G:/fpga-brain/altfp_addsub.vhd Line: 4547
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub4" File: G:/fpga-brain/altfp_addsub.vhd Line: 4547
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub4" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4547
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub4" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4547
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub4" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4547
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub4" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4547
     Info (12134): Parameter "LPM_DIRECTION" = "ADD"
     Info (12134): Parameter "LPM_PIPELINE" = "0"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
@@ -3783,11 +3783,11 @@ Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_alt
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_kbg.tdf
-    Info (12023): Found entity 1: add_sub_kbg File: G:/fpga-brain/db/add_sub_kbg.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_kbg File: G:/fpga-brain/FIRMWARE/db/add_sub_kbg.tdf Line: 22
 Info (12128): Elaborating entity "add_sub_kbg" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub4|add_sub_kbg:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub5" File: G:/fpga-brain/altfp_addsub.vhd Line: 4558
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub5" File: G:/fpga-brain/altfp_addsub.vhd Line: 4558
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub5" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4558
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub5" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4558
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub5" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4558
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub5" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4558
     Info (12134): Parameter "LPM_DIRECTION" = "ADD"
     Info (12134): Parameter "LPM_PIPELINE" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
@@ -3795,20 +3795,20 @@ Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_alt
     Info (12134): Parameter "lpm_hint" = "USE_WYS=ON"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_kpj.tdf
-    Info (12023): Found entity 1: add_sub_kpj File: G:/fpga-brain/db/add_sub_kpj.tdf Line: 25
+    Info (12023): Found entity 1: add_sub_kpj File: G:/fpga-brain/FIRMWARE/db/add_sub_kpj.tdf Line: 25
 Info (12128): Elaborating entity "add_sub_kpj" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub5|add_sub_kpj:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub6" File: G:/fpga-brain/altfp_addsub.vhd Line: 4574
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub6" File: G:/fpga-brain/altfp_addsub.vhd Line: 4574
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub6" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4574
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub6" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4574
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub6" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4574
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:add_sub6" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4574
     Info (12134): Parameter "LPM_DIRECTION" = "ADD"
     Info (12134): Parameter "LPM_PIPELINE" = "0"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_WIDTH" = "9"
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_lower" File: G:/fpga-brain/altfp_addsub.vhd Line: 4595
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_lower" File: G:/fpga-brain/altfp_addsub.vhd Line: 4595
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_lower" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4595
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_lower" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4595
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_lower" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4595
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_lower" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4595
     Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
     Info (12134): Parameter "LPM_PIPELINE" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
@@ -3816,11 +3816,11 @@ Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_alt
     Info (12134): Parameter "lpm_hint" = "USE_WYS=ON"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_3ql.tdf
-    Info (12023): Found entity 1: add_sub_3ql File: G:/fpga-brain/db/add_sub_3ql.tdf Line: 25
+    Info (12023): Found entity 1: add_sub_3ql File: G:/fpga-brain/FIRMWARE/db/add_sub_3ql.tdf Line: 25
 Info (12128): Elaborating entity "add_sub_3ql" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_lower|add_sub_3ql:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper0" File: G:/fpga-brain/altfp_addsub.vhd Line: 4613
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper0" File: G:/fpga-brain/altfp_addsub.vhd Line: 4613
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper0" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4613
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper0" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4613
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper0" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4613
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper0" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4613
     Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
     Info (12134): Parameter "LPM_PIPELINE" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
@@ -3828,38 +3828,38 @@ Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_alt
     Info (12134): Parameter "lpm_hint" = "USE_WYS=ON"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8bl.tdf
-    Info (12023): Found entity 1: add_sub_8bl File: G:/fpga-brain/db/add_sub_8bl.tdf Line: 25
+    Info (12023): Found entity 1: add_sub_8bl File: G:/fpga-brain/FIRMWARE/db/add_sub_8bl.tdf Line: 25
 Info (12128): Elaborating entity "add_sub_8bl" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper0|add_sub_8bl:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper1" File: G:/fpga-brain/altfp_addsub.vhd Line: 4630
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper1" File: G:/fpga-brain/altfp_addsub.vhd Line: 4630
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper1" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4630
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper1" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4630
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper1" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4630
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_2comp_res_upper1" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4630
     Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
     Info (12134): Parameter "LPM_PIPELINE" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_WIDTH" = "14"
     Info (12134): Parameter "lpm_hint" = "USE_WYS=ON"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_add_sub_upper0" File: G:/fpga-brain/altfp_addsub.vhd Line: 4675
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_add_sub_upper0" File: G:/fpga-brain/altfp_addsub.vhd Line: 4675
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_add_sub_upper0" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4675
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_add_sub_upper0" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4675
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_add_sub_upper0" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4675
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_add_sub_upper0" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4675
     Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
     Info (12134): Parameter "LPM_PIPELINE" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_WIDTH" = "14"
     Info (12134): Parameter "lpm_hint" = "USE_WYS=ON"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_add_sub_upper1" File: G:/fpga-brain/altfp_addsub.vhd Line: 4692
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_add_sub_upper1" File: G:/fpga-brain/altfp_addsub.vhd Line: 4692
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_add_sub_upper1" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4692
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_add_sub_upper1" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4692
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_add_sub_upper1" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4692
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_add_sub_upper1" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4692
     Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
     Info (12134): Parameter "LPM_PIPELINE" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_WIDTH" = "14"
     Info (12134): Parameter "lpm_hint" = "USE_WYS=ON"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_lower" File: G:/fpga-brain/altfp_addsub.vhd Line: 4719
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_lower" File: G:/fpga-brain/altfp_addsub.vhd Line: 4719
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_lower" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4719
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_lower" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4719
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_lower" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4719
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_lower" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4719
     Info (12134): Parameter "LPM_DIRECTION" = "ADD"
     Info (12134): Parameter "LPM_PIPELINE" = "0"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
@@ -3867,11 +3867,11 @@ Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_alt
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_qrg.tdf
-    Info (12023): Found entity 1: add_sub_qrg File: G:/fpga-brain/db/add_sub_qrg.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_qrg File: G:/fpga-brain/FIRMWARE/db/add_sub_qrg.tdf Line: 22
 Info (12128): Elaborating entity "add_sub_qrg" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_lower|add_sub_qrg:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
-Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_upper1" File: G:/fpga-brain/altfp_addsub.vhd Line: 4731
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_upper1" File: G:/fpga-brain/altfp_addsub.vhd Line: 4731
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_upper1" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4731
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_upper1" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4731
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_upper1" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4731
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_upper1" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4731
     Info (12134): Parameter "LPM_DIRECTION" = "ADD"
     Info (12134): Parameter "LPM_PIPELINE" = "0"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
@@ -3879,48 +3879,48 @@ Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_alt
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "lpm_add_sub"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_34h.tdf
-    Info (12023): Found entity 1: add_sub_34h File: G:/fpga-brain/db/add_sub_34h.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_34h File: G:/fpga-brain/FIRMWARE/db/add_sub_34h.tdf Line: 22
 Info (12128): Elaborating entity "add_sub_34h" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_add_sub:man_res_rounding_add_sub_upper1|add_sub_34h:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
-Info (12128): Elaborating entity "lpm_compare" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_compare:trailing_zeros_limit_comparator" File: G:/fpga-brain/altfp_addsub.vhd Line: 4743
-Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_compare:trailing_zeros_limit_comparator" File: G:/fpga-brain/altfp_addsub.vhd Line: 4743
-Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_compare:trailing_zeros_limit_comparator" with the following parameter: File: G:/fpga-brain/altfp_addsub.vhd Line: 4743
+Info (12128): Elaborating entity "lpm_compare" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_compare:trailing_zeros_limit_comparator" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4743
+Info (12130): Elaborated megafunction instantiation "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_compare:trailing_zeros_limit_comparator" File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4743
+Info (12133): Instantiated megafunction "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_compare:trailing_zeros_limit_comparator" with the following parameter: File: G:/fpga-brain/FIRMWARE/altfp_addsub.vhd Line: 4743
     Info (12134): Parameter "LPM_PIPELINE" = "0"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_WIDTH" = "6"
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "lpm_compare"
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_7rh.tdf
-    Info (12023): Found entity 1: cmpr_7rh File: G:/fpga-brain/db/cmpr_7rh.tdf Line: 22
+    Info (12023): Found entity 1: cmpr_7rh File: G:/fpga-brain/FIRMWARE/db/cmpr_7rh.tdf Line: 22
 Info (12128): Elaborating entity "cmpr_7rh" for hierarchy "net:c3|altfp_addsub:c1|altfp_addsub_altfp_add_sub_55j:altfp_addsub_altfp_add_sub_55j_component|lpm_compare:trailing_zeros_limit_comparator|cmpr_7rh:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_compare.tdf Line: 280
-Info (12128): Elaborating entity "VGA" for hierarchy "VGA:c4" File: G:/fpga-brain/fpgabrain.vhdl Line: 310
-Info (12128): Elaborating entity "SYNC" for hierarchy "VGA:c4|SYNC:C1" File: G:/fpga-brain/VGA.vhd Line: 28
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(16): used explicit default value for signal "WW" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 16
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(17): used explicit default value for signal "HH" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 17
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(18): used explicit default value for signal "HFP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 18
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(19): used explicit default value for signal "HS" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 19
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(20): used explicit default value for signal "HBP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 20
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(21): used explicit default value for signal "VFP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 21
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(22): used explicit default value for signal "VS" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 22
-Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(23): used explicit default value for signal "VBP" because signal was never assigned a value File: G:/fpga-brain/SYNC.vhd Line: 23
+Info (12128): Elaborating entity "VGA" for hierarchy "VGA:c4" File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 310
+Info (12128): Elaborating entity "SYNC" for hierarchy "VGA:c4|SYNC:C1" File: G:/fpga-brain/FIRMWARE/VGA.vhd Line: 28
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(16): used explicit default value for signal "WW" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/SYNC.vhd Line: 16
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(17): used explicit default value for signal "HH" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/SYNC.vhd Line: 17
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(18): used explicit default value for signal "HFP" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/SYNC.vhd Line: 18
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(19): used explicit default value for signal "HS" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/SYNC.vhd Line: 19
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(20): used explicit default value for signal "HBP" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/SYNC.vhd Line: 20
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(21): used explicit default value for signal "VFP" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/SYNC.vhd Line: 21
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(22): used explicit default value for signal "VS" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/SYNC.vhd Line: 22
+Warning (10540): VHDL Signal Declaration warning at SYNC.vhd(23): used explicit default value for signal "VBP" because signal was never assigned a value File: G:/fpga-brain/FIRMWARE/SYNC.vhd Line: 23
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following DSP element node(s):
-        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_mult1" File: G:/fpga-brain/db/mult_5ks.tdf Line: 43
-        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_mult3" File: G:/fpga-brain/db/mult_5ks.tdf Line: 52
-        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_mult5" File: G:/fpga-brain/db/mult_5ks.tdf Line: 61
-        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_mult7" File: G:/fpga-brain/db/mult_5ks.tdf Line: 70
-        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_out2" File: G:/fpga-brain/db/mult_5ks.tdf Line: 79
-        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_out4" File: G:/fpga-brain/db/mult_5ks.tdf Line: 84
-        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_out6" File: G:/fpga-brain/db/mult_5ks.tdf Line: 89
-        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_out8" File: G:/fpga-brain/db/mult_5ks.tdf Line: 94
+        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_mult1" File: G:/fpga-brain/FIRMWARE/db/mult_5ks.tdf Line: 43
+        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_mult3" File: G:/fpga-brain/FIRMWARE/db/mult_5ks.tdf Line: 52
+        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_mult5" File: G:/fpga-brain/FIRMWARE/db/mult_5ks.tdf Line: 61
+        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_mult7" File: G:/fpga-brain/FIRMWARE/db/mult_5ks.tdf Line: 70
+        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_out2" File: G:/fpga-brain/FIRMWARE/db/mult_5ks.tdf Line: 79
+        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_out4" File: G:/fpga-brain/FIRMWARE/db/mult_5ks.tdf Line: 84
+        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_out6" File: G:/fpga-brain/FIRMWARE/db/mult_5ks.tdf Line: 89
+        Warning (14320): Synthesized away node "net:c3|altfp_mul:c0|altfp_mul_altfp_mult_trn:altfp_mul_altfp_mult_trn_component|lpm_mult:man_product2_mult|mult_5ks:auto_generated|mac_out8" File: G:/fpga-brain/FIRMWARE/db/mult_5ks.tdf Line: 94
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "net:c3|linksWeightArray" is uninferred due to inappropriate RAM size File: G:/fpga-brain/net.vhd Line: 228
+    Info (276004): RAM logic "net:c3|linksWeightArray" is uninferred due to inappropriate RAM size File: G:/fpga-brain/FIRMWARE/net.vhd Line: 228
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "RA[9]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 19
-    Warning (13410): Pin "RA[11]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 19
-    Warning (13410): Pin "RA[12]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 19
-    Warning (13410): Pin "CS" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 23
-    Warning (13410): Pin "BA[0]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 27
-    Warning (13410): Pin "BA[1]" is stuck at GND File: G:/fpga-brain/fpgabrain.vhdl Line: 27
+    Warning (13410): Pin "RA[9]" is stuck at GND File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 19
+    Warning (13410): Pin "RA[11]" is stuck at GND File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 19
+    Warning (13410): Pin "RA[12]" is stuck at GND File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 19
+    Warning (13410): Pin "CS" is stuck at GND File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 23
+    Warning (13410): Pin "BA[0]" is stuck at GND File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 27
+    Warning (13410): Pin "BA[1]" is stuck at GND File: G:/fpga-brain/FIRMWARE/fpgabrain.vhdl Line: 27
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 957 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -3932,9 +3932,9 @@ Info (21057): Implemented 925 device resources after synthesis - the final resou
     Info (21061): Implemented 877 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 111 warnings
-    Info: Peak virtual memory: 4859 megabytes
-    Info: Processing ended: Fri Sep 13 22:04:11 2019
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 4860 megabytes
+    Info: Processing ended: Sat Sep 14 23:32:54 2019
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:24
 
 
