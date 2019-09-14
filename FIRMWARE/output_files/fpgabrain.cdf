@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6E22) Path("G:/fpga-brain/output_files/") File("fpgabrain.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE6E22) Path("G:/fpga-brain/FIRMWARE/output_files/") File("fpgabrain.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

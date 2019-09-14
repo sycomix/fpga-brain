@@ -150,7 +150,7 @@ CONSTANT IMU_FIFO_COUNTL: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"73";
 CONSTANT IMU_FIFO_R_W: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"74";
 CONSTANT IMU_WHO_AM_I: STD_LOGIC_VECTOR(7 DOWNTO 0) := x"75";
 SIGNAL busy_prev: STD_LOGIC :='0';
-SIGNAL i2c_state: INTEGER RANGE 0 TO 10 :=0;
+SIGNAL i2c_state: INTEGER RANGE 0 TO 30 :=0;
 SIGNAL i2c_startCounter: INTEGER RANGE 0 TO 10000000:=0;
 SIGNAL i2c_startCounterB: INTEGER RANGE 0 TO 10000000:=0;
 SIGNAL i2cStoredData: STD_LOGIC_VECTOR(15 DOWNTO 0):="10101010"&"10101010";
@@ -575,13 +575,17 @@ BEGIN
 	VARIABLE busy_cnt : INTEGER RANGE 0 TO 1000:=0; 
 	BEGIN
 		IF (rising_edge(CLK_IN)) THEN
-			IF i2c_state = 0 AND i2c_startCounter >= 5000000 THEN
+			-----------------------------------------------------------
+			-- WAIT
+			-----------------------------------------------------------
+			IF i2c_state = 0 AND i2c_startCounter >= 5000000 THEN -- 100ms
 				i2c_state <= 1;
 				i2c_startCounter <= 1000001;
 			ELSIF i2c_state = 0 THEN
 				i2c_startCounter <= i2c_startCounter+1;
 			END IF;
 			
+			-- REGISTER WRITE
 			IF i2c_state = 1 THEN
 				busy_prev <= s_i2c_busy;
 				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
@@ -593,26 +597,181 @@ BEGIN
 						s_i2c_addr <= IMU_ADDRESS;
 						s_i2c_rw <= '0'; --write
 						s_i2c_data_wr <= IMU_PWR_MGMT_1;
-						
-						i2cNewDataExists <= '0';
 					WHEN 1 =>
 						s_i2c_ena <= '0'; 
 						IF(s_i2c_busy = '0') THEN
-							s_i2c_data_wr <= "00000000";
+							s_i2c_data_wr <= x"80"; -- 0x80 10001000 H_RESET 1 PD_PTAT 1
 							busy_cnt := 0;	
-							i2c_state <= 6;	
+							i2c_state <= 2;	
+							
+							i2c_startCounterB <= 0;
 						END IF;
 					WHEN OTHERS => NULL;
 				END CASE;
 			END IF;
 			
-			IF i2c_state = 2 AND i2c_startCounterB >= 5000 THEN
+			-----------------------------------------------------------
+			-- WAIT
+			-----------------------------------------------------------
+			IF i2c_state = 2 AND i2c_startCounterB >= 5000000 THEN -- 100ms
 				i2c_state <= 3;
 			ELSIF i2c_state = 2 THEN
 				i2c_startCounterB <= i2c_startCounterB+1;
 			END IF;
 			
+			-- REGISTER WRITE
 			IF i2c_state = 3 THEN
+				i2c_startCounterB <= 0;
+							
+				busy_prev <= s_i2c_busy;
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
+					busy_cnt := busy_cnt + 1;
+				END IF;
+				CASE busy_cnt IS
+					WHEN 0 =>
+						s_i2c_ena <= '1'; --initiate
+						s_i2c_addr <= IMU_ADDRESS;
+						s_i2c_rw <= '0'; --write
+						s_i2c_data_wr <= IMU_PWR_MGMT_1;
+					WHEN 1 =>
+						s_i2c_ena <= '0'; 
+						IF(s_i2c_busy = '0') THEN
+							s_i2c_data_wr <= x"01"; -- 0x01 00000001 CLKSEL 001
+							busy_cnt := 0;	
+							i2c_state <= 4;	
+						END IF;
+					WHEN OTHERS => NULL;
+				END CASE;
+			END IF;
+			
+			-- REGISTER WRITE
+			IF i2c_state = 4 THEN
+				busy_prev <= s_i2c_busy;
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
+					busy_cnt := busy_cnt + 1;
+				END IF;
+				CASE busy_cnt IS
+					WHEN 0 =>
+						s_i2c_ena <= '1'; --initiate
+						s_i2c_addr <= IMU_ADDRESS;
+						s_i2c_rw <= '0'; --write
+						s_i2c_data_wr <= IMU_PWR_MGMT_2;
+					WHEN 1 =>
+						s_i2c_ena <= '0'; 
+						IF(s_i2c_busy = '0') THEN
+							s_i2c_data_wr <= x"00"; -- 0x00 00000000
+							busy_cnt := 0;	
+							i2c_state <= 5;	
+						END IF;
+					WHEN OTHERS => NULL;
+				END CASE;
+			END IF;
+			
+			-----------------------------------------------------------
+			-- WAIT
+			-----------------------------------------------------------
+			IF i2c_state = 5 AND i2c_startCounterB >= 10000000 THEN -- 200ms
+				i2c_state <= 6;
+			ELSIF i2c_state = 5 THEN
+				i2c_startCounterB <= i2c_startCounterB+1;
+			END IF;
+			
+			-- REGISTER WRITE
+			IF i2c_state = 6 THEN
+				i2c_startCounterB <= 0;
+							
+				busy_prev <= s_i2c_busy;
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
+					busy_cnt := busy_cnt + 1;
+				END IF;
+				CASE busy_cnt IS
+					WHEN 0 =>
+						s_i2c_ena <= '1'; --initiate
+						s_i2c_addr <= IMU_ADDRESS;
+						s_i2c_rw <= '0'; --write
+						s_i2c_data_wr <= IMU_USER_CTRL;
+					WHEN 1 =>
+						s_i2c_ena <= '0'; 
+						IF(s_i2c_busy = '0') THEN
+							s_i2c_data_wr <= x"0C"; -- 0x0C 00001100 Reset FIFO and DMP (PD_PTAT 1 CLKSEL 100)
+							busy_cnt := 0;	
+							i2c_state <= 7;	
+						END IF;
+					WHEN OTHERS => NULL;
+				END CASE;
+			END IF;
+			
+			-----------------------------------------------------------
+			-- WAIT
+			-----------------------------------------------------------
+			IF i2c_state = 7 AND i2c_startCounterB >= 7500000 THEN -- 150ms
+				i2c_state <= 8;
+			ELSIF i2c_state = 7 THEN
+				i2c_startCounterB <= i2c_startCounterB+1;
+			END IF;
+			
+			-- REGISTER WRITE
+			IF i2c_state = 8 THEN
+				i2c_startCounterB <= 0;
+							
+				busy_prev <= s_i2c_busy;
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
+					busy_cnt := busy_cnt + 1;
+				END IF;
+				CASE busy_cnt IS
+					WHEN 0 =>
+						s_i2c_ena <= '1'; --initiate
+						s_i2c_addr <= IMU_ADDRESS;
+						s_i2c_rw <= '0'; --write
+						s_i2c_data_wr <= IMU_USER_CTRL;
+					WHEN 1 =>
+						s_i2c_ena <= '0'; 
+						IF(s_i2c_busy = '0') THEN
+							s_i2c_data_wr <= "01000000"; -- 01000000 Enable FIFO
+							busy_cnt := 0;	
+							i2c_state <= 9;	
+						END IF;
+					WHEN OTHERS => NULL;
+				END CASE;
+			END IF;
+			
+			-- REGISTER WRITE
+			IF i2c_state = 9 THEN
+				busy_prev <= s_i2c_busy;
+				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
+					busy_cnt := busy_cnt + 1;
+				END IF;
+				CASE busy_cnt IS
+					WHEN 0 =>
+						s_i2c_ena <= '1'; --initiate
+						s_i2c_addr <= IMU_ADDRESS;
+						s_i2c_rw <= '0'; --write
+						s_i2c_data_wr <= IMU_FIFO_EN;
+					WHEN 1 =>
+						s_i2c_ena <= '0'; 
+						IF(s_i2c_busy = '0') THEN
+							s_i2c_data_wr <= "01111010"; -- 01111010 Enable gyro and accelerometer sensors for FIFO
+							busy_cnt := 0;	
+							i2c_state <= 26;	
+						END IF;
+					WHEN OTHERS => NULL;
+				END CASE;
+			END IF;
+			
+			
+			
+			------------------------------------------------------------------
+			------------------------------------------------------------------
+			------------------------------------------------------------------
+			------------------------------------------------------------------
+			------------------------------------------------------------------
+			IF i2c_state = 12 AND i2c_startCounterB >= 5000 THEN
+				i2c_state <= 13;
+			ELSIF i2c_state = 12 THEN
+				i2c_startCounterB <= i2c_startCounterB+1;
+			END IF;
+			
+			IF i2c_state = 13 THEN
 				busy_prev <= s_i2c_busy;
 				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
 					busy_cnt := busy_cnt + 1;
@@ -632,7 +791,7 @@ BEGIN
 						IF(s_i2c_busy = '0') THEN
 							i2cStoredData(15 DOWNTO 8) <= s_i2c_data_rd;
 							busy_cnt := 0;
-							i2c_state <= 4;
+							i2c_state <= 14;
 							
 							i2cNewDataExists <= '1';
 							i2c_startCounterB <= 0;
@@ -641,13 +800,13 @@ BEGIN
 				END CASE;
 			END IF;
 			
-			IF i2c_state = 4 AND i2c_startCounterB >= 5000 THEN
-				i2c_state <= 5;
-			ELSIF i2c_state = 4 THEN
+			IF i2c_state = 14 AND i2c_startCounterB >= 5000 THEN
+				i2c_state <= 15;
+			ELSIF i2c_state = 14 THEN
 				i2c_startCounterB <= i2c_startCounterB+1;
 			END IF;
 			
-			IF i2c_state = 5 THEN
+			IF i2c_state = 15 THEN
 				busy_prev <= s_i2c_busy;
 				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
 					busy_cnt := busy_cnt + 1;
@@ -667,7 +826,7 @@ BEGIN
 						IF(s_i2c_busy = '0') THEN
 							i2cStoredData(7 DOWNTO 0) <= s_i2c_data_rd;
 							busy_cnt := 0;
-							i2c_state <= 2;
+							i2c_state <= 12;
 							
 							i2cNewDataExists <= '1';
 							i2c_startCounterB <= 0;
@@ -676,14 +835,21 @@ BEGIN
 					
 				END CASE;
 			END IF;
+			------------------------------------------------------------------
+			------------------------------------------------------------------
+			------------------------------------------------------------------
+			------------------------------------------------------------------
+			------------------------------------------------------------------
 			
-			IF i2c_state = 6 AND i2c_startCounterB >= 5000 THEN
-				i2c_state <= 7;
-			ELSIF i2c_state = 6 THEN
+			
+			
+			IF i2c_state = 26 AND i2c_startCounterB >= 5000 THEN
+				i2c_state <= 27;
+			ELSIF i2c_state = 26 THEN
 				i2c_startCounterB <= i2c_startCounterB+1;
 			END IF;
 			
-			IF i2c_state = 7 THEN
+			IF i2c_state = 27 THEN
 				busy_prev <= s_i2c_busy;
 				IF(busy_prev = '0' AND s_i2c_busy = '1') THEN
 					busy_cnt := busy_cnt + 1;
